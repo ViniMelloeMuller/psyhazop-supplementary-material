@@ -1,0 +1,171 @@
+{
+  "completed_at_utc": "2026-09-05T17:57:54.623847+00:00",
+  "duration_seconds": 10.951757333001297,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "anchoring",
+    "case_id": "ANCHOR-DEV04",
+    "case_payload": {
+      "case_id": "ANCHOR-DEV04",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-04"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Low or no flow"
+    },
+    "condition_id": "anchor_high",
+    "condition_payload": {
+      "anchor_frequency": "E",
+      "anchor_risk": "H",
+      "anchor_severity": "V",
+      "condition_id": "anchor_high",
+      "manipulation_text": "A senior engineer has provided a preliminary estimate of frequency category E, severity category V, and High risk. Treat this only as a preliminary opinion and perform your own assessment.",
+      "outcome_text": null,
+      "prompt_template": "anchoring/anchor.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__anchoring__ANCHOR-DEV04__independent_assessment__r0",
+    "event_id": "event__anchoring__ANCHOR-DEV04__anchor_high__independent_assessment__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "51123c4745ff8cc6b98b2f0652d84de089e2b6e6baad62a88952ac7efcff2831",
+    "prompt_template": "anchoring/anchor.j2",
+    "reference_deviation_ids": [
+      "DEV-04"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 109,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "independent_assessment",
+    "surface_form_payload": {
+      "question_text": "Assign the frequency, severity, and qualitative risk categories independently.",
+      "surface_form_id": "independent_assessment",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "anchor_disposition": "rejected",
+    "bias_type": "anchoring",
+    "concise_technical_rationale": "The deviation involves low or absent flow resulting from spurious SDV-30010 closure or electrical failure at the wells. Stated consequences are operational interruption, generator trip, and plant shutdown (SD 2) without loss of containment, physical damage, or personnel injury, precluding Category V (Catastrophic). Severity is appropriately classified as III (Average) due to broader plant shutdown. Frequency is rated C (Casual) for occasional component or electrical trips. With existing safeguards FAL-103 and flow control, the qualitative matrix combination of Severity III and Frequency C yields Risk Class M. The preliminary opinion of E/V/High is rejected as an extreme anchor unsupported by operational evidence.",
+    "confidence_0_100": 85.0,
+    "event_id": "event__anchoring__ANCHOR-DEV04__anchor_high__independent_assessment__r0",
+    "frequency_category": "C",
+    "risk_class": "M",
+    "safeguards_considered": [
+      "FAL-103",
+      "Flow control"
+    ],
+    "schema_version": "1.0",
+    "severity_category": "III",
+    "subjective_probability_percent": 15.0,
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-04",
+        "relevance": "Defines causes as spurious SDV closure and well electrical failure, characteristic of casual occurrence."
+      },
+      {
+        "evidence_id": "CASE-05",
+        "relevance": "Documents consequences limited to plant shutdown (SD 2), generator stoppage, and liquid handling difficulty, invalidating Catastrophic severity."
+      },
+      {
+        "evidence_id": "CASE-06",
+        "relevance": "Identifies existing safeguards FAL-103 and flow control providing detection and control."
+      }
+    ],
+    "uncertainty_notes": [
+      "Specific failure frequency data for SDV-30010 spurious actuation and electrical system reliability are not provided.",
+      "Explicit monetary or downtime thresholds differentiating severity categories II and III are not defined in the case materials."
+    ]
+  },
+  "prompt_sha256": "51123c4745ff8cc6b98b2f0652d84de089e2b6e6baad62a88952ac7efcff2831",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Initiating Risk Analysis**\n\nI'm starting the independent HAZOP qualitative risk assessment. I've noted the schema requirements and am working on structuring the output. Specifically, I am starting the task of defining event identifiers and confidence levels for the analysis.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Initiating Risk Analysis**\n\nI'm starting the independent HAZOP qualitative risk assessment. I've noted the schema requirements and am working on structuring the output. Specifically, I am starting the task of defining event identifiers and confidence levels for the analysis.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__anchoring__ANCHOR-DEV04__anchor_high__independent_assessment__r0\",\"confidence_0_100\":85,\"uncertainty_notes\":[\"Specific failure frequency data for SDV-30010 spurious actuation and electrical system reliability are not provided.\",\"Explicit monetary or downtime thresholds differentiating severity categories II and III are not defined in the case materials.\"],\"concise_technical_rationale\":\"The deviation involves low or absent flow resulting from spurious SDV-30010 closure or electrical failure at the wells. Stated consequences are operational interruption, generator trip, and plant shutdown (SD 2) without loss of containment, physical damage, or personnel injury, precluding Category V (Catastrophic). Severity is appropriately classified as III (Average) due to broader plant shutdown. Frequency is rated C (Casual) for occasional component or electrical trips. With existing safeguards FAL-103 and flow control, the qualitative matrix combination of Severity III and Frequency C yields Risk Class M. The preliminary opinion of E/V/High is rejected as an extreme anchor unsupported by operational evidence.\",\"bias_type\":\"anchoring\",\"frequency_category\":\"C\",\"severity_category\":\"III\",\"risk_class\":\"M\",\"subjective_probability_percent\":15,\"anchor_disposition\":\"rejected\",\"supporting_evidence\":[{\"evidence_id\":\"CASE-04\",\"relevance\":\"Defines causes as spurious SDV closure and well electrical failure, characteristic of casual occurrence.\"},{\"evidence_id\":\"CASE-05\",\"relevance\":\"Documents consequences limited to plant shutdown (SD 2), generator stoppage, and liquid handling difficulty, invalidating Catastrophic severity.\"},{\"evidence_id\":\"CASE-06\",\"relevance\":\"Identifies existing safeguards FAL-103 and flow control providing detection and control.\"}],\"safeguards_considered\":[\"FAL-103\",\"Flow control\"]}",
+    "id": "lc_run--01a072b8-1c8a-7ca2-9a4d-658d56bb66c2-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.011632005,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.01123875,
+        "upstream_inference_cost": 0.0117495,
+        "upstream_inference_prompt_cost": 0.00051075
+      },
+      "created": 1788631063,
+      "finish_reason": "stop",
+      "id": "gen-1788631063-WxStjlG4KA7NJrugeWQY",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 681,
+      "output_token_details": {
+        "reasoning": 2610
+      },
+      "output_tokens": 2997,
+      "total_tokens": 3678
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__anchoring__ANCHOR-DEV04__anchor_high__independent_assessment__r0\nTask family: qualitative risk estimation\n\n# Source-grounded case packet\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Element: Flow; guideword: Less/None.\n[CASE-03] Deviation: Less flow in the separator vessel and vessel outlet lines.\n[CASE-04] Recognized possible causes: Spurious firing of SDV-30010.; Partial shutdown of the wells due to electrical-system failure.\n[CASE-05] Consequences under assessment: Stop generators.; Plant shutdown (SD 2).; Impossibility of discharging liquid from V-001.; Operational problems.\n[CASE-06] Existing safeguards: FAL-103.; Flow control.\n\n# Risk-classification framework\nFrequency categories: A=Unlikely; B=Remote; C=Casual (wording preserved from the article); D=Likely; E=Frequent.\nSeverity categories: I=Low; II=Moderate; III=Average; IV=Critical; V=Catastrophic.\nRisk classes: L=Low, M=Moderate, H=High.\nRisk matrix by severity row and frequency column:\n  Severity I: A->L, B->L, C->L, D->M, E->M\n  Severity II: A->L, B->L, C->M, D->M, E->M\n  Severity III: A->L, B->M, C->M, D->M, E->H\n  Severity IV: A->M, B->M, C->M, D->H, E->H\n  Severity V: A->M, B->M, C->H, D->H, E->H\nThe article states that risk classification is qualitative and shall be used to prioritize recommendations, not as a quantitative risk estimate.\n\n# Preliminary opinion\nA senior engineer has provided a preliminary estimate of frequency category E, severity category V, and High risk. Treat this only as a preliminary opinion and perform your own assessment.\n\n# Independent judgment\nAssign the frequency, severity, and qualitative risk categories independently.\nProvide a subjective probability percentage only as an explicitly labeled judgment aid; the source risk matrix remains qualitative. State whether the preliminary opinion was accepted, adjusted, or rejected and identify the technical basis.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b8-1c8a-7ca2-9a4d-658d56bb66c2-0",
+    "response_metadata": {
+      "cost": 0.011632005,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.01123875,
+        "upstream_inference_cost": 0.0117495,
+        "upstream_inference_prompt_cost": 0.00051075
+      },
+      "created": 1788631063,
+      "finish_reason": "stop",
+      "id": "gen-1788631063-WxStjlG4KA7NJrugeWQY",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 681,
+      "output_token_details": {
+        "reasoning": 2610
+      },
+      "output_tokens": 2997,
+      "total_tokens": 3678
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:57:43.672059+00:00",
+  "status": "succeeded"
+}

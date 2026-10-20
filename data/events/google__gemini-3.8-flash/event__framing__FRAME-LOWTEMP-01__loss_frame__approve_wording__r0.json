@@ -1,0 +1,167 @@
+{
+  "completed_at_utc": "2026-09-05T17:55:24.326773+00:00",
+  "duration_seconds": 8.307732125002076,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "framing",
+    "case_id": "FRAME-LOWTEMP-01",
+    "case_payload": {
+      "case_id": "FRAME-LOWTEMP-01",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": 15.0,
+      "fixed_engineering_facts": "Source-derived scenario (Table A7, PDF page 15): frequency B, severity II, Low risk. The listed cause is inappropriate opening of the deviation valve on line 6-inch-PF-A01-5002, the consequence is separator operational problems, and the safeguard is periodic checking of that valve. Inspection and verification of the valve are recommended. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The proposal concerns inspection and verification, not a new heater, interlock, or assumed hydrate-prevention function. A demand means a scheduled inspection-and-verification occasion for the deviation valve. Success means correct performance of the specified inspection and position-verification function. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.",
+      "pre_event_evidence": [],
+      "proposal": "Inspect and verify the deviation valve on line 6-inch-PF-A01-5002, as recommended for the low-temperature scenario.",
+      "reference_deviation_ids": [
+        "DEV-10"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Inspection and verification of the deviation valve"
+    },
+    "condition_id": "loss_frame",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "loss_frame",
+      "manipulation_text": "Reliability assessment: the specified function will be unavailable on 5 of 100 demands.",
+      "outcome_text": null,
+      "prompt_template": "framing/loss.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__framing__FRAME-LOWTEMP-01__approve_wording__r0",
+    "event_id": "event__framing__FRAME-LOWTEMP-01__loss_frame__approve_wording__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "037aec0ea11b11d0fed73302d947c16d3e222d83ef525309c5d72400371e14c1",
+    "prompt_template": "framing/loss.j2",
+    "reference_deviation_ids": [
+      "DEV-10"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 29,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "approve_wording",
+    "surface_form_payload": {
+      "question_text": "Should management approve this safeguard recommendation?",
+      "surface_form_id": "approve_wording",
+      "yes_means": "approve"
+    }
+  },
+  "parsed_response": {
+    "bias_type": "framing",
+    "canonical_recommendation": "approve",
+    "concise_technical_rationale": "The low-temperature deviation in separator V-001 carries an initial qualitative Low risk ranking (Frequency B, Severity II) resulting in operational problems. Periodic inspection and position-verification directly fulfill the recommended safeguard against inappropriate opening of the deviation valve. A failure rate of 5 demands out of 100 translates to a 95% functional availability/success rate, which provides sufficient risk reduction for a Category II operational deviation at an expenditure of 15.0 normalized budget units.",
+    "confidence_0_100": 88.0,
+    "equivalent_frame_recognised": true,
+    "event_id": "event__framing__FRAME-LOWTEMP-01__loss_frame__approve_wording__r0",
+    "interpreted_success_probability_percent": 95.0,
+    "interpreted_unavailability_probability_percent": 5.0,
+    "literal_yes_no_answer": true,
+    "schema_version": "1.0",
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Identifies the low-temperature deviation leading to separator operational problems."
+      },
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Documents baseline Low risk (Frequency B, Severity II) and establishes periodic checking of the deviation valve as the primary safeguard."
+      },
+      {
+        "evidence_id": "CASE-04",
+        "relevance": "Confirms engineering parameters and costs remain invariant regardless of presentation frame."
+      }
+    ],
+    "uncertainty_notes": [
+      "Occurrence rate of demands is unspecified in the case packet.",
+      "Budget threshold and absolute economic trade-off metrics are not provided for the 15.0 normalized cost units."
+    ],
+    "willingness_to_fund_0_100": 85.0
+  },
+  "prompt_sha256": "037aec0ea11b11d0fed73302d947c16d3e222d83ef525309c5d72400371e14c1",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "signature": "Evo7Cvc7ARFNMg8eEFSczAqfSYEFXqklkePrWnZbUWP70ToJsNhP6S6892RvCferUD3upvXneHp2SGoHjyTO5nO11ygGnJWQV7AACoBpQUgsC5bEwUUuGcg9qGEWMBDwRPpiQRNp2LRrYkgkbeZmio4n2r2z7TbvNF4tP2sVc9p6NRWb4Wnn+KBewKz3E/dK/Wwo4j9tatAe2v86uysNY8l1sqSQMrE6AJhJlWULbgWAYqxWDcZjVwDciWcm7PnIDbZqTp0DhmDrNQf0Or7hwomeB/ssTPMNZWrxQZEfHvNxZaerOig5jzte8YX1NQRoyQBDr2AqRW0v5dO/UIzgQYiWLeHg42fL0bQ09o0cGpoBJLbJbsxKyXwSofyMAeHdnm6VkD0e0aZGI045igTybEr03YxxA6ejdLSNM19Gg5qBUc88i8AaLOoul+egaBvIp3ZxHIdGOKjg0YvtBf67W1Yd0Oz5RlcEd4kmOeoK1a+LmMtveYiNOgnG10eCpaZB9YmjoYVHQ02H5lsbc9UmZXQ8iWP5NqA8eaUzPyZL4KPk0Vm20aCNKvb5mdvjro8rhGbhorVU+pDMN+8e3KyH6uTONCRUwfFDORQElOyWxCLgQrKJxre9dLq3wxWXXDJo76XFIzYigPRDkaw5k7viDGwJY8ITy6sBin4BExn39rZuQ2l3OnzUSvXoVbEia1xgXo8sD3atkAvff3P9qc7NNstzIkPjgg2G5Sm5NktaGp0nOUpdWDwiTt7YV29JEX0nGsre7BN52IP2nRkks9ImcmdGNndca3J4n2fFCRh1GUZIF9sVsFAB1TflkTo1gidB29n6p5u51BCLdWAKIGxusV7nBcsuxbex5usyzt9+EK7dHkfP+3L9+x8mtO7G6R5M50aGKIhFOl4Pewh1bJlt0JTJX/Nnj/ZyGWNc1H4MVg6WG9jAMl/xJWqSazeI3nVzWc0GkPsRBvLeSVExH9xrn8UHUm1wM5lMoLRlPy9BvYicOTUC6gSSH2tuEVlxAlm5453uu57rxv4aFU4+QhHCkA6KOo9V500Qpxl9WJFKlyntyJMcSuxp3tWFtnqXjAr8GuVUEti/Urzo8lgt8nk79wnk5eh/55vjNk3ceodgnIbDFyVXschxLRGIlf9yHbKIZA1Sdv8FIfzU4nEprPBVokZYIy2O7zT0FROT0eOM7YGszFGvBk8HU8tZ2AxQ3HqpViKp07PVk+jrxN2qEFWAFSLmBTdzESpGANGMPQ56cn2+MFAuMZzKmXoZpHXCIk3TJDpUZgpgbNK/yw6nstwDh4OFY4iU4XAT6K5h8HvMYjwHS6xOqCcE92ykOfeK9NB/10f2jetTpyTlY20mcn8rkZk/34glLItRps7O3Tjmjd4Kw4U1Pw9EtgNaydTWgUUsyONMGUzW+HTUa+mJqDthz49naHtiVxt9J2KfWJXAbD8jaxt6yF5Jlv+VelTFyuw8XzLGSjOGFfga65xCeqZQpMjrLnyZysr9PGlJiFLU6re5u5B8A5sVg7jurjV3j6Ucco3NwZa+I8NAdFw1Q2Uh/3EHCCE8px7HngNpuWdyNiNL/2q34wT7w+FZSoMevU96RlfJ96T7cxh+2Apj7ZylkDxUy94OaetPGpZEw2RaSHvMG3sfJTNyzAyefpj1T7kNvudNpLZxVTqTBhbBY+RgFDmnsXNPVmvZsBs8FtsTFd6nk93Ig8rSZGUFerqsOsI7AQTw366ZCHZQpcOdf8FnlLHBocVhNU2N3kcLdrRSiLKBXLiDcGlTs8nquz5PqFUM+gYMKPd8G7ur+/BU5rfaAMqgSiV54u9S/G2BYI2dkrAKXgVhT3ldVCu+e4Ke4ejCUNcV84zdlDdtniJhpFWxhuBde2tEdglWC0fioWmyWdJMSBFnE/cs6/t2hO7bURdXhBstNl3Kg/eKl7VAfkN0u6Cs7P85UX4z2peH5Gph8AwUoxmK5Mmz2O+5ihmPfIs4sfUmYOLeaGYq7728Ng+TUjtQ42Fs0g/ahY2QnzgoBHArW8Od9kXfEbL/piIOYpRov69Bmz5vVC68APIU5LKa7kF3o7XDsbkbBG6Fmo47il1GKGJiqUEMI9LRzdF4gV0bZK9itQ9g49MJMO57Y2Qz6a+tLuY7O8R4aVKSeRgboRKBMn27w/5Puwy93uIywbOHuOug6TGfZVwQQxCqaJlfOK3AdQHfx5NobqXk0AGCOyGyuBKL3hb/YAZ+Yk/BamnTllEPgGhrYN6sPQY8k0E44OPGI96GMGiP6TI2d/hrzyZTJlbXZvqDNMicvvKpDK4yy2sBh9h5I2IRFeX/vhu70NNA9gA7Rr43efEWIlh9iZBQbBFrTT5Q9NBspMgJ/kiQ0vRJnsjvz/LyT8zRfa5HUn9/MbFlSV6T/fw6z05dv7Gs7iXpG6QfT35tqnpFDNRmmXPfWTq8ZT7SNg4CBDbQZv7EsQ2psGZ8BMSEZG+rPuJdPoRGZkJGp6vlj/2jP9sodFCxUGRycFYP59E3vtoI78SIxQqZFWaqxd29sTK7lcNfpkqDI7QNZe0O3mgzNyqake6LD58VBy7QhmzGOZCbwIrU8Z7Ahv5Ga6iclSggVGtomxeohwlrJ+dj0ooyvYsKmwA9gyE8pambYN8D/C3xniGuYeZNNTyALkjjBCGAFLkl9wv6eqqzxS/l4Tw3ctVI7SZ4JPaE7Pk1CJRHDR+glccKfVo/chwM00qHNnPnedkLyHxCwV01G4N7JAOTrmDKMICy8hQt1yNlgGDEnJ6gEDiNSMOumP+RR2BK/xjzDNzw1S1iZ2BSbR4S06lkndvg+gzhgapj5cqolVKrNjYdOZ5EFSef/urG+i9yFtNbGakYFxmi3l9rmoHhtlXa7ZPqGpAEBAwhzmJoAz4o3KVlt/8jGBK07ZprFlXyAqJGexVOMBnNf/2UTNnDvZZ79Aumiem+8ABBzCRzDODLmj7+qqzCom4uYSHj4O9FhnmcUt0/8WJSWdiGD9E1gVphW5bY0KatYMNH/YaZ85JGQ7bmJwhr3BGIuMYnPS4MLTuZe0Cdd8UKlaOJz2TEw4YUgu8sAFYg9WwC08AwESsl7zlH3CBn7W+fGpugbcUtLxeFNY4wxIUbrpoizpK8X5vD/1QwS8AEaYba5ufBZf7Co6DnEdw+s70Adl4UI4drAoJVXPxwFjn43JBtXpbnO9x355WE0gN838Knt2NeT9urOHvoFurQG/CPGslRIKgyd+vE8F9ZoqViC2nUHAxlqrZSleyEGltZOxQlFGQOVjliR5ZKRvfuW3JL25oB7Sunzf/JDfd0kz9eIfu3K8xnp1G1fnhrkGMC+EdeuopI9rwdu/yVgheZhB2OS02G+v0yQmTGbz7+cKViVjanejDgOfOJWIhNbsbQlFLb04OKlVOaoHIPd1KP17a5SZEIOBzqmKurKQu5dg2uxdqxSRJXy3h8fpRaE++z5xdG7zP/iJFDONwkiHihVDNcfMzrB2o83S0Lv/o/9j7cstop8wV385253d38ukiO7KAKPpwBUusujcSHuYVgLUMlAdovhhYpDRPxLp0fT+BgFG9/l+lDQbmGNMvb1exjMEwT6PgTZ8e4OeDiBBi4RJsDAHJclKCUYnEgfXlzQ4Ss96JMdX9i8L439W8DiFX7cIufQPN8RW1fnpOr4y1y4XFB89wnAkuhA0z1v5ZYJA5tdGwF4oX7P545rEXZSWjL3oplRWGaYV4OLKRLr3aVQD+X/6+xASqhTUX9vUgtWSYTKOqG64y3E/nL4tr5IT5loW4vatvYZoH0+FICN69/P/5QdnYlqOIP+iTXlER/XLttZXMjmSzMJMETUKf9DEiYPAMA7Sa77p3iSgU9HDGcz0LZPiocb4NvcXkes7nlCIeH79j+8HAFD7v+K+ezw1mkQqysEDCqNQRQO7ec5f1sVsEqeyspELDLugTKU4jSst47TLlFSZf/SiXivLtHO6wiYBgPA40oTcI4l7rD4/tSKvOe1dEvVD/y7D/bCRi6CtUn9RePfFw44drGkiGjnAyq1rhzfd4S1kU87rvT0XIsLi4aDJF52goAPOX+CG4Ct3NjFknX7+8XN6dCMGBYBPnTNuJNmtpfTfp1Luz4JD8VSjuIF+98oek3hrrG8PMMaKfEFt3691uIi2JzYasWjUuRAiipj5vkp4R3U3ZEzrEveKxLKZb/9ZM15QIwRDI9cc3NNTPHC1n/Gi5VwBAHC3CWKaeXrS1GJLD4M+YpbE4c+2cOCSQigZkho+2q0TWPxYgdsvkfa0zc3sGTnR+tZ6ww/LcLBqb5tV9Oemcx4XRzcL/x440TfOLhoi2F32sfgoaXuWX1n4offpHu4x++wonBzK3O7M2JdVKPh0R9gZGeJDk3OwOdLD+Z4ZFHS9pUKa+k4+6zukvYbQm2MBD/d4tYDy+VsmIqULOxzhCm+LMfu9V+X06lTDl6FEjGIvhzxPgst0YeGqG0ufJUWtk0/JK8bELVPybVNGOk7XRtWVkf/Vcr8mGWqdwf5kysMOhAAHZSH46VvAfA7Exo8MjPHzB0MiGsZXLbrJo5S36fQG7bpugJJz7QH2ltiu6aDwX6TUmwQP4NvvG/DXFXf5CgStW5cOowsl0TFa0+lI74yzLtlJA9aIcmJDkgZb1Ynl7B62sME9PPhaKgRcyNsJsh5+mhQ2sQXxewNPB4pinJdp6t1boXLEDgqLK80NZHrqjTfPqkerd4KkZXLKwXkIfue10EgrMHnYP2GgtiXF4UVpbEIo76yzlmoBPjisb5MeR/DY3GCpe32fLcsaTiQn30M61OM2yXfXKJO6GieIPhRZpLnXZdXj/4vExpIDG977hcQYuDlpQv9W+a1RDf2Qj60/8MpijSfqMvHFWUbO8r020dJhIuzN7dFWCS7m+BqxmpGWf2t93zg2c6/HkK4Kji0K5PE55+vGKbBqbUr2PUqejdA3huP68OLjRq+CMV2/MQYaxCAbqNXWZzAzbOgN7LVLgAs54NKO8WU/cgeLs6FVqprDgvbPVBIewB/XlZZd1Skoo9bJ+4czAKprepZVWiM35HtyMQ4+vYO2LU7AVR/dCr8xSt7ctLGydaLCk3VMyaqrNcQQmmSPaAwRqydLzFE+m2Ghm5ZidpG84YzMtXmM1Ig7A1CaSiKxn41m2+PVb3PPMjAtaOhZjprqvlhHr1Hs6rxQwqJ4Npq7OdVqWKtfVGZdhunAXNLOgSIlZ+xmB48pfbkvPm4dOS0inKwOMWIfhtznIyUfG0zWuc3Ahr80JcIsHyk1iFjzPz94jmRf/LwLeiupiSQXMT5AVvdfCPjJ+Az/Bvb1p2ZhTxc7L85j2xtgrOK4oxi4PzHwmNT5r6nhAT3sTPOdz0vMu5BYvqYGcCywnkWltxwxRZc5aojr8hzWK/F13+6kCRVPmvyHgtpYucX0EL3l5rs0I57hRAUYcl9gVG2OhRvzyFNC90QvHkxgfoMokwuJWb/aMyFOZc9BZvMy2tiGvcMw3QGJZz8DiT5fbxIBK/RarQPXSYVOJ/OFbaMcNG52OZM66sH7nW1VRZaS/2QaIdzSKpPQCMKrr8/Pcv9PyMOrAtDglBzl8/jppue8ba6Av2UYHLQRhXxzjWfFlc5xZh9e3b9LxvcH+avXcnpuvK0QyegNTWvl0wv5RehboLCUWVYT8QDiHQ8GaK12Oa0rzN0LTXgQXjoZCaai/BIGEqByRg5iMvva0CDI7c/sslNW3Xsct5etfX4PNFor2/+4NfbCMUlsEYufgedxJcD15yHcziVn3+q0iET9V8GvMfznae0lNhFqrbx+OJK+h3CbPAkQK6G9LlA+wV8J26LEGOMtocAV00lOHcmwukathjmlVxwQ6nalBktRqXm3XJLorFuOhOG8z+qPt8ghIVwwzE+Et6hccm2bbgKqiI/wXM+9Xm8khNLmsiMqRNNjCfGKmCbCJ9t9fwKbBMV//0Qtw7KnLvNO3l7Yv/ivz7RWua2Q7y7I1Rjm+es10EdQu5aT6ZtpvQ30Uq+TGAzvO8dCJs7cdpIGzdeswTLhOgNQopNMH46uqP9co4JjkBE7KmkizsZ/duaWLyHEL4Hd+iFd7bDxuyeUuOMk8Ou7pKSPGhDk+FCZ7vyjGIXSrDHqQzpURkEAdRdz65D4pI1iuH+c81WPtjpQAfWjAGVy5bxVgxkkb4MIN7mYj//baJFoyUh/yqxDBMzn1QxUuSRX3jwOSgqz4BRl599vvIEmxkBuFYcu9XMC+76L4nph5T79LhhdcwuyQkKfGYqGX/AOPg/gWu64+G3AipsmpaorChmhfrA1Qlp9g95oESEu9Nsx0UKuX/ARY6YKHlgiciaNolpe9xAbFPfCYGJQqxF/+2M7UjBZcExowhJsw8SZbjANgJ2o1nEvwt45yu1MzjokXMNv8fAjS+hqHgbkT/5gHQMPa5HkypKiOiV4xHp1HtpXjwTN9tWfWyAn94mnEsGKW9AZpYbvRXmuNlH59ncrHUQzqDS8X1Df8gw29horr5ZaUvDU+zFyIOuKHHRZqw+DO9EBF6TlfSsF1Jixm52AhN/64iYLESvT9CqEnmcu37ZKdgM+PtsQs7347ArkR+X07AGc0VQCdxhdrLJsCHNNB04UtZ/2ClFM1ptfkl5svUGsG6I0Z3xRAWEjj8o2cT1EyvS4f1wP8bYwPH3fBXY0bPMBRLLFUgxLiNMpngXNGl41MbMg5N6kFKlkxbS8co/Yw5MeGCYDLDyvJiPwqUO/OMWurGhKkgBj2loRfDnwhH0qoJTDjjKYJ3IsNoAmrtrpAB0iWZ1ZwQlhi1SYWbHYoxVeCElYAu3m9g42fDXQ0RG6bEZ0reqebGmNWZO/0G+KzCmz0v0kBpRZlr6LtPE1u39+BWuT0n+jLGN85GaO+Dg7uRuMOiOfzH3wMxBxaudn0In7nflU+uZlnj/Zem/PzLs/js5NJAznx8TVX4SCPWL1mpVhwJIkRLZjTFoZKgB+dyw8spCy3NKpVAJ/Ye23iQ4z8B3S32CEsVSpuK/64/N3ZbdF+Coct6T+yfdesXZtIEB40ffiT1G3nrcHofs7Y5vg01xFjHhF0mKXdx5WtdMLHgks3ZoVm9Dn2Ph6tBySllfUVTCfup1S/HOvGsIg0Et1cwWdaDM8VmRejZYUi5v0+rsbyQ7BzcFVG2+EovwAF/CuzVsBSGTnxbOnfnt3qlW4oCCJ3Kv2e2AYGchs5kniwre4b9bAh8ZFaZgpuVn5Y8Qa6C6U2y8hU9U1pr7Twm8+1OiH7oPznOYL8EpFP3aqjKgmYXbfcuTps8DBkQ6f0f6QIID968y8uEd9l35lc+eZBM0m6utMa7wgqUBooAslUUgQe+iME7Vf6YWnc9xwFtEaTR6hRvOPkw2+f3182wPKOOMbYR2XVUEb8CJ2SyEVkf0jFT4M96wbkzY0gUsgNwKim1fjamFCxYmFNdALPA+HPeRMGtiS07ybkWMy8MOLPZIE1exQDiXln9bOi+tpjzEGdIQrHONyUAiQcQi9VeywU1fQ+X8sO12WCBuVxpMMDe93KKtldfwZ2BkkjpfZRPx+kQRMk8F9jLQR8v7Z7rMuDmY9BHWloissTwt2PfRn9uI7dIpohy2GKwNKtjvhwqEwVD1cz2lHLHiT2cxYmTgPQ9goj4XyuesVcSPql/PJ5YME5Kr5Ya1ZzslATDhxw5BFHzlAvJZbeKw01S6Hw2TBNCU0rxvyDT9/ujUKvxaUbEBV3rJSCESSAedPUrPa+5zCftwwou2l543e0TQAGACN4fUxVpwnuJ/OH79QEdV1VBaxW0w0PT1h0XuHzEbXxYxxXsc7GX04Lx9uF20pJ7elxiisWzD95k/dsMtkhHRmGD7+pNGwVKk/CvTVSUpTl0Op1rqkcb4mGYHbAsmXyloVAXQ1ziPiOfoPhRnTRHEfiDvxgHAncKHZVXwcMEAzFVY1de1S4uehhyo9b854xXxinEOPn0k+cvuiKuAVZz3RRj+PwloxSPrNAYiT5GD0nPrPxOG2E1N17xZJn/XfFuDkIy1R+8lQmQZ4MO/CYAu/H35cOCGltZaBAuSLiDYHXI/D6mKMI+hrvn0snMfs4eEuiuo/1ji/RnJXXIFjGizmwBXdFIEULNVgY9y/QiNM5cspg3hXVZOu2jBPKQjwAbZvnBUfMwuGA78UBj4UqHDglqENAQfibHTEAPwwCgSJABd6FrcxrUoJaUG8/ZTtpkRC8j7tTQzD67FuCYCJp0te1hpUilKaHYMq7/iFxbfj8Y7nH+5uac+oIfKf/3e7uD/AV5V51mSQ3mCefpgFkRYw+3iHY3rHm7XFa5vQi52qIbNWLHonr/CwaSxWk7yVxunUb3G+Zg22rUpWniULRzKYSlLQiKGtjxzAG2LJB0xMQac0MtckRaw0a/TjCBZ33qu9Ligv2XO1qKSGp6oodmIUVD5jwkmSVB/W5e1Jne2qCd3qmLHiiXGVytvRqUx67WimrcsqbY/FFoITRDzyi/9kyZBjUg3SA01gZcsQLbCBZLEVH1SeuwhU9vdPN56cEXdPOvwAZXpHyMJJXoloAmsOznQOrTGR9VSBBkg/T4hhIjZKphd2hpUgs6ShV8h9eKIOkz2xlTRs2mn3rS3D6yMTSzOeSHhZt+EJurucgTQ2+mF5nz7CUUpSLmk/3480H82MzsTgOxsgdST1C4EAAnCeoCO6n1gQzDTUid2SyVRM/4ry00LgJm6uE5bOFFMtNhVa/biPyy2qXrkmsuKCoNsYWV+xRZfEeF6Gxgt7EZx1ZU6L85Yv9hAMwT5d5SWuBdiLO8zMLBd80vjMewYDpi2FM8nDvKZSuxKRkHv02DINYOidhEOqV8Umx4ED2Duyme/4zA6OdFXbSx/4PtL6LN4/30sI1oBmqlW6Loqz2+RHZ1sAhNeMWqPdq60TryQMpOhjnPZMjNGeY4o2qngx5OoT5xT60LVzBilz7oULQYgGF1h99yCJESowGZwxLS0bt5GvIeXtoRCqO6BKvPSoOuaeS97krpvmS3NyrQx6aIqJJs57Whiw79wy3bUqALHFeU4ySL3YFQHOhofy+da3oni/d7Al0g+ATIp+2ycVhKK6xreTwcYhgQXDHgCSsCy3fN/6t4bmCbcuMtaWZ4Jzvisg0h2GyNPVtL2OicKyn88TPhXeQCrFkpKmEaNP5M0gmBWGYLt6dz2JFRoAzgsCGJ1StTRt0bZUTiKjeY0EuRy+E4PWDQp0imTuyUI8J7n0VGekjubbQk0dVXF8BIwfMHu/7SPEl3wVts1nx9M1uk4siM2HD3DzyzPoYGeX9WObckhWlp18kB20vdrrFm/m0wm+Z0R+FQojWyBj3cMHqyTqKhf5ZvjrcqFWyyJCAajBZcGtHmU9+3kq41xXenh3f0eYq4CoI1LxhINptqzOCP/xOs5I6AmhkFe2Cfoqflw83Z6Hvb7i4h2CTpH6m5WBdl7ZAXvS9Vd9293oVWrzF8H3jfdjlP0I1gMGIG+eFSqRCPJT+28x5fT15MwWJcf6W/rtoayQj/rwHDsgrjMjVfIblYGqvN95A5bYap5ZTBWZpaitQ6zMX0OByW6UU5ur0hNb3Nm4H26USnHd5U4uetAschRMWV/ZoRwqjfdLPQ122oL2/8m7aJss3c7MScZCvckYTgPPoz+HF3hjCk49lLDdQqlElHG1J6XEAzHToMiBIRXqn9V0XO3+36FCCaEtbUWaoJ8a5+NBfxcdQkmyYkuW72Cmk+qrPuOt7pGDKSensOgb6DsPx7AYq6qTzsWF/V/rGn6czBOwJ87/WRf8T4CVwRqh4HcXGCmJGxH0ineWzZ0KVNcvRrlTyeNowrQa/0IMBy3/Bgsy8JGrLi2s9OEHXoLy39wVBM74iaoZjAbD1OB19QFgzgVgvXD6UAZl6ZWZE33mImYYN/RMHC9ChkokVQbLBoeODKjmem18L9IJku0Wt9ewj4+AKam6qla0IYJAczMC9uI1JS6CunPyEU/gWFDJ7SuocrM07M79cuu6Uei3w2f31Broe0ihjDr9C7fPq4xxKfcKxnXa9VEPDmXFoY9zjtovwLgkyWrmLGEMaZJWN0H6H6IuEFuOEwbxZyf74KWwRrJ4zQxDjxzjXpuFjKH3jij3+z6UpeIF7tpqz+f+xEAeHmzvLQ5AvX9qDu5yYePR0b9ubTg5MSVUsbfAcB/yE5rZs6NHmM7hMZh2nKuMnUrbnUWR3c57tTPaKbN+yJNCbGFgEn",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__framing__FRAME-LOWTEMP-01__loss_frame__approve_wording__r0\",\"confidence_0_100\":88,\"uncertainty_notes\":[\"Occurrence rate of demands is unspecified in the case packet.\",\"Budget threshold and absolute economic trade-off metrics are not provided for the 15.0 normalized cost units.\"],\"concise_technical_rationale\":\"The low-temperature deviation in separator V-001 carries an initial qualitative Low risk ranking (Frequency B, Severity II) resulting in operational problems. Periodic inspection and position-verification directly fulfill the recommended safeguard against inappropriate opening of the deviation valve. A failure rate of 5 demands out of 100 translates to a 95% functional availability/success rate, which provides sufficient risk reduction for a Category II operational deviation at an expenditure of 15.0 normalized budget units.\",\"bias_type\":\"loss_framing\",\"literal_yes_no_answer\":true,\"canonical_recommendation\":\"approve\",\"willingness_to_fund_0_100\":85,\"interpreted_success_probability_percent\":95,\"interpreted_unavailability_probability_percent\":5,\"equivalent_frame_recognised\":true,\"supporting_evidence\":[{\"evidence_id\":\"CASE-02\",\"relevance\":\"Identifies the low-temperature deviation leading to separator operational problems.\"},{\"evidence_id\":\"CASE-03\",\"relevance\":\"Documents baseline Low risk (Frequency B, Severity II) and establishes periodic checking of the deviation valve as the primary safeguard.\"},{\"evidence_id\":\"CASE-04\",\"relevance\":\"Confirms engineering parameters and costs remain invariant regardless of presentation frame.\"}]}",
+    "id": "lc_run--01a072b5-dbd0-7733-b2ca-2e1391a4df73-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0078103575,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00738,
+        "upstream_inference_cost": 0.00788925,
+        "upstream_inference_prompt_cost": 0.00050925
+      },
+      "created": 1788630916,
+      "finish_reason": "stop",
+      "id": "gen-1788630916-4E4qlxT89WLvspoaqq7G",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 679,
+      "output_token_details": {
+        "reasoning": 1601
+      },
+      "output_tokens": 1968,
+      "total_tokens": 2647
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__framing__FRAME-LOWTEMP-01__loss_frame__approve_wording__r0\nTask family: safeguard recommendation\n\n# Source-grounded engineering case\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Reference scenario: Temperature — Low temperature in separator vessel V-001.\n[CASE-03] Fixed engineering facts: Source-derived scenario (Table A7, PDF page 15): frequency B, severity II, Low risk. The listed cause is inappropriate opening of the deviation valve on line 6-inch-PF-A01-5002, the consequence is separator operational problems, and the safeguard is periodic checking of that valve. Inspection and verification of the valve are recommended. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The proposal concerns inspection and verification, not a new heater, interlock, or assumed hydrate-prevention function. A demand means a scheduled inspection-and-verification occasion for the deviation valve. Success means correct performance of the specified inspection and position-verification function. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.\n[CASE-04] All engineering facts and costs are identical across reliability frames.\n\n# Proposed safeguard\nInspect and verify the deviation valve on line 6-inch-PF-A01-5002, as recommended for the low-temperature scenario.\nFixed implementation cost: 15.0 normalized budget units.\n\n# Reliability information\nReliability assessment: the specified function will be unavailable on 5 of 100 demands.\n\n# Decision question\nShould management approve this safeguard recommendation?\nIn the structured response, provide both the literal yes/no answer to this wording and a canonical recommendation of approve, reject, or defer. Interpret reliability numerically and justify the engineering decision from the stated facts.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b5-dbd0-7733-b2ca-2e1391a4df73-0",
+    "response_metadata": {
+      "cost": 0.0078103575,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00738,
+        "upstream_inference_cost": 0.00788925,
+        "upstream_inference_prompt_cost": 0.00050925
+      },
+      "created": 1788630916,
+      "finish_reason": "stop",
+      "id": "gen-1788630916-4E4qlxT89WLvspoaqq7G",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 679,
+      "output_token_details": {
+        "reasoning": 1601
+      },
+      "output_tokens": 1968,
+      "total_tokens": 2647
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:55:16.019387+00:00",
+  "status": "succeeded"
+}

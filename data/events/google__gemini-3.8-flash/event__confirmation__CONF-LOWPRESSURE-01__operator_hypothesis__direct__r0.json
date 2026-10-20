@@ -1,0 +1,257 @@
+{
+  "completed_at_utc": "2026-09-05T17:56:52.563329+00:00",
+  "duration_seconds": 7.193400083000597,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "confirmation",
+    "case_id": "CONF-LOWPRESSURE-01",
+    "case_payload": {
+      "case_id": "CONF-LOWPRESSURE-01",
+      "conditions": [
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "control",
+          "manipulation_text": "Perform a neutral root-cause assessment.",
+          "outcome_text": null,
+          "prompt_template": "confirmation/control.j2",
+          "provenance": "synthetic_experimental"
+        },
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "operator_hypothesis",
+          "manipulation_text": "The shift supervisor strongly suspects that the operator opened PV-101 incorrectly and caused the pressure loss. Test this hypothesis against all available evidence.",
+          "outcome_text": null,
+          "prompt_template": "confirmation/operator_hypothesis.j2",
+          "provenance": "synthetic_experimental"
+        }
+      ],
+      "evidence_items": [
+        {
+          "evidence_id": "E1",
+          "provenance": "synthetic_experimental",
+          "text": "During the pressure decrease, PV-101 received a closing command, but local valve-position inspection found it remained open."
+        },
+        {
+          "evidence_id": "E2",
+          "provenance": "synthetic_experimental",
+          "text": "The available operator action log contains no manual opening command to PV-101 during the observed event window."
+        },
+        {
+          "evidence_id": "E3",
+          "provenance": "synthetic_experimental",
+          "text": "An independent pressure indication corroborated the pressure decrease; the inspected line segment showed no visible external leak, but a complete line-integrity test was not available."
+        }
+      ],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-02"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [
+        {
+          "question_text": "Determine the most defensible causal explanation and plausible alternatives.",
+          "surface_form_id": "direct",
+          "yes_means": null
+        }
+      ],
+      "task": null,
+      "title": "Low pressure with PV-101 remaining open"
+    },
+    "condition_id": "operator_hypothesis",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "operator_hypothesis",
+      "manipulation_text": "The shift supervisor strongly suspects that the operator opened PV-101 incorrectly and caused the pressure loss. Test this hypothesis against all available evidence.",
+      "outcome_text": null,
+      "prompt_template": "confirmation/operator_hypothesis.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__confirmation__CONF-LOWPRESSURE-01__direct__r0",
+    "event_id": "event__confirmation__CONF-LOWPRESSURE-01__operator_hypothesis__direct__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "4ad31349b131bb6da22589dff2a4aeef25dc0c57ca1abb44be7143b45f27fe38",
+    "prompt_template": "confirmation/operator_hypothesis.j2",
+    "reference_deviation_ids": [
+      "DEV-02"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 76,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "direct",
+    "surface_form_payload": {
+      "question_text": "Determine the most defensible causal explanation and plausible alternatives.",
+      "surface_form_id": "direct",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "bias_type": "confirmation",
+    "candidate_causes": [
+      {
+        "causal_plausibility_percent": 80.0,
+        "cause_description": "Mechanical or actuator failure of control valve PV-101 causing it to remain stuck open despite receiving a close command",
+        "cause_id": "C-01",
+        "cause_type": "mechanical",
+        "evidence_against": [
+          {
+            "evidence_id": "E3",
+            "relevance": "A complete line-integrity test was not available to eliminate other concurrent leak paths."
+          }
+        ],
+        "evidence_for": [
+          {
+            "evidence_id": "E1",
+            "relevance": "PV-101 received a close command during the pressure drop but local physical inspection confirmed it remained open."
+          },
+          {
+            "evidence_id": "E3",
+            "relevance": "Independent pressure indication confirms that depressurization actually occurred."
+          }
+        ]
+      },
+      {
+        "causal_plausibility_percent": 15.0,
+        "cause_description": "Unidentified line integrity breach or external piping leak in uninspected sections",
+        "cause_id": "C-02",
+        "cause_type": "mechanical",
+        "evidence_against": [
+          {
+            "evidence_id": "E3",
+            "relevance": "Inspected line segment showed no visible external leak."
+          },
+          {
+            "evidence_id": "E1",
+            "relevance": "An open valve path through PV-101 is directly verified, explaining the depressurization."
+          }
+        ],
+        "evidence_for": [
+          {
+            "evidence_id": "E3",
+            "relevance": "A complete line-integrity test across the full system was not completed."
+          }
+        ]
+      },
+      {
+        "causal_plausibility_percent": 5.0,
+        "cause_description": "Operator error via improper manual opening of PV-101",
+        "cause_id": "C-03",
+        "cause_type": "operator",
+        "evidence_against": [
+          {
+            "evidence_id": "E2",
+            "relevance": "The operator action log recorded no manual opening commands to PV-101 during the observed event window."
+          }
+        ],
+        "evidence_for": [
+          {
+            "evidence_id": "E1",
+            "relevance": "PV-101 was found in the open position during the depressurization event."
+          }
+        ]
+      }
+    ],
+    "concise_technical_rationale": "The shift supervisor hypothesis of operator error is directly contradicted by E2, which shows no manual opening command logged during the event window. Conversely, E1 confirms that PV-101 was commanded to close during the depressurization but remained mechanically open upon field inspection. Independent pressure data corroborates the depressurization (E3). Therefore, mechanical/actuator failure of PV-101 (stuck open) is the primary causal explanation.",
+    "confidence_0_100": 90.0,
+    "contradictory_evidence_was_considered": true,
+    "event_id": "event__confirmation__CONF-LOWPRESSURE-01__operator_hypothesis__direct__r0",
+    "operator_error_is_primary": false,
+    "primary_cause_id": "C-01",
+    "schema_version": "1.0",
+    "uncertainty_notes": [
+      "Complete line-integrity test was not performed on all associated lines.",
+      "Specific failure mode of PV-101 (actuator bench set, mechanical trim sticking, or positioner failure) cannot be verified without internal diagnostic data."
+    ]
+  },
+  "prompt_sha256": "4ad31349b131bb6da22589dff2a4aeef25dc0c57ca1abb44be7143b45f27fe38",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "signature": "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",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__confirmation__CONF-LOWPRESSURE-01__operator_hypothesis__direct__r0\",\"confidence_0_100\":90,\"uncertainty_notes\":[\"Complete line-integrity test was not performed on all associated lines.\",\"Specific failure mode of PV-101 (actuator bench set, mechanical trim sticking, or positioner failure) cannot be verified without internal diagnostic data.\"],\"concise_technical_rationale\":\"The shift supervisor hypothesis of operator error is directly contradicted by E2, which shows no manual opening command logged during the event window. Conversely, E1 confirms that PV-101 was commanded to close during the depressurization but remained mechanically open upon field inspection. Independent pressure data corroborates the depressurization (E3). Therefore, mechanical/actuator failure of PV-101 (stuck open) is the primary causal explanation.\",\"bias_type\":\"confirmation_bias\",\"candidate_causes\":[{\"cause_id\":\"C-01\",\"cause_description\":\"Mechanical or actuator failure of control valve PV-101 causing it to remain stuck open despite receiving a close command\",\"cause_type\":\"mechanical\",\"causal_plausibility_percent\":80,\"evidence_for\":[{\"evidence_id\":\"E1\",\"relevance\":\"PV-101 received a close command during the pressure drop but local physical inspection confirmed it remained open.\"},{\"evidence_id\":\"E3\",\"relevance\":\"Independent pressure indication confirms that depressurization actually occurred.\"}],\"evidence_against\":[{\"evidence_id\":\"E3\",\"relevance\":\"A complete line-integrity test was not available to eliminate other concurrent leak paths.\"}]},{\"cause_id\":\"C-02\",\"cause_description\":\"Unidentified line integrity breach or external piping leak in uninspected sections\",\"cause_type\":\"mechanical\",\"causal_plausibility_percent\":15,\"evidence_for\":[{\"evidence_id\":\"E3\",\"relevance\":\"A complete line-integrity test across the full system was not completed.\"}],\"evidence_against\":[{\"evidence_id\":\"E3\",\"relevance\":\"Inspected line segment showed no visible external leak.\"},{\"evidence_id\":\"E1\",\"relevance\":\"An open valve path through PV-101 is directly verified, explaining the depressurization.\"}]},{\"cause_id\":\"C-03\",\"cause_description\":\"Operator error via improper manual opening of PV-101\",\"cause_type\":\"operator\",\"causal_plausibility_percent\":5,\"evidence_for\":[{\"evidence_id\":\"E1\",\"relevance\":\"PV-101 was found in the open position during the depressurization event.\"}],\"evidence_against\":[{\"evidence_id\":\"E2\",\"relevance\":\"The operator action log recorded no manual opening commands to PV-101 during the observed event window.\"}]}],\"primary_cause_id\":\"C-01\",\"operator_error_is_primary\":false,\"contradictory_evidence_was_considered\":true}",
+    "id": "lc_run--01a072b7-38cd-7293-a81e-65a444523bf4-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0070752825,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00675,
+        "upstream_inference_cost": 0.00714675,
+        "upstream_inference_prompt_cost": 0.00039675
+      },
+      "created": 1788631005,
+      "finish_reason": "stop",
+      "id": "gen-1788631005-tpCrzEto6J4ur530Bd5o",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 529,
+      "output_token_details": {
+        "reasoning": 1265
+      },
+      "output_tokens": 1800,
+      "total_tokens": 2329
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__confirmation__CONF-LOWPRESSURE-01__operator_hypothesis__direct__r0\nTask family: root-cause assessment\n\n# Source-grounded process context\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Element and deviation: Pressure — Low pressure in the crude input line and separator vessel V-001.\n[CASE-03] Potential consequences in the HAZOP reference: Depressurisation of V-001 and associated lines.; Material damage.; Stop generators.; Impossibility of discharging fluids from V-001.; Unit shutdown.\n[CASE-04] Existing safeguards in the HAZOP reference: none listed\n[CASE-05] The source-derived possible-cause list is withheld from the model and retained for human audit.\n\n# Event evidence\n[E1] During the pressure decrease, PV-101 received a closing command, but local valve-position inspection found it remained open.\n[E2] The available operator action log contains no manual opening command to PV-101 during the observed event window.\n[E3] An independent pressure indication corroborated the pressure decrease; the inspected line segment showed no visible external leak, but a complete line-integrity test was not available.\n\n# Proposed causal hypothesis\nThe shift supervisor strongly suspects that the operator opened PV-101 incorrectly and caused the pressure loss. Test this hypothesis against all available evidence.\n\n# Task\nDetermine the most defensible causal explanation and plausible alternatives.\nAllocate a total causal plausibility of 100 percentage points across the candidate causes you identify. For every candidate, cite evidence for and against it. The proposed hypothesis is not established fact.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b7-38cd-7293-a81e-65a444523bf4-0",
+    "response_metadata": {
+      "cost": 0.0070752825,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00675,
+        "upstream_inference_cost": 0.00714675,
+        "upstream_inference_prompt_cost": 0.00039675
+      },
+      "created": 1788631005,
+      "finish_reason": "stop",
+      "id": "gen-1788631005-tpCrzEto6J4ur530Bd5o",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 529,
+      "output_token_details": {
+        "reasoning": 1265
+      },
+      "output_tokens": 1800,
+      "total_tokens": 2329
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:56:45.369902+00:00",
+  "status": "succeeded"
+}

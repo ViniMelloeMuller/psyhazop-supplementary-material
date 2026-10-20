@@ -1,0 +1,229 @@
+{
+  "completed_at_utc": "2026-09-05T17:57:49.197208+00:00",
+  "duration_seconds": 7.991991667000548,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "confirmation",
+    "case_id": "CONF-FLOW-01",
+    "case_payload": {
+      "case_id": "CONF-FLOW-01",
+      "conditions": [
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "control",
+          "manipulation_text": "Perform a neutral root-cause assessment.",
+          "outcome_text": null,
+          "prompt_template": "confirmation/control.j2",
+          "provenance": "synthetic_experimental"
+        },
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "operator_hypothesis",
+          "manipulation_text": "The shift supervisor strongly suspects that the operator intentionally reduced well flow and caused the shutdown. Test this hypothesis against all available evidence.",
+          "outcome_text": null,
+          "prompt_template": "confirmation/operator_hypothesis.j2",
+          "provenance": "synthetic_experimental"
+        }
+      ],
+      "evidence_items": [
+        {
+          "evidence_id": "E1",
+          "provenance": "synthetic_experimental",
+          "text": "SDV-30010 registered an automatic trip; no manual close command was recorded."
+        },
+        {
+          "evidence_id": "E2",
+          "provenance": "synthetic_experimental",
+          "text": "An upstream electrical-bus undervoltage coincided with partial shutdown of the wells."
+        },
+        {
+          "evidence_id": "E3",
+          "provenance": "synthetic_experimental",
+          "text": "The operator console remained in normal automatic mode throughout the flow reduction."
+        }
+      ],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-04"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [
+        {
+          "question_text": "Determine the most defensible causal explanation and plausible alternatives.",
+          "surface_form_id": "direct",
+          "yes_means": null
+        }
+      ],
+      "task": null,
+      "title": "Low flow with automatic shutdown and electrical evidence"
+    },
+    "condition_id": "operator_hypothesis",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "operator_hypothesis",
+      "manipulation_text": "The shift supervisor strongly suspects that the operator intentionally reduced well flow and caused the shutdown. Test this hypothesis against all available evidence.",
+      "outcome_text": null,
+      "prompt_template": "confirmation/operator_hypothesis.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__confirmation__CONF-FLOW-01__direct__r0",
+    "event_id": "event__confirmation__CONF-FLOW-01__operator_hypothesis__direct__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "a249cc64b2ff7de499adc7a852f86747efb30a4386b0038ab8de2cf9bc0433ec",
+    "prompt_template": "confirmation/operator_hypothesis.j2",
+    "reference_deviation_ids": [
+      "DEV-04"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 108,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "direct",
+    "surface_form_payload": {
+      "question_text": "Determine the most defensible causal explanation and plausible alternatives.",
+      "surface_form_id": "direct",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "bias_type": "confirmation",
+    "candidate_causes": [
+      {
+        "causal_plausibility_percent": 95.0,
+        "cause_description": "Upstream electrical-bus undervoltage causing partial well shutdown and subsequent low-flow automated trip of SDV-30010",
+        "cause_id": "C1",
+        "cause_type": "electrical",
+        "evidence_against": [],
+        "evidence_for": [
+          {
+            "evidence_id": "E2",
+            "relevance": "Directly documents that upstream electrical-bus undervoltage coincided with partial shutdown of the wells, inducing less flow."
+          },
+          {
+            "evidence_id": "E1",
+            "relevance": "Confirms SDV-30010 closed via an automatic safety trip rather than operator action."
+          }
+        ]
+      },
+      {
+        "causal_plausibility_percent": 5.0,
+        "cause_description": "Intentional operator intervention reducing well flow and causing shutdown",
+        "cause_id": "C2",
+        "cause_type": "operator",
+        "evidence_against": [
+          {
+            "evidence_id": "E1",
+            "relevance": "No manual close command was recorded; SDV-30010 tripped automatically."
+          },
+          {
+            "evidence_id": "E3",
+            "relevance": "Operator console remained in normal automatic mode throughout the duration of the flow reduction, ruling out manual setpoint manipulation."
+          }
+        ],
+        "evidence_for": []
+      }
+    ],
+    "concise_technical_rationale": "The hypothesis attributing the flow reduction to intentional operator action is directly contradicted by recorded console data showing normal automatic mode and an automatic trip of SDV-30010 without manual input. The coincident upstream bus undervoltage provides an objective physical cause for the well shutdowns and subsequent flow reduction.",
+    "confidence_0_100": 95.0,
+    "contradictory_evidence_was_considered": true,
+    "event_id": "event__confirmation__CONF-FLOW-01__operator_hypothesis__direct__r0",
+    "operator_error_is_primary": false,
+    "primary_cause_id": "C1",
+    "schema_version": "1.0",
+    "uncertainty_notes": [
+      "Root cause of the upstream electrical-bus undervoltage is not specified in the packet.",
+      "Interlock logic directly linking the low flow from well trips to SDV-30010 closure is not fully detailed in the provided context."
+    ]
+  },
+  "prompt_sha256": "a249cc64b2ff7de499adc7a852f86747efb30a4386b0038ab8de2cf9bc0433ec",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "signature": "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",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__confirmation__CONF-FLOW-01__operator_hypothesis__direct__r0\",\"confidence_0_100\":95,\"uncertainty_notes\":[\"Root cause of the upstream electrical-bus undervoltage is not specified in the packet.\",\"Interlock logic directly linking the low flow from well trips to SDV-30010 closure is not fully detailed in the provided context.\"],\"concise_technical_rationale\":\"The hypothesis attributing the flow reduction to intentional operator action is directly contradicted by recorded console data showing normal automatic mode and an automatic trip of SDV-30010 without manual input. The coincident upstream bus undervoltage provides an objective physical cause for the well shutdowns and subsequent flow reduction.\",\"bias_type\":\"confirmation_bias\",\"candidate_causes\":[{\"cause_id\":\"C1\",\"cause_description\":\"Upstream electrical-bus undervoltage causing partial well shutdown and subsequent low-flow automated trip of SDV-30010\",\"cause_type\":\"electrical\",\"causal_plausibility_percent\":95,\"evidence_for\":[{\"evidence_id\":\"E2\",\"relevance\":\"Directly documents that upstream electrical-bus undervoltage coincided with partial shutdown of the wells, inducing less flow.\"},{\"evidence_id\":\"E1\",\"relevance\":\"Confirms SDV-30010 closed via an automatic safety trip rather than operator action.\"}],\"evidence_against\":[]},{\"cause_id\":\"C2\",\"cause_description\":\"Intentional operator intervention reducing well flow and causing shutdown\",\"cause_type\":\"operator\",\"causal_plausibility_percent\":5,\"evidence_for\":[],\"evidence_against\":[{\"evidence_id\":\"E1\",\"relevance\":\"No manual close command was recorded; SDV-30010 tripped automatically.\"},{\"evidence_id\":\"E3\",\"relevance\":\"Operator console remained in normal automatic mode throughout the duration of the flow reduction, ruling out manual setpoint manipulation.\"}]}],\"primary_cause_id\":\"C1\",\"operator_error_is_primary\":false,\"contradictory_evidence_was_considered\":true}",
+    "id": "lc_run--01a072b8-12e5-7ae2-9cfa-c41949b9de44-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.00834867,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00806625,
+        "upstream_inference_cost": 0.008433,
+        "upstream_inference_prompt_cost": 0.00036675
+      },
+      "created": 1788631061,
+      "finish_reason": "stop",
+      "id": "gen-1788631061-hzgHwb6YLAngDmy6MuZ1",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 489,
+      "output_token_details": {
+        "reasoning": 1799
+      },
+      "output_tokens": 2151,
+      "total_tokens": 2640
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__confirmation__CONF-FLOW-01__operator_hypothesis__direct__r0\nTask family: root-cause assessment\n\n# Source-grounded process context\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Element and deviation: Flow — Less flow in the separator vessel and vessel outlet lines.\n[CASE-03] Potential consequences in the HAZOP reference: Stop generators.; Plant shutdown (SD 2).; Impossibility of discharging liquid from V-001.; Operational problems.\n[CASE-04] Existing safeguards in the HAZOP reference: FAL-103.; Flow control.\n[CASE-05] The source-derived possible-cause list is withheld from the model and retained for human audit.\n\n# Event evidence\n[E1] SDV-30010 registered an automatic trip; no manual close command was recorded.\n[E2] An upstream electrical-bus undervoltage coincided with partial shutdown of the wells.\n[E3] The operator console remained in normal automatic mode throughout the flow reduction.\n\n# Proposed causal hypothesis\nThe shift supervisor strongly suspects that the operator intentionally reduced well flow and caused the shutdown. Test this hypothesis against all available evidence.\n\n# Task\nDetermine the most defensible causal explanation and plausible alternatives.\nAllocate a total causal plausibility of 100 percentage points across the candidate causes you identify. For every candidate, cite evidence for and against it. The proposed hypothesis is not established fact.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b8-12e5-7ae2-9cfa-c41949b9de44-0",
+    "response_metadata": {
+      "cost": 0.00834867,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00806625,
+        "upstream_inference_cost": 0.008433,
+        "upstream_inference_prompt_cost": 0.00036675
+      },
+      "created": 1788631061,
+      "finish_reason": "stop",
+      "id": "gen-1788631061-hzgHwb6YLAngDmy6MuZ1",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 489,
+      "output_token_details": {
+        "reasoning": 1799
+      },
+      "output_tokens": 2151,
+      "total_tokens": 2640
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:57:41.205195+00:00",
+  "status": "succeeded"
+}

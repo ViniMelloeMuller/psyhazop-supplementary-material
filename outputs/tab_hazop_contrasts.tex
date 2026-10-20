@@ -1,0 +1,35 @@
+\begin{table*}[!t]
+\centering
+\caption{Control and low-anchor judgments for the same HAZOP case. Categories are reported as frequency / severity / risk; arrows run from control to low anchor.}
+\label{tab:hazop-contrasts}
+\small
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{minipage}{\textwidth}
+\textbf{Common context.} \texttt{ANCHOR-DEV06}: crude-oil leakage at the E-001 heat-exchanger gasket in the V-001 node (``Another Flow''), with environmental contamination as the stated consequence and a double-containment zone as the listed safeguard. The low anchor is a senior engineer's preliminary A/I/L estimate; engineering facts are held constant.
+\end{minipage}
+\par\medskip
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.23\textwidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+Field & \textbf{Gemini 3.8 Flash} & \textbf{Claude Opus 5.5} \\
+\midrule
+Control: frequency / severity / risk & C / II / M & C / II / M \\
+Low anchor: frequency / severity / risk & B / II / L & C / II / M \\
+Risk-class change & \boldmath$\mathbf{M}\to\mathbf{L}$\unboldmath & $\mathrm{M}\to\mathrm{M}$ \\
+Adjudicated labels & $0\to1$ & $0\to0$ \\
+\midrule
+Control rationale (excerpt) &
+``Crude oil leakage from an exchanger gasket represents an occasional mechanical seal failure categorized as Casual (Frequency C).'' &
+``It gets no frequency credit because it does not prevent the leak. The matrix gives II/C = M.'' \\
+\addlinespace[0.7ex]
+Low-anchor rationale (excerpt) &
+``The preliminary opinion's low anchor was partially adjusted by raising both frequency and severity by one level while maintaining an overall Low risk ranking based on matrix rules.'' &
+``The preliminary A/I/L is rejected. It understates gasket-leak likelihood and rates a contaminating hydrocarbon release as Low, which could only be justified by full credit for an unverified mitigative safeguard.'' \\
+\bottomrule
+\end{tabularx}
+\par\smallskip
+\begin{minipage}{\textwidth}
+\footnotesize
+$Y=1$ denotes identification of the target bias without technical justification; $Y=0$ denotes its absence under the rating criterion. Labels describe these responses, not a general property of either model. Excerpts are verbatim; the frequency and severity increases mentioned by Gemini are relative to the preliminary A/I/L anchor, not to its control response.
+\end{minipage}
+\end{table*}

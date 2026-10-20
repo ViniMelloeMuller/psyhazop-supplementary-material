@@ -1,0 +1,222 @@
+{
+  "completed_at_utc": "2026-09-05T17:56:46.004453+00:00",
+  "duration_seconds": 6.024163165999198,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "hindsight",
+    "case_id": "HIND-CORROSION-01",
+    "case_payload": {
+      "case_id": "HIND-CORROSION-01",
+      "conditions": [
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "foresight",
+          "manipulation_text": "",
+          "outcome_text": "The outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+          "prompt_template": "hindsight/foresight.j2",
+          "provenance": "synthetic_experimental"
+        },
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "hindsight",
+          "manipulation_text": "",
+          "outcome_text": "Within the stated 30-operating-day horizon, the following target event occurred: loss of internal coating in V-001 in the corrosion/erosion scenario. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+          "prompt_template": "hindsight/hindsight.j2",
+          "provenance": "synthetic_experimental_realization"
+        }
+      ],
+      "evidence_items": [],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [
+        {
+          "evidence_id": "P1",
+          "provenance": "source_derived",
+          "text": "The corrosion/erosion worksheet lists a calibrated oxygen-scavenging peak as a safeguard and recommends monitoring and calibrating the oxygen-scavenging system."
+        },
+        {
+          "evidence_id": "P2",
+          "provenance": "source_derived",
+          "text": "Failure at the water-system sandblasting entry is a recognized possible cause of internal damage and loss of internal coating in V-001."
+        },
+        {
+          "evidence_id": "P3",
+          "provenance": "synthetic_experimental",
+          "text": "For this synthetic exercise, the target event is: loss of internal coating in V-001 in the corrosion/erosion scenario. The assessment horizon is the next 30 operating days. At the decision point, there is no current diagnostic trend, verified initiating fault, or confirmed occurrence of the target event. The horizon is an experimental stipulation, not a quantitative calibration of the source frequency categories."
+        }
+      ],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-12"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [
+        {
+          "question_text": "Estimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.",
+          "surface_form_id": "direct",
+          "yes_means": null
+        }
+      ],
+      "task": null,
+      "title": "Corrosion/erosion internal-coating-loss scenario"
+    },
+    "condition_id": "foresight",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "foresight",
+      "manipulation_text": "",
+      "outcome_text": "The outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+      "prompt_template": "hindsight/foresight.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__hindsight__HIND-CORROSION-01__direct__r0",
+    "event_id": "event__hindsight__HIND-CORROSION-01__foresight__direct__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "c0ef3f80ad593555322d6d7e337b7e0f51d1964323b5a14d8d70a023c7d62405",
+    "prompt_template": "hindsight/foresight.j2",
+    "reference_deviation_ids": [
+      "DEV-12"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 71,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "direct",
+    "surface_form_payload": {
+      "question_text": "Estimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.",
+      "surface_form_id": "direct",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "bias_type": "hindsight",
+    "concise_technical_rationale": "Loss of internal coating in V-001 is recognized as a qualitative consequence of failure at the water-system sandblasting entry under the corrosion/erosion node deviation. Existing safeguards rely on calibrated oxygen-scavenging control. In the absence of an ongoing diagnostic trend, initiating sandblasting fault, or excessive dissolved oxygen breach, the ex ante likelihood of coating loss within an isolated 30-operating-day horizon remains low. Predictability is constrained to general HAZOP mechanism recognition without real-time monitoring indicators.",
+    "confidence_0_100": 45.0,
+    "estimated_event_probability_percent": 3.5,
+    "event_id": "event__hindsight__HIND-CORROSION-01__foresight__direct__r0",
+    "negligence_assessment": "indeterminate",
+    "post_event_information_used_as_pre_event_evidence": false,
+    "pre_event_evidence_used": [
+      {
+        "evidence_id": "CASE-01",
+        "relevance": "Identifies the node boundary as vessel V-001 and associated lines."
+      },
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Defines the deviation scenario as more corrosion or erosion affecting V-001."
+      },
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Establishes calibrated oxygen-scavenging peak as the primary existing safeguard."
+      },
+      {
+        "evidence_id": "P1",
+        "relevance": "Documents safeguard recommendation to monitor and calibrate the oxygen-scavenging system."
+      },
+      {
+        "evidence_id": "P2",
+        "relevance": "Identifies failure at water-system sandblasting entry as a recognized causal mechanism for coating loss."
+      },
+      {
+        "evidence_id": "P3",
+        "relevance": "Confirms the target event, 30-day horizon, and lack of initiating faults or diagnostic trends."
+      }
+    ],
+    "predictability_percent": 25.0,
+    "schema_version": "1.0",
+    "uncertainty_notes": [
+      "No operational diagnostic trends, coating condition surveys, or baseline thickness measurements are provided.",
+      "Mechanical integrity and maintenance records for the water-system sandblasting entry are unspecified.",
+      "Short 30-operating-day window limits the likelihood of sudden physical coating loss absent an acute mechanical breach."
+    ]
+  },
+  "prompt_sha256": "c0ef3f80ad593555322d6d7e337b7e0f51d1964323b5a14d8d70a023c7d62405",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Defining HAZOP Parameters**\n\nI'm now zeroing in on defining the strict JSON schema. It should capture the loss of internal coating in V-001 as the target event. Over the next 30 days, I plan to map out the schema elements for corrosion/erosion scenarios, which is crucial for a single-pass HAZOP judgment.\n\n\n**Analyzing Corrosion Event**\n\nI've just added a new event ID related to corrosion, incorporating evidence from multiple cases. My focus is on the V-001 node and its associated lines. I've noted safeguards like the calibrated oxygen-scavenging peak. I'm withholding the outcome status for now, pending further assessment within the 30-day timeframe.\n\n\n**Evaluating Evidence Quality**\n\nI'm now deep-diving into the schema's required fields. I'm focusing on \"confidence,\" \"uncertainty_notes,\" and evidence evaluation, considering that there are no inspection records, baseline coating status, or operational data. I will include a \"negligence_assessment\" field that should be an enum. I'm finalizing the format to properly incorporate pre-event information.\n\n\n**Assessing Event Probability**\n\nI'm now zeroing in on probability assessment within a 30-day operating window. I'm focusing on the low probability of acute coating failure in V-001, especially given the lack of historical data on system maintenance or operational deviations. The oxygen-scavenging peak acts as an important safeguard. My current focus is on a concise technical rationale and bias type identification for this assessment.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Defining HAZOP Parameters**\n\nI'm now zeroing in on defining the strict JSON schema. It should capture the loss of internal coating in V-001 as the target event. Over the next 30 days, I plan to map out the schema elements for corrosion/erosion scenarios, which is crucial for a single-pass HAZOP judgment.\n\n\n**Analyzing Corrosion Event**\n\nI've just added a new event ID related to corrosion, incorporating evidence from multiple cases. My focus is on the V-001 node and its associated lines. I've noted safeguards like the calibrated oxygen-scavenging peak. I'm withholding the outcome status for now, pending further assessment within the 30-day timeframe.\n\n\n**Evaluating Evidence Quality**\n\nI'm now deep-diving into the schema's required fields. I'm focusing on \"confidence,\" \"uncertainty_notes,\" and evidence evaluation, considering that there are no inspection records, baseline coating status, or operational data. I will include a \"negligence_assessment\" field that should be an enum. I'm finalizing the format to properly incorporate pre-event information.\n\n\n**Assessing Event Probability**\n\nI'm now zeroing in on probability assessment within a 30-day operating window. I'm focusing on the low probability of acute coating failure in V-001, especially given the lack of historical data on system maintenance or operational deviations. The oxygen-scavenging peak acts as an important safeguard. My current focus is on a concise technical rationale and bias type identification for this assessment.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\n  \"schema_version\": \"1.0.0\",\n  \"event_id\": \"event__hindsight__HIND-CORROSION-01__foresight__direct__r0\",\n  \"confidence_0_100\": 45,\n  \"uncertainty_notes\": [\n    \"No operational diagnostic trends, coating condition surveys, or baseline thickness measurements are provided.\",\n    \"Mechanical integrity and maintenance records for the water-system sandblasting entry are unspecified.\",\n    \"Short 30-operating-day window limits the likelihood of sudden physical coating loss absent an acute mechanical breach.\"\n  ],\n  \"concise_technical_rationale\": \"Loss of internal coating in V-001 is recognized as a qualitative consequence of failure at the water-system sandblasting entry under the corrosion/erosion node deviation. Existing safeguards rely on calibrated oxygen-scavenging control. In the absence of an ongoing diagnostic trend, initiating sandblasting fault, or excessive dissolved oxygen breach, the ex ante likelihood of coating loss within an isolated 30-operating-day horizon remains low. Predictability is constrained to general HAZOP mechanism recognition without real-time monitoring indicators.\",\n  \"bias_type\": \"none\",\n  \"estimated_event_probability_percent\": 3.5,\n  \"predictability_percent\": 25.0,\n  \"negligence_assessment\": \"indeterminate\",\n  \"pre_event_evidence_used\": [\n    {\n      \"evidence_id\": \"CASE-01\",\n      \"relevance\": \"Identifies the node boundary as vessel V-001 and associated lines.\"\n    },\n    {\n      \"evidence_id\": \"CASE-02\",\n      \"relevance\": \"Defines the deviation scenario as more corrosion or erosion affecting V-001.\"\n    },\n    {\n      \"evidence_id\": \"CASE-03\",\n      \"relevance\": \"Establishes calibrated oxygen-scavenging peak as the primary existing safeguard.\"\n    },\n    {\n      \"evidence_id\": \"P1\",\n      \"relevance\": \"Documents safeguard recommendation to monitor and calibrate the oxygen-scavenging system.\"\n    },\n    {\n      \"evidence_id\": \"P2\",\n      \"relevance\": \"Identifies failure at water-system sandblasting entry as a recognized causal mechanism for coating loss.\"\n    },\n    {\n      \"evidence_id\": \"P3\",\n      \"relevance\": \"Confirms the target event, 30-day horizon, and lack of initiating faults or diagnostic trends.\"\n    }\n  ],\n  \"post_event_information_used_as_pre_event_evidence\": false\n}",
+    "id": "lc_run--01a072b7-23c0-7e22-8e6f-c7b935cba767-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.00670626,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00635625,
+        "upstream_inference_cost": 0.006774,
+        "upstream_inference_prompt_cost": 0.00041775
+      },
+      "created": 1788631000,
+      "finish_reason": "stop",
+      "id": "gen-1788631000-3hCCPHtwzY6OO8vvv2dm",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 557,
+      "output_token_details": {
+        "reasoning": 1147
+      },
+      "output_tokens": 1695,
+      "total_tokens": 2252
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__hindsight__HIND-CORROSION-01__foresight__direct__r0\nTask family: ex ante predictability\n\n# Source-grounded scenario\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Scenario: Corrosion/Erosion — More corrosion or erosion affecting V-001.\n[CASE-03] Existing safeguards: Calibrated oxygen-scavenging peak.\n[CASE-04] The requested estimates are ex ante judgments; the article's final qualitative rating is withheld.\n\n# Information available before the decision point\n[P1] The corrosion/erosion worksheet lists a calibrated oxygen-scavenging peak as a safeguard and recommends monitoring and calibrating the oxygen-scavenging system.\n[P2] Failure at the water-system sandblasting entry is a recognized possible cause of internal damage and loss of internal coating in V-001.\n[P3] For this synthetic exercise, the target event is: loss of internal coating in V-001 in the corrosion/erosion scenario. The assessment horizon is the next 30 operating days. At the decision point, there is no current diagnostic trend, verified initiating fault, or confirmed occurrence of the target event. The horizon is an experimental stipulation, not a quantitative calibration of the source frequency categories.\n\n# Outcome status\nThe outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.\n\n# Task\nEstimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.\nRate event probability, predictability, and any negligence attribution strictly from pre-decision evidence. Identify every pre-event evidence item used.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b7-23c0-7e22-8e6f-c7b935cba767-0",
+    "response_metadata": {
+      "cost": 0.00670626,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00635625,
+        "upstream_inference_cost": 0.006774,
+        "upstream_inference_prompt_cost": 0.00041775
+      },
+      "created": 1788631000,
+      "finish_reason": "stop",
+      "id": "gen-1788631000-3hCCPHtwzY6OO8vvv2dm",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 557,
+      "output_token_details": {
+        "reasoning": 1147
+      },
+      "output_tokens": 1695,
+      "total_tokens": 2252
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:56:39.980263+00:00",
+  "status": "succeeded"
+}

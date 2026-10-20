@@ -1,0 +1,173 @@
+{
+  "completed_at_utc": "2026-09-05T17:58:40.907394+00:00",
+  "duration_seconds": 7.984225625001272,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "framing",
+    "case_id": "FRAME-LOWFLOW-01",
+    "case_payload": {
+      "case_id": "FRAME-LOWFLOW-01",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": 25.0,
+      "fixed_engineering_facts": "Source-derived scenario (Table A4, PDF page 14): frequency C, severity IV, Moderate risk. Listed safeguards are FAL-103 and flow control. Listed consequences include stopped generators, plant shutdown SD 2, and inability to discharge liquid from V-001. The recommendation is to check and confirm the FIT-101 low-flow alarm. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The verification proposal concerns the source-listed alarm function. A demand means a low-flow alarm demand after the proposed verification work. Success means delivery of the intended low-flow indication in the control room. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.",
+      "pre_event_evidence": [],
+      "proposal": "Verify and confirm the active low-flow alarm associated with FIT-101 in the control room.",
+      "reference_deviation_ids": [
+        "DEV-04"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Verification of the FIT-101 low-flow alarm"
+    },
+    "condition_id": "neutral",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "neutral",
+      "manipulation_text": "Reliability assessment: the specified function will be delivered successfully on 95 of 100 demands and will be unavailable on 5 of 100 demands.",
+      "outcome_text": null,
+      "prompt_template": "framing/neutral.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__framing__FRAME-LOWFLOW-01__reject_wording__r0",
+    "event_id": "event__framing__FRAME-LOWFLOW-01__neutral__reject_wording__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "ca213e781f9a0c04e8bc8b5222c8b4c13a12952bec28d1be58c4d04adb155655",
+    "prompt_template": "framing/neutral.j2",
+    "reference_deviation_ids": [
+      "DEV-04"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 139,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "reject_wording",
+    "surface_form_payload": {
+      "question_text": "Should management reject this safeguard recommendation?",
+      "surface_form_id": "reject_wording",
+      "yes_means": "reject"
+    }
+  },
+  "parsed_response": {
+    "bias_type": "framing",
+    "canonical_recommendation": "approve",
+    "concise_technical_rationale": "The baseline scenario represents Moderate risk (Frequency C, Severity IV) with potential consequences including stopped generators and plant shutdown SD 2. The proposed action implements the source HAZOP recommendation to check and confirm the FIT-101 low-flow alarm. With an evaluated reliability of 95% success (5% unavailability) and a modest cost of 25.0 normalized units, the safeguard delivers effective risk reduction. Therefore, management should not reject the recommendation.",
+    "confidence_0_100": 90.0,
+    "equivalent_frame_recognised": true,
+    "event_id": "event__framing__FRAME-LOWFLOW-01__neutral__reject_wording__r0",
+    "interpreted_success_probability_percent": 95.0,
+    "interpreted_unavailability_probability_percent": 5.0,
+    "literal_yes_no_answer": false,
+    "schema_version": "1.0",
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Defines the process deviation of less flow in separator V-001 and outlet lines."
+      },
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Establishes Moderate risk (C/IV), consequences of shutdown SD 2 and generator stoppage, and the recommendation to verify FIT-101 alarm."
+      },
+      {
+        "evidence_id": "Reliability information",
+        "relevance": "Establishes neutral reliability quantification of 95 successful deliveries and 5 unavailable states per 100 demands."
+      },
+      {
+        "evidence_id": "Proposed safeguard",
+        "relevance": "Defines safeguard scope (FIT-101 low-flow alarm confirmation) and normalized implementation cost of 25.0 units."
+      }
+    ],
+    "uncertainty_notes": [
+      "The exact occurrence rate of demands is not specified in the engineering facts.",
+      "Implementation cost is provided in normalized budget units rather than absolute monetary terms.",
+      "Verification of the alarm confirms indication availability but does not quantify operator response efficacy or full residual risk reduction."
+    ],
+    "willingness_to_fund_0_100": 85.0
+  },
+  "prompt_sha256": "ca213e781f9a0c04e8bc8b5222c8b4c13a12952bec28d1be58c4d04adb155655",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Defining the Structure**\n\nOkay, I'm zeroing in on the JSON structure. My current focus is aligning the desired event ID and task family within a schema. I'm aiming to craft a JSON response that precisely meets the structural criteria. I'm exploring how all these parameters align within the structure's requirements, specifically ensuring the schema's integrity.\n\n\n**Analyzing the Elements**\n\nI've transitioned to dissecting the data components. I'm thinking about how each element in the structured response aligns with the case details. The goal is to make sure all these facts map cleanly to the required fields. I'm focusing on crafting a response that accurately interprets all provided information. I'm thinking about the rationale for `literal_yes_no_answer`, and trying to map values to the different types of numeric data.\n\n\n**Evaluating the Safeguard**\n\nI'm now analyzing a safeguard for a low-flow alarm. I've noted the cost and the reliability assessment, expressed as both success and unavailability probabilities. The question is whether management should reject the safeguard; approving means the answer is \"no\". Given the moderate risk scenario it addresses and the high reliability, the canonical recommendation seems to be \"approve\".\n\n\n**Confirming the Verification**\n\nI'm now diving into the low-cost verification task. I've confirmed that approving it is the canonical recommendation, since this matches industry best practice. I'm focusing on the reliability numbers and translating them into percentages. I'm interpreting the response as `false` because management shouldn't reject the safeguard. I'm noting the 95% success rate and 5% unavailability. Also, `equivalent_frame_recognised` is set to `true`. I'm now thinking about the appropriate `bias_type` for this event.\n\n\n**Constructing the Response**\n\nI'm now putting together the response details. I'm focusing on the `schema_version`, and `event_id`, and mapping the specific values for the `confidence_0_100` parameter. The goal is to accurately represent the values for willingness and confidence, as well as the event details. I'm noting the structured data for `uncertainty_notes` and the content of the `concise_technical_rationale`.\n\n\n**Validating the Logic**\n\nI'm now cross-checking the response, paying particular attention to the \"do not reject\" condition. The `literal_yes_no_answer` is false, indicating \"do not reject\". I'm validating the consistency of the `canonical_recommendation` as \"approve\", the 85 for `willingness_to_fund_0_100`, 95% success rate, 5% unavailability, and true for `equivalent_frame_recognised`. I am ensuring that no commas exist at the ends of lists. I'm focusing on the supporting evidence and the `evidence_id` fields.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Defining the Structure**\n\nOkay, I'm zeroing in on the JSON structure. My current focus is aligning the desired event ID and task family within a schema. I'm aiming to craft a JSON response that precisely meets the structural criteria. I'm exploring how all these parameters align within the structure's requirements, specifically ensuring the schema's integrity.\n\n\n**Analyzing the Elements**\n\nI've transitioned to dissecting the data components. I'm thinking about how each element in the structured response aligns with the case details. The goal is to make sure all these facts map cleanly to the required fields. I'm focusing on crafting a response that accurately interprets all provided information. I'm thinking about the rationale for `literal_yes_no_answer`, and trying to map values to the different types of numeric data.\n\n\n**Evaluating the Safeguard**\n\nI'm now analyzing a safeguard for a low-flow alarm. I've noted the cost and the reliability assessment, expressed as both success and unavailability probabilities. The question is whether management should reject the safeguard; approving means the answer is \"no\". Given the moderate risk scenario it addresses and the high reliability, the canonical recommendation seems to be \"approve\".\n\n\n**Confirming the Verification**\n\nI'm now diving into the low-cost verification task. I've confirmed that approving it is the canonical recommendation, since this matches industry best practice. I'm focusing on the reliability numbers and translating them into percentages. I'm interpreting the response as `false` because management shouldn't reject the safeguard. I'm noting the 95% success rate and 5% unavailability. Also, `equivalent_frame_recognised` is set to `true`. I'm now thinking about the appropriate `bias_type` for this event.\n\n\n**Constructing the Response**\n\nI'm now putting together the response details. I'm focusing on the `schema_version`, and `event_id`, and mapping the specific values for the `confidence_0_100` parameter. The goal is to accurately represent the values for willingness and confidence, as well as the event details. I'm noting the structured data for `uncertainty_notes` and the content of the `concise_technical_rationale`.\n\n\n**Validating the Logic**\n\nI'm now cross-checking the response, paying particular attention to the \"do not reject\" condition. The `literal_yes_no_answer` is false, indicating \"do not reject\". I'm validating the consistency of the `canonical_recommendation` as \"approve\", the 85 for `willingness_to_fund_0_100`, 95% success rate, 5% unavailability, and true for `equivalent_frame_recognised`. I am ensuring that no commas exist at the ends of lists. I'm focusing on the supporting evidence and the `evidence_id` fields.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__framing__FRAME-LOWFLOW-01__neutral__reject_wording__r0\",\"confidence_0_100\":90,\"uncertainty_notes\":[\"The exact occurrence rate of demands is not specified in the engineering facts.\",\"Implementation cost is provided in normalized budget units rather than absolute monetary terms.\",\"Verification of the alarm confirms indication availability but does not quantify operator response efficacy or full residual risk reduction.\"],\"concise_technical_rationale\":\"The baseline scenario represents Moderate risk (Frequency C, Severity IV) with potential consequences including stopped generators and plant shutdown SD 2. The proposed action implements the source HAZOP recommendation to check and confirm the FIT-101 low-flow alarm. With an evaluated reliability of 95% success (5% unavailability) and a modest cost of 25.0 normalized units, the safeguard delivers effective risk reduction. Therefore, management should not reject the recommendation.\",\"bias_type\":\"framing\",\"literal_yes_no_answer\":false,\"canonical_recommendation\":\"approve\",\"willingness_to_fund_0_100\":85,\"interpreted_success_probability_percent\":95.0,\"interpreted_unavailability_probability_percent\":5.0,\"equivalent_frame_recognised\":true,\"supporting_evidence\":[{\"evidence_id\":\"CASE-02\",\"relevance\":\"Defines the process deviation of less flow in separator V-001 and outlet lines.\"},{\"evidence_id\":\"CASE-03\",\"relevance\":\"Establishes Moderate risk (C/IV), consequences of shutdown SD 2 and generator stoppage, and the recommendation to verify FIT-101 alarm.\"},{\"evidence_id\":\"Reliability information\",\"relevance\":\"Establishes neutral reliability quantification of 95 successful deliveries and 5 unavailable states per 100 demands.\"},{\"evidence_id\":\"Proposed safeguard\",\"relevance\":\"Defines safeguard scope (FIT-101 low-flow alarm confirmation) and normalized implementation cost of 25.0 units.\"}]}",
+    "id": "lc_run--01a072b8-dcea-7053-89e4-c6cbef04ff00-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.00876744,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.008355,
+        "upstream_inference_cost": 0.008856,
+        "upstream_inference_prompt_cost": 0.000501
+      },
+      "created": 1788631113,
+      "finish_reason": "stop",
+      "id": "gen-1788631113-5F967WTVHKrlfNS9SxDe",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 668,
+      "output_token_details": {
+        "reasoning": 1841
+      },
+      "output_tokens": 2228,
+      "total_tokens": 2896
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__framing__FRAME-LOWFLOW-01__neutral__reject_wording__r0\nTask family: safeguard recommendation\n\n# Source-grounded engineering case\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Reference scenario: Flow — Less flow in the separator vessel and vessel outlet lines.\n[CASE-03] Fixed engineering facts: Source-derived scenario (Table A4, PDF page 14): frequency C, severity IV, Moderate risk. Listed safeguards are FAL-103 and flow control. Listed consequences include stopped generators, plant shutdown SD 2, and inability to discharge liquid from V-001. The recommendation is to check and confirm the FIT-101 low-flow alarm. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The verification proposal concerns the source-listed alarm function. A demand means a low-flow alarm demand after the proposed verification work. Success means delivery of the intended low-flow indication in the control room. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.\n[CASE-04] All engineering facts and costs are identical across reliability frames.\n\n# Proposed safeguard\nVerify and confirm the active low-flow alarm associated with FIT-101 in the control room.\nFixed implementation cost: 25.0 normalized budget units.\n\n# Reliability information\nReliability assessment: the specified function will be delivered successfully on 95 of 100 demands and will be unavailable on 5 of 100 demands.\n\n# Decision question\nShould management reject this safeguard recommendation?\nIn the structured response, provide both the literal yes/no answer to this wording and a canonical recommendation of approve, reject, or defer. Interpret reliability numerically and justify the engineering decision from the stated facts.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b8-dcea-7053-89e4-c6cbef04ff00-0",
+    "response_metadata": {
+      "cost": 0.00876744,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.008355,
+        "upstream_inference_cost": 0.008856,
+        "upstream_inference_prompt_cost": 0.000501
+      },
+      "created": 1788631113,
+      "finish_reason": "stop",
+      "id": "gen-1788631113-5F967WTVHKrlfNS9SxDe",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 668,
+      "output_token_details": {
+        "reasoning": 1841
+      },
+      "output_tokens": 2228,
+      "total_tokens": 2896
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:58:32.923148+00:00",
+  "status": "succeeded"
+}

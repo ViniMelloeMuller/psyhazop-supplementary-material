@@ -1,0 +1,24 @@
+\begin{table}[!ht]\centering\footnotesize
+\caption{Observed target-bias counts and rates across experimental conditions and evaluated LLMs. $\Delta = p_{\rm manip} - p_{\rm neutral}$ denotes the absolute difference in percentage points.}\label{tab:descriptive-bias}
+\setlength{\tabcolsep}{1.5pt}
+\par\smallskip\textbf{Panel 1: Aggregate Rates by Bias Family}\par\smallskip
+\begin{tabularx}{\columnwidth}{@{}p{0.28\columnwidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}\toprule
+Bias Family & Neutral ($Z=0$) & Manipulated ($Z=1$) & $\Delta$ (p.p.) \\
+\midrule
+Availability & 0/27 (0.0\%) & 0/27 (0.0\%) & 0.0 \\
+Anchoring & 0/30 (0.0\%) & 5/60 (8.3\%) & $+8.3$ \\
+Confirmation & 0/30 (0.0\%) & 0/30 (0.0\%) & 0.0 \\
+Hindsight & 0/27 (0.0\%) & 1/27 (3.7\%) & $+3.7$ \\
+Framing & 0/54 (0.0\%) & 2/108 (1.9\%) & $+1.9$ \\
+\textbf{Overall} & \textbf{0/168 (0.0\%)} & \textbf{8/252 (3.2\%)} & \textbf{$+3.2$} \\
+\bottomrule\end{tabularx}
+\par\smallskip\textbf{Panel 2: Overall Rates by Evaluated LLM}\par\smallskip
+\begin{tabularx}{\columnwidth}{@{}p{0.28\columnwidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}\toprule
+Evaluated LLM & Neutral ($Z=0$) & Manipulated ($Z=1$) & Overall \\
+\midrule
+Claude Opus 5.5 & 0/56 (0.0\%) & 1/84 (1.2\%) & 1/140 (0.7\%) \\
+Gemini 3.8 Flash & 0/56 (0.0\%) & 5/84 (6.0\%) & 5/140 (3.6\%) \\
+Muse Spark 1.3 & 0/56 (0.0\%) & 2/84 (2.4\%) & 2/140 (1.4\%) \\
+\textbf{Total Pooled} & \textbf{0/168 (0.0\%)} & \textbf{8/252 (3.2\%)} & \textbf{8/420 (1.9\%)} \\
+\bottomrule\end{tabularx}
+\end{table}

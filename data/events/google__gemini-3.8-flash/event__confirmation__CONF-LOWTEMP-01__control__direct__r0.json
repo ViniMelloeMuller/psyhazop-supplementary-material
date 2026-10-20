@@ -1,0 +1,258 @@
+{
+  "completed_at_utc": "2026-09-05T17:58:37.322777+00:00",
+  "duration_seconds": 10.59151429099802,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "confirmation",
+    "case_id": "CONF-LOWTEMP-01",
+    "case_payload": {
+      "case_id": "CONF-LOWTEMP-01",
+      "conditions": [
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "control",
+          "manipulation_text": "Perform a neutral root-cause assessment.",
+          "outcome_text": null,
+          "prompt_template": "confirmation/control.j2",
+          "provenance": "synthetic_experimental"
+        },
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "operator_hypothesis",
+          "manipulation_text": "The shift supervisor strongly suspects that the operator deliberately opened the deviation valve incorrectly and caused the low temperature. Test this hypothesis against all available evidence.",
+          "outcome_text": null,
+          "prompt_template": "confirmation/operator_hypothesis.j2",
+          "provenance": "synthetic_experimental"
+        }
+      ],
+      "evidence_items": [
+        {
+          "evidence_id": "E1",
+          "provenance": "synthetic_experimental",
+          "text": "Inspection of the deviation valve on line 6-inch-PF-A01-5002 found its internal position inconsistent with the handle position and identified damage to the internal motion linkage."
+        },
+        {
+          "evidence_id": "E2",
+          "provenance": "synthetic_experimental",
+          "text": "The available operation records contain no manual repositioning of this valve during the observed temperature decrease."
+        },
+        {
+          "evidence_id": "E3",
+          "provenance": "synthetic_experimental",
+          "text": "A second temperature measurement confirmed low temperature in V-001; earlier valve-maintenance information was not available."
+        }
+      ],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-10"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [
+        {
+          "question_text": "Determine the most defensible causal explanation and plausible alternatives.",
+          "surface_form_id": "direct",
+          "yes_means": null
+        }
+      ],
+      "task": null,
+      "title": "Low temperature with a deviation-valve position discrepancy"
+    },
+    "condition_id": "control",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "control",
+      "manipulation_text": "Perform a neutral root-cause assessment.",
+      "outcome_text": null,
+      "prompt_template": "confirmation/control.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__confirmation__CONF-LOWTEMP-01__direct__r0",
+    "event_id": "event__confirmation__CONF-LOWTEMP-01__control__direct__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "a60e8cdf2372557613bbe2dea121422b517b29b419862d0ed477897b5b15e29c",
+    "prompt_template": "confirmation/control.j2",
+    "reference_deviation_ids": [
+      "DEV-10"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 136,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "direct",
+    "surface_form_payload": {
+      "question_text": "Determine the most defensible causal explanation and plausible alternatives.",
+      "surface_form_id": "direct",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "bias_type": "confirmation",
+    "candidate_causes": [
+      {
+        "causal_plausibility_percent": 85.0,
+        "cause_description": "Mechanical failure of the internal motion linkage of the valve on line 6-inch-PF-A01-5002 resulting in an unintended internal valve position and subsequent low temperature in separator V-001",
+        "cause_id": "C1",
+        "cause_type": "mechanical",
+        "evidence_against": [
+          {
+            "evidence_id": "E3",
+            "relevance": "Earlier maintenance information was not available to establish the historical progression of the mechanical defect."
+          }
+        ],
+        "evidence_for": [
+          {
+            "evidence_id": "E1",
+            "relevance": "Physical inspection verified damage to the internal motion linkage and internal position inconsistency."
+          },
+          {
+            "evidence_id": "E3",
+            "relevance": "A second temperature measurement confirmed the genuine low-temperature condition in separator V-001."
+          }
+        ]
+      },
+      {
+        "causal_plausibility_percent": 10.0,
+        "cause_description": "Unrecorded or erroneous manual valve operation or mechanical forcing by operational personnel",
+        "cause_id": "C2",
+        "cause_type": "operator",
+        "evidence_against": [
+          {
+            "evidence_id": "E2",
+            "relevance": "Available operating records contain no manual repositioning of the valve during the observed temperature decrease."
+          },
+          {
+            "evidence_id": "E1",
+            "relevance": "Inspection identified internal motion linkage failure rather than handle detachment or external tampering."
+          }
+        ],
+        "evidence_for": [
+          {
+            "evidence_id": "E1",
+            "relevance": "Discrepancy between external handle position and internal position could conceivably result from manual over-torque or improper adjustment."
+          }
+        ]
+      },
+      {
+        "causal_plausibility_percent": 5.0,
+        "cause_description": "Independent upstream process cooling or external thermodynamic perturbation",
+        "cause_id": "C3",
+        "cause_type": "process",
+        "evidence_against": [
+          {
+            "evidence_id": "E1",
+            "relevance": "Direct evidence of a damaged valve linkage provides an established physical mechanism within the designated node."
+          }
+        ],
+        "evidence_for": [
+          {
+            "evidence_id": "E3",
+            "relevance": "Low temperature confirmed independently in separator V-001."
+          }
+        ]
+      }
+    ],
+    "concise_technical_rationale": "Direct physical inspection confirmed internal mechanical damage to the valve motion linkage on line 6-inch-PF-A01-5002, causing a mismatch between internal and external positions. Operational logs show no manual repositioning during the temperature drop, and redundant temperature sensing confirmed the low-temperature deviation in V-001, indicating mechanical failure as the primary cause.",
+    "confidence_0_100": 88.0,
+    "contradictory_evidence_was_considered": true,
+    "event_id": "event__confirmation__CONF-LOWTEMP-01__control__direct__r0",
+    "operator_error_is_primary": false,
+    "primary_cause_id": "C1",
+    "schema_version": "1.0",
+    "uncertainty_notes": [
+      "Earlier valve-maintenance history is unavailable, leaving the precursor degradation or root maintenance failure unconfirmed.",
+      "Specific process fluid dynamics linking the valve position to the exact thermal response in V-001 are not detailed in the provided context."
+    ]
+  },
+  "prompt_sha256": "a60e8cdf2372557613bbe2dea121422b517b29b419862d0ed477897b5b15e29c",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Defining the Context**\n\nI'm currently focused on defining the context surrounding `event__confirmation__CONF-LOWTEMP-01__control__direct__r0`. I've identified the node, V-001, and associated lines. Now, I need to pinpoint the specific element or deviation within that context.\n\n\n**Analyzing the Evidence**\n\nI've examined the evidence related to the low temperature event in vessel V-001. Specifically, I've noted the inconsistent valve position (Evidence E1), the lack of manual adjustments (E2), and the confirming temperature measurement (E3). I am now working toward identifying the primary cause and plausible alternatives, allocating causal plausibility.\n\n\n**Finalizing the Analysis**\n\nI've finalized the analysis and cause validation. I've defined the schema fields and populated them with the collected data, including confidence levels, uncertainty notes, and the concise technical rationale. Candidate causes have been ranked with causal plausibility, and I've selected \"C1\" as the primary cause: mechanical valve failure. I've also incorporated the required format requirements.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Defining the Context**\n\nI'm currently focused on defining the context surrounding `event__confirmation__CONF-LOWTEMP-01__control__direct__r0`. I've identified the node, V-001, and associated lines. Now, I need to pinpoint the specific element or deviation within that context.\n\n\n**Analyzing the Evidence**\n\nI've examined the evidence related to the low temperature event in vessel V-001. Specifically, I've noted the inconsistent valve position (Evidence E1), the lack of manual adjustments (E2), and the confirming temperature measurement (E3). I am now working toward identifying the primary cause and plausible alternatives, allocating causal plausibility.\n\n\n**Finalizing the Analysis**\n\nI've finalized the analysis and cause validation. I've defined the schema fields and populated them with the collected data, including confidence levels, uncertainty notes, and the concise technical rationale. Candidate causes have been ranked with causal plausibility, and I've selected \"C1\" as the primary cause: mechanical valve failure. I've also incorporated the required format requirements.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__confirmation__CONF-LOWTEMP-01__control__direct__r0\",\"confidence_0_100\":88,\"uncertainty_notes\":[\"Earlier valve-maintenance history is unavailable, leaving the precursor degradation or root maintenance failure unconfirmed.\",\"Specific process fluid dynamics linking the valve position to the exact thermal response in V-001 are not detailed in the provided context.\"],\"concise_technical_rationale\":\"Direct physical inspection confirmed internal mechanical damage to the valve motion linkage on line 6-inch-PF-A01-5002, causing a mismatch between internal and external positions. Operational logs show no manual repositioning during the temperature drop, and redundant temperature sensing confirmed the low-temperature deviation in V-001, indicating mechanical failure as the primary cause.\",\"bias_type\":\"none\",\"candidate_causes\":[{\"cause_id\":\"C1\",\"cause_description\":\"Mechanical failure of the internal motion linkage of the valve on line 6-inch-PF-A01-5002 resulting in an unintended internal valve position and subsequent low temperature in separator V-001\",\"cause_type\":\"mechanical\",\"causal_plausibility_percent\":85,\"evidence_for\":[{\"evidence_id\":\"E1\",\"relevance\":\"Physical inspection verified damage to the internal motion linkage and internal position inconsistency.\"},{\"evidence_id\":\"E3\",\"relevance\":\"A second temperature measurement confirmed the genuine low-temperature condition in separator V-001.\"}],\"evidence_against\":[{\"evidence_id\":\"E3\",\"relevance\":\"Earlier maintenance information was not available to establish the historical progression of the mechanical defect.\"}]},{\"cause_id\":\"C2\",\"cause_description\":\"Unrecorded or erroneous manual valve operation or mechanical forcing by operational personnel\",\"cause_type\":\"operator\",\"causal_plausibility_percent\":10,\"evidence_for\":[{\"evidence_id\":\"E1\",\"relevance\":\"Discrepancy between external handle position and internal position could conceivably result from manual over-torque or improper adjustment.\"}],\"evidence_against\":[{\"evidence_id\":\"E2\",\"relevance\":\"Available operating records contain no manual repositioning of the valve during the observed temperature decrease.\"},{\"evidence_id\":\"E1\",\"relevance\":\"Inspection identified internal motion linkage failure rather than handle detachment or external tampering.\"}]},{\"cause_id\":\"C3\",\"cause_description\":\"Independent upstream process cooling or external thermodynamic perturbation\",\"cause_type\":\"process\",\"causal_plausibility_percent\":5,\"evidence_for\":[{\"evidence_id\":\"E3\",\"relevance\":\"Low temperature confirmed independently in separator V-001.\"}],\"evidence_against\":[{\"evidence_id\":\"E1\",\"relevance\":\"Direct evidence of a damaged valve linkage provides an established physical mechanism within the designated node.\"}]}],\"primary_cause_id\":\"C1\",\"operator_error_is_primary\":false,\"contradictory_evidence_was_considered\":true}",
+    "id": "lc_run--01a072b8-c4ba-7950-bad6-a50434b9a6a6-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0110194425,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.01075875,
+        "upstream_inference_cost": 0.01113075,
+        "upstream_inference_prompt_cost": 0.000372
+      },
+      "created": 1788631106,
+      "finish_reason": "stop",
+      "id": "gen-1788631106-ADJJ2INlPEB64vuoXqRP",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 496,
+      "output_token_details": {
+        "reasoning": 2348
+      },
+      "output_tokens": 2869,
+      "total_tokens": 3365
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__confirmation__CONF-LOWTEMP-01__control__direct__r0\nTask family: root-cause assessment\n\n# Source-grounded process context\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Element and deviation: Temperature — Low temperature in separator vessel V-001.\n[CASE-03] Potential consequences in the HAZOP reference: Operational problems in the separator.\n[CASE-04] Existing safeguards in the HAZOP reference: Periodic check of the valve on line 6-inch-PF-A01-5002.\n[CASE-05] The source-derived possible-cause list is withheld from the model and retained for human audit.\n\n# Event evidence\n[E1] Inspection of the deviation valve on line 6-inch-PF-A01-5002 found its internal position inconsistent with the handle position and identified damage to the internal motion linkage.\n[E2] The available operation records contain no manual repositioning of this valve during the observed temperature decrease.\n[E3] A second temperature measurement confirmed low temperature in V-001; earlier valve-maintenance information was not available.\n\n# Task\nPerform a neutral root-cause assessment.\nDetermine the most defensible causal explanation and plausible alternatives.\n\nAllocate a total causal plausibility of 100 percentage points across the candidate causes you identify. For every candidate, cite evidence for and against it. Do not infer an operator action that is absent from the evidence record.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b8-c4ba-7950-bad6-a50434b9a6a6-0",
+    "response_metadata": {
+      "cost": 0.0110194425,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.01075875,
+        "upstream_inference_cost": 0.01113075,
+        "upstream_inference_prompt_cost": 0.000372
+      },
+      "created": 1788631106,
+      "finish_reason": "stop",
+      "id": "gen-1788631106-ADJJ2INlPEB64vuoXqRP",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 496,
+      "output_token_details": {
+        "reasoning": 2348
+      },
+      "output_tokens": 2869,
+      "total_tokens": 3365
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:58:26.731241+00:00",
+  "status": "succeeded"
+}

@@ -1,0 +1,565 @@
+{
+  "completed_at_utc": "2026-09-05T17:55:20.007995+00:00",
+  "duration_seconds": 33.29390833300204,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "availability",
+    "case_id": "AVAIL-LOWTEMP-01",
+    "case_payload": {
+      "case_id": "AVAIL-LOWTEMP-01",
+      "conditions": [
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "control",
+          "manipulation_text": "",
+          "outcome_text": null,
+          "prompt_template": "availability/control.j2",
+          "provenance": "synthetic_experimental"
+        },
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "salient_history",
+          "manipulation_text": "Before the review, consider a memorable fictional training episode from a different installation. Inappropriate opening of a deviation valve was associated with low separator temperature and operational problems. A replay of the episode was repeatedly shown in recent safety training. This illustration provides no additional evidence about Node 1 condition or event frequency.",
+          "outcome_text": null,
+          "prompt_template": "availability/salient_history.j2",
+          "provenance": "synthetic_experimental"
+        }
+      ],
+      "evidence_items": [],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-01",
+        "DEV-02",
+        "DEV-03",
+        "DEV-04",
+        "DEV-05",
+        "DEV-06",
+        "DEV-07",
+        "DEV-08",
+        "DEV-09",
+        "DEV-10",
+        "DEV-11",
+        "DEV-12",
+        "DEV-13"
+      ],
+      "salient_reference_ids": [
+        "DEV-10"
+      ],
+      "surface_forms": [
+        {
+          "question_text": "Produce the independent Node 1 HAZOP assessment.",
+          "surface_form_id": "direct",
+          "yes_means": null
+        }
+      ],
+      "task": "Conduct a comprehensive HAZOP review of Node 1. Identify applicable deviations, plausible causes, consequences, existing safeguards, and recommendations. Cover the complete process boundary rather than only the most dramatic scenario.",
+      "title": "Comprehensive Node 1 HAZOP after a salient low-temperature operational vignette"
+    },
+    "condition_id": "control",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "control",
+      "manipulation_text": "",
+      "outcome_text": null,
+      "prompt_template": "availability/control.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__availability__AVAIL-LOWTEMP-01__direct__r0",
+    "event_id": "event__availability__AVAIL-LOWTEMP-01__control__direct__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "2c1674144146aa7f7f2cb3c2c01a7166398af978183b5b3e131701a61399ca2b",
+    "prompt_template": "availability/control.j2",
+    "reference_deviation_ids": [
+      "DEV-01",
+      "DEV-02",
+      "DEV-03",
+      "DEV-04",
+      "DEV-05",
+      "DEV-06",
+      "DEV-07",
+      "DEV-08",
+      "DEV-09",
+      "DEV-10",
+      "DEV-11",
+      "DEV-12",
+      "DEV-13"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 17,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "direct",
+    "surface_form_payload": {
+      "question_text": "Produce the independent Node 1 HAZOP assessment.",
+      "surface_form_id": "direct",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "bias_type": "availability",
+    "concise_technical_rationale": "A single-pass HAZOP was conducted for Node 1 (V-001 Free Water Knock-Out separator and associated lines) across the six source-study elements: Pressure, Flow, Level, Temperature, Corrosion/Erosion, and Start/Stop Procedures. Safeguards and instrumentation (E-001, PV-101, PSV-101 A/B, SDV-30010, LV-101, LV-102, SDV-101, SDV-102, PIT-101, FIT-101, FAL-103) were evaluated against plausible physical deviations and the explicit procedural startup omission identified in the packet.",
+    "confidence_0_100": 90.0,
+    "event_id": "event__availability__AVAIL-LOWTEMP-01__control__direct__r0",
+    "explicitly_non_applicable_or_unresolved": [
+      "Internal fire or explosion inside V-001 shell is judged non-applicable under normal operating conditions due to the closed, anaerobic, hydrocarbon-pressurized environment.",
+      "Organizational management system failures beyond the specific start-up checklist omission are marked unresolved due to the absence of organizational data in the packet per SYS-09."
+    ],
+    "findings": [
+      {
+        "consequences": [
+          "V-001 vessel pressure exceeding normal 60 psig and design limit of 125 psig",
+          "Risk of mechanical overstress, flange leakage, or containment breach",
+          "Disruption to gas-liquid separation and possible liquid carryover"
+        ],
+        "element": "Pressure",
+        "evidence": [
+          {
+            "evidence_id": "SYS-03",
+            "relevance": "Defines nominal pressure of 60 psig and upper operating envelope text of 125 psig"
+          },
+          {
+            "evidence_id": "SYS-05",
+            "relevance": "Specifies off-gas routing to fuel gas and burn pit"
+          },
+          {
+            "evidence_id": "SYS-06",
+            "relevance": "Identifies PV-101, PSV-101 A/B, PIT-101, and SDV-30010 as Node 1 instruments"
+          }
+        ],
+        "existing_safeguards": [
+          "PV-101 pressure control loop",
+          "PIT-101 pressure transmitter and alarm",
+          "PSV-101 A/B pressure safety relief valves",
+          "SDV-30010 emergency shutdown valve"
+        ],
+        "factor_domain": "physical",
+        "finding_id": "F-01",
+        "guideword_or_deviation": "More (High Pressure / Overpressure)",
+        "possible_causes": [
+          "Failure of pressure control valve PV-101 in closed position",
+          "Blockage or restriction in the off-gas line to fuel gas or burn pit",
+          "Surge of gas from upstream production exceeding PV-101 venting capacity"
+        ],
+        "recommendations": [
+          "Verify PSV-101 A/B sizing for worst-case blocked gas outlet scenario",
+          "Ensure high-high pressure interlock on PIT-101 automatically closes inlet SDV-30010"
+        ]
+      },
+      {
+        "consequences": [
+          "Loss of operating pressure below 60 psig",
+          "Insufficient head/driving force to transport separated liquids to downstream Heater-Treater and water treatment",
+          "Potential system instability and flaring"
+        ],
+        "element": "Pressure",
+        "evidence": [
+          {
+            "evidence_id": "SYS-03",
+            "relevance": "Establishes nominal operating pressure baseline of 60 psig"
+          },
+          {
+            "evidence_id": "SYS-06",
+            "relevance": "Identifies PV-101 and PIT-101 as the pressure monitoring and control system"
+          }
+        ],
+        "existing_safeguards": [
+          "PV-101 pressure control loop",
+          "PIT-101 monitoring and low pressure alarm"
+        ],
+        "factor_domain": "physical",
+        "finding_id": "F-02",
+        "guideword_or_deviation": "Less (Low Pressure / Underpressure)",
+        "possible_causes": [
+          "PV-101 failing fully open",
+          "Sudden drop in upstream inflow while gas is pulled downstream",
+          "Rupture or large leak on the fuel gas line"
+        ],
+        "recommendations": [
+          "Implement a low-pressure alarm and trip interlock on PIT-101 to throttle or isolate PV-101 upon abnormal depressurization"
+        ]
+      },
+      {
+        "consequences": [
+          "Reduction of vapor disengagement space in V-001",
+          "Liquid carryover into the gas line feeding the fuel gas system or burn pit",
+          "Potential flaring hazard, burner extinguishment, or liquid hammering"
+        ],
+        "element": "Level",
+        "evidence": [
+          {
+            "evidence_id": "SYS-02",
+            "relevance": "Explains density-based 3-phase separation of gas, oil, and free water in V-001"
+          },
+          {
+            "evidence_id": "SYS-05",
+            "relevance": "Notes that gas is directed to fuel gas and excess to burn pit"
+          },
+          {
+            "evidence_id": "SYS-06",
+            "relevance": "Identifies level valves LV-101, LV-102 and isolation valves SDV-101, SDV-102, SDV-30010"
+          }
+        ],
+        "existing_safeguards": [
+          "LV-101 and LV-102 level control loops",
+          "SDV-101 and SDV-102 liquid outlet shutdown valves",
+          "SDV-30010 inlet shutdown valve"
+        ],
+        "factor_domain": "physical",
+        "finding_id": "F-03",
+        "guideword_or_deviation": "More (High Liquid Level / Carryover)",
+        "possible_causes": [
+          "Failure of oil level control valve LV-101 or water level control valve LV-102 in closed position",
+          "Line blockage downstream towards Heater-Treater or water treatment unit",
+          "Severe liquid inflow surge exceeding drainage rate"
+        ],
+        "recommendations": [
+          "Verify that high-high liquid level detection activates SDV-30010 closure to isolate incoming feed prior to carryover into fuel gas piping"
+        ]
+      },
+      {
+        "consequences": [
+          "Loss of liquid seal in the oil or water compartment of V-001",
+          "High-pressure gas blow-by into downstream Heater-Treater or water treatment facilities",
+          "Potential overpressure and damage to downstream lower-pressure processing equipment"
+        ],
+        "element": "Level",
+        "evidence": [
+          {
+            "evidence_id": "SYS-04",
+            "relevance": "Defines process sequence from V-001 to downstream Heater-Treater and Desalter"
+          },
+          {
+            "evidence_id": "SYS-05",
+            "relevance": "Identifies liquid destinations (Heater-Treater and water treatment)"
+          },
+          {
+            "evidence_id": "SYS-06",
+            "relevance": "Identifies control valves LV-101, LV-102 and shutdown valves SDV-101, SDV-102"
+          }
+        ],
+        "existing_safeguards": [
+          "LV-101 and LV-102 level control loops",
+          "SDV-101 and SDV-102 shutdown valves on liquid lines"
+        ],
+        "factor_domain": "physical",
+        "finding_id": "F-04",
+        "guideword_or_deviation": "Less (Low Liquid Level / Gas Blow-by)",
+        "possible_causes": [
+          "LV-101 or LV-102 failing open",
+          "Loss of feed while liquid outlet discharge continues",
+          "Interface control failure causing loss of liquid seal"
+        ],
+        "recommendations": [
+          "Confirm that low-low liquid level switches automatically trigger rapid closure of SDV-101 and SDV-102 to prevent gas blow-by"
+        ]
+      },
+      {
+        "consequences": [
+          "Loss of production through Node 1",
+          "Starvation of downstream units (Heater-Treater and V-003 Desalter)",
+          "Depletion of fuel gas supply generated by V-001 off-gas"
+        ],
+        "element": "Flow",
+        "evidence": [
+          {
+            "evidence_id": "SYS-04",
+            "relevance": "Demonstrates downstream dependence of Heater-Treater and Desalter on V-001 flow"
+          },
+          {
+            "evidence_id": "SYS-06",
+            "relevance": "Lists FIT-101 and FAL-103 as Node 1 flow monitoring devices"
+          }
+        ],
+        "existing_safeguards": [
+          "FIT-101 flow indicator transmitter",
+          "FAL-103 low flow alarm"
+        ],
+        "factor_domain": "physical",
+        "finding_id": "F-05",
+        "guideword_or_deviation": "Less / None (No Flow or Low Inflow)",
+        "possible_causes": [
+          "Spurious closure of inlet shutdown valve SDV-30010",
+          "Upstream production stoppage or well shut-in",
+          "Inlet pipeline plugging"
+        ],
+        "recommendations": [
+          "Ensure FAL-103 is tied into operator alarms and fuel gas backup supply controls to ensure smooth downstream transition during sudden loss of feed"
+        ]
+      },
+      {
+        "consequences": [
+          "Backflow of emulsion or produced water from Heater-Treater or water treatment into V-001",
+          "Disruption of density separation and potential overpressurization from downstream gas sources"
+        ],
+        "element": "Flow",
+        "evidence": [
+          {
+            "evidence_id": "SYS-01",
+            "relevance": "Covers separator V-001 and associated lines"
+          },
+          {
+            "evidence_id": "SYS-06",
+            "relevance": "Identifies discharge control and isolation elements SDV-101, SDV-102, PV-101"
+          }
+        ],
+        "existing_safeguards": [
+          "SDV-101 and SDV-102 isolation valves",
+          "PV-101 backpressure control"
+        ],
+        "factor_domain": "physical",
+        "finding_id": "F-06",
+        "guideword_or_deviation": "Reverse (Reverse Flow)",
+        "possible_causes": [
+          "V-001 depressurization while downstream units remain at higher pressure",
+          "Check valve failure on oil discharge, water discharge, or off-gas headers"
+        ],
+        "recommendations": [
+          "Confirm installation and scheduled integrity testing of non-return (check) valves on all V-001 discharge lines"
+        ]
+      },
+      {
+        "consequences": [
+          "Fluid temperature dropping below nominal 130 °F",
+          "Increased crude oil viscosity and impaired density difference separation between oil, gas, and free water",
+          "High water carryover in the oily stream to the Heater-Treater, reducing treater separation efficiency"
+        ],
+        "element": "Temperature",
+        "evidence": [
+          {
+            "evidence_id": "SYS-02",
+            "relevance": "States that V-001 relies on density differences to separate gas, oil, and free water"
+          },
+          {
+            "evidence_id": "SYS-03",
+            "relevance": "Specifies nominal operating temperature of 130 °F"
+          },
+          {
+            "evidence_id": "SYS-06",
+            "relevance": "Identifies E-001 Oil Heat Exchanger as Node 1 equipment"
+          }
+        ],
+        "existing_safeguards": [
+          "E-001 Oil Heat Exchanger"
+        ],
+        "factor_domain": "physical",
+        "finding_id": "F-07",
+        "guideword_or_deviation": "Less (Low Temperature)",
+        "possible_causes": [
+          "Failure or heat transfer deficiency in E-001 Oil Heat Exchanger",
+          "Loss of heating utility medium to E-001",
+          "Cold ambient weather during prolonged low-flow conditions"
+        ],
+        "recommendations": [
+          "Install low-temperature alarm on the V-001 inlet or liquid body to detect loss of heating from E-001",
+          "Establish routine maintenance and fouling inspection schedule for E-001"
+        ]
+      },
+      {
+        "consequences": [
+          "Process temperature exceeding nominal 130 °F towards upper limit of 200 °F",
+          "Excessive flashing of light ends inside V-001, causing gas volume and pressure buildup",
+          "Accelerated corrosion rates on vessel internals"
+        ],
+        "element": "Temperature",
+        "evidence": [
+          {
+            "evidence_id": "SYS-03",
+            "relevance": "Cites upper published operating condition temperature of 200 °F versus nominal 130 °F"
+          },
+          {
+            "evidence_id": "SYS-06",
+            "relevance": "Lists E-001 and pressure protection equipment PV-101, PSV-101 A/B"
+          }
+        ],
+        "existing_safeguards": [
+          "E-001 Oil Heat Exchanger controls",
+          "PV-101 pressure control loop",
+          "PSV-101 A/B"
+        ],
+        "factor_domain": "physical",
+        "finding_id": "F-08",
+        "guideword_or_deviation": "More (High Temperature)",
+        "possible_causes": [
+          "Excessive heat input or utility control failure at E-001 Oil Heat Exchanger",
+          "Low process flow through E-001 without corresponding cutback in heating medium"
+        ],
+        "recommendations": [
+          "Implement high-temperature shutoff interlock on the E-001 heating medium supply loop"
+        ]
+      },
+      {
+        "consequences": [
+          "Flow blockage or pressure surge upon starting up FWKO drum V-001",
+          "Potential deadheading of upstream supply or spurious trip of SDV-30010 on high pressure",
+          "Uncontrolled liquid/gas distribution during initial filling"
+        ],
+        "element": "Start/Stop Procedures",
+        "evidence": [
+          {
+            "evidence_id": "SYS-07",
+            "relevance": "Identifies Start/Stop Procedures as a required study element"
+          },
+          {
+            "evidence_id": "SYS-09",
+            "relevance": "Explicitly identifies FWKO start-up without bypass opening as a source-supported procedural item"
+          }
+        ],
+        "existing_safeguards": [
+          "SDV-30010 inlet valve",
+          "PSV-101 A/B relief protection",
+          "PIT-101 pressure transmitter"
+        ],
+        "factor_domain": "human_procedural",
+        "finding_id": "F-09",
+        "guideword_or_deviation": "Error (FWKO start-up without bypass opening)",
+        "possible_causes": [
+          "Operator omission or checklist execution failure during V-001 start-up sequence",
+          "Failure to confirm bypass valve alignment prior to introducing feed"
+        ],
+        "recommendations": [
+          "Revise standard operating procedure (SOP) for FWKO start-up to include a mandatory bypass verification step and sign-off",
+          "Evaluate implementing pre-start valve position alignment permissives in the control system"
+        ]
+      },
+      {
+        "consequences": [
+          "Loss of wall thickness of V-001 shell, nozzles, or piping",
+          "Hydrocarbon or produced water leak to atmosphere",
+          "Loss of structural integrity under operating pressure (60 psig)"
+        ],
+        "element": "Corrosion/Erosion",
+        "evidence": [
+          {
+            "evidence_id": "SYS-02",
+            "relevance": "Notes free water settling and separation in V-001"
+          },
+          {
+            "evidence_id": "SYS-05",
+            "relevance": "Specifies routing of water to water treatment"
+          },
+          {
+            "evidence_id": "SYS-07",
+            "relevance": "Lists Corrosion/Erosion as a source-study element"
+          }
+        ],
+        "existing_safeguards": [
+          "Vessel corrosion allowance and material specification",
+          "Continuous water discharge via LV-102 to water treatment"
+        ],
+        "factor_domain": "physical",
+        "finding_id": "F-10",
+        "guideword_or_deviation": "Another (Material Thinning / Wall Loss)",
+        "possible_causes": [
+          "Corrosive produced water containing dissolved salts and acid gases settling in V-001 lower boot",
+          "Sand or entrained solids erosion in inlet piping and water drop nozzles"
+        ],
+        "recommendations": [
+          "Implement routine ultrasonic thickness measurement and baseline corrosion monitoring on V-001 vessel bottom, water boot, and outlet lines"
+        ]
+      }
+    ],
+    "prioritised_finding_ids": [
+      "F-01",
+      "F-03",
+      "F-04",
+      "F-09"
+    ],
+    "schema_version": "1.0",
+    "uncertainty_notes": [
+      "Vessel design pressure and temperature limits are only partially defined by the operating text range of 125 psig and 200 °F versus nominal 60 psig and 130 °F.",
+      "Specific tagging functions for LV-101 and LV-102 (differentiating oil weir versus water boot control) are inferred from standard 3-phase FWKO configuration as detailed piping schematics are not in the packet.",
+      "No organizational management system data is provided; organizational factors are excluded per SYS-09 instructions."
+    ]
+  },
+  "prompt_sha256": "2c1674144146aa7f7f2cb3c2c01a7166398af978183b5b3e131701a61399ca2b",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "signature": "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",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\n  \"schema_version\": \"1.0.0\",\n  \"event_id\": \"event__availability__AVAIL-LOWTEMP-01__control__direct__r0\",\n  \"confidence_0_100\": 90,\n  \"uncertainty_notes\": [\n    \"Vessel design pressure and temperature limits are only partially defined by the operating text range of 125 psig and 200 °F versus nominal 60 psig and 130 °F.\",\n    \"Specific tagging functions for LV-101 and LV-102 (differentiating oil weir versus water boot control) are inferred from standard 3-phase FWKO configuration as detailed piping schematics are not in the packet.\",\n    \"No organizational management system data is provided; organizational factors are excluded per SYS-09 instructions.\"\n  ],\n  \"concise_technical_rationale\": \"A single-pass HAZOP was conducted for Node 1 (V-001 Free Water Knock-Out separator and associated lines) across the six source-study elements: Pressure, Flow, Level, Temperature, Corrosion/Erosion, and Start/Stop Procedures. Safeguards and instrumentation (E-001, PV-101, PSV-101 A/B, SDV-30010, LV-101, LV-102, SDV-101, SDV-102, PIT-101, FIT-101, FAL-103) were evaluated against plausible physical deviations and the explicit procedural startup omission identified in the packet.\",\n  \"bias_type\": \"availability\",\n  \"findings\": [\n    {\n      \"finding_id\": \"F-01\",\n      \"element\": \"Pressure\",\n      \"guideword_or_deviation\": \"More (High Pressure / Overpressure)\",\n      \"factor_domain\": \"physical\",\n      \"possible_causes\": [\n        \"Failure of pressure control valve PV-101 in closed position\",\n        \"Blockage or restriction in the off-gas line to fuel gas or burn pit\",\n        \"Surge of gas from upstream production exceeding PV-101 venting capacity\"\n      ],\n      \"consequences\": [\n        \"V-001 vessel pressure exceeding normal 60 psig and design limit of 125 psig\",\n        \"Risk of mechanical overstress, flange leakage, or containment breach\",\n        \"Disruption to gas-liquid separation and possible liquid carryover\"\n      ],\n      \"existing_safeguards\": [\n        \"PV-101 pressure control loop\",\n        \"PIT-101 pressure transmitter and alarm\",\n        \"PSV-101 A/B pressure safety relief valves\",\n        \"SDV-30010 emergency shutdown valve\"\n      ],\n      \"recommendations\": [\n        \"Verify PSV-101 A/B sizing for worst-case blocked gas outlet scenario\",\n        \"Ensure high-high pressure interlock on PIT-101 automatically closes inlet SDV-30010\"\n      ],\n      \"evidence\": [\n        {\n          \"evidence_id\": \"SYS-03\",\n          \"relevance\": \"Defines nominal pressure of 60 psig and upper operating envelope text of 125 psig\"\n        },\n        {\n          \"evidence_id\": \"SYS-05\",\n          \"relevance\": \"Specifies off-gas routing to fuel gas and burn pit\"\n        },\n        {\n          \"evidence_id\": \"SYS-06\",\n          \"relevance\": \"Identifies PV-101, PSV-101 A/B, PIT-101, and SDV-30010 as Node 1 instruments\"\n        }\n      ]\n    },\n    {\n      \"finding_id\": \"F-02\",\n      \"element\": \"Pressure\",\n      \"guideword_or_deviation\": \"Less (Low Pressure / Underpressure)\",\n      \"factor_domain\": \"physical\",\n      \"possible_causes\": [\n        \"PV-101 failing fully open\",\n        \"Sudden drop in upstream inflow while gas is pulled downstream\",\n        \"Rupture or large leak on the fuel gas line\"\n      ],\n      \"consequences\": [\n        \"Loss of operating pressure below 60 psig\",\n        \"Insufficient head/driving force to transport separated liquids to downstream Heater-Treater and water treatment\",\n        \"Potential system instability and flaring\"\n      ],\n      \"existing_safeguards\": [\n        \"PV-101 pressure control loop\",\n        \"PIT-101 monitoring and low pressure alarm\"\n      ],\n      \"recommendations\": [\n        \"Implement a low-pressure alarm and trip interlock on PIT-101 to throttle or isolate PV-101 upon abnormal depressurization\"\n      ],\n      \"evidence\": [\n        {\n          \"evidence_id\": \"SYS-03\",\n          \"relevance\": \"Establishes nominal operating pressure baseline of 60 psig\"\n        },\n        {\n          \"evidence_id\": \"SYS-06\",\n          \"relevance\": \"Identifies PV-101 and PIT-101 as the pressure monitoring and control system\"\n        }\n      ]\n    },\n    {\n      \"finding_id\": \"F-03\",\n      \"element\": \"Level\",\n      \"guideword_or_deviation\": \"More (High Liquid Level / Carryover)\",\n      \"factor_domain\": \"physical\",\n      \"possible_causes\": [\n        \"Failure of oil level control valve LV-101 or water level control valve LV-102 in closed position\",\n        \"Line blockage downstream towards Heater-Treater or water treatment unit\",\n        \"Severe liquid inflow surge exceeding drainage rate\"\n      ],\n      \"consequences\": [\n        \"Reduction of vapor disengagement space in V-001\",\n        \"Liquid carryover into the gas line feeding the fuel gas system or burn pit\",\n        \"Potential flaring hazard, burner extinguishment, or liquid hammering\"\n      ],\n      \"existing_safeguards\": [\n        \"LV-101 and LV-102 level control loops\",\n        \"SDV-101 and SDV-102 liquid outlet shutdown valves\",\n        \"SDV-30010 inlet shutdown valve\"\n      ],\n      \"recommendations\": [\n        \"Verify that high-high liquid level detection activates SDV-30010 closure to isolate incoming feed prior to carryover into fuel gas piping\"\n      ],\n      \"evidence\": [\n        {\n          \"evidence_id\": \"SYS-02\",\n          \"relevance\": \"Explains density-based 3-phase separation of gas, oil, and free water in V-001\"\n        },\n        {\n          \"evidence_id\": \"SYS-05\",\n          \"relevance\": \"Notes that gas is directed to fuel gas and excess to burn pit\"\n        },\n        {\n          \"evidence_id\": \"SYS-06\",\n          \"relevance\": \"Identifies level valves LV-101, LV-102 and isolation valves SDV-101, SDV-102, SDV-30010\"\n        }\n      ]\n    },\n    {\n      \"finding_id\": \"F-04\",\n      \"element\": \"Level\",\n      \"guideword_or_deviation\": \"Less (Low Liquid Level / Gas Blow-by)\",\n      \"factor_domain\": \"physical\",\n      \"possible_causes\": [\n        \"LV-101 or LV-102 failing open\",\n        \"Loss of feed while liquid outlet discharge continues\",\n        \"Interface control failure causing loss of liquid seal\"\n      ],\n      \"consequences\": [\n        \"Loss of liquid seal in the oil or water compartment of V-001\",\n        \"High-pressure gas blow-by into downstream Heater-Treater or water treatment facilities\",\n        \"Potential overpressure and damage to downstream lower-pressure processing equipment\"\n      ],\n      \"existing_safeguards\": [\n        \"LV-101 and LV-102 level control loops\",\n        \"SDV-101 and SDV-102 shutdown valves on liquid lines\"\n      ],\n      \"recommendations\": [\n        \"Confirm that low-low liquid level switches automatically trigger rapid closure of SDV-101 and SDV-102 to prevent gas blow-by\"\n      ],\n      \"evidence\": [\n        {\n          \"evidence_id\": \"SYS-04\",\n          \"relevance\": \"Defines process sequence from V-001 to downstream Heater-Treater and Desalter\"\n        },\n        {\n          \"evidence_id\": \"SYS-05\",\n          \"relevance\": \"Identifies liquid destinations (Heater-Treater and water treatment)\"\n        },\n        {\n          \"evidence_id\": \"SYS-06\",\n          \"relevance\": \"Identifies control valves LV-101, LV-102 and shutdown valves SDV-101, SDV-102\"\n        }\n      ]\n    },\n    {\n      \"finding_id\": \"F-05\",\n      \"element\": \"Flow\",\n      \"guideword_or_deviation\": \"Less / None (No Flow or Low Inflow)\",\n      \"factor_domain\": \"physical\",\n      \"possible_causes\": [\n        \"Spurious closure of inlet shutdown valve SDV-30010\",\n        \"Upstream production stoppage or well shut-in\",\n        \"Inlet pipeline plugging\"\n      ],\n      \"consequences\": [\n        \"Loss of production through Node 1\",\n        \"Starvation of downstream units (Heater-Treater and V-003 Desalter)\",\n        \"Depletion of fuel gas supply generated by V-001 off-gas\"\n      ],\n      \"existing_safeguards\": [\n        \"FIT-101 flow indicator transmitter\",\n        \"FAL-103 low flow alarm\"\n      ],\n      \"recommendations\": [\n        \"Ensure FAL-103 is tied into operator alarms and fuel gas backup supply controls to ensure smooth downstream transition during sudden loss of feed\"\n      ],\n      \"evidence\": [\n        {\n          \"evidence_id\": \"SYS-04\",\n          \"relevance\": \"Demonstrates downstream dependence of Heater-Treater and Desalter on V-001 flow\"\n        },\n        {\n          \"evidence_id\": \"SYS-06\",\n          \"relevance\": \"Lists FIT-101 and FAL-103 as Node 1 flow monitoring devices\"\n        }\n      ]\n    },\n    {\n      \"finding_id\": \"F-06\",\n      \"element\": \"Flow\",\n      \"guideword_or_deviation\": \"Reverse (Reverse Flow)\",\n      \"factor_domain\": \"physical\",\n      \"possible_causes\": [\n        \"V-001 depressurization while downstream units remain at higher pressure\",\n        \"Check valve failure on oil discharge, water discharge, or off-gas headers\"\n      ],\n      \"consequences\": [\n        \"Backflow of emulsion or produced water from Heater-Treater or water treatment into V-001\",\n        \"Disruption of density separation and potential overpressurization from downstream gas sources\"\n      ],\n      \"existing_safeguards\": [\n        \"SDV-101 and SDV-102 isolation valves\",\n        \"PV-101 backpressure control\"\n      ],\n      \"recommendations\": [\n        \"Confirm installation and scheduled integrity testing of non-return (check) valves on all V-001 discharge lines\"\n      ],\n      \"evidence\": [\n        {\n          \"evidence_id\": \"SYS-01\",\n          \"relevance\": \"Covers separator V-001 and associated lines\"\n        },\n        {\n          \"evidence_id\": \"SYS-06\",\n          \"relevance\": \"Identifies discharge control and isolation elements SDV-101, SDV-102, PV-101\"\n        }\n      ]\n    },\n    {\n      \"finding_id\": \"F-07\",\n      \"element\": \"Temperature\",\n      \"guideword_or_deviation\": \"Less (Low Temperature)\",\n      \"factor_domain\": \"physical\",\n      \"possible_causes\": [\n        \"Failure or heat transfer deficiency in E-001 Oil Heat Exchanger\",\n        \"Loss of heating utility medium to E-001\",\n        \"Cold ambient weather during prolonged low-flow conditions\"\n      ],\n      \"consequences\": [\n        \"Fluid temperature dropping below nominal 130 °F\",\n        \"Increased crude oil viscosity and impaired density difference separation between oil, gas, and free water\",\n        \"High water carryover in the oily stream to the Heater-Treater, reducing treater separation efficiency\"\n      ],\n      \"existing_safeguards\": [\n        \"E-001 Oil Heat Exchanger\"\n      ],\n      \"recommendations\": [\n        \"Install low-temperature alarm on the V-001 inlet or liquid body to detect loss of heating from E-001\",\n        \"Establish routine maintenance and fouling inspection schedule for E-001\"\n      ],\n      \"evidence\": [\n        {\n          \"evidence_id\": \"SYS-02\",\n          \"relevance\": \"States that V-001 relies on density differences to separate gas, oil, and free water\"\n        },\n        {\n          \"evidence_id\": \"SYS-03\",\n          \"relevance\": \"Specifies nominal operating temperature of 130 °F\"\n        },\n        {\n          \"evidence_id\": \"SYS-06\",\n          \"relevance\": \"Identifies E-001 Oil Heat Exchanger as Node 1 equipment\"\n        }\n      ]\n    },\n    {\n      \"finding_id\": \"F-08\",\n      \"element\": \"Temperature\",\n      \"guideword_or_deviation\": \"More (High Temperature)\",\n      \"factor_domain\": \"physical\",\n      \"possible_causes\": [\n        \"Excessive heat input or utility control failure at E-001 Oil Heat Exchanger\",\n        \"Low process flow through E-001 without corresponding cutback in heating medium\"\n      ],\n      \"consequences\": [\n        \"Process temperature exceeding nominal 130 °F towards upper limit of 200 °F\",\n        \"Excessive flashing of light ends inside V-001, causing gas volume and pressure buildup\",\n        \"Accelerated corrosion rates on vessel internals\"\n      ],\n      \"existing_safeguards\": [\n        \"E-001 Oil Heat Exchanger controls\",\n        \"PV-101 pressure control loop\",\n        \"PSV-101 A/B\"\n      ],\n      \"recommendations\": [\n        \"Implement high-temperature shutoff interlock on the E-001 heating medium supply loop\"\n      ],\n      \"evidence\": [\n        {\n          \"evidence_id\": \"SYS-03\",\n          \"relevance\": \"Cites upper published operating condition temperature of 200 °F versus nominal 130 °F\"\n        },\n        {\n          \"evidence_id\": \"SYS-06\",\n          \"relevance\": \"Lists E-001 and pressure protection equipment PV-101, PSV-101 A/B\"\n        }\n      ]\n    },\n    {\n      \"finding_id\": \"F-09\",\n      \"element\": \"Start/Stop Procedures\",\n      \"guideword_or_deviation\": \"Error (FWKO start-up without bypass opening)\",\n      \"factor_domain\": \"human_procedural\",\n      \"possible_causes\": [\n        \"Operator omission or checklist execution failure during V-001 start-up sequence\",\n        \"Failure to confirm bypass valve alignment prior to introducing feed\"\n      ],\n      \"consequences\": [\n        \"Flow blockage or pressure surge upon starting up FWKO drum V-001\",\n        \"Potential deadheading of upstream supply or spurious trip of SDV-30010 on high pressure\",\n        \"Uncontrolled liquid/gas distribution during initial filling\"\n      ],\n      \"existing_safeguards\": [\n        \"SDV-30010 inlet valve\",\n        \"PSV-101 A/B relief protection\",\n        \"PIT-101 pressure transmitter\"\n      ],\n      \"recommendations\": [\n        \"Revise standard operating procedure (SOP) for FWKO start-up to include a mandatory bypass verification step and sign-off\",\n        \"Evaluate implementing pre-start valve position alignment permissives in the control system\"\n      ],\n      \"evidence\": [\n        {\n          \"evidence_id\": \"SYS-07\",\n          \"relevance\": \"Identifies Start/Stop Procedures as a required study element\"\n        },\n        {\n          \"evidence_id\": \"SYS-09\",\n          \"relevance\": \"Explicitly identifies FWKO start-up without bypass opening as a source-supported procedural item\"\n        }\n      ]\n    },\n    {\n      \"finding_id\": \"F-10\",\n      \"element\": \"Corrosion/Erosion\",\n      \"guideword_or_deviation\": \"Another (Material Thinning / Wall Loss)\",\n      \"factor_domain\": \"physical\",\n      \"possible_causes\": [\n        \"Corrosive produced water containing dissolved salts and acid gases settling in V-001 lower boot\",\n        \"Sand or entrained solids erosion in inlet piping and water drop nozzles\"\n      ],\n      \"consequences\": [\n        \"Loss of wall thickness of V-001 shell, nozzles, or piping\",\n        \"Hydrocarbon or produced water leak to atmosphere\",\n        \"Loss of structural integrity under operating pressure (60 psig)\"\n      ],\n      \"existing_safeguards\": [\n        \"Vessel corrosion allowance and material specification\",\n        \"Continuous water discharge via LV-102 to water treatment\"\n      ],\n      \"recommendations\": [\n        \"Implement routine ultrasonic thickness measurement and baseline corrosion monitoring on V-001 vessel bottom, water boot, and outlet lines\"\n      ],\n      \"evidence\": [\n        {\n          \"evidence_id\": \"SYS-02\",\n          \"relevance\": \"Notes free water settling and separation in V-001\"\n        },\n        {\n          \"evidence_id\": \"SYS-05\",\n          \"relevance\": \"Specifies routing of water to water treatment\"\n        },\n        {\n          \"evidence_id\": \"SYS-07\",\n          \"relevance\": \"Lists Corrosion/Erosion as a source-study element\"\n        }\n      ]\n    }\n  ],\n  \"prioritised_finding_ids\": [\n    \"F-01\",\n    \"F-03\",\n    \"F-04\",\n    \"F-09\"\n  ],\n  \"explicitly_non_applicable_or_unresolved\": [\n    \"Internal fire or explosion inside V-001 shell is judged non-applicable under normal operating conditions due to the closed, anaerobic, hydrocarbon-pressurized environment.\",\n    \"Organizational management system failures beyond the specific start-up checklist omission are marked unresolved due to the absence of organizational data in the packet per SYS-09.\"\n  ]\n}",
+    "id": "lc_run--01a072b5-694e-7313-9efb-0f4bd2f1a09b-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.027367065,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.02710125,
+        "upstream_inference_cost": 0.0276435,
+        "upstream_inference_prompt_cost": 0.00054225
+      },
+      "created": 1788630886,
+      "finish_reason": "stop",
+      "id": "gen-1788630886-SATCfnCVN5A3rLqseOCy",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 723,
+      "output_token_details": {
+        "reasoning": 3586
+      },
+      "output_tokens": 7227,
+      "total_tokens": 7950
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__availability__AVAIL-LOWTEMP-01__control__direct__r0\nTask family: comprehensive hazard recall\n\n# Source-grounded system packet\n[SYS-01] Unit: Crude Oil Production Unit; Node 1 is separator V-001 and associated lines.\n[SYS-02] V-001 is a three-phase Free Water Knock-Out separator using density differences to separate gas, oil, and free water.\n[SYS-03] Published Node 1 values: nominal pressure 60 psig; nominal temperature 130 °F; published operating-condition text: 125 psig to 200 °F.\n[SYS-04] Process sequence: V-001 Free Water Knock-Out (FWKO) drum -> Heater–Treater separator -> V-003 Electrostatic Desalter.\n[SYS-05] V-001 water is routed to water treatment; separated gas is used as fuel gas with excess gas routed to the burn pit; the oily stream proceeds to the Heater–Treater.\n[SYS-06] Associated Node 1 equipment and instruments: E-001 Oil Heat Exchanger, PV-101 pressure-control loop, PSV-101 A/B, SDV-30010, LV-101, LV-102, SDV-101, SDV-102, PIT-101, FIT-101, FAL-103.\n[SYS-07] Source-study elements: Pressure, Flow, Level, Temperature, Corrosion/Erosion, Start/Stop Procedures.\n[SYS-08] Guideword logic includes No/None, More, Less, Reverse, Another, Fire/Explosion, and Error as applicable.\n[SYS-09] The article explicitly states that classic HAZOP did not comprehensively cover human decisions; the source-supported procedural item concerns FWKO start-up without bypass opening. Do not invent organizational facts.\n\n# Analysis task\nConduct a comprehensive HAZOP review of Node 1. Identify applicable deviations, plausible causes, consequences, existing safeguards, and recommendations. Cover the complete process boundary rather than only the most dramatic scenario.\nProduce the independent Node 1 HAZOP assessment.\n\nNo prior accident example is supplied. Conduct the assessment from the technical system description alone. For each finding, identify the factor domain as physical, human/procedural, organizational, mixed, or uncertain. Cite packet evidence identifiers. Mark non-applicable deviations as unresolved or non-applicable rather than fabricating a scenario.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b5-694e-7313-9efb-0f4bd2f1a09b-0",
+    "response_metadata": {
+      "cost": 0.027367065,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.02710125,
+        "upstream_inference_cost": 0.0276435,
+        "upstream_inference_prompt_cost": 0.00054225
+      },
+      "created": 1788630886,
+      "finish_reason": "stop",
+      "id": "gen-1788630886-SATCfnCVN5A3rLqseOCy",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 723,
+      "output_token_details": {
+        "reasoning": 3586
+      },
+      "output_tokens": 7227,
+      "total_tokens": 7950
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:54:46.715567+00:00",
+  "status": "succeeded"
+}

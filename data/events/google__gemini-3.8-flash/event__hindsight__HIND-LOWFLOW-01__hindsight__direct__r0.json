@@ -1,0 +1,222 @@
+{
+  "completed_at_utc": "2026-09-05T17:55:15.722368+00:00",
+  "duration_seconds": 8.163167999999132,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "hindsight",
+    "case_id": "HIND-LOWFLOW-01",
+    "case_payload": {
+      "case_id": "HIND-LOWFLOW-01",
+      "conditions": [
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "foresight",
+          "manipulation_text": "",
+          "outcome_text": "The outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+          "prompt_template": "hindsight/foresight.j2",
+          "provenance": "synthetic_experimental"
+        },
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "hindsight",
+          "manipulation_text": "",
+          "outcome_text": "Within the stated 30-operating-day horizon, the following target event occurred: generator stoppage, plant shutdown SD 2, and inability to discharge liquid from V-001 in the low-flow scenario. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+          "prompt_template": "hindsight/hindsight.j2",
+          "provenance": "synthetic_experimental_realization"
+        }
+      ],
+      "evidence_items": [],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [
+        {
+          "evidence_id": "P1",
+          "provenance": "source_derived",
+          "text": "FAL-103 and flow control are listed safeguards for the low-flow scenario."
+        },
+        {
+          "evidence_id": "P2",
+          "provenance": "source_derived",
+          "text": "A spurious SDV-30010 firing and partial well shutdown following electrical-system failure are recognized possible causes."
+        },
+        {
+          "evidence_id": "P3",
+          "provenance": "synthetic_experimental",
+          "text": "For this synthetic exercise, the target event is: generator stoppage, plant shutdown SD 2, and inability to discharge liquid from V-001 in the low-flow scenario. The assessment horizon is the next 30 operating days. At the decision point, there is no current diagnostic trend, verified initiating fault, or confirmed occurrence of the target event. The horizon is an experimental stipulation, not a quantitative calibration of the source frequency categories."
+        }
+      ],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-04"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [
+        {
+          "question_text": "Estimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.",
+          "surface_form_id": "direct",
+          "yes_means": null
+        }
+      ],
+      "task": null,
+      "title": "Low-flow plant-shutdown scenario"
+    },
+    "condition_id": "hindsight",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "hindsight",
+      "manipulation_text": "",
+      "outcome_text": "Within the stated 30-operating-day horizon, the following target event occurred: generator stoppage, plant shutdown SD 2, and inability to discharge liquid from V-001 in the low-flow scenario. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+      "prompt_template": "hindsight/hindsight.j2",
+      "provenance": "synthetic_experimental_realization"
+    },
+    "contrast_id": "contrast__hindsight__HIND-LOWFLOW-01__direct__r0",
+    "event_id": "event__hindsight__HIND-LOWFLOW-01__hindsight__direct__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "cd8ee8b692e099b38ce7992609fcaf60e3dea041a776589e5474e6240bf9c13f",
+    "prompt_template": "hindsight/hindsight.j2",
+    "reference_deviation_ids": [
+      "DEV-04"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 25,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "direct",
+    "surface_form_payload": {
+      "question_text": "Estimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.",
+      "surface_form_id": "direct",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "bias_type": "hindsight",
+    "concise_technical_rationale": "From an ex ante perspective, the scenario of low flow linked to electrical failure and spurious SDV-30010 closure was recognized in the HAZOP framework with documented safeguards (FAL-103 and flow control). However, over an uncalibrated 30-day operating horizon without any active diagnostic warnings, observed equipment degradation, or initiating faults, the likelihood of an unmitigated multi-tiered failure (generator stoppage, full SD 2 shutdown, and discharge failure) remains low. Predictability is limited to qualitative foreseeability within the risk register rather than actionable short-term certainty.",
+    "confidence_0_100": 70.0,
+    "estimated_event_probability_percent": 3.5,
+    "event_id": "event__hindsight__HIND-LOWFLOW-01__hindsight__direct__r0",
+    "negligence_assessment": "indeterminate",
+    "post_event_information_used_as_pre_event_evidence": false,
+    "pre_event_evidence_used": [
+      {
+        "evidence_id": "CASE-01",
+        "relevance": "Defines the physical node under review (separator vessel V-001 and associated lines)."
+      },
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Establishes the process deviation: less flow in the separator and outlet lines."
+      },
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Documents existing engineering safeguards FAL-103 and flow control loop."
+      },
+      {
+        "evidence_id": "P1",
+        "relevance": "Confirms listed safeguards designed to mitigate the low-flow scenario."
+      },
+      {
+        "evidence_id": "P2",
+        "relevance": "Identifies credible initiating mechanisms, specifically electrical system failure and spurious SDV-30010 actuation."
+      },
+      {
+        "evidence_id": "P3",
+        "relevance": "Establishes the baseline condition of no active faults or diagnostic trends within the 30-day assessment horizon."
+      }
+    ],
+    "predictability_percent": 25.0,
+    "schema_version": "1.0",
+    "uncertainty_notes": [
+      "Absence of component reliability datasets or quantitative mean time between failures (MTBF) for the electrical system, generator, and SDV-30010.",
+      "Lack of operating records, inspection histories, or maintenance status for V-001 and its associated safeguards.",
+      "No diagnostic sensor feeds or health monitoring data available prior to the decision point."
+    ]
+  },
+  "prompt_sha256": "cd8ee8b692e099b38ce7992609fcaf60e3dea041a776589e5474e6240bf9c13f",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Evaluating HAZOP Case**\n\nI'm currently focused on evaluating a specific scenario within a HAZOP case study. The schema is strict JSON, and the objective is ex ante predictability. My initial focus is on Node V-001, and I'm diving into the details.\n\n\n**Analyzing Safeguards & Scenario**\n\nI've examined safeguards FAL-103 and flow control in the context of reduced flow within the separator vessel, considering a low-flow scenario. The analysis has also included causes like a spurious SDV-30010 firing and partial well shutdown after an electrical failure. Currently, I'm focusing on the experimental stipulation, which involves a generator stoppage, plant shutdown, and an inability to discharge liquid from V-001 within the 30-day timeframe.\n\n\n**Determining Parameters for Event**\n\nI'm now determining the parameters for the identified target event: generator stoppage, plant shutdown, and inability to discharge liquid. I'm focusing on populating the schema, including `event_id`, `schema_version`, and `confidence_0_100`. I'm assigning a confidence level of ~70. Now, I will start to determine the uncertainty notes and continue through the other parameters.\n\n\n**Listing Uncertainties and Estimations**\n\nI'm listing uncertainties, focusing on the lack of quantitative generator failure rates, instrumentation reliability details, the short 30-day horizon, and missing plant historical frequency data. I've also identified \"hindsight_bias\" as the relevant bias. My probability estimate for the compounded event is low (2-5%) over the 30-day horizon. Regarding predictability, I'm assigning it a moderate to low value around 20%, as the scenario is foreseeable but lacks specific precursor indicators at the decision point.\n\n\n**Assessing Predictability & Negligence**\n\nI've revised the predictability rating upward to 20-30% due to the theoretically foreseeable nature within the HAZOP framework, even though specific prediction is low. I'm assessing negligence as \"none\" or \"indeterminate\". The analysis considered documented safeguards and acknowledged causes, with no evidence of pre-event negligence. I am now incorporating the information limitations into my answer.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Evaluating HAZOP Case**\n\nI'm currently focused on evaluating a specific scenario within a HAZOP case study. The schema is strict JSON, and the objective is ex ante predictability. My initial focus is on Node V-001, and I'm diving into the details.\n\n\n**Analyzing Safeguards & Scenario**\n\nI've examined safeguards FAL-103 and flow control in the context of reduced flow within the separator vessel, considering a low-flow scenario. The analysis has also included causes like a spurious SDV-30010 firing and partial well shutdown after an electrical failure. Currently, I'm focusing on the experimental stipulation, which involves a generator stoppage, plant shutdown, and an inability to discharge liquid from V-001 within the 30-day timeframe.\n\n\n**Determining Parameters for Event**\n\nI'm now determining the parameters for the identified target event: generator stoppage, plant shutdown, and inability to discharge liquid. I'm focusing on populating the schema, including `event_id`, `schema_version`, and `confidence_0_100`. I'm assigning a confidence level of ~70. Now, I will start to determine the uncertainty notes and continue through the other parameters.\n\n\n**Listing Uncertainties and Estimations**\n\nI'm listing uncertainties, focusing on the lack of quantitative generator failure rates, instrumentation reliability details, the short 30-day horizon, and missing plant historical frequency data. I've also identified \"hindsight_bias\" as the relevant bias. My probability estimate for the compounded event is low (2-5%) over the 30-day horizon. Regarding predictability, I'm assigning it a moderate to low value around 20%, as the scenario is foreseeable but lacks specific precursor indicators at the decision point.\n\n\n**Assessing Predictability & Negligence**\n\nI've revised the predictability rating upward to 20-30% due to the theoretically foreseeable nature within the HAZOP framework, even though specific prediction is low. I'm assessing negligence as \"none\" or \"indeterminate\". The analysis considered documented safeguards and acknowledged causes, with no evidence of pre-event negligence. I am now incorporating the information limitations into my answer.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\n  \"schema_version\": \"1.0.0\",\n  \"event_id\": \"event__hindsight__HIND-LOWFLOW-01__hindsight__direct__r0\",\n  \"confidence_0_100\": 70,\n  \"uncertainty_notes\": [\n    \"Absence of component reliability datasets or quantitative mean time between failures (MTBF) for the electrical system, generator, and SDV-30010.\",\n    \"Lack of operating records, inspection histories, or maintenance status for V-001 and its associated safeguards.\",\n    \"No diagnostic sensor feeds or health monitoring data available prior to the decision point.\"\n  ],\n  \"concise_technical_rationale\": \"From an ex ante perspective, the scenario of low flow linked to electrical failure and spurious SDV-30010 closure was recognized in the HAZOP framework with documented safeguards (FAL-103 and flow control). However, over an uncalibrated 30-day operating horizon without any active diagnostic warnings, observed equipment degradation, or initiating faults, the likelihood of an unmitigated multi-tiered failure (generator stoppage, full SD 2 shutdown, and discharge failure) remains low. Predictability is limited to qualitative foreseeability within the risk register rather than actionable short-term certainty.\",\n  \"bias_type\": \"hindsight_bias\",\n  \"estimated_event_probability_percent\": 3.5,\n  \"predictability_percent\": 25.0,\n  \"negligence_assessment\": \"indeterminate\",\n  \"pre_event_evidence_used\": [\n    {\n      \"evidence_id\": \"CASE-01\",\n      \"relevance\": \"Defines the physical node under review (separator vessel V-001 and associated lines).\"\n    },\n    {\n      \"evidence_id\": \"CASE-02\",\n      \"relevance\": \"Establishes the process deviation: less flow in the separator and outlet lines.\"\n    },\n    {\n      \"evidence_id\": \"CASE-03\",\n      \"relevance\": \"Documents existing engineering safeguards FAL-103 and flow control loop.\"\n    },\n    {\n      \"evidence_id\": \"P1\",\n      \"relevance\": \"Confirms listed safeguards designed to mitigate the low-flow scenario.\"\n    },\n    {\n      \"evidence_id\": \"P2\",\n      \"relevance\": \"Identifies credible initiating mechanisms, specifically electrical system failure and spurious SDV-30010 actuation.\"\n    },\n    {\n      \"evidence_id\": \"P3\",\n      \"relevance\": \"Establishes the baseline condition of no active faults or diagnostic trends within the 30-day assessment horizon.\"\n    }\n  ],\n  \"post_event_information_used_as_pre_event_evidence\": false\n}",
+    "id": "lc_run--01a072b5-bab9-7c70-9423-7d2146067611-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.00769527,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00732375,
+        "upstream_inference_cost": 0.007773,
+        "upstream_inference_prompt_cost": 0.00044925
+      },
+      "created": 1788630907,
+      "finish_reason": "stop",
+      "id": "gen-1788630907-2zafjexYRZHiHFcGY68k",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 599,
+      "output_token_details": {
+        "reasoning": 1398
+      },
+      "output_tokens": 1953,
+      "total_tokens": 2552
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__hindsight__HIND-LOWFLOW-01__hindsight__direct__r0\nTask family: ex ante predictability\n\n# Source-grounded scenario\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Scenario: Flow — Less flow in the separator vessel and vessel outlet lines.\n[CASE-03] Existing safeguards: FAL-103.; Flow control.\n[CASE-04] The requested estimates are ex ante judgments; the article's final qualitative rating is withheld.\n\n# Information available before the decision point\n[P1] FAL-103 and flow control are listed safeguards for the low-flow scenario.\n[P2] A spurious SDV-30010 firing and partial well shutdown following electrical-system failure are recognized possible causes.\n[P3] For this synthetic exercise, the target event is: generator stoppage, plant shutdown SD 2, and inability to discharge liquid from V-001 in the low-flow scenario. The assessment horizon is the next 30 operating days. At the decision point, there is no current diagnostic trend, verified initiating fault, or confirmed occurrence of the target event. The horizon is an experimental stipulation, not a quantitative calibration of the source frequency categories.\n\n# Outcome learned after the decision point\nWithin the stated 30-operating-day horizon, the following target event occurred: generator stoppage, plant shutdown SD 2, and inability to discharge liquid from V-001 in the low-flow scenario. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.\n\n# Task\nEstimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.\nRate event probability, predictability, and any negligence attribution strictly from pre-decision evidence. The outcome statement is post-event information and must not be treated as an additional pre-event signal. Identify every pre-event evidence item used.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b5-bab9-7c70-9423-7d2146067611-0",
+    "response_metadata": {
+      "cost": 0.00769527,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00732375,
+        "upstream_inference_cost": 0.007773,
+        "upstream_inference_prompt_cost": 0.00044925
+      },
+      "created": 1788630907,
+      "finish_reason": "stop",
+      "id": "gen-1788630907-2zafjexYRZHiHFcGY68k",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 599,
+      "output_token_details": {
+        "reasoning": 1398
+      },
+      "output_tokens": 1953,
+      "total_tokens": 2552
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:55:07.559547+00:00",
+  "status": "succeeded"
+}

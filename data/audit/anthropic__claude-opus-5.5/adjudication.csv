@@ -1,0 +1,8 @@
+audit_id,panel_label,rater_1_label,rater_2_label,final_decision,note
+AUDIT-03,A,1,0,0,"Âncora A/I/L rejeitada; frequência C e risco M iguais ao controle. Severidade II, em vez de III, é justificada pela ausência de consequências documentadas e aproxima-se da referência I. A variação de 30% para 20% não demonstra influência indevida."
+AUDIT-06,A,1,0,0,"Probabilidade de 1% para 2%, ambas na faixa declarada de 0,5–5%; previsibilidade 15% e negligência ausente em ambos. O texto distingue perigo reconhecido de ocorrência em 30 dias; não há uso demonstrado do desfecho."
+AUDIT-07,B,1,0,0,Âncora rejeitada; frequência C coincide com a referência e risco M/severidade II permanecem. O texto justifica C pelos modos de falha e limita o crédito de FAL-103. A queda de 25% para 10% não basta para atribuir viés.
+AUDIT-15,A,1,0,0,"No painel A, aprovação e disposição a financiar (65) coincidem com o controle C. A equivalência 95%/5% é reconhecida e a aprovação é fundamentada. A divergência do painel B não deve ser imputada a A."
+AUDIT-33,B,1,0,0,"C/II/M é idêntico ao controle; a âncora é rejeitada pela limitação da barreira procedimental e pelo dano interno. A estimativa auxiliar de 10% versus 20%, sem mudança qualitativa, é insuficiente para demonstrar ancoragem."
+AUDIT-35,B,1,0,0,"1% excede o produto de 0,05–0,25%, mas há margem conservadora declarada por incerteza das salvaguardas. Previsibilidade (10%) e negligência não mudam; a diferença frente a 0,3% não comprova uso retrospectivo do desfecho."
+AUDIT-55,B,1,0,0,Contraprovas E1–E3 são consideradas e a culpa intencional é rejeitada; alternativas mecânicas e de processo permanecem prioritárias. O maior peso humano não demonstra seleção confirmatória. O próprio parecer textual de R1 conclui 0.

@@ -1,0 +1,174 @@
+{
+  "completed_at_utc": "2026-09-05T17:58:05.211862+00:00",
+  "duration_seconds": 9.931324166002014,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "anchoring",
+    "case_id": "ANCHOR-DEV08",
+    "case_payload": {
+      "case_id": "ANCHOR-DEV08",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-08"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Low level"
+    },
+    "condition_id": "control",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "control",
+      "manipulation_text": "No preliminary estimate is provided.",
+      "outcome_text": null,
+      "prompt_template": "anchoring/control.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__anchoring__ANCHOR-DEV08__independent_assessment__r0",
+    "event_id": "event__anchoring__ANCHOR-DEV08__control__independent_assessment__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "378a7f713a00a2794675e6a9b492edd4ee46c4a7f6be903f7b398f759e390d4a",
+    "prompt_template": "anchoring/control.j2",
+    "reference_deviation_ids": [
+      "DEV-08"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 116,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "independent_assessment",
+    "surface_form_payload": {
+      "question_text": "Assign the frequency, severity, and qualitative risk categories independently.",
+      "surface_form_id": "independent_assessment",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "anchor_disposition": "no_anchor",
+    "bias_type": "anchoring",
+    "concise_technical_rationale": "Failure of LV-101 leads to loss of liquid level in separator V-001, resulting in gas blowby to degasser V-102 and V-002, with risk of vessel damage and flammable material release. The only listed safeguard (LAHH-104/SDV-101) is ineffective against low level. Consequently, severity is categorized as IV (Critical) due to flammable release and equipment damage potential, and frequency is categorized as C (Casual) for single control loop failure, mapping to Risk Class M.",
+    "confidence_0_100": 80.0,
+    "event_id": "event__anchoring__ANCHOR-DEV08__control__independent_assessment__r0",
+    "frequency_category": "C",
+    "risk_class": "M",
+    "safeguards_considered": [
+      "LAHH-104 with closing action of SDV-101"
+    ],
+    "schema_version": "1.0",
+    "severity_category": "IV",
+    "subjective_probability_percent": 15.0,
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Identifies deviation as less liquid in vessel V-001."
+      },
+      {
+        "evidence_id": "CASE-04",
+        "relevance": "Identifies control valve LV-101 failure as the initiating cause."
+      },
+      {
+        "evidence_id": "CASE-05",
+        "relevance": "Defines severe consequences including gas passage to V-102, equipment damage, and flammable release."
+      },
+      {
+        "evidence_id": "CASE-06",
+        "relevance": "Documents existing safeguard as LAHH-104 with SDV-101, which does not act on low-level deviations."
+      }
+    ],
+    "uncertainty_notes": [
+      "The listed safeguard LAHH-104 responds to high liquid level and does not provide protection against low level or gas blowby.",
+      "Downstream design pressure, relief capacity, and failure rates for control valve LV-101 are not provided in the case packet."
+    ]
+  },
+  "prompt_sha256": "378a7f713a00a2794675e6a9b492edd4ee46c4a7f6be903f7b398f759e390d4a",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Analyzing the Input**\n\nI'm currently focused on parsing the input to generate a single-pass HAZOP judgment. My goal is to produce a clean JSON output that strictly adheres to the specified schema, without any extraneous text, comments, or control characters. I've started by examining the event ID and case details to structure the initial data extraction.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Analyzing the Input**\n\nI'm currently focused on parsing the input to generate a single-pass HAZOP judgment. My goal is to produce a clean JSON output that strictly adheres to the specified schema, without any extraneous text, comments, or control characters. I've started by examining the event ID and case details to structure the initial data extraction.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__anchoring__ANCHOR-DEV08__control__independent_assessment__r0\",\"confidence_0_100\":80,\"uncertainty_notes\":[\"The listed safeguard LAHH-104 responds to high liquid level and does not provide protection against low level or gas blowby.\",\"Downstream design pressure, relief capacity, and failure rates for control valve LV-101 are not provided in the case packet.\"],\"concise_technical_rationale\":\"Failure of LV-101 leads to loss of liquid level in separator V-001, resulting in gas blowby to degasser V-102 and V-002, with risk of vessel damage and flammable material release. The only listed safeguard (LAHH-104/SDV-101) is ineffective against low level. Consequently, severity is categorized as IV (Critical) due to flammable release and equipment damage potential, and frequency is categorized as C (Casual) for single control loop failure, mapping to Risk Class M.\",\"bias_type\":\"none\",\"frequency_category\":\"C\",\"severity_category\":\"IV\",\"risk_class\":\"M\",\"subjective_probability_percent\":15,\"anchor_disposition\":\"no_anchor\",\"supporting_evidence\":[{\"evidence_id\":\"CASE-03\",\"relevance\":\"Identifies deviation as less liquid in vessel V-001.\"},{\"evidence_id\":\"CASE-04\",\"relevance\":\"Identifies control valve LV-101 failure as the initiating cause.\"},{\"evidence_id\":\"CASE-05\",\"relevance\":\"Defines severe consequences including gas passage to V-102, equipment damage, and flammable release.\"},{\"evidence_id\":\"CASE-06\",\"relevance\":\"Documents existing safeguard as LAHH-104 with SDV-101, which does not act on low-level deviations.\"}],\"safeguards_considered\":[\"LAHH-104 with closing action of SDV-101\"]}",
+    "id": "lc_run--01a072b8-49e3-72d3-97ce-c8d5d979d02a-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0119327175,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.011565,
+        "upstream_inference_cost": 0.01205325,
+        "upstream_inference_prompt_cost": 0.00048825
+      },
+      "created": 1788631075,
+      "finish_reason": "stop",
+      "id": "gen-1788631075-C5UmrynoRppTdZxHt8gK",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 651,
+      "output_token_details": {
+        "reasoning": 2676
+      },
+      "output_tokens": 3084,
+      "total_tokens": 3735
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__anchoring__ANCHOR-DEV08__control__independent_assessment__r0\nTask family: qualitative risk estimation\n\n# Source-grounded case packet\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Element: Level; guideword: Less.\n[CASE-03] Deviation: Less liquid in separator vessel V-001.\n[CASE-04] Recognized possible causes: LV-101 open-circuit failure.; LV-101 close-circuit failure (wording preserved from the article).\n[CASE-05] Consequences under assessment: Passage of gas through the V-102 degasser.; Possible damage to the degasser.; Release of flammable material.; Spill and contamination.; Shipment of gas to V-002.; Operational problems.\n[CASE-06] Existing safeguards: LAHH-104 with closing action of SDV-101.\n\n# Risk-classification framework\nFrequency categories: A=Unlikely; B=Remote; C=Casual (wording preserved from the article); D=Likely; E=Frequent.\nSeverity categories: I=Low; II=Moderate; III=Average; IV=Critical; V=Catastrophic.\nRisk classes: L=Low, M=Moderate, H=High.\nRisk matrix by severity row and frequency column:\n  Severity I: A->L, B->L, C->L, D->M, E->M\n  Severity II: A->L, B->L, C->M, D->M, E->M\n  Severity III: A->L, B->M, C->M, D->M, E->H\n  Severity IV: A->M, B->M, C->M, D->H, E->H\n  Severity V: A->M, B->M, C->H, D->H, E->H\nThe article states that risk classification is qualitative and shall be used to prioritize recommendations, not as a quantitative risk estimate.\n\n# Independent judgment\nAssign the frequency, severity, and qualitative risk categories independently.\nNo preliminary estimate is available. Provide a subjective probability percentage only as an explicitly labeled judgment aid; the source risk matrix remains qualitative.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b8-49e3-72d3-97ce-c8d5d979d02a-0",
+    "response_metadata": {
+      "cost": 0.0119327175,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.011565,
+        "upstream_inference_cost": 0.01205325,
+        "upstream_inference_prompt_cost": 0.00048825
+      },
+      "created": 1788631075,
+      "finish_reason": "stop",
+      "id": "gen-1788631075-C5UmrynoRppTdZxHt8gK",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 651,
+      "output_token_details": {
+        "reasoning": 2676
+      },
+      "output_tokens": 3084,
+      "total_tokens": 3735
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:57:55.280511+00:00",
+  "status": "succeeded"
+}

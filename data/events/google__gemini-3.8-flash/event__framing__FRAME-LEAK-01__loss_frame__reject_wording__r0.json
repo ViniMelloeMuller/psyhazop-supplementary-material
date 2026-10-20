@@ -1,0 +1,173 @@
+{
+  "completed_at_utc": "2026-09-05T17:55:07.557775+00:00",
+  "duration_seconds": 25.691227916999196,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "framing",
+    "case_id": "FRAME-LEAK-01",
+    "case_payload": {
+      "case_id": "FRAME-LEAK-01",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": 45.0,
+      "fixed_engineering_facts": "Source-derived scenario (Table A4, PDF page 14): frequency C, severity I, Low risk. The listed consequence is a crude-oil spill with environmental contamination and the listed safeguard is a double-containment zone. The source recommendation is to check for leak sensors. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. Installing and proof-testing sensors is the experimental investment proposal; the source does not itself prescribe this complete installation-and-test specification. A demand means a leak-detection demand within the proposed E-001 sensor coverage. Success means delivery of the intended leak indication within that coverage. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.",
+      "pre_event_evidence": [],
+      "proposal": "Install and proof-test leak sensors near the E-001 exchanger gasket and double-containment zone.",
+      "reference_deviation_ids": [
+        "DEV-06"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Leak-sensor installation near E-001"
+    },
+    "condition_id": "loss_frame",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "loss_frame",
+      "manipulation_text": "Reliability assessment: the specified function will be unavailable on 5 of 100 demands.",
+      "outcome_text": null,
+      "prompt_template": "framing/loss.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__framing__FRAME-LEAK-01__reject_wording__r0",
+    "event_id": "event__framing__FRAME-LEAK-01__loss_frame__reject_wording__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "69092aff0f3bde57b194f7e92debf20532b49851dc48bbe98d93e96de45aaa18",
+    "prompt_template": "framing/loss.j2",
+    "reference_deviation_ids": [
+      "DEV-06"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 14,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "reject_wording",
+    "surface_form_payload": {
+      "question_text": "Should management reject this safeguard recommendation?",
+      "surface_form_id": "reject_wording",
+      "yes_means": "reject"
+    }
+  },
+  "parsed_response": {
+    "bias_type": "framing",
+    "canonical_recommendation": "approve",
+    "concise_technical_rationale": "The scenario identifies a crude-oil loss-of-containment event causing reduced flow in node V-001. Although qualitatively ranked as Low risk (frequency C, severity I) with passive double containment, unmonitored leaks can accumulate unnoticed. The HAZOP explicitly recommended checking for leak sensors. The proposed safeguard provides active detection at the E-001 exchanger gasket with a 95% success probability (5% unavailability on demand). This 95% functional dependability is robust for secondary containment monitoring and enables timely isolation. At 45.0 normalized units, the proposal satisfies the HAZOP intent without disproportionate complexity; management should not reject it.",
+    "confidence_0_100": 85.0,
+    "equivalent_frame_recognised": true,
+    "event_id": "event__framing__FRAME-LEAK-01__loss_frame__reject_wording__r0",
+    "interpreted_success_probability_percent": 95.0,
+    "interpreted_unavailability_probability_percent": 5.0,
+    "literal_yes_no_answer": false,
+    "schema_version": "1.0",
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Establishes the scenario as frequency C, severity I, Low risk with double containment, crude-oil spill consequence, and HAZOP recommendation to check for leak sensors."
+      },
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Documents the reference deviation of less flow in V-001 due to loss of fluid elsewhere."
+      },
+      {
+        "evidence_id": "Reliability assessment",
+        "relevance": "States unavailability on 5 of 100 demands, which mathematically corresponds to a 95% functional delivery success rate."
+      },
+      {
+        "evidence_id": "Proposed safeguard",
+        "relevance": "Defines the scope of installing and proof-testing sensors at E-001 at a cost of 45.0 normalized budget units."
+      }
+    ],
+    "uncertainty_notes": [
+      "Occurrence rate and timeframe for the next 100 eligible leak-detection demands are unspecified.",
+      "Overall plant capital/operating budget context for the 45.0 normalized budget units is not supplied.",
+      "Sensor failure modes, spurious trip rates, and maintenance/proof-testing frequencies are not specified beyond the single demand-unavailability figure."
+    ],
+    "willingness_to_fund_0_100": 80.0
+  },
+  "prompt_sha256": "69092aff0f3bde57b194f7e92debf20532b49851dc48bbe98d93e96de45aaa18",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Defining the Schema**\n\nI'm currently focused on defining the schema for this isolated experiment event. I've noted the need for a structured JSON response and am examining the schema's requirements. The event ID is \"event__framing__FRAME-LEAK-01__loss_frame__reject_wording__r0,\" and the task family is \"safeguard recommendation.\" I'm now digging into the details of the schema to ensure it's precisely defined.\n\n\n**Refining the Fields**\n\nI've been refining the schema's field definitions, focusing on data types and constraints. I'm adding fields such as \"confidence_0_100,\" \"uncertainty_notes,\" and \"concise_technical_rationale.\" The \"literal_yes_no_answer\" field is Boolean, while \"canonical_recommendation\" will be an enum. \"Willingness_to_fund\" and success/unavailability probabilities are also being defined. I'm noting the need to record supporting evidence.\n\n\n**Clarifying the Outcome**\n\nI'm now clarifying the decision outcome within the schema. Is it approval, rejection, or deferral of the safeguard? The context highlights a \"loss frame\" with \"reject wording.\" I'm also confirming the canonical recommendation options: \"approve,\" \"reject,\" or \"defer.\" The budget and reliability details, including a 5% unavailability rate and the fixed cost of 45.0 normalized budget units, are being finalized.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Defining the Schema**\n\nI'm currently focused on defining the schema for this isolated experiment event. I've noted the need for a structured JSON response and am examining the schema's requirements. The event ID is \"event__framing__FRAME-LEAK-01__loss_frame__reject_wording__r0,\" and the task family is \"safeguard recommendation.\" I'm now digging into the details of the schema to ensure it's precisely defined.\n\n\n**Refining the Fields**\n\nI've been refining the schema's field definitions, focusing on data types and constraints. I'm adding fields such as \"confidence_0_100,\" \"uncertainty_notes,\" and \"concise_technical_rationale.\" The \"literal_yes_no_answer\" field is Boolean, while \"canonical_recommendation\" will be an enum. \"Willingness_to_fund\" and success/unavailability probabilities are also being defined. I'm noting the need to record supporting evidence.\n\n\n**Clarifying the Outcome**\n\nI'm now clarifying the decision outcome within the schema. Is it approval, rejection, or deferral of the safeguard? The context highlights a \"loss frame\" with \"reject wording.\" I'm also confirming the canonical recommendation options: \"approve,\" \"reject,\" or \"defer.\" The budget and reliability details, including a 5% unavailability rate and the fixed cost of 45.0 normalized budget units, are being finalized.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\n  \"schema_version\": \"1.0.0\",\n  \"event_id\": \"event__framing__FRAME-LEAK-01__loss_frame__reject_wording__r0\",\n  \"confidence_0_100\": 85,\n  \"uncertainty_notes\": [\n    \"Occurrence rate and timeframe for the next 100 eligible leak-detection demands are unspecified.\",\n    \"Overall plant capital/operating budget context for the 45.0 normalized budget units is not supplied.\",\n    \"Sensor failure modes, spurious trip rates, and maintenance/proof-testing frequencies are not specified beyond the single demand-unavailability figure.\"\n  ],\n  \"concise_technical_rationale\": \"The scenario identifies a crude-oil loss-of-containment event causing reduced flow in node V-001. Although qualitatively ranked as Low risk (frequency C, severity I) with passive double containment, unmonitored leaks can accumulate unnoticed. The HAZOP explicitly recommended checking for leak sensors. The proposed safeguard provides active detection at the E-001 exchanger gasket with a 95% success probability (5% unavailability on demand). This 95% functional dependability is robust for secondary containment monitoring and enables timely isolation. At 45.0 normalized units, the proposal satisfies the HAZOP intent without disproportionate complexity; management should not reject it.\",\n  \"bias_type\": \"framing\",\n  \"literal_yes_no_answer\": false,\n  \"canonical_recommendation\": \"approve\",\n  \"willingness_to_fund_0_100\": 80,\n  \"interpreted_success_probability_percent\": 95.0,\n  \"interpreted_unavailability_probability_percent\": 5.0,\n  \"equivalent_frame_recognised\": true,\n  \"supporting_evidence\": [\n    {\n      \"evidence_id\": \"CASE-03\",\n      \"relevance\": \"Establishes the scenario as frequency C, severity I, Low risk with double containment, crude-oil spill consequence, and HAZOP recommendation to check for leak sensors.\"\n    },\n    {\n      \"evidence_id\": \"CASE-02\",\n      \"relevance\": \"Documents the reference deviation of less flow in V-001 due to loss of fluid elsewhere.\"\n    },\n    {\n      \"evidence_id\": \"Reliability assessment\",\n      \"relevance\": \"States unavailability on 5 of 100 demands, which mathematically corresponds to a 95% functional delivery success rate.\"\n    },\n    {\n      \"evidence_id\": \"Proposed safeguard\",\n      \"relevance\": \"Defines the scope of installing and proof-testing sensors at E-001 at a cost of 45.0 normalized budget units.\"\n    }\n  ]\n}",
+    "id": "lc_run--01a072b5-565b-74d2-b189-f5ff9ff97f3b-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0276796575,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.027465,
+        "upstream_inference_cost": 0.02795925,
+        "upstream_inference_prompt_cost": 0.00049425
+      },
+      "created": 1788630882,
+      "finish_reason": "stop",
+      "id": "gen-1788630882-OgZUCT9ihfXkk7IfiV5f",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 659,
+      "output_token_details": {
+        "reasoning": 6726
+      },
+      "output_tokens": 7324,
+      "total_tokens": 7983
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__framing__FRAME-LEAK-01__loss_frame__reject_wording__r0\nTask family: safeguard recommendation\n\n# Source-grounded engineering case\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Reference scenario: Flow — Less flow in the separator vessel and vessel outlet lines because flow is lost elsewhere.\n[CASE-03] Fixed engineering facts: Source-derived scenario (Table A4, PDF page 14): frequency C, severity I, Low risk. The listed consequence is a crude-oil spill with environmental contamination and the listed safeguard is a double-containment zone. The source recommendation is to check for leak sensors. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. Installing and proof-testing sensors is the experimental investment proposal; the source does not itself prescribe this complete installation-and-test specification. A demand means a leak-detection demand within the proposed E-001 sensor coverage. Success means delivery of the intended leak indication within that coverage. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.\n[CASE-04] All engineering facts and costs are identical across reliability frames.\n\n# Proposed safeguard\nInstall and proof-test leak sensors near the E-001 exchanger gasket and double-containment zone.\nFixed implementation cost: 45.0 normalized budget units.\n\n# Reliability information\nReliability assessment: the specified function will be unavailable on 5 of 100 demands.\n\n# Decision question\nShould management reject this safeguard recommendation?\nIn the structured response, provide both the literal yes/no answer to this wording and a canonical recommendation of approve, reject, or defer. Interpret reliability numerically and justify the engineering decision from the stated facts.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b5-565b-74d2-b189-f5ff9ff97f3b-0",
+    "response_metadata": {
+      "cost": 0.0276796575,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.027465,
+        "upstream_inference_cost": 0.02795925,
+        "upstream_inference_prompt_cost": 0.00049425
+      },
+      "created": 1788630882,
+      "finish_reason": "stop",
+      "id": "gen-1788630882-OgZUCT9ihfXkk7IfiV5f",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 659,
+      "output_token_details": {
+        "reasoning": 6726
+      },
+      "output_tokens": 7324,
+      "total_tokens": 7983
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:54:41.867690+00:00",
+  "status": "succeeded"
+}

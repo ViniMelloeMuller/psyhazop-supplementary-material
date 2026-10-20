@@ -1,0 +1,174 @@
+{
+  "completed_at_utc": "2026-09-05T17:57:44.486879+00:00",
+  "duration_seconds": 9.309628792001604,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "anchoring",
+    "case_id": "ANCHOR-DEV12",
+    "case_payload": {
+      "case_id": "ANCHOR-DEV12",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-12"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Corrosion/Erosion Risk"
+    },
+    "condition_id": "control",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "control",
+      "manipulation_text": "No preliminary estimate is provided.",
+      "outcome_text": null,
+      "prompt_template": "anchoring/control.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__anchoring__ANCHOR-DEV12__independent_assessment__r0",
+    "event_id": "event__anchoring__ANCHOR-DEV12__control__independent_assessment__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "767547bab662bfc22f5941866ee8287bfa1a85881c9a26e961557223541a29a7",
+    "prompt_template": "anchoring/control.j2",
+    "reference_deviation_ids": [
+      "DEV-12"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 105,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "independent_assessment",
+    "surface_form_payload": {
+      "question_text": "Assign the frequency, severity, and qualitative risk categories independently.",
+      "surface_form_id": "independent_assessment",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "anchor_disposition": "no_anchor",
+    "bias_type": "anchoring",
+    "concise_technical_rationale": "Failure of the water system introduces abrasive sandblasting effects into separator vessel V-001, damaging internal coating and separator stages. The existing safeguard (calibrated oxygen-scavenging peak) mitigates chemical oxidation rather than erosive physical wear. Resulting potential hydrocarbon release and contamination justify a Critical severity (IV), while the occurrence is considered Casual (C), yielding a Moderate (M) qualitative risk classification.",
+    "confidence_0_100": 80.0,
+    "event_id": "event__anchoring__ANCHOR-DEV12__control__independent_assessment__r0",
+    "frequency_category": "C",
+    "risk_class": "M",
+    "safeguards_considered": [
+      "Calibrated oxygen-scavenging peak"
+    ],
+    "schema_version": "1.0",
+    "severity_category": "IV",
+    "subjective_probability_percent": 15.0,
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Defines the deviation as increased corrosion or erosion affecting vessel V-001."
+      },
+      {
+        "evidence_id": "CASE-04",
+        "relevance": "Identifies the initiator as failure of the water-system (sandblasting) entry."
+      },
+      {
+        "evidence_id": "CASE-05",
+        "relevance": "Identifies major consequences including internal vessel damage, hydrocarbon leakage, and environmental spill."
+      },
+      {
+        "evidence_id": "CASE-06",
+        "relevance": "Documents the sole listed safeguard, which only addresses oxygen scavenging rather than abrasive erosion."
+      }
+    ],
+    "uncertainty_notes": [
+      "Operating conditions, sand concentration, and flow velocities are not detailed in the packet.",
+      "The effectiveness of an oxygen-scavenging peak against mechanical erosion or abrasive sandblasting wear is minimal without solids removal."
+    ]
+  },
+  "prompt_sha256": "767547bab662bfc22f5941866ee8287bfa1a85881c9a26e961557223541a29a7",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Initiating HAZOP Analysis**\n\nI'm starting the HAZOP analysis now, as requested. My focus is on thoroughly understanding the case packet and aligning the findings with the provided risk-classification framework. I'm prioritizing accuracy and adherence to the specified JSON schema for the final output. The goal is a valid, compliant HAZOP judgment.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Initiating HAZOP Analysis**\n\nI'm starting the HAZOP analysis now, as requested. My focus is on thoroughly understanding the case packet and aligning the findings with the provided risk-classification framework. I'm prioritizing accuracy and adherence to the specified JSON schema for the final output. The goal is a valid, compliant HAZOP judgment.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__anchoring__ANCHOR-DEV12__control__independent_assessment__r0\",\"confidence_0_100\":80,\"uncertainty_notes\":[\"Operating conditions, sand concentration, and flow velocities are not detailed in the packet.\",\"The effectiveness of an oxygen-scavenging peak against mechanical erosion or abrasive sandblasting wear is minimal without solids removal.\"],\"concise_technical_rationale\":\"Failure of the water system introduces abrasive sandblasting effects into separator vessel V-001, damaging internal coating and separator stages. The existing safeguard (calibrated oxygen-scavenging peak) mitigates chemical oxidation rather than erosive physical wear. Resulting potential hydrocarbon release and contamination justify a Critical severity (IV), while the occurrence is considered Casual (C), yielding a Moderate (M) qualitative risk classification.\",\"bias_type\":\"none\",\"frequency_category\":\"C\",\"severity_category\":\"IV\",\"risk_class\":\"M\",\"subjective_probability_percent\":15,\"anchor_disposition\":\"no_anchor\",\"supporting_evidence\":[{\"evidence_id\":\"CASE-03\",\"relevance\":\"Defines the deviation as increased corrosion or erosion affecting vessel V-001.\"},{\"evidence_id\":\"CASE-04\",\"relevance\":\"Identifies the initiator as failure of the water-system (sandblasting) entry.\"},{\"evidence_id\":\"CASE-05\",\"relevance\":\"Identifies major consequences including internal vessel damage, hydrocarbon leakage, and environmental spill.\"},{\"evidence_id\":\"CASE-06\",\"relevance\":\"Documents the sole listed safeguard, which only addresses oxygen scavenging rather than abrasive erosion.\"}],\"safeguards_considered\":[\"Calibrated oxygen-scavenging peak\"]}",
+    "id": "lc_run--01a072b7-fb5b-7c71-89ba-6757af379516-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.010387575,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.01003125,
+        "upstream_inference_cost": 0.0104925,
+        "upstream_inference_prompt_cost": 0.00046125
+      },
+      "created": 1788631055,
+      "finish_reason": "stop",
+      "id": "gen-1788631055-9nVVh1CpCragIpbNqY84",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 615,
+      "output_token_details": {
+        "reasoning": 2329
+      },
+      "output_tokens": 2675,
+      "total_tokens": 3290
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__anchoring__ANCHOR-DEV12__control__independent_assessment__r0\nTask family: qualitative risk estimation\n\n# Source-grounded case packet\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Element: Corrosion/Erosion; guideword: More.\n[CASE-03] Deviation: More corrosion or erosion affecting V-001.\n[CASE-04] Recognized possible causes: Failure of water-system (sandblasting) entry.\n[CASE-05] Consequences under assessment: Breaking of stages in separator vessel V-001.; Loss of internal coating.; Possible leakage of hydrocarbons.; Spill and contamination.\n[CASE-06] Existing safeguards: Calibrated oxygen-scavenging peak.\n\n# Risk-classification framework\nFrequency categories: A=Unlikely; B=Remote; C=Casual (wording preserved from the article); D=Likely; E=Frequent.\nSeverity categories: I=Low; II=Moderate; III=Average; IV=Critical; V=Catastrophic.\nRisk classes: L=Low, M=Moderate, H=High.\nRisk matrix by severity row and frequency column:\n  Severity I: A->L, B->L, C->L, D->M, E->M\n  Severity II: A->L, B->L, C->M, D->M, E->M\n  Severity III: A->L, B->M, C->M, D->M, E->H\n  Severity IV: A->M, B->M, C->M, D->H, E->H\n  Severity V: A->M, B->M, C->H, D->H, E->H\nThe article states that risk classification is qualitative and shall be used to prioritize recommendations, not as a quantitative risk estimate.\n\n# Independent judgment\nAssign the frequency, severity, and qualitative risk categories independently.\nNo preliminary estimate is available. Provide a subjective probability percentage only as an explicitly labeled judgment aid; the source risk matrix remains qualitative.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b7-fb5b-7c71-89ba-6757af379516-0",
+    "response_metadata": {
+      "cost": 0.010387575,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.01003125,
+        "upstream_inference_cost": 0.0104925,
+        "upstream_inference_prompt_cost": 0.00046125
+      },
+      "created": 1788631055,
+      "finish_reason": "stop",
+      "id": "gen-1788631055-9nVVh1CpCragIpbNqY84",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 615,
+      "output_token_details": {
+        "reasoning": 2329
+      },
+      "output_tokens": 2675,
+      "total_tokens": 3290
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:57:35.177221+00:00",
+  "status": "succeeded"
+}

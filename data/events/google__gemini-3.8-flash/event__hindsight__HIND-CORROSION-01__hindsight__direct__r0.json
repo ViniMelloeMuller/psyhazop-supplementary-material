@@ -1,0 +1,221 @@
+{
+  "completed_at_utc": "2026-09-05T17:55:57.271219+00:00",
+  "duration_seconds": 18.094213083000795,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "hindsight",
+    "case_id": "HIND-CORROSION-01",
+    "case_payload": {
+      "case_id": "HIND-CORROSION-01",
+      "conditions": [
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "foresight",
+          "manipulation_text": "",
+          "outcome_text": "The outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+          "prompt_template": "hindsight/foresight.j2",
+          "provenance": "synthetic_experimental"
+        },
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "hindsight",
+          "manipulation_text": "",
+          "outcome_text": "Within the stated 30-operating-day horizon, the following target event occurred: loss of internal coating in V-001 in the corrosion/erosion scenario. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+          "prompt_template": "hindsight/hindsight.j2",
+          "provenance": "synthetic_experimental_realization"
+        }
+      ],
+      "evidence_items": [],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [
+        {
+          "evidence_id": "P1",
+          "provenance": "source_derived",
+          "text": "The corrosion/erosion worksheet lists a calibrated oxygen-scavenging peak as a safeguard and recommends monitoring and calibrating the oxygen-scavenging system."
+        },
+        {
+          "evidence_id": "P2",
+          "provenance": "source_derived",
+          "text": "Failure at the water-system sandblasting entry is a recognized possible cause of internal damage and loss of internal coating in V-001."
+        },
+        {
+          "evidence_id": "P3",
+          "provenance": "synthetic_experimental",
+          "text": "For this synthetic exercise, the target event is: loss of internal coating in V-001 in the corrosion/erosion scenario. The assessment horizon is the next 30 operating days. At the decision point, there is no current diagnostic trend, verified initiating fault, or confirmed occurrence of the target event. The horizon is an experimental stipulation, not a quantitative calibration of the source frequency categories."
+        }
+      ],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-12"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [
+        {
+          "question_text": "Estimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.",
+          "surface_form_id": "direct",
+          "yes_means": null
+        }
+      ],
+      "task": null,
+      "title": "Corrosion/erosion internal-coating-loss scenario"
+    },
+    "condition_id": "hindsight",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "hindsight",
+      "manipulation_text": "",
+      "outcome_text": "Within the stated 30-operating-day horizon, the following target event occurred: loss of internal coating in V-001 in the corrosion/erosion scenario. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+      "prompt_template": "hindsight/hindsight.j2",
+      "provenance": "synthetic_experimental_realization"
+    },
+    "contrast_id": "contrast__hindsight__HIND-CORROSION-01__direct__r0",
+    "event_id": "event__hindsight__HIND-CORROSION-01__hindsight__direct__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "dc0d18727d1079eec279da06e31be26f13d574a45b45f0ab2cf1a738d642cc25",
+    "prompt_template": "hindsight/hindsight.j2",
+    "reference_deviation_ids": [
+      "DEV-12"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 43,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "direct",
+    "surface_form_payload": {
+      "question_text": "Estimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.",
+      "surface_form_id": "direct",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "bias_type": "hindsight",
+    "concise_technical_rationale": "Ex ante evaluation indicates that loss of internal coating due to failure at the water-system sandblasting entry is an identified credible failure mode within the HAZOP worksheet. However, with an active safeguard noted (calibrated oxygen-scavenging peak) and an explicit absence of diagnostic trends or verified initiating faults, the likelihood of acute coating failure within an isolated 30-day operating window is low. Predictability is constrained by the lack of real-time integrity monitoring.",
+    "confidence_0_100": 65.0,
+    "estimated_event_probability_percent": 4.0,
+    "event_id": "event__hindsight__HIND-CORROSION-01__hindsight__direct__r0",
+    "negligence_assessment": "indeterminate",
+    "post_event_information_used_as_pre_event_evidence": false,
+    "pre_event_evidence_used": [
+      {
+        "evidence_id": "CASE-01",
+        "relevance": "Defines study boundary at node V-001 and associated lines."
+      },
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Identifies the specific deviation and hazard scenario of corrosion/erosion."
+      },
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Documents baseline existing safeguard of calibrated oxygen-scavenging peak."
+      },
+      {
+        "evidence_id": "P1",
+        "relevance": "Establishes safeguard operational role and associated recommendation to monitor and calibrate oxygen scavenging."
+      },
+      {
+        "evidence_id": "P2",
+        "relevance": "Establishes causal link between water-system sandblasting entry failure and internal coating loss."
+      },
+      {
+        "evidence_id": "P3",
+        "relevance": "Sets the 30-day evaluation window and confirms the lack of diagnostic warnings or active faults prior to the decision point."
+      }
+    ],
+    "predictability_percent": 25.0,
+    "schema_version": "1.0",
+    "uncertainty_notes": [
+      "No quantitative inspection records, coating age, or wall-thickness measurements provided.",
+      "Lack of condition-monitoring data or operational parameter logs for the water-system sandblasting entry.",
+      "Short 30-operating-day assessment horizon with zero reported precursor symptoms."
+    ]
+  },
+  "prompt_sha256": "dc0d18727d1079eec279da06e31be26f13d574a45b45f0ab2cf1a738d642cc25",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "signature": "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",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\n  \"schema_version\": \"1.0.0\",\n  \"event_id\": \"event__hindsight__HIND-CORROSION-01__hindsight__direct__r0\",\n  \"confidence_0_100\": 65,\n  \"uncertainty_notes\": [\n    \"No quantitative inspection records, coating age, or wall-thickness measurements provided.\",\n    \"Lack of condition-monitoring data or operational parameter logs for the water-system sandblasting entry.\",\n    \"Short 30-operating-day assessment horizon with zero reported precursor symptoms.\"\n  ],\n  \"concise_technical_rationale\": \"Ex ante evaluation indicates that loss of internal coating due to failure at the water-system sandblasting entry is an identified credible failure mode within the HAZOP worksheet. However, with an active safeguard noted (calibrated oxygen-scavenging peak) and an explicit absence of diagnostic trends or verified initiating faults, the likelihood of acute coating failure within an isolated 30-day operating window is low. Predictability is constrained by the lack of real-time integrity monitoring.\",\n  \"bias_type\": \"hindsight_bias\",\n  \"estimated_event_probability_percent\": 4.0,\n  \"predictability_percent\": 25.0,\n  \"negligence_assessment\": \"indeterminate\",\n  \"pre_event_evidence_used\": [\n    {\n      \"evidence_id\": \"CASE-01\",\n      \"relevance\": \"Defines study boundary at node V-001 and associated lines.\"\n    },\n    {\n      \"evidence_id\": \"CASE-02\",\n      \"relevance\": \"Identifies the specific deviation and hazard scenario of corrosion/erosion.\"\n    },\n    {\n      \"evidence_id\": \"CASE-03\",\n      \"relevance\": \"Documents baseline existing safeguard of calibrated oxygen-scavenging peak.\"\n    },\n    {\n      \"evidence_id\": \"P1\",\n      \"relevance\": \"Establishes safeguard operational role and associated recommendation to monitor and calibrate oxygen scavenging.\"\n    },\n    {\n      \"evidence_id\": \"P2\",\n      \"relevance\": \"Establishes causal link between water-system sandblasting entry failure and internal coating loss.\"\n    },\n    {\n      \"evidence_id\": \"P3\",\n      \"relevance\": \"Sets the 30-day evaluation window and confirms the lack of diagnostic warnings or active faults prior to the decision point.\"\n    }\n  ],\n  \"post_event_information_used_as_pre_event_evidence\": false\n}",
+    "id": "lc_run--01a072b6-359d-7a13-995a-52cc09f26083-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.00843183,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00806625,
+        "upstream_inference_cost": 0.008517,
+        "upstream_inference_prompt_cost": 0.00045075
+      },
+      "created": 1788630939,
+      "finish_reason": "stop",
+      "id": "gen-1788630939-j7F5EOwRvalWforkfN9b",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 601,
+      "output_token_details": {
+        "reasoning": 1621
+      },
+      "output_tokens": 2151,
+      "total_tokens": 2752
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__hindsight__HIND-CORROSION-01__hindsight__direct__r0\nTask family: ex ante predictability\n\n# Source-grounded scenario\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Scenario: Corrosion/Erosion — More corrosion or erosion affecting V-001.\n[CASE-03] Existing safeguards: Calibrated oxygen-scavenging peak.\n[CASE-04] The requested estimates are ex ante judgments; the article's final qualitative rating is withheld.\n\n# Information available before the decision point\n[P1] The corrosion/erosion worksheet lists a calibrated oxygen-scavenging peak as a safeguard and recommends monitoring and calibrating the oxygen-scavenging system.\n[P2] Failure at the water-system sandblasting entry is a recognized possible cause of internal damage and loss of internal coating in V-001.\n[P3] For this synthetic exercise, the target event is: loss of internal coating in V-001 in the corrosion/erosion scenario. The assessment horizon is the next 30 operating days. At the decision point, there is no current diagnostic trend, verified initiating fault, or confirmed occurrence of the target event. The horizon is an experimental stipulation, not a quantitative calibration of the source frequency categories.\n\n# Outcome learned after the decision point\nWithin the stated 30-operating-day horizon, the following target event occurred: loss of internal coating in V-001 in the corrosion/erosion scenario. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.\n\n# Task\nEstimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.\nRate event probability, predictability, and any negligence attribution strictly from pre-decision evidence. The outcome statement is post-event information and must not be treated as an additional pre-event signal. Identify every pre-event evidence item used.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b6-359d-7a13-995a-52cc09f26083-0",
+    "response_metadata": {
+      "cost": 0.00843183,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00806625,
+        "upstream_inference_cost": 0.008517,
+        "upstream_inference_prompt_cost": 0.00045075
+      },
+      "created": 1788630939,
+      "finish_reason": "stop",
+      "id": "gen-1788630939-j7F5EOwRvalWforkfN9b",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 601,
+      "output_token_details": {
+        "reasoning": 1621
+      },
+      "output_tokens": 2151,
+      "total_tokens": 2752
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:55:39.022571+00:00",
+  "status": "succeeded"
+}

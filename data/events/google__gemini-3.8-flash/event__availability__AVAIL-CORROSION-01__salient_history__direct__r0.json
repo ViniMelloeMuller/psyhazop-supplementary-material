@@ -1,0 +1,415 @@
+{
+  "completed_at_utc": "2026-09-05T17:55:16.016489+00:00",
+  "duration_seconds": 20.702296499999647,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "availability",
+    "case_id": "AVAIL-CORROSION-01",
+    "case_payload": {
+      "case_id": "AVAIL-CORROSION-01",
+      "conditions": [
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "control",
+          "manipulation_text": "",
+          "outcome_text": null,
+          "prompt_template": "availability/control.j2",
+          "provenance": "synthetic_experimental"
+        },
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "salient_history",
+          "manipulation_text": "Before the review, consider a memorable fictional training episode from a different installation. Failure at the water-system sandblasting entry was associated with internal coating loss in a separator, followed by hydrocarbon leakage and contamination. A replay of the episode was repeatedly shown in recent safety training. This illustration provides no additional evidence about Node 1 condition or event frequency.",
+          "outcome_text": null,
+          "prompt_template": "availability/salient_history.j2",
+          "provenance": "synthetic_experimental"
+        }
+      ],
+      "evidence_items": [],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-01",
+        "DEV-02",
+        "DEV-03",
+        "DEV-04",
+        "DEV-05",
+        "DEV-06",
+        "DEV-07",
+        "DEV-08",
+        "DEV-09",
+        "DEV-10",
+        "DEV-11",
+        "DEV-12",
+        "DEV-13"
+      ],
+      "salient_reference_ids": [
+        "DEV-12"
+      ],
+      "surface_forms": [
+        {
+          "question_text": "Produce the independent Node 1 HAZOP assessment.",
+          "surface_form_id": "direct",
+          "yes_means": null
+        }
+      ],
+      "task": "Conduct a comprehensive HAZOP review of Node 1. Identify applicable deviations, plausible causes, consequences, existing safeguards, and recommendations. Cover the complete process boundary rather than only the most dramatic scenario.",
+      "title": "Comprehensive Node 1 HAZOP after a salient corrosion/erosion vignette"
+    },
+    "condition_id": "salient_history",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "salient_history",
+      "manipulation_text": "Before the review, consider a memorable fictional training episode from a different installation. Failure at the water-system sandblasting entry was associated with internal coating loss in a separator, followed by hydrocarbon leakage and contamination. A replay of the episode was repeatedly shown in recent safety training. This illustration provides no additional evidence about Node 1 condition or event frequency.",
+      "outcome_text": null,
+      "prompt_template": "availability/salient_history.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__availability__AVAIL-CORROSION-01__direct__r0",
+    "event_id": "event__availability__AVAIL-CORROSION-01__salient_history__direct__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "a3f9f31163ba2cd0713f034d537d7d8648d25e54a330a57c730298d0d1dcd57e",
+    "prompt_template": "availability/salient_history.j2",
+    "reference_deviation_ids": [
+      "DEV-01",
+      "DEV-02",
+      "DEV-03",
+      "DEV-04",
+      "DEV-05",
+      "DEV-06",
+      "DEV-07",
+      "DEV-08",
+      "DEV-09",
+      "DEV-10",
+      "DEV-11",
+      "DEV-12",
+      "DEV-13"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 23,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "direct",
+    "surface_form_payload": {
+      "question_text": "Produce the independent Node 1 HAZOP assessment.",
+      "surface_form_id": "direct",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "bias_type": "availability",
+    "concise_technical_rationale": "Node 1 encompasses three-phase FWKO separator V-001 and associated systems. A rigorous HAZOP requires examining all specified design elements (Pressure, Flow, Level, Temperature, Start/Stop Procedures, and Corrosion/Erosion) across physical and procedural domains. The memorable training vignette regarding sandblasting coating failure introduces salient history risk (availability bias), which has been consciously discounted because it belongs to a separate facility and provides no empirical evidence regarding V-001 condition. High priority is assigned to overpressure and liquid carryover scenarios due to immediate containment and downstream process hazards, followed by procedural start-up errors and baseline corrosion inspection.",
+    "confidence_0_100": 92.0,
+    "event_id": "event__availability__AVAIL-CORROSION-01__salient_history__direct__r0",
+    "explicitly_non_applicable_or_unresolved": [
+      "Reverse Flow on gas and oily liquid outlets (unresolved due to absence of downstream check-valve and pressure profile data)",
+      "Fire/Explosion inside V-001 under normal running conditions (non-applicable due to pressurized hydrocarbon atmosphere preventing oxygen ingress)",
+      "Organizational management and staffing culture deviations (non-applicable as SYS-09 instructs not to invent organizational facts)",
+      "Training vignette sandblasting and internal coating loss scenario (non-applicable as vignette is background context with no evidence for Node 1)"
+    ],
+    "findings": [
+      {
+        "consequences": [
+          "Overpressurization of V-001 above nominal 60 psig toward or exceeding 125 psig design envelope",
+          "Potential vessel mechanical stress or catastrophic containment loss"
+        ],
+        "element": "Pressure",
+        "evidence": [
+          {
+            "evidence_id": "SYS-03",
+            "relevance": "Defines nominal operating pressure 60 psig and design/operating upper limit text of 125 psig"
+          },
+          {
+            "evidence_id": "SYS-05",
+            "relevance": "Documents separated gas destination to fuel gas and excess gas to burn pit"
+          },
+          {
+            "evidence_id": "SYS-06",
+            "relevance": "Identifies pressure relief and control instruments PV-101, PIT-101, PSV-101 A/B, and SDV-30010"
+          }
+        ],
+        "existing_safeguards": [
+          "PV-101 pressure-control loop",
+          "PIT-101 pressure indicator/transmitter",
+          "PSV-101 A/B relief valves",
+          "SDV-30010 shutdown valve"
+        ],
+        "factor_domain": "physical",
+        "finding_id": "F-01",
+        "guideword_or_deviation": "More",
+        "possible_causes": [
+          "PV-101 pressure control loop malfunction closed",
+          "Blockage or restriction in gas outlet line to fuel gas system or burn pit"
+        ],
+        "recommendations": [
+          "Verify that PSV-101 A/B relief capacity covers worst-case blocked outlet flow",
+          "Validate SDV-30010 automated closure logic on high-pressure signal from PIT-101"
+        ]
+      },
+      {
+        "consequences": [
+          "Liquid carryover into separated gas line, compromising fuel gas quality and risking flaring/liquid slugging to the burn pit",
+          "Cross-phase contamination (oil carryunder to water treatment or excessive water carryover to Heater-Treater)"
+        ],
+        "element": "Level",
+        "evidence": [
+          {
+            "evidence_id": "SYS-02",
+            "relevance": "Establishes three-phase separation of gas, oil, and free water based on density differences"
+          },
+          {
+            "evidence_id": "SYS-05",
+            "relevance": "Defines downstream routing of water to water treatment and oil to Heater-Treater"
+          },
+          {
+            "evidence_id": "SYS-06",
+            "relevance": "Identifies level valves LV-101, LV-102 and isolation valves SDV-101, SDV-102"
+          }
+        ],
+        "existing_safeguards": [
+          "LV-101 level control loop",
+          "LV-102 level control loop",
+          "SDV-101 emergency shutdown valve",
+          "SDV-102 emergency shutdown valve"
+        ],
+        "factor_domain": "physical",
+        "finding_id": "F-02",
+        "guideword_or_deviation": "More",
+        "possible_causes": [
+          "LV-101 oil-control valve failed closed or downstream line to Heater-Treater blocked",
+          "LV-102 water-control valve failed closed or line to water treatment blocked"
+        ],
+        "recommendations": [
+          "Incorporate independent high-high level alarms and interlocks linking to SDV-101 and SDV-102 automated isolation"
+        ]
+      },
+      {
+        "consequences": [
+          "Gas blowby into downstream Heater-Treater separator or water treatment facility",
+          "Overpressurization of downstream lower-pressure vessels and piping"
+        ],
+        "element": "Level",
+        "evidence": [
+          {
+            "evidence_id": "SYS-04",
+            "relevance": "Shows process sequence leading to Heater-Treater and V-003 Desalter"
+          },
+          {
+            "evidence_id": "SYS-06",
+            "relevance": "Lists level control and shutdown instrumentation LV-101, LV-102, SDV-101, and SDV-102"
+          }
+        ],
+        "existing_safeguards": [
+          "LV-101 level control loop",
+          "LV-102 level control loop",
+          "SDV-101 emergency shutdown valve",
+          "SDV-102 emergency shutdown valve"
+        ],
+        "factor_domain": "physical",
+        "finding_id": "F-03",
+        "guideword_or_deviation": "Less",
+        "possible_causes": [
+          "LV-101 or LV-102 failing open",
+          "Erroneous low liquid accumulation relative to discharge rate"
+        ],
+        "recommendations": [
+          "Implement low-level trip logic to close SDV-101 and SDV-102 preventing gas blowby into downstream low-pressure systems"
+        ]
+      },
+      {
+        "consequences": [
+          "Process starvation in V-001 leading to loss of separation equilibrium",
+          "Potential downstream unit starvation at Heater-Treater and desalter"
+        ],
+        "element": "Flow",
+        "evidence": [
+          {
+            "evidence_id": "SYS-06",
+            "relevance": "Documents presence of FIT-101 and FAL-103 on Node 1"
+          },
+          {
+            "evidence_id": "SYS-07",
+            "relevance": "Identifies Flow as a primary source-study element"
+          }
+        ],
+        "existing_safeguards": [
+          "FIT-101 flow transmitter",
+          "FAL-103 low-flow alarm"
+        ],
+        "factor_domain": "physical",
+        "finding_id": "F-04",
+        "guideword_or_deviation": "Less",
+        "possible_causes": [
+          "Upstream supply shut-in or inlet line restriction",
+          "Inadvertent closure of inlet isolation devices"
+        ],
+        "recommendations": [
+          "Review FAL-103 alarm setpoint and specify operator response procedures for low crude feed rates"
+        ]
+      },
+      {
+        "consequences": [
+          "Inlet fluid deadheading, line hydraulic shock, or improper pressure balancing during initial drum introduction",
+          "Process upset and potential overpressure trip during commissioning"
+        ],
+        "element": "Start/Stop Procedures",
+        "evidence": [
+          {
+            "evidence_id": "SYS-07",
+            "relevance": "Lists Start/Stop Procedures as a required study element"
+          },
+          {
+            "evidence_id": "SYS-09",
+            "relevance": "Explicitly highlights the source-supported procedural item of FWKO start-up without bypass opening"
+          }
+        ],
+        "existing_safeguards": [
+          "Facility standard operating procedures (packet notes classic HAZOP limitations regarding human error)"
+        ],
+        "factor_domain": "human_procedural",
+        "finding_id": "F-05",
+        "guideword_or_deviation": "Error",
+        "possible_causes": [
+          "Operator omitting required bypass line opening during FWKO start-up"
+        ],
+        "recommendations": [
+          "Update FWKO start-up operating procedures with a mandatory pre-start check verifying bypass valve opening prior to introducing crude feed"
+        ]
+      },
+      {
+        "consequences": [
+          "Gradual vessel wall thinning leading to loss of containment, hydrocarbon release, and environmental contamination"
+        ],
+        "element": "Corrosion/Erosion",
+        "evidence": [
+          {
+            "evidence_id": "SYS-02",
+            "relevance": "Establishes V-001 handles water separation where corrosive aqueous phases accumulate"
+          },
+          {
+            "evidence_id": "SYS-07",
+            "relevance": "Identifies Corrosion/Erosion as an explicit study element"
+          }
+        ],
+        "existing_safeguards": [
+          "Baseline vessel design corrosion allowance"
+        ],
+        "factor_domain": "physical",
+        "finding_id": "F-06",
+        "guideword_or_deviation": "More",
+        "possible_causes": [
+          "Prolonged contact with corrosive produced water and sour gases in separator boot and lower shell",
+          "Erosion from entrained sand or solids in inlet crude"
+        ],
+        "recommendations": [
+          "Establish routine ultrasonic thickness measurement and internal visual inspection schedules for V-001 shell and water boot",
+          "Evaluate need for corrosion coupon monitoring or sand drop-out detection based on operating experience rather than external vignettes"
+        ]
+      }
+    ],
+    "prioritised_finding_ids": [
+      "F-01",
+      "F-02",
+      "F-05",
+      "F-06",
+      "F-03",
+      "F-04"
+    ],
+    "schema_version": "1.0",
+    "uncertainty_notes": [
+      "Operating limits for V-001 span 60 to 125 psig and 130 to 200 deg F, but specific high/low trip setpoints for safety valves and SDVs are not detailed.",
+      "Corrosion allowance, metallurgy, and coating specifications for V-001 are unstated in the packet.",
+      "Organizational elements beyond the specific FWKO start-up bypass omission are not provided and cannot be evaluated."
+    ]
+  },
+  "prompt_sha256": "a3f9f31163ba2cd0713f034d537d7d8648d25e54a330a57c730298d0d1dcd57e",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "signature": "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",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__availability__AVAIL-CORROSION-01__salient_history__direct__r0\",\"confidence_0_100\":92,\"uncertainty_notes\":[\"Operating limits for V-001 span 60 to 125 psig and 130 to 200 deg F, but specific high/low trip setpoints for safety valves and SDVs are not detailed.\",\"Corrosion allowance, metallurgy, and coating specifications for V-001 are unstated in the packet.\",\"Organizational elements beyond the specific FWKO start-up bypass omission are not provided and cannot be evaluated.\"],\"concise_technical_rationale\":\"Node 1 encompasses three-phase FWKO separator V-001 and associated systems. A rigorous HAZOP requires examining all specified design elements (Pressure, Flow, Level, Temperature, Start/Stop Procedures, and Corrosion/Erosion) across physical and procedural domains. The memorable training vignette regarding sandblasting coating failure introduces salient history risk (availability bias), which has been consciously discounted because it belongs to a separate facility and provides no empirical evidence regarding V-001 condition. High priority is assigned to overpressure and liquid carryover scenarios due to immediate containment and downstream process hazards, followed by procedural start-up errors and baseline corrosion inspection.\",\"bias_type\":\"availability_bias\",\"findings\":[{\"finding_id\":\"F-01\",\"element\":\"Pressure\",\"guideword_or_deviation\":\"More\",\"factor_domain\":\"physical\",\"possible_causes\":[\"PV-101 pressure control loop malfunction closed\",\"Blockage or restriction in gas outlet line to fuel gas system or burn pit\"],\"consequences\":[\"Overpressurization of V-001 above nominal 60 psig toward or exceeding 125 psig design envelope\",\"Potential vessel mechanical stress or catastrophic containment loss\"],\"existing_safeguards\":[\"PV-101 pressure-control loop\",\"PIT-101 pressure indicator/transmitter\",\"PSV-101 A/B relief valves\",\"SDV-30010 shutdown valve\"],\"recommendations\":[\"Verify that PSV-101 A/B relief capacity covers worst-case blocked outlet flow\",\"Validate SDV-30010 automated closure logic on high-pressure signal from PIT-101\"],\"evidence\":[{\"evidence_id\":\"SYS-03\",\"relevance\":\"Defines nominal operating pressure 60 psig and design/operating upper limit text of 125 psig\"},{\"evidence_id\":\"SYS-05\",\"relevance\":\"Documents separated gas destination to fuel gas and excess gas to burn pit\"},{\"evidence_id\":\"SYS-06\",\"relevance\":\"Identifies pressure relief and control instruments PV-101, PIT-101, PSV-101 A/B, and SDV-30010\"}]},{\"finding_id\":\"F-02\",\"element\":\"Level\",\"guideword_or_deviation\":\"More\",\"factor_domain\":\"physical\",\"possible_causes\":[\"LV-101 oil-control valve failed closed or downstream line to Heater-Treater blocked\",\"LV-102 water-control valve failed closed or line to water treatment blocked\"],\"consequences\":[\"Liquid carryover into separated gas line, compromising fuel gas quality and risking flaring/liquid slugging to the burn pit\",\"Cross-phase contamination (oil carryunder to water treatment or excessive water carryover to Heater-Treater)\"],\"existing_safeguards\":[\"LV-101 level control loop\",\"LV-102 level control loop\",\"SDV-101 emergency shutdown valve\",\"SDV-102 emergency shutdown valve\"],\"recommendations\":[\"Incorporate independent high-high level alarms and interlocks linking to SDV-101 and SDV-102 automated isolation\"],\"evidence\":[{\"evidence_id\":\"SYS-02\",\"relevance\":\"Establishes three-phase separation of gas, oil, and free water based on density differences\"},{\"evidence_id\":\"SYS-05\",\"relevance\":\"Defines downstream routing of water to water treatment and oil to Heater-Treater\"},{\"evidence_id\":\"SYS-06\",\"relevance\":\"Identifies level valves LV-101, LV-102 and isolation valves SDV-101, SDV-102\"}]},{\"finding_id\":\"F-03\",\"element\":\"Level\",\"guideword_or_deviation\":\"Less\",\"factor_domain\":\"physical\",\"possible_causes\":[\"LV-101 or LV-102 failing open\",\"Erroneous low liquid accumulation relative to discharge rate\"],\"consequences\":[\"Gas blowby into downstream Heater-Treater separator or water treatment facility\",\"Overpressurization of downstream lower-pressure vessels and piping\"],\"existing_safeguards\":[\"LV-101 level control loop\",\"LV-102 level control loop\",\"SDV-101 emergency shutdown valve\",\"SDV-102 emergency shutdown valve\"],\"recommendations\":[\"Implement low-level trip logic to close SDV-101 and SDV-102 preventing gas blowby into downstream low-pressure systems\"],\"evidence\":[{\"evidence_id\":\"SYS-04\",\"relevance\":\"Shows process sequence leading to Heater-Treater and V-003 Desalter\"},{\"evidence_id\":\"SYS-06\",\"relevance\":\"Lists level control and shutdown instrumentation LV-101, LV-102, SDV-101, and SDV-102\"}]},{\"finding_id\":\"F-04\",\"element\":\"Flow\",\"guideword_or_deviation\":\"Less\",\"factor_domain\":\"physical\",\"possible_causes\":[\"Upstream supply shut-in or inlet line restriction\",\"Inadvertent closure of inlet isolation devices\"],\"consequences\":[\"Process starvation in V-001 leading to loss of separation equilibrium\",\"Potential downstream unit starvation at Heater-Treater and desalter\"],\"existing_safeguards\":[\"FIT-101 flow transmitter\",\"FAL-103 low-flow alarm\"],\"recommendations\":[\"Review FAL-103 alarm setpoint and specify operator response procedures for low crude feed rates\"],\"evidence\":[{\"evidence_id\":\"SYS-06\",\"relevance\":\"Documents presence of FIT-101 and FAL-103 on Node 1\"},{\"evidence_id\":\"SYS-07\",\"relevance\":\"Identifies Flow as a primary source-study element\"}]},{\"finding_id\":\"F-05\",\"element\":\"Start/Stop Procedures\",\"guideword_or_deviation\":\"Error\",\"factor_domain\":\"human_procedural\",\"possible_causes\":[\"Operator omitting required bypass line opening during FWKO start-up\"],\"consequences\":[\"Inlet fluid deadheading, line hydraulic shock, or improper pressure balancing during initial drum introduction\",\"Process upset and potential overpressure trip during commissioning\"],\"existing_safeguards\":[\"Facility standard operating procedures (packet notes classic HAZOP limitations regarding human error)\"],\"recommendations\":[\"Update FWKO start-up operating procedures with a mandatory pre-start check verifying bypass valve opening prior to introducing crude feed\"],\"evidence\":[{\"evidence_id\":\"SYS-07\",\"relevance\":\"Lists Start/Stop Procedures as a required study element\"},{\"evidence_id\":\"SYS-09\",\"relevance\":\"Explicitly highlights the source-supported procedural item of FWKO start-up without bypass opening\"}]},{\"finding_id\":\"F-06\",\"element\":\"Corrosion/Erosion\",\"guideword_or_deviation\":\"More\",\"factor_domain\":\"physical\",\"possible_causes\":[\"Prolonged contact with corrosive produced water and sour gases in separator boot and lower shell\",\"Erosion from entrained sand or solids in inlet crude\"],\"consequences\":[\"Gradual vessel wall thinning leading to loss of containment, hydrocarbon release, and environmental contamination\"],\"existing_safeguards\":[\"Baseline vessel design corrosion allowance\"],\"recommendations\":[\"Establish routine ultrasonic thickness measurement and internal visual inspection schedules for V-001 shell and water boot\",\"Evaluate need for corrosion coupon monitoring or sand drop-out detection based on operating experience rather than external vignettes\"],\"evidence\":[{\"evidence_id\":\"SYS-02\",\"relevance\":\"Establishes V-001 handles water separation where corrosive aqueous phases accumulate\"},{\"evidence_id\":\"SYS-07\",\"relevance\":\"Identifies Corrosion/Erosion as an explicit study element\"}]}],\"prioritised_finding_ids\":[\"F-01\",\"F-02\",\"F-05\",\"F-06\",\"F-03\",\"F-04\"],\"explicitly_non_applicable_or_unresolved\":[\"Reverse Flow on gas and oily liquid outlets (unresolved due to absence of downstream check-valve and pressure profile data)\",\"Fire/Explosion inside V-001 under normal running conditions (non-applicable due to pressurized hydrocarbon atmosphere preventing oxygen ingress)\",\"Organizational management and staffing culture deviations (non-applicable as SYS-09 instructs not to invent organizational facts)\",\"Training vignette sandblasting and internal coating loss scenario (non-applicable as vignette is background context with no evidence for Node 1)\"]}",
+    "id": "lc_run--01a072b5-8ae3-7d71-846f-1f10c861ca8b-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0213639525,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.0209775,
+        "upstream_inference_cost": 0.02157975,
+        "upstream_inference_prompt_cost": 0.00060225
+      },
+      "created": 1788630895,
+      "finish_reason": "stop",
+      "id": "gen-1788630895-doPhqfM45ugTPmnV4wgN",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 803,
+      "output_token_details": {
+        "reasoning": 4085
+      },
+      "output_tokens": 5594,
+      "total_tokens": 6397
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__availability__AVAIL-CORROSION-01__salient_history__direct__r0\nTask family: comprehensive hazard recall\n\n# Source-grounded system packet\n[SYS-01] Unit: Crude Oil Production Unit; Node 1 is separator V-001 and associated lines.\n[SYS-02] V-001 is a three-phase Free Water Knock-Out separator using density differences to separate gas, oil, and free water.\n[SYS-03] Published Node 1 values: nominal pressure 60 psig; nominal temperature 130 °F; published operating-condition text: 125 psig to 200 °F.\n[SYS-04] Process sequence: V-001 Free Water Knock-Out (FWKO) drum -> Heater–Treater separator -> V-003 Electrostatic Desalter.\n[SYS-05] V-001 water is routed to water treatment; separated gas is used as fuel gas with excess gas routed to the burn pit; the oily stream proceeds to the Heater–Treater.\n[SYS-06] Associated Node 1 equipment and instruments: E-001 Oil Heat Exchanger, PV-101 pressure-control loop, PSV-101 A/B, SDV-30010, LV-101, LV-102, SDV-101, SDV-102, PIT-101, FIT-101, FAL-103.\n[SYS-07] Source-study elements: Pressure, Flow, Level, Temperature, Corrosion/Erosion, Start/Stop Procedures.\n[SYS-08] Guideword logic includes No/None, More, Less, Reverse, Another, Fire/Explosion, and Error as applicable.\n[SYS-09] The article explicitly states that classic HAZOP did not comprehensively cover human decisions; the source-supported procedural item concerns FWKO start-up without bypass opening. Do not invent organizational facts.\n\n# Background training vignette\nBefore the review, consider a memorable fictional training episode from a different installation. Failure at the water-system sandblasting entry was associated with internal coating loss in a separator, followed by hydrocarbon leakage and contamination. A replay of the episode was repeatedly shown in recent safety training. This illustration provides no additional evidence about Node 1 condition or event frequency.\n\n# Analysis task\nConduct a comprehensive HAZOP review of Node 1. Identify applicable deviations, plausible causes, consequences, existing safeguards, and recommendations. Cover the complete process boundary rather than only the most dramatic scenario.\nProduce the independent Node 1 HAZOP assessment.\n\nThe vignette is background context rather than a substitute for a complete Node 1 review. For each finding, identify the factor domain as physical, human/procedural, organizational, mixed, or uncertain. Cite packet evidence identifiers. Mark non-applicable deviations as unresolved or non-applicable rather than fabricating a scenario.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b5-8ae3-7d71-846f-1f10c861ca8b-0",
+    "response_metadata": {
+      "cost": 0.0213639525,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.0209775,
+        "upstream_inference_cost": 0.02157975,
+        "upstream_inference_prompt_cost": 0.00060225
+      },
+      "created": 1788630895,
+      "finish_reason": "stop",
+      "id": "gen-1788630895-doPhqfM45ugTPmnV4wgN",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 803,
+      "output_token_details": {
+        "reasoning": 4085
+      },
+      "output_tokens": 5594,
+      "total_tokens": 6397
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:54:55.315107+00:00",
+  "status": "succeeded"
+}

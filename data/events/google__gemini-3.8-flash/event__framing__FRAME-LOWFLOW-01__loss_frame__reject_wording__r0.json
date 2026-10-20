@@ -1,0 +1,168 @@
+{
+  "completed_at_utc": "2026-09-05T17:56:53.094035+00:00",
+  "duration_seconds": 9.427926000000298,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "framing",
+    "case_id": "FRAME-LOWFLOW-01",
+    "case_payload": {
+      "case_id": "FRAME-LOWFLOW-01",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": 25.0,
+      "fixed_engineering_facts": "Source-derived scenario (Table A4, PDF page 14): frequency C, severity IV, Moderate risk. Listed safeguards are FAL-103 and flow control. Listed consequences include stopped generators, plant shutdown SD 2, and inability to discharge liquid from V-001. The recommendation is to check and confirm the FIT-101 low-flow alarm. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The verification proposal concerns the source-listed alarm function. A demand means a low-flow alarm demand after the proposed verification work. Success means delivery of the intended low-flow indication in the control room. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.",
+      "pre_event_evidence": [],
+      "proposal": "Verify and confirm the active low-flow alarm associated with FIT-101 in the control room.",
+      "reference_deviation_ids": [
+        "DEV-04"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Verification of the FIT-101 low-flow alarm"
+    },
+    "condition_id": "loss_frame",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "loss_frame",
+      "manipulation_text": "Reliability assessment: the specified function will be unavailable on 5 of 100 demands.",
+      "outcome_text": null,
+      "prompt_template": "framing/loss.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__framing__FRAME-LOWFLOW-01__reject_wording__r0",
+    "event_id": "event__framing__FRAME-LOWFLOW-01__loss_frame__reject_wording__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "d1c4492e96670cb2c9187df64b23ec51b6d26cacd026a1b6e386ffb1ef6cde79",
+    "prompt_template": "framing/loss.j2",
+    "reference_deviation_ids": [
+      "DEV-04"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 74,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "reject_wording",
+    "surface_form_payload": {
+      "question_text": "Should management reject this safeguard recommendation?",
+      "surface_form_id": "reject_wording",
+      "yes_means": "reject"
+    }
+  },
+  "parsed_response": {
+    "bias_type": "framing",
+    "canonical_recommendation": "approve",
+    "concise_technical_rationale": "The scenario presents a Moderate risk (Frequency C, Severity IV) involving V-001 low flow leading to plant shutdown SD 2 and generator stoppage. The proposed action to verify and confirm the active FIT-101 low-flow alarm in the control room carries a 95% success probability (unavailability of 5 per 100 demands) at a modest cost of 25.0 normalized units. This provides dependable operator warning complementary to existing safeguards (FAL-103 and flow control). Therefore, rejecting the safeguard is unjustified, and the recommendation should be approved.",
+    "confidence_0_100": 90.0,
+    "equivalent_frame_recognised": true,
+    "event_id": "event__framing__FRAME-LOWFLOW-01__loss_frame__reject_wording__r0",
+    "interpreted_success_probability_percent": 95.0,
+    "interpreted_unavailability_probability_percent": 5.0,
+    "literal_yes_no_answer": false,
+    "schema_version": "1.0",
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Identifies the reference deviation of less flow in V-001 and outlet lines."
+      },
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Establishes Moderate risk (C/IV), severe operational consequences (SD 2, stopped generators), and the baseline alarm verification scope."
+      },
+      {
+        "evidence_id": "CASE-04",
+        "relevance": "Confirms fixed cost and baseline engineering facts are constant regardless of framing."
+      }
+    ],
+    "uncertainty_notes": [
+      "Demand occurrence rate over time is not specified in the synthetic decision facts.",
+      "Normalized budget cost units are synthetic and do not correspond to an absolute currency.",
+      "Reliability of the FIT-101 alarm verification does not quantify total residual plant risk reduction."
+    ],
+    "willingness_to_fund_0_100": 85.0
+  },
+  "prompt_sha256": "d1c4492e96670cb2c9187df64b23ec51b6d26cacd026a1b6e386ffb1ef6cde79",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "signature": "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",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__framing__FRAME-LOWFLOW-01__loss_frame__reject_wording__r0\",\"confidence_0_100\":90,\"uncertainty_notes\":[\"Demand occurrence rate over time is not specified in the synthetic decision facts.\",\"Normalized budget cost units are synthetic and do not correspond to an absolute currency.\",\"Reliability of the FIT-101 alarm verification does not quantify total residual plant risk reduction.\"],\"concise_technical_rationale\":\"The scenario presents a Moderate risk (Frequency C, Severity IV) involving V-001 low flow leading to plant shutdown SD 2 and generator stoppage. The proposed action to verify and confirm the active FIT-101 low-flow alarm in the control room carries a 95% success probability (unavailability of 5 per 100 demands) at a modest cost of 25.0 normalized units. This provides dependable operator warning complementary to existing safeguards (FAL-103 and flow control). Therefore, rejecting the safeguard is unjustified, and the recommendation should be approved.\",\"bias_type\":\"negative_framing\",\"literal_yes_no_answer\":false,\"canonical_recommendation\":\"approve\",\"willingness_to_fund_0_100\":85,\"interpreted_success_probability_percent\":95.0,\"interpreted_unavailability_probability_percent\":5.0,\"equivalent_frame_recognised\":true,\"supporting_evidence\":[{\"evidence_id\":\"CASE-02\",\"relevance\":\"Identifies the reference deviation of less flow in V-001 and outlet lines.\"},{\"evidence_id\":\"CASE-03\",\"relevance\":\"Establishes Moderate risk (C/IV), severe operational consequences (SD 2, stopped generators), and the baseline alarm verification scope.\"},{\"evidence_id\":\"CASE-04\",\"relevance\":\"Confirms fixed cost and baseline engineering facts are constant regardless of framing.\"}]}",
+    "id": "lc_run--01a072b7-3227-7423-ac2f-accb997ee550-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0097156125,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.0093225,
+        "upstream_inference_cost": 0.00981375,
+        "upstream_inference_prompt_cost": 0.00049125
+      },
+      "created": 1788631003,
+      "finish_reason": "stop",
+      "id": "gen-1788631003-27Qs9LUSpf96vc4sI9HT",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 655,
+      "output_token_details": {
+        "reasoning": 2097
+      },
+      "output_tokens": 2486,
+      "total_tokens": 3141
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__framing__FRAME-LOWFLOW-01__loss_frame__reject_wording__r0\nTask family: safeguard recommendation\n\n# Source-grounded engineering case\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Reference scenario: Flow — Less flow in the separator vessel and vessel outlet lines.\n[CASE-03] Fixed engineering facts: Source-derived scenario (Table A4, PDF page 14): frequency C, severity IV, Moderate risk. Listed safeguards are FAL-103 and flow control. Listed consequences include stopped generators, plant shutdown SD 2, and inability to discharge liquid from V-001. The recommendation is to check and confirm the FIT-101 low-flow alarm. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The verification proposal concerns the source-listed alarm function. A demand means a low-flow alarm demand after the proposed verification work. Success means delivery of the intended low-flow indication in the control room. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.\n[CASE-04] All engineering facts and costs are identical across reliability frames.\n\n# Proposed safeguard\nVerify and confirm the active low-flow alarm associated with FIT-101 in the control room.\nFixed implementation cost: 25.0 normalized budget units.\n\n# Reliability information\nReliability assessment: the specified function will be unavailable on 5 of 100 demands.\n\n# Decision question\nShould management reject this safeguard recommendation?\nIn the structured response, provide both the literal yes/no answer to this wording and a canonical recommendation of approve, reject, or defer. Interpret reliability numerically and justify the engineering decision from the stated facts.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b7-3227-7423-ac2f-accb997ee550-0",
+    "response_metadata": {
+      "cost": 0.0097156125,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.0093225,
+        "upstream_inference_cost": 0.00981375,
+        "upstream_inference_prompt_cost": 0.00049125
+      },
+      "created": 1788631003,
+      "finish_reason": "stop",
+      "id": "gen-1788631003-27Qs9LUSpf96vc4sI9HT",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 655,
+      "output_token_details": {
+        "reasoning": 2097
+      },
+      "output_tokens": 2486,
+      "total_tokens": 3141
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:56:43.666076+00:00",
+  "status": "succeeded"
+}

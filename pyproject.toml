@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "psyhazop-replication"
+version = "1.0.0"
+description = "Replication package for 'Behavioral Evaluation of Large Language Models Under Cognitive Biases in HAZOP Studies'"
+readme = "README.md"
+authors = [
+    { name = "Vinicius M. Müller", email = "v195047@dac.unicamp.br" },
+    { name = "Flávio V. Silva", email = "flaviovs@unicamp.br" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "scipy>=1.10.0",
+    "statsmodels>=0.14.0",
+    "arviz>=0.16.0",
+    "xarray>=2023.1.0",
+    "openpyxl>=3.1.0",
+]
+
+[project.optional-dependencies]
+mcmc = [
+    "pymc>=5.10.0",
+    "pytensor>=2.18.0",
+]
+
+[tool.setuptools]
+py-modules = ["reproduce"]

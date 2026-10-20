@@ -1,0 +1,235 @@
+{
+  "completed_at_utc": "2026-09-05T18:13:45.490190+00:00",
+  "duration_seconds": 18.286854207999568,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "hindsight",
+    "case_id": "HIND-LOWPRESSURE-01",
+    "case_payload": {
+      "case_id": "HIND-LOWPRESSURE-01",
+      "conditions": [
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "foresight",
+          "manipulation_text": "",
+          "outcome_text": "The outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+          "prompt_template": "hindsight/foresight.j2",
+          "provenance": "synthetic_experimental"
+        },
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "hindsight",
+          "manipulation_text": "",
+          "outcome_text": "Within the stated 30-operating-day horizon, the following target event occurred: unit shutdown associated with lower pressure in V-001. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+          "prompt_template": "hindsight/hindsight.j2",
+          "provenance": "synthetic_experimental_realization"
+        }
+      ],
+      "evidence_items": [],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [
+        {
+          "evidence_id": "P1",
+          "provenance": "source_derived",
+          "text": "No existing safeguard is listed for lower pressure; the recommendation is to check and, if necessary, activate the PIT-101 low-pressure alarm."
+        },
+        {
+          "evidence_id": "P2",
+          "provenance": "source_derived",
+          "text": "PV-101 loop-open failure and pipeline leakage or fracture are recognized possible causes of lower pressure."
+        },
+        {
+          "evidence_id": "P3",
+          "provenance": "synthetic_experimental",
+          "text": "For this synthetic exercise, the target event is: unit shutdown associated with lower pressure in V-001. The assessment horizon is the next 30 operating days. At the decision point, there is no current diagnostic trend, verified initiating fault, or confirmed occurrence of the target event. The horizon is an experimental stipulation, not a quantitative calibration of the source frequency categories."
+        }
+      ],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-02"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [
+        {
+          "question_text": "Estimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.",
+          "surface_form_id": "direct",
+          "yes_means": null
+        }
+      ],
+      "task": null,
+      "title": "Lower-pressure unit-shutdown scenario"
+    },
+    "condition_id": "foresight",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "foresight",
+      "manipulation_text": "",
+      "outcome_text": "The outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+      "prompt_template": "hindsight/foresight.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__hindsight__HIND-LOWPRESSURE-01__direct__r0",
+    "event_id": "event__hindsight__HIND-LOWPRESSURE-01__foresight__direct__r0",
+    "model_id": "meta/muse-spark-1.3",
+    "prompt_sha256": "bd4d3a90baff03e5d85a55a7fac4c12a11d02d1a8d3cf2b9436935cd301e91cb",
+    "prompt_template": "hindsight/foresight.j2",
+    "reference_deviation_ids": [
+      "DEV-02"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 24,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "direct",
+    "surface_form_payload": {
+      "question_text": "Estimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.",
+      "surface_form_id": "direct",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "bias_type": "hindsight",
+    "concise_technical_rationale": "HAZOP deviation is low pressure in crude line/V-001 with recognized causes PV-101 loop-open failure and pipeline leakage/fracture and target consequence unit shutdown. No safeguard is listed; only recommendation is to check/activate PIT-101 low-pressure alarm. With no diagnostic trend, verified fault, or frequency data, 30-day occurrence is possible but not expected. Generic deviation mechanism was foreseeable, but specific occurrence/timing was not.",
+    "confidence_0_100": 55.0,
+    "estimated_event_probability_percent": 5.0,
+    "event_id": "event__hindsight__HIND-LOWPRESSURE-01__foresight__direct__r0",
+    "negligence_assessment": "indeterminate",
+    "post_event_information_used_as_pre_event_evidence": false,
+    "pre_event_evidence_used": [
+      {
+        "evidence_id": "CASE-01",
+        "relevance": "Defines HAZOP node as V-001 and associated lines."
+      },
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Defines deviation as low pressure in crude input line and V-001."
+      },
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Establishes no existing safeguards listed."
+      },
+      {
+        "evidence_id": "CASE-04",
+        "relevance": "Confirms rating withheld, requiring ex ante judgment only."
+      },
+      {
+        "evidence_id": "P1",
+        "relevance": "Confirms no safeguard for low pressure and only proposed action is PIT-101 alarm check/activation."
+      },
+      {
+        "evidence_id": "P2",
+        "relevance": "Identifies recognized causes: PV-101 loop-open failure and leakage/fracture."
+      },
+      {
+        "evidence_id": "P3",
+        "relevance": "Defines target as shutdown with low pressure over 30 days, with no precursors and uncalibrated horizon."
+      }
+    ],
+    "predictability_percent": 40.0,
+    "schema_version": "1.0",
+    "uncertainty_notes": [
+      "No failure-rate, reliability, maintenance, or history data for PV-101 loop or pipeline leak/fracture.",
+      "No diagnostic trend, inspection status, or verified initiating fault at decision point.",
+      "Safeguard effectiveness and PIT-101 alarm availability unknown beyond 'none listed' and recommendation.",
+      "Source qualitative rating withheld; 30-day horizon is experimental stipulation not calibrated to source categories.",
+      "No design intent limits, applicable standards, or compliance/timing evidence to assess negligence."
+    ]
+  },
+  "prompt_sha256": "bd4d3a90baff03e5d85a55a7fac4c12a11d02d1a8d3cf2b9436935cd301e91cb",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "Mapping event data to the required JSON schema while estimating ex ante probability and predictability.Assigning low ex ante probability and moderate predictability under HAZOP with no safeguards or trend.Setting negligence to indeterminate due to limited pre-decision evidence and noting uncertainty.Assigning numeric confidence, probability, and predictability while listing evidence and uncertainty notes.",
+      "reasoning_details": [
+        {
+          "format": "meta-responses-v1",
+          "index": 0,
+          "summary": "Mapping event data to the required JSON schema while estimating ex ante probability and predictability.Assigning low ex ante probability and moderate predictability under HAZOP with no safeguards or trend.Setting negligence to indeterminate due to limited pre-decision evidence and noting uncertainty.Assigning numeric confidence, probability, and predictability while listing evidence and uncertainty notes.",
+          "type": "reasoning.summary"
+        },
+        {
+          "data": "Q-PaDgHEwphzeIjiHEXJQk_ZHthKEo51b3t_XEDqtcGWcUJz9BjUDiogJpsy8v30rGOXK2jLDnDd7DYo6krhflzdCvcqyA1pRtPZOyXrKPeZiYmkysxFbfPFO8aNh3z0CoOEJqugkD1hveP-cRriNjkv0ya3UrkdWOcTSncFXHlQ8fO3VDCxbHE90eiyLhZ5-wigMrWz-rnFtcBDOr_LAL8qP2-FHWLpbLGJgPX1ITrG5k-EynsU-6nqzr2IEJIfZqyCAj9OJqtihYZjjBldNZ8Li7GB4ZLTIzmbJ_0x5NoS449aPtHV0CBPE0Dz0_ed1xk0OAoZX9Ii6oANpE2OY3SUvYAmtmnn8-DicE154QjQRW5G3YeC5WZPSV7v4BazRnxWQid5GgwKyyULFR4cAsPwfyyJidDoZHhihfiIwjuD000IOZFx_knapfJ9RovxJnEwubw6CY-qtlHxwLofmaV3uhh5r6oXU1n8If-0nssG0qS9B-_tGswYW0lnJ8uBxmEG1Pb_mAeUECR594XQ2_1XT1SXKS9A9a_NbB3aTyfmpGm3PjfwHpVzx9JaeXHPNxZ5Vg9whVZGQTkUiLAYdzrrKzbfjM_pcJb63o9whl9KpTHnasn9pXE6cIo4ErfloLZa3H7P_PN7uuOyCy-x5nEAfuEJtgAtBRyWcngVEz4mOAcqUsHiak_-7MxKARY8NhGB0kID9Q2LG2RH4WLBkIq1a0X0DO_MufpFF3aIOrG0C2BGKQG8jZJ2aYNLx96NgPnvk5-c5ucAkorbQdFMA8h4pA4xL9fSqL-Jc_ba0HqnjeuViWKLH1Wl-J3np-gpIRPkPpnSCv592PxyoZuaDcsKw5SKLJGBZbEM1HyzpFjs_6x8rb_jg-hN6nUEiFQmPvHY1P-vZUDsk62niCLSOsr87mjG24JX_jzFUFCBYvff131yHajmRPSmAj2jcJyyNOXsH6s6beRqHiH2gy0pC8NLrm0-yuapgOPGfr6ZnIB07RRhUOD5StMJW9PBRwbMm8Lfzw4gJ4D-X1SY2oMBXdaeip4PZCnLPGN1VqkLC_SCTxLGH3g8Fv4WXmI1Q3yzL6uNXHDp2nDvYhMWTOdXskpsHMAr4MPDXi_GlZ8fYaOXHUOgXNLukYkSevgC12hf4cnDbcyC13AkXoU6sIXo--yojS7g85uoUYYh622UPdvfUrAdufNK_DTYtAVzqeVFzOJXbSUcnxFGFHFscFUj91NAWY9YNodXLfupHsrp1TsxtU2EQv-zHKBGkSgz27zFyZs6d3mzuRCBBNe3D7XB_f2if4A5-1LTQCHQEG2yjXfiyk4UZqYmDV1d8JYLRlLWsqaOgfFCvvP9XCeFnTekNEqhNSKv4BiZ03oUyQxNgIZcUfWGvPTwUM_yyahIkwutf7WjxaNWE0aJwXveqzCszrc3mXAxQ8x2IfK5qZcb5lpN2U0u9_1gqF9xTGvuqwfrhTbKLeJedXwMrRkX9O3fq5QDyCMTkcgXPc7E6cS4DLf5NkvqLGxELX-Kg-FXsfY8Ml2D3ppEpw-QefpfZfqw7V4PKDLR8RXaAKmcNYcgv6iqFWvkU4uN6lFug0gMkGeQFZurRq3ybM2pX10qjfcTHaU6gYdu6F7ewaHbHcTR_ARSgaYvZI_AYLtPIIU7c3eBaPKw2wYOY5Q7SlArjzXNqz1fSsHOTXcd-__iyJQ3EM_FAQ-0QHbW679wSEj0M0aouDnMC2iz5-NUA41ALgbdZwrNti9_M_Dgps8rh38UFXEIufDHSdBQI0l_PIgURgUL4n0pD77Kdh_N25FfYJmct0KBjWREqhG1lBED9llDzJpeiWSPfz06a7nhDHXVHFYlczraznYDSYNpib4BahOu2U673w4mW5BoGJmn3r8PQ68p_IKfv4DJL0R_X5WXazAIE3_1QNlIoa86sZIvuWwRFfBm3sS1GON0FNdjmCDJiABl5FaIUiCxUEC8TkvBh7mQdPMvFhaoPw5huy0HqPD0Pn3oZv6Ke7Ujo1WK507l23cWC7KzdeEyvog_C5_yn9Bfv7uhzZkBa0PllFhSl9uKBn_fAii2Sx0Gvxlvs5JtHWby4-4C92bW5sbTg1g7uZ-2SNTTkFbUZZcJxPh-nhAX0E4kbcyD6iRz5CxQlELhDP_TJ_DkUmIJ2WKUWKSv3xmBC7nBst7Ji3KWfLR0M_VgCpWr-aX5r5EsG9i62zkjOg8hFPXdmf3ihAYtmu20I6hB1FqPocOsNzfu65ks57MJxnqPb0kbkr_3DcVwBDvn4sdIclWfyOOu7wzroJETSxwqqFXQ26_qJGjd1ziLj8kqEz1_-Cuf5nGJC2dncbr675E22aqB_OboOWIFMAhXPJ4P8badCcBARqYo6U8I4Rf3rAm2Xd_Mc7eGupMAyerthwsYTlw4whQKsjrrT50RFdAEHqgVqqqUbDHI4IdMWLMsnWlqbtxCsYLwDP-LeCT_80VqE3n-oobcgUNmy6iTvCyHKXXIaFYWoqGMckSuOwCuv6jGU0qpnGJh7QLZTLr5-F--yFkrCgV4QPWALFuH68eOeuxNLKX4dr9Tds2rF_fBowkMFIFaxC1rWA2nkPGCodVu_sqpHu-11yDx8V_zp0mUBwexzmxKBHSel5cd8eEOTqIBXFYtna45i_hTscEzs4fXnJccrxrWbW28gkqPfwyEhnPmtYAXRDfOromoU75HHO41jseOdBdV3QewT5i8sEOnTkluzsbEHxZFeRxe4RkUnhS3WoStOwkTIIPWN0Dp4NWNb3TH0q1IKUss6F80M_34-bx1LvZRo_Xr4_RVocjmliCApfy47OuecEa3b5sLeFkt1YgRH-q4_ylJATg8rp_7-xFjaKZDYMzsNxWXrEKDJ-ey6vXVy6Sf97g_d-U_RSGz3KEacazvj4lgMoBrXycQQ2I1KSx3idg7btKlHrxCCSdJhDzS3tOs9Oi0xtzVAE-jS2r73MrlFGH4IjgVv25UCTJmfwzDpw_bY1MX55kYtExledWiPO-xotgvnjZLxFBTVpzSdRUBLFTB5e_sROi94PKUQIIRYAebS9XE-B10tgO1EwcJyOxq2mCFaY9ArWOp9r_YUIfuozkQjVFY1h6lrCFkyQC5wOTsBNmu-n5g9J-9EKpdM0eZDICUvSodZ7AjwFHHJtLr3LfVR12ajZr008-ig84kwBl5h9rp4zF8H-7jr9pkbvMZ3Y2puw5_8_V85RMFbBAfdFuwptfk5mYkPCYCEZAD_xENmQ9cmf-q071ogCoA-8o469WsCzIa3l-mkcGhTlxuhCEPiFrAjg8smGO68M25Bok6YloeYR5PfcI3yRWs12d2NJAH5FfCjq1o_WsAvHeb-uDqjVatfDnw0fdLQHZJKxsC2034_Y_v7vipb4czZKEhVWekjlqWzpFlJ3h0BZMzkVTIavFzXVkt4g-73sZf8RRkS_rw4eo140xFlNe-XZcFFIf8VGe2x_hnDECE0km7AsUmLliValPBcLipHzMmbzz7DTBCBdfPvWJjuiKwwJ8idhGul4Cbhyc5QF_OWCtYFnVu-Jjm6ANIwcBpR8_3cbIln9WCHWBVgY7W_PNlpjQfsKPP-e-XrvWrA7Gpleo_M_SZVNeJRUCbz4pAtMi1-1fXNBmpD-Ys2-sMWoK58F5vT-CuPv-ogutJU5X3GTN0b0yE4Ryh3WbxuRvInPVtlBTFZc4LahOtsDA4QdVNJHsFo1XlfcEG7zsnQtucB1cz-Wx_vvelbs0yrrj0Br7ptx1ymZlTghXrWuvlBFtm83Dy2VornFHp1l08Hw4YFe2sju7zdEfxYfptvN5TXEnjpbH9mbsuKeFNimQKM2y90BaHGRo1HOSvjSX3UDD_9Hr9E7K7ah8T78QROyqQxuRaxYhvnsMQxFyVM5qN4rCgZzpsNtoOxZPRG1k6WYcgoU9182uDcfol7domG5whoy6lmkOAVom101bqU8Dtx_bTFDGoU4zn1ay1SEUrREp5FcJI4s5JqxiUiNAFNGmTaonom_dCjL7ySDP79wK62WwiD6cmcbRyUooNeXINbDo-UuFB5BUOey0WftpO_nfgq7K17po6QSVlt1feXHuWu9Bqrve7KOyXWd4RC4gc8c_f4w16AtU2-WecHDHQBx5Y_SREyUG3XNRCr4lUvJryvvCdO--2mUsfIU6HSQwqLogu3ZKp_I26M_mDil5qzejQL7Uhm4J-Z0TH4bcW-b5gwwpw-Rpz6gm6nfiOtUNJemU3NyUD5tnJ1MyDO4CgpWztlvrPYyJBkcS3t_tGKZhQvsS3dI1sW5TmtvCUaIua3XmOLIS4jhHJx_7PPJPP1P5Q6rQgijVNy3qAEobjO_WoVjfkxP46GOYrLsk9_FDteDTnZPztZHoUnNWAkLSsqizRPuEz2QacInABoXghZh-4veaKuMx8Yy2MSglfa2VKbJlZqXZrFE-fT1dr-rFV1y-Y5Uczvkn-1GJQgx8IqVOxvVdmifyNj-HH4eA3X1VGRctKahdCuv6_jFO0k16VVGada2k4LcfjQrCKZ1IeeYn3LP3-AneEYFvzr12mTBxXiW9-USzFPtwLEQI-GrGgPDQzykxOGUcC5zoDsx4Va_CQ-5WTGXM2KnT4ji8NVLBgb8A2_cv_KvdBV6Oa-Um9HBY6akT_PRRCMMFxf32adRV2LEYbYfqvoTQgAL806-XxF1s07QtAXsb3t-9bo0WvSahf2O17rLzORUn7mFaYLV155WlWBwoWCHx5UwoVQ3uzmcuYUT_8NVfh_TcEiiJmMJHOdP6DXBfKkbk_a3yIgbqYTVMe0xZvZBp8tHqna-46aZuLI0xk9E-z7XXBtDB2uXa5F7qv6Web5CEWGHz-1PQiKgp8yUA9woMiHTh_QkYkSWIJZQBnO95sTsGvXRAjuIEzqMgBgbLjjcQIaWxJg7ZRM1SyGlIxP1jqqGRcaPcqs_Fu1i_FxyuCf6rQrHwWgd6Q2v4jSEJbA6Ax7Z-W0a_rl3iLHgurGvS79InasJOqBhmYCPUNj-y-_cyZfg-tme93cdNdMMyNpJdezKL0IWM3Utx4cmwB30JU8L5g9kd0RjtMmpMub9OHvnzjz59mi2UJi3jZ_PyyLS0ka5wwvq9NVdm-JinDTJ445SXrHn-dFjQdzvxOFQv6JHOGJqOzCPP1fHz_GB0uIQpbp1im_ETf3JR_A-tgtaiP6FYZlt-claQlYgahPqLoSBJfC7_-Eq7qShC-j7m3pmj0z4-QsVpkqfSRW65FV_EesVldNuSTiDna-IvK3ihcxh7Z3ALBYbkn3IP18Hu6mN1vninf0J1aC0E8nqSq39BDjzsyP6Ar1cJ_CnmzQFgwBDQRTnQJfy9unHdN09k06TjWDBn6MhwHgcgXAoxhbsjSrUBZ5IhebcrEoaCY-oH3cCVT6Dz16JiPcGx9Kz0XYO4SWwOBoYezWZ39FjmCf7QEq0DTH-8smpNjfZ7Ri5ISH1GOP1iFG18NnG4J5QvUnUXbjohx9b9T18ylwqtxWsXOGegUIigzhLQfuy04kuD6Jafgi6jDrgsDzCR5YdKJTtr_sVLxTan2y_4GJLGGUTRxzhrQGpkXkS6m4I86Nvrm05nnyC6CPOdVRUzc_D449VOdTFB29fppklOZ8k6_pLSN3FSD9VBFW4XjStMSnn6YKpXCL2rG9AvnFqC3uTZXzLcNK2-i1y7kuXP13tMvduZMAPgqlEkHQvWjPGJkHCWa2ihtas6QUHGJXFa_Zf5zwGbLnx_GS-oOzD9UcUGAwonC0BjBhB61rlE35K288zbDoddXmTgJG7nXycXiziT-IMycNwdjWm-miXj2HGQvwY4Gn7OPOa-YQeuVurN4Z1UdFtaGVgKwPlU3sCXhBuY2ZmLsJ072BJQgIZUvjdX-EJ0Yftth7lD42j7amvakHY_yMgxhqTv-hkuOHpCxl2cJV7GaVfTaUYvD4egkQ3wrLKFIB-9utlhLigfNqoWYc7wahnBD-k5-C5fIRDvsKs0nR23SYo9U8eguCt49mFgQz3a9JOQ-tUbHM6S5aRt0GvKY6OOD0EI0qWn6kOMvwNiAdzXpLGs_uAOdiqbw_SkNvQgNSR7q-hKSlH_tjD9Vws54-H_QOoGoopE_zGmT1ALz9Wa5T4DtFO9hWGj4Vi90zTarpeOASr0egKQBJKnD6FwXqBAQMd_WgL1lRWSuKCVQcrvAuEvz7KzFedQqx14JEGg2a5hLL75bcfDhAZUCc-mvhcaUOTizLHh-Uxk-VGJNR5s3Rz6jcbMVk2X-ooPqYtJH4u-CQruK3IIiKXmsXiBKY28mTRZ4Mun-6IDJWt37LwlPB18ZAR-cs2uH8d213_7336N0oIIhvObr_RwE73aAFH4dhuSkPRI9MeQK2qXAb7xADwlMaDQxHV5H_9q_PZgE_a_z_fwHp75mqA9DypTjC1EV3HKJqglk5WUsRDouPofLoEP5PPKmupSEM5veYPgDVOShRc1WghEW0FIhhBETpwWETXQzbuIHiAjxlrDCLmdyU67UuxbA4jNdYGCCu4fQw9J8jMjjQ_Qa1lSj33B6WOGvIm4hiP4EGDhTvbsAAPU3u8a8z_P29ycBlZFw4uKy-uvyZb6PkCQkPjQC-OKRgslWXpYkf9XVu6wf6ElM0xGl4ltU7wSfXRQ2oeFdhfxc8bKiYuWUFfqLUUvPUSAnMeolgnvx7gutAYIdcfw9ScFTy1139MjaQ92ZklTwKTA50mjrCM_ff34vaconLyVOQB30Vkmt65Fb7XQBdREE1mHlKqnF4FnBQpg8UXxC9PhmhGa0bAQvnjPzut_MohnqUUzDiOSdVcKexk6tRjrqBg9Vw8EeS-oka-Azv6EnkJaNc2CztO3R65ZOjESJAJS05TXd7sE6mcpEaZTSQt9OuJBrBgLcGNtkfCJARDWaxNYMyRFu1CW9PfzhijCcK2HkzmA1WOV2AaEKzWEJXjykHNNqHuKo8mUkFTN_kBznimg10IxBoW58CtRhEpzRZEqMkE1e_9WpChQeAeumavSBC2kXIOseUR9L5Qu0Peg_OdXBecBxzv4tMoORwBd0B0AuLQJsUwMWZRn5a5jgzDL6y_tY1j5WWoSSoIJAsHha0ByPYHQV2CAz19XIclttMuEyR1REC9xYOIRI6YMORNKMC75DylLiCLtzSweCl5KiX8KI1AoYOAPxVwKQC3bA7woX30RrmsMHCNmc-N-LdgCy1uIS56BGR-n3G7NlrwkEoFARwROiVi05NATrS1ncFfnoCXZeW5OGQzik-lJ-B0HOxPMHp0orL5py-P4JdJL8HcQSM5fIi8feh_A8BLPhoKb-S6HOYEIZ9oEjRCZI_Qg1S0Fb6j64NgbAG-Oz6f31RCydEObQM1wWV5Qkm0ygurV3JTFiRqTKhURZtY1UAOz_VZYB3i7bbMRxo-FNXvFa9xX_14cgtNllD4_t8bB9JNLZe89MLfbJZG-I0bp3m6x4CYrrVMV9N9ZxaIchd4P_HMIaPJmNDS4XNowBo7uZFN8RSuwGGKPpHwHdHsIVAdpkK9b2c3MRX9OwtM_lEKMeCgQG3mUJbks4KWxHHzaFpo63gWFp4Zl-ORReC48iqxHrRzMr_o1r3Nh8tZv9ObzHPvlqa6HRwTTwyGIBIJpo739m2iPi6Lui4fOqlBUV26PeSM2huiO7KQ9MCQOJNulcTT3z0rUX192iFk5smpFAtw_g0RK9YMJAWChMn2BuKZ_4_cCTAVX54BOkIUq_W8GkWGmBPVS84cqGlve--Q2w_qwTw8tGf5PSDWjj7DwxirV5TZ70zfeJJTGYsjo6Ll6eZrTvDbq0DP3pRzg_rYI-UAHc1SkIqH9zD9tCr7ZEj38n04kB5cgyK6415vmoZuvk5dtZY_tJhkTJfryCexf2fj1Z1fIiA2eD6SZfjTGueYlm6V8eqCs9MADZaQBDmRXWoPghrIg1cWqGA_QY8XiVKrivI0rrNW8DD_KmSRjnQTiN4cXSPhGicNUGz9-NRc1UAPs7V1VAdBrADnPlttXIDCaaAyIJbc-1JIeZ8RFA1NZeY6bTrRPWOj4ymz5c7tAhHmN7iLdvMTgDB6IZZIHKlMQg56YmR_dl8RgdS6B5m0svb8zgtsIcNdXoePISICEB4jYkUcdBUigx1vL4Z2qfJFeM9g3zA6IpQ0Zk-wiDUApV16Iyo7Q407suUbp6uL9gtnXQKTpAcBegRGG5Sw2AIlGeBv-P1O05j81PfWerdDyMeapoU4VRpwJEJDKuuqY72K45BFBrKspLNTxJowJK28kReLxNZcaKKZ3pL3Qw_TsbmOb3bc5pfdOPKp3gssecBglCI8Uo2zidCrNjhRYzxlqtJzcmsULCIP9QvgbnIXx3lIAduOcgjA2YcHe6tMxBfkP4WFgjc7sfIUmsNZHC8tCx9EhkRSbN8yT606mWK8MAVhHKlFJxnDRoY52owp1-Vfs4RQ6SNbjnXp00CgyAj4pCbmM46tbpvOKL_jAEfDt6yqNr8qC2alcyvrxcMeiIvpFSQsZcMOWO4pcyJ2e0ciJIeEISYtfk7fcr-rfk4LU8h0qkZLqTGYzlhWclXdV2fEw7FKwSvBGt9Rjviqwm_VJEP22NQkGQbPryquwStsOoxKSZfGMFl6SzCQh3bJ2_qh_yvv0OrYPeG1BUPIrMlCeTc_bCkw5_BiCoyrHp93ldM0cQqf_oJwPt1XYznaFZZsbI45qCxgGDINuIK5v2w7mASH6hgp8Ld1LDjPdHXMWFuHsPwWNUxqZ0lsf6LExvIjbyzN2XwoFFWGVyHcA9m0p59pj4c5H1Kg6nRAMZiV39heDp7CeQ6KVRZ2nxks14aR3i0eHF3M2D6NiTJnHdeAbdDZo6hEs_JxyTZgSYQTBaWKq2oM3fjHQUQDI3Z7D1x8s5hcVdt13DkWaKGpu_zdZ24ogE6EO_cMN5Ryr7o594seesX9r9L7KS3KIHC-zbkiGgfVSxEKaAmw9s8AVjc40fu7AcDTMAEKeJERbscyY1qdzGXZ80mBfq_ZukJz7gyV0nB8Mpgn43VzytfoloP368rnX6nmarpXK_lYwSJCUoMTYhQAbngx3w3U7XUvP0tAhDMXHJd54nz-7RPnZv_9RJLvnxVsuxj9BhwOXNwXvBi5xkKgfHQhdSPytjC5NzzGd2sQeQt_2vPc5PKBtAQTceBGXDRhcZgGPLytUy8ULO4fVHNkWhES9HwsAIJt-F0fFgZyLr0ZlYSDp0vSQG8rfWwgyW5_ohU-7AUYbiJ5O75wnTEWDpbi7nnfM8tv0XxOZ-cjqv2NNgCBvxHrNX-awDdWm1R9fqLvdqxqWbbhdi5yJgIStfyaHw0SmhnlE2FCn5sSWwZAnz3JB6IuIvXgEVJw4qAV8JT8F6j5e3NzUUVNRJF-MSlAezYfRK_o47f0y6B1zVrB_X2UNI5jnaYl64NXABEwumrNpar6xJLRw9El7Iw3R_60uW1g8osvzL_Ftf5on1_JVZgK0mquf_7LGBa7kv99ZitsNlh3pfs5BRBusNkH9I9iYOid0IuvCTPJxFIzc6eTEdGHKDdYB_oEB42y1qzXK-kNpgF-PmkTjI7y9d8DhCVeYDUbfFCUHQrUC7B3h2K0thRHbD0LYCTJSR8MMsU_2XSP1pbZxMFKu6F4qhc_x4K81W5VhqX7hdiL0KaD8S5wWV34hHt2AWdnMwsY6I08I5-eykqV0kdRn2LT5kOnRP68JGl-0LRenj77KXpiOhtTqqy3bes_ber5noVVDL3NFKanA8dT4piKpxW44R1Z4myrzI34fa6hVcp3octqKQ_CUKFxsVRe5nTnpWe_RucUICB6PQSaeDKqjBb7y8HlEe0ggSXxidVWrBW0U0-HgnputFnfdqWjb0Do1_UqTxYz0sTEHPA-_O_-M2McVlqoSllYJWUAg14ir-T0sgplZ-bx27ZicJ8FixEM8TscijMSqnbdtAuTebIpIJxcVWXZ44O8zWFNp2LrTUCBlmwhTj57ddqCgp7iqh9iFIkXAuxkEoKOYnO0IrEsnVJAXfTkHhmAhfgaedAzkcwkkYoYopxTRrXagpQ1teZphI-1_e7V7s5hL-PXJIMEOYDlLFu9zxbWdR3qkAvbGsHm01r9qVEWHRXn32LJM_3i6g7a0yLc-lHDvbspUXXiuE0gTPSGJ1ZnNUwOxqn335Cr-SGC8xHnJnZfx3T5YGq2XSNlchRr-0FV-jxJVdMA7UqJIzp44FrFB8rwFIJs-TOA8nsYGjW-F44KKR05bBdQlXHLmLoIwyAVsOzRlVEIPh-rGDzIQ6LB3gRW86OiIWQoDki538nRN8r21R6619e5UAKMCqygzUU5CQMihR0ZJ0irw38_Uwv0OLhIdrGjMDKETMUOdJob1Cua5UoO5HzSq63PY3DwVMNfZ0naaHUGNQXjhCVEEqsGYDYm8Y2Dw54LM6aujkosm4QJZIWtV506U_cFKB62DeGuk8ltGD7EHMHquSXHxXLPxgfXKBexbbSLeiIM6Qaz6nCsUA_ZYj7GgFVOPggy7rRjTjFiWmZUa68ooP3q0pYjD9LKrg-L04bQwPisLi07JMvQ08hcV_r0PagOIxSF7Bt2lM_Gx0t8wFt_LJx_Mj5UTInyECR0NCideyUcPlF6Jyj_hJ0CX1MNHvkUfkLbM_AhZF8qgrlBa1tZse6ITs0f4_4H1IoyWmdYFo-wayKJwAIpeFmEG-N-AYB2GTVazPUv-CuiIi2PhhKxSNHA2KBJAFhZf0Gga6aRHow_F6N-QtKCmbD8djvsuRIXdaT0lv1Hyogh2p9_9hNowvvQAnsDKNMKxp7ukELhyJszY7S_3mvC7xW-eeLHfDs_h-B3fZsxh-DfzbITCy-hGRnmpkly7d1XCytbcwMc33daTXthFUlHLE0JEcq1qDWDJnbTpBbduTSs5eFu5nxp3MommKPYvKH4IXSsLDHffl6cIUy7XZN0Ci6MAFjbTskndrSMENTLuzyNPhH2cpGnAiUXHvkia1FPiwm9AvOssEC58hmZkhjXULGUjiHA9vgHL39PuZm_BP1Sgm-MvUSdcMiAzKurn_iI48dKIwZOM4wbjziaUlpOgOxi0GkRJSsIwTwXG5W-6f2LiA4EutZ9bERVvp-A2u3b7yksDUIT4eVPopFQTkI8aAyW4Azotk0cgyACzhAvISRym3loBamTs9tUS6wc-vsUETl9j6BYSdn2mtP8dWOTbcuCLrHBsNQ1I7R-j4uLzhTuIxxsZ_Jp-EcawvlWwPw956li-XhRRUR_V0MCb7363BnhuDvGGz9k3lg-AdbhRZFbVHOxm6jzIs3GEIz8ZAv9hty7zmuResa6Bt-oYJ8f1fSSxAAi1RSP_8KKoF8AggJw3vPzyw6zNJNI839qwUS04Pbrq98jqpJBxb_5PC09qGQ770U_6lc_YSCffevdInSzriInACObWrjqdb_I7wGRJOHl68fHiWnpv4wGp_dNjsaynSKqZY5V_enYGwuomAv4huBcmCjeSyY5JNurhZOcZndws_7_YokM4Wc0OfwNdAkdssGmTPRwgXLf9FtaORk6_HZ_YR907gAoe1A4ElTwO1I-S6Ekwp3UeoKm4RSiSc3Es2C-SsrwCplaMJMhMRdreHZ7plVBUgOBnSTJkHMY_yUb-KePdhfsyZoaq4tjkWgcv3f67JOm-i4v1VcQEnXoZEVoeV0bni7MlwI-OXBt_9rU61ddewogT_ENZ-Izgtx3MKHqJZ4SXOc6dkQ_X8O4oO77LhBPOdgBmunJp1K1-Skc4hv0ZFT8yyc3bOBP9pgGwY5ojDMHqUM2enIg15laKtlgSSsFoB102PB3LUBbySqBxXhkXegYg1bytMjt9ILlA-IGiswhPa2NjkaWdTGMDNoeqjk7uvJQyVTk7SdUP-p8RhqF7oaCqpoyYrDTeB2r5smbH1_4nIdm00d2Gz59CarcXlebKmq_sbVnCeVJu9tEpJBhf9gaHg9KmhbbZDZGtQRraZM_R6gCKTWxrwYJHp9ElDTLviJl9Q29N8l1r9bVmvj5oraTxJdTFv6N9h6fJLpDHKE6Ort2vA24f4b31bREA5a6OJyTvfzHv1NAGog2DYjzN9plOBSEj19ueI9RL_xiLWuA6FJGuLz4S5PEWWdIbdzN1TGiky3DN0I1sW57wMOXKEAWuN0gNi-71di9vqD5fgSpsp6k79yF2lEzors8eHclyJ_Xdmc7FSKV_SVRarFI0jXDqRCIW3vg1Li8OEhFmzTMpBsc-QyKXo95MxhKzmkJTldjvMP-tSF7SwHHpzmEghxz_Y7SMN4t5iErF-NtlmEi2ROmR0EayfOvpOa9fTdBFFHFbfX__IJdLQApamG86_7bQQQZQK32UCAq7ZGe78L8Ip9_7fh8-QQHklwfMkJ0i6Lq7xdSXjPemRxRYnGc_MxwdHbmQ59aKXLSbod5XvByokvFUlpJU9vutQx2aF_6FlUGKFjG4koXfJ9PpjK-WDBravQWWDgh3-Ym2nI8yQy2piH6QxTM5X4S9lP_HAN4OOITkzOkBfaWlmp5L3hzfYN25tsC-MyOabhgIsoxyBKaDi5HbHr2qkgjyJ8EKsbyr9aSS700oHmTh_9WNxSqihyV31rbHF_D-cR7tnpJ58OgEQakHYhPdooavKVJ2ItMc25_hnzNbMWG0OBozcgZ5nO9xR9zAzHls53mSu2RlcEthqQd_Vk4XvPmfGY3Xa8O-2X8CboqpJ25-woz-Wkf2snB3IY4lJa8BoVzh-dhubpixymOb0zwykbOkwQ4njp0mglw_HUVWVpdfI9JcNKM7ApJLnA46AF-eEKJ3y0u4iGwMfihf8phee_niiwY1twu9FqW5hVRBvf_zCnWzfbag_yHiHfN1cs5rBG7Cam_Udykb8t_K_-aNeE7lDALh7sXsFP4j_VWJ1-ucX7VvL3OJx-kHaDdU3C0BCVRY_mQbCHUqQvhK4wXAKKJD803TVFbCa8jNgaCDiZTFNxHqKAxfw8KjQRQlcx4r7Md2DgyIfeF2v3xjGhp_u96XC00PTKmcChx1r3lnKkasndLXQMqfUyckIFXHW33vOJ6fZfh_Qzqe4HegdDs9WXmqX8QsfZbiELs2ry00z-lJ4ZsdWC1Lw9wiiT9PHh6ET-auM-U24-E3wHqiu9Wem9TE1YS9Y0UmF3HG469-e5ksQUSsmokjUzGnXOS6SgUkTOF-2UAW3YHdguA15hJ10d3l0IiDTgvm727lpDqAIZsNOL6Bol7hf9nVARjmGgb0c6udyREObkSI3ehjjDu20Cr8g1Qzk6-74vmDnU7hkL5mrwVKsncRDFHYwh7CdzmLqDdg0boXziOELOFfUGW_yxAFbub9X5sLp5pDMEwvQZrZ4DBoIWGv1y_ASBQRzXxS5xIvnr5SVDYv40C4VuNp5FkPOx6BCSxTuqheXJSfsLylsbOU15vn24q2RhIeFUNoXgBBxEvb46w38DWZddLl5qVL9-8q1ZTkK1obF1puJDDtHcnCBIPsPlZDY1BbS7NBN4FtYmBIUfEK8ixkLnguCFEr_E0dR4bIBdbluEynuecr2BUY_XgzeaCPTEiXeW3-ReCplYbLnLjc621l76zPN6K5o3AFjhAbtKOv23oKJTejEKmwI-9dQKWWLgeS24bkHyS1xMHIW2IKLDHtAtUXLcBJPKqqHnE-8hyowAq4P457PmaenHCN3z7PuYpvBvYQSTmmxKaiAg0Q_vXC5PEmj1NStpEy8KvhWa1P7QVZBuqLyJ5DxtpfQtC58MIBJV2dPW2X__kiLHcKOfuBWQmbyavSwCFAkWFNpVPNAh64gVl4xzed4X66R5AAGWiEv_Z8GU5ABjrOaAip4A7127vjTiIDpeuTKgWb3XafTVjb-lyX9eBukYOHp0Vr4wqnBICzoXoGD9agQgEMBfwcHVEgogUnKbV1f1b50j1rPubZxBi5CyXPRUKySngJ5NEVrdawb0AdG-V5eJJcHomW7aS0d0CCmC8OIPHkihMPnOYO054-auqFsDdo3rM0aKtAoNZ1rM9zj3-rUzng68f7cgIFK1RBWiYH72zoCnK8kOOGQ20w6sH-8_1eNGNKZ5hVMadEYIz_QsCK0PcgT4VT7ePG4Dz2_5MlkUwKUu06F5k3SkuDmrIN58t41CXEqd8j5f9JfWl4rviDFRtUKNLvxlATqXY_vBvJXt4S6RCj1GUvqsYqoI8k_PAr4UbjHIXzjC5FxMTZbv9wOgfC4wYR1mR_phD4k2g7exEuijZXMq0zAYGHfqP6QeaKZJbJ7sVtRuVXjUGhHbeLamfDeN53KOb2tLK4pGE2q2K_ND1USYjSVyw9fFzqG3q5zlg8J7uvHwb9otuj2qoGeb4rSm2YyRebxt0RGx0ZC8QjqoSljsmmHeBgdVTYzjlpdbp6yPUbAavMGWjh8I5Cf5_VteNw4dutSHjygH62JXW1H_X0GUoqwChpqkPrR3ftvc85lW6hqPkiI5PvLmI0wjiXJXNCfZClwdquZRXwU9gWlr0s2XuGykPCX1uQRusbYH8NPm5ZxJHg6-yxguvpjiikWPE3VsuaGUp61nuabLk5wKuzUAWCQwy1vuHziNaHIvoXUSkwvxwSEmerkU8gSYtCjBDbzDpJE-H__yFyOdbRn8fhG7s9Y_sGcUnDTUyPPcc2bAEYR3EW_WsruaoJtDbmxvimEqzWoLVDZrg6zmX0-lTLpM0JjZHuoy6HTKWoswWJEU8Nkw2LzyhJZ-QBLKZX1E5zvVt8fX4ImmGInSNv8gtoJq46K4O2rQRkWN5E8MRJHVZKYifNXKyyms97H4P0JkSMpnldBwy2pxyiw0w57DRowldC_4O8gXwaubatOAcaz9JWM5Wlb8UwtAvOhYlOxS1YjRA2IMPkzsONC2YnJc4uc_N-3AYeBbyOxgE5xmpnDeTYtTKZfPp_6UeZ0PJouIVqpRlGi6uXrM5MTpK58WsEz7skRGrcc2k0gFnuCPlraibeU-W05UgNu97KK3UQUbpXt7ZfIfPFUt61uXnz6ijPAXIWraiTJXuazr_XpbCz7Hla7mJIdXaeOWsByJvwR6ZUaqGY6wDwlvcPwsGivFF6UDvwkiWsu-pCQA12K_Jd1JU8LqwWkQ7yIcsM4qjdudOBEDnNrICGeDnzLbTJ1M5poD9gN1IMYQaDXXxqABwjFlifDmEbfgLTb86P714WwL8ZcLc34zHZGjEBCUy-NkV_3KQSWZY56xu5_FZ0gonUnjxjmHrgrOnhkjwmIbKqtq3l2jtSpuBg0yOQ5mFoZm5bfBc9k4RsjfGxgObIT0Zcb5kP-VyiP3Tfg2dk1O4rmaE6FZJTlHFlXx0mhy31zaptKqKN5xGNYh-BIMsS1NGKo9TcfBjP5czhHStbUEQ-0rwLJeQMTozHayKrfZ_KfcSj_7mDfQh4MyAWHwZCEEodjxOncnM9iQ7TrwyHgqRVDpq2XepQ09cU1kay_Wd7MQ9ipkZ7COrPvLuc6iRbkuxo-r2AbKaGJWl6qvdeA1EbqXJ3xHKcshkvkRUzuI09-hsYLLFCIaQVi-t7l0c1NOIq07RP3k3GZoeHvI2ERgHkCConUfcsHl9bWQPjA6mXWPsNdyovQByUa265twaeOV4GrBIqAYtKU7qm8Jd3DaBTSA4tZDJM0tTW7o-otFC2sH7pw4zYYLABNOHrPsPPomhxrw1Ad5ju_CG0sab6lcYAxxWjKOZODJrc7gqdbUYIniowjnjjjdHYw0FwK89HVuKl4KXiF9gNxBfUo6GG3ONZjOkgFrgxSGDQ7o99B7Ekmr9DjLP4yiBbTamMH0yXj6Sjur--_VKcy3VcYYHDaE4lcZpWtB5NWC6mGvXe74aLQRiz55I4wCjf8CMtyMj99qRRciKjcKUwNKJJoavgnOEgGmbhYJ7Ux2J3YX0N5IeYdP7gKJOrdy87cpJQOBuWivE1kqxlNairHIro9atnDCthUuvHjAhtxcGrYWMpWwu2i4s7nWBWqVtq-ai2nChr_dFRC5oF0RNuHVzuS02O812ycBXUA9wyp9PlZMH36T0juuoU9QNpXw90KbUl3h-1U2IGVls5m5KVY4MyTwZoW1rKSLI-28yFfCC7l_Hbl-_W82ItNbU0hkovo3M8QSmdbfc3oRBi0Sw9rgaowuZsd2R_tivpMYTZ1ctWU8yJZBUOtvBu6lW0KSt2zLqMNF0nGHcLeC6dZrBZo4dLlJpFF3M-vaoNeCZt37WKznHIXJ4R-HCZmQkkJhdfuXxUAokn47_ni5CbFW9nY4ldp0R8hHfm_8Kgs4sb0FzbikeKPH6tzitVbhk6wC6Aa697qjfWjgYbWK4TsKozV3rrKZabVy62l7t5frJ9ZF93HMdT3-F_G6LqotLlKeKMXeDlw7Xqj5UmUVN59yUcgQEG67yxk4Az8mfcJO4NQnDcaMswr_uz0QMHYc6UcEHxXhNgWxbNLGlcarCRe0QIqN-x8r2aH8u7x-_kQBLgY3HnYPR0R_WB7wfK4XbL9ZdilUf4goBMaKtR7oG-2knVM1aS47s0hTjomzeoSMotUbQvfvTGAQ3MKJvhmoXyh4wKBPTmriO8hwbkjAdnSJwMAKJ1SMMGLtJlpPGX8P7hC-VuhLfClh9SFjvI95DpOf_KUTQFiQke8kerSAKjAbao2kKULAxRCt1bDGGV7SQ6g4uV3akbLJWQApuT3C94OC7Euyi5sx5KNqBEY-g8WH0NL3DtX72SZWV2Wq4faNoqlbS1SGaRxcYeObW1rP7fs9mszi2ClgHDUNwsgmaz6zil9vR-is_CgWC34omQ-BQSvIb_FpLXEVOHXqTT79aIw3w1AVNqmjJXBzroaO1_WbxCMZIopHF_qk4vUjTLq6rGyuoi9FfZgsEvNNlQvTiWDnaFoHpbgCNSf56yFBjbJZ_ZOktbCkEg9mgjgkH0sVkoyJIOAWlYW28NqRKsOKvwFF_GnMh308wx3kWX0hj3O4rlD0H87WGo0UVpome-uq2uUiUbMPp2M2Hrowt76W_qQraa6nfH_IRbUCHdyVVenYxVC8s7CB9oI8nrbcyuyI-YRa2ucXJ_8pbpCdfCreUSMzaIPAiO6fBkbj8pm8KgAF3AgH8GGduInJXZ27ckSqIZ2-yi2Gw-YvjBVB8Ps6M_kJ6wKlBGlawtCSuP_EZPACdKk3yMZf2kiDzK_fVmxpie---mbHDQXAVoycVzalzZCfxaYKg3HYKbpVyOoBytkTPcV_IWp-ADqjeT5NSDXnKYDdIK_cZaTkW5ghfjbvUndHWStz1DZrY4Xhe0hrnrUZgii6_hOLT45oCQBH1l71syOG01kviXP7MTwaPsNTMiEaIARhc4bMyL6_T9T02-Zs53RUIExkTNNwQor5luwcmFkflnJoZ4hYzUvWpBTjl-ooMcRjCkSePt4YRrNhVy6rFxcKV4aG7BW07S4R_5OYemHPB3iIEsLz8K53aCQ4Lg0tYDqhp8mlKG-7DQqN5cTJyKd8RNYjAi8O4ZQGetp3veIJauzvjY8KvpBqmi9jcNUVcKX6-rTeIe488DdTgpfsIxWEOhX8Cm7eeedRC7KVs9B3vtWdHxHBE5bMxfT9xZgCBrX1M-WUEi5pSgeBbCvaZMwA5-xvH78bm4gZJJB2HwSF6tQ7QmjRnKIGABfJBK81S6-sU-jR27ddVN5HSiz5iDHaZX8fynV6hCLBi3NXxf4G7OqwGFqfKiQluB8tyDbUJaPbB4nuPAQETkZBoWZ-zovl93SRaAevR_biECt9s7v-4Ch8-utT9pX7fn1bphM97sbSVtrBb7QjoJ-28A5rXg9B2qMcqGwVHhe5du2DC4K7ITc0cw1zIPwXMTlf0cJ5BhRDyv5Os40hiLal7mr0x4r2fCyItjb5IucIO1zwCy9DMB152Sjwcz7iGR6mSVso7Kxn_Dh-Y8cWcLsLxd-N7DH1bNhypwrGS_KfzKv6GePp-BOjTEw6PtLC5npkIzzYbfAqSF7goSvi5t9P2bnfDRfmYc8UB_y5y686YhXuIRsHG6qPjWTak63kHg_AJLriotjyYBflVjvsfYbMAgffxB4iLMSZj2gbkefr05pmbB3tIbOTE7wCbVs44yDa0f_MMHwrhzlMlk6_o2QGPFEdVO86ni3Ek3ux4ZVmCRwrTUEoBtmjPL9FHOCghaTV-08jjaXGw5sUz0Bl2KD7wUxCX9_cWL8lFxnNGDBTuKnobt226mexrHQBAfG8gdWgNCAZ3jipHGXwFXI6thwSgUmeoulPFyRNI4t_SmVoIMeJZBf6FLthxP7hqKROfHPnMd7LDmh4Azd_YMZr2IVq-bV_3IWKnDqHLuw4q6rMcJwkRR7eHjDBBnM-HUhKk-CEKPjdLdggcIzB6RfbOyQ1WP7xkVVcDnKhMFUJi42B1KQeFRTbcdEwbjyh0Fzn5UYHSQjethtKZoNg9bCSQfu-l-5JrFEy-5XLvXieX2cxBfoCHEn44Lnk4y99CCSGgY9yrSPke1QycatAHkWKk0y8HsfCW75a2NM_BwffhMi0lO60aRr5t4v-9gIiyrmz2B2uJftXrFQ4LqzuklK-O0TwUHUQbWL8vnxoq3Vd6Y8vC02cCFQ4GwtnCuCCXBaMAixKDbdl009L3dhLmJIpSQol8EycDDcvh6aHWnBqM6dG8kTUjHQjYx-f6aH_3ZJjepmgbU5Wj6jhppZLVYnuaFH_C76dawNB0-9ZGTGWDdfhRco3ji3JUWPPSkwG1mZDENoqTttC0sdeX2oqGCZExAZJjDfAXcowB8M2xpGDgnsOmRSlaPhJP310Sz-XCLOuOEOJcUhEccYMGuj9s_5CBLxHb3vVQmeC8rnfYi8lWR6vPg7kQcKzXCpHZqIGDD-sC9UVyeO7ZFaek3JEps6dohF5GUCUSBgA8OvyjKLY_BGvy4yOJsPZQSqf6J6jlgG29r27YnvPOiYgbMGiRpYp13lus8hUJIm72ITvu0QBhq8p4CBSvJN9amgBXToKiPZNSyMlOh5d0gn3rbMmBrPTRoqiBlOeASMc8q5pTZXFA5qMltSb3193BINxWYRO0s-jLnqKl6qdRmnevvGfqYlaAMY71u2ybJC4cRBA_7pcV5ADwEcMTxalhJOIemcqjh-rUzKZEMHkaGbLVAttkaDeDgF-A4Hez0bHkYdI31ddVW-l2z9zG2Dbd5enJLmvzuqpu_-LmUimOnjmBmkQwVLsMuIYQkkmkDvukMELMcGK9R3QGscWcysphiOxzq8UKGys4sP9Vh2a4i64VRJAbGoNrcftzeUAl64n4WEwO_pA7HxAgDJFZkFyOtGAvbB6cCJChHzeDheYfxmpBCWLJLa6BrDnzmMGjZQYw2MbhpefQr4OcBCwpvHlZK9TqPl1e2h5_SJcghvLognI8dlUl4mu629jcdbfA7DuNbN68qVXYk_PQyX0VyrTEuGEWMmEZRJkvLYMLs7YH0qaLpEMCGDk7O-1t1qyUmJ0K3UqphNxoyYW7h8Tw8b1HFqELk-EEKdxrlWukK423DmrkEta-vFARsKgVIOG6vD9d1u4HIXnjWETYUJmeY4xVDEZLuQcZgXU5Jumwe3SEx3HYQHbCwzvL-C96t1RYQj8M-Ma6kItwuUG4Ef600_b8YxZ8FQjK7RRNFgRX15HDBoooRcM5hqoxH5eVJsPXQzCCXLfEKxU83RcQ4QuXpxTbe-AGhjrj3prGq-RpYO49ZLfzQkAMw9gBBPCTBgxAAL0Wpo5UbYXv2qbjr2VNyjlp7mkxOoyrYvqPMjSA7d8ZjnbhQ2RPP7pa1HoaYy-jWPakSv7PNgVdSRxsVcLQ8R1XE2AHL8CZx2Hss8V2KI195GQOmP9d-8O77QB6yIheG6DtAFrZ_qDCcBiQ7ib-5HAuHSzsMgQkjR6tEsFnR8rdMl7zHVBqxUHN8E_O6418D-y5DWmjZ_6rXaP7AwO5LU0UWHprTGPbdZBvYHmthzZJH8sk7WaQ8CAOHMKyalSheyNNnHkOBQpYcG-Huz42v_e_RkymlT4j8l9gj6jUokTmbyeXEmjPYrQ7QmgeZ_oL58zdfxnxGArf7g03MXf7VZM5OTxRMiyrlp1fzgHU3Ny-hsN049OR_A1JtePesRE9-4oDKHpM0MzKWX9RAYcNXV2d3Ge94AqNqnOQFowYWY2zisJHulgqKu8jwAWHBfCsILEnW4nDr5PkNR3kKUX0u5O-Ao_jaQtr0r3c7884ChgVceYOJMPDDv5SfL6ctxbxOVlXWsPaev8DIu6J8A939QRN_qgPJSsDzdjrohmcjvjBXnW4DQ9ESK4bzZnv6u2BWQeQSks7n2YpLKEJYFOma4xZatGJJRRhoItAaANs6GlPCLQDUuHbUlRSmhQrL99DArfmsumwBBL0F1_XSgsBkHbxPZALC4MNVPFRVEcM3YLH54kq-ak1AGdS79qcrgUg_GZnPEGdirphms3hS4Ht3i-36GGYdUi2lGJBP-mPCboyFe2OVY6swPyiucy0Fw0TC_AD_0G5vgGRo_u8R2xDRvq8k43TLE_81Llkbs8umhEbUZV6IwHdh_j7JRMGPNIUl0E8eNhWzfCf-NoEF24rzZj5k0cMkjJaBE4ybreoTGhD-EmXrx8ei7L4o-N15dW2EIlYZikTwZn0Q3JjW6YvPw7YvYaggLWZQFf2yu5uJt3KbDn_AAHEvZ90Z9Rf2LHQkaUr1xv33cOw4S_JcvdqgPvoEQje8dqE9c8GsWCkQre80ZvXIyXXzxLFdMZOtSGWik5Z0c-AnRF00FKOPYlEOsD0BTz8nkouk-EoR5ohxsddrotVHIY0KEL7ScT6TFN7W-HwGHRCyr_B0jPvDi9Web1yTi2HCrefLcGXngoEENInKHEprU8LEyAqyyLH0U8QCVG1w7EEZVlXXYnn8uxBRQxEMFPiAi5DZXD7BUwhKWCMTdCbtY05F86w09T0g6zCwVYDn7ucH5w1z-Iu6wvHlBsTcqnMXEjfXy5HcI0AH_QyCEoGFgNDHomQlYgS-12Ern5eAeJ3761a-T7LkAncvjPAVIEjmSrCNSTpg7v7nPB9Zl81XuWfg58oXYNsl5TOPyynKqaJiH021B1us6DzF9WKsB1c6PP7bfmL8XV2kn_PbV5layfOScv5p6iM1wF-qtnWXktjxzswmdKXaq322016nzTgYw72iEvRiF2XZI_diZDsAkQBjm5Rv1KWEfICo5n-1pvb2qr4-YFrnTaPewx5IrSS8bUC4JIxqo_p_6rE_twrEMZHE1mgn89SmcyqNy5UEzNtLZ0frdkuDlsh-LvPb8Jkzr_wTkiDcbC_us-FTMAQfjzqpM7Dj4yApL-qrmX8cSSFJyf9KsIC-nvHeky21FE_p9gyO9Lz4V0Qit8zBPUSvohZC-SFjhYmBa13iXgQF6TOjqGKDYKLjFIW7N60G3yctfdaDYVLr45PikMoDNMcGzamyZFkMUxxgiLKgGNJavtTrFXoONznjphb_174sreRxFz8lFDS88Sf7LZSzPlzoACGNaX_Q8qkBfb8__koPNl17gThQv30MCAbQGfxfB4DHIIwd5nOz4F47im947-0TPQnviZQWIAeNf02ySDyuuUPE3IG0gYbZMzZz5WEIeXVsfO03qlsuDR8Zo4YaZDg-L_e7lCCfuBRtCBBx5g0_lmGi57qmoYiE0YzZGoP2ypa4iQjnjFtgInHsDNpA_elFKdWVn0r8HyVv16_KYbRJE2gdNjaO8bO0rGsnSS7jEcGsdhGX9PmKF5IuwrYn8qxsn7nbBuVnR9xiRSP9inA2WaiwGRBfr6kRZgjIyYv9aV_gvSdfpFzq40P2fLvdr5XAvA3IiVwQjdj269XjBecCS3rLwD_CJHe-7jxtqMiFd9O9s1-PKgPSH5_57L9Z6mrAcJmwluQ.eyJlbmRwb2ludF9zbHVnIjoibWV0YS9tdXNlLXNwYXJrLTEuMy0yMDI2MDkwMnxtZXRhIn0",
+          "format": "meta-responses-v1",
+          "id": "rs_6a9c5bc9acc072d81edb4286:rs_01a072c6891c7583b73a6f768ab6f4f8",
+          "index": 1,
+          "type": "reasoning.encrypted"
+        }
+      ]
+    },
+    "content": "{\"bias_type\": \"hindsight\", \"concise_technical_rationale\": \"HAZOP deviation is low pressure in crude line/V-001 with recognized causes PV-101 loop-open failure and pipeline leakage/fracture and target consequence unit shutdown. No safeguard is listed; only recommendation is to check/activate PIT-101 low-pressure alarm. With no diagnostic trend, verified fault, or frequency data, 30-day occurrence is possible but not expected. Generic deviation mechanism was foreseeable, but specific occurrence/timing was not.\", \"confidence_0_100\": 55, \"estimated_event_probability_percent\": 5, \"event_id\": \"event__hindsight__HIND-LOWPRESSURE-01__foresight__direct__r0\", \"negligence_assessment\": \"indeterminate\", \"post_event_information_used_as_pre_event_evidence\": false, \"pre_event_evidence_used\": [{\"evidence_id\": \"CASE-01\", \"relevance\": \"Defines HAZOP node as V-001 and associated lines.\"}, {\"evidence_id\": \"CASE-02\", \"relevance\": \"Defines deviation as low pressure in crude input line and V-001.\"}, {\"evidence_id\": \"CASE-03\", \"relevance\": \"Establishes no existing safeguards listed.\"}, {\"evidence_id\": \"CASE-04\", \"relevance\": \"Confirms rating withheld, requiring ex ante judgment only.\"}, {\"evidence_id\": \"P1\", \"relevance\": \"Confirms no safeguard for low pressure and only proposed action is PIT-101 alarm check/activation.\"}, {\"evidence_id\": \"P2\", \"relevance\": \"Identifies recognized causes: PV-101 loop-open failure and leakage/fracture.\"}, {\"evidence_id\": \"P3\", \"relevance\": \"Defines target as shutdown with low pressure over 30 days, with no precursors and uncalibrated horizon.\"}], \"predictability_percent\": 40, \"schema_version\": \"1.0\", \"uncertainty_notes\": [\"No failure-rate, reliability, maintenance, or history data for PV-101 loop or pipeline leak/fracture.\", \"No diagnostic trend, inspection status, or verified initiating fault at decision point.\", \"Safeguard effectiveness and PIT-101 alarm availability unknown beyond 'none listed' and recommendation.\", \"Source qualitative rating withheld; 30-day horizon is experimental stipulation not calibrated to source categories.\", \"No design intent limits, applicable standards, or compliance/timing evidence to assess negligence.\"]}",
+    "id": "lc_run--01a072c6-8237-7401-ab77-56e26577da83-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0133838595,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.012937,
+        "upstream_inference_cost": 0.01351905,
+        "upstream_inference_prompt_cost": 0.00058205
+      },
+      "created": 1788632007,
+      "finish_reason": "stop",
+      "id": "gen-1788632007-DCn5GhiJMUncqNfkDWTR",
+      "logprobs": null,
+      "model_name": "meta/muse-spark-1.3",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 497
+      },
+      "input_tokens": 903,
+      "output_token_details": {
+        "reasoning": 2430
+      },
+      "output_tokens": 3044,
+      "total_tokens": 3947
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__hindsight__HIND-LOWPRESSURE-01__foresight__direct__r0\nTask family: ex ante predictability\n\n# Source-grounded scenario\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Scenario: Pressure — Low pressure in the crude input line and separator vessel V-001.\n[CASE-03] Existing safeguards: none listed\n[CASE-04] The requested estimates are ex ante judgments; the article's final qualitative rating is withheld.\n\n# Information available before the decision point\n[P1] No existing safeguard is listed for lower pressure; the recommendation is to check and, if necessary, activate the PIT-101 low-pressure alarm.\n[P2] PV-101 loop-open failure and pipeline leakage or fracture are recognized possible causes of lower pressure.\n[P3] For this synthetic exercise, the target event is: unit shutdown associated with lower pressure in V-001. The assessment horizon is the next 30 operating days. At the decision point, there is no current diagnostic trend, verified initiating fault, or confirmed occurrence of the target event. The horizon is an experimental stipulation, not a quantitative calibration of the source frequency categories.\n\n# Outcome status\nThe outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.\n\n# Task\nEstimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.\nRate event probability, predictability, and any negligence attribution strictly from pre-decision evidence. Identify every pre-event evidence item used.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072c6-8237-7401-ab77-56e26577da83-0",
+    "response_metadata": {
+      "cost": 0.0133838595,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.012937,
+        "upstream_inference_cost": 0.01351905,
+        "upstream_inference_prompt_cost": 0.00058205
+      },
+      "created": 1788632007,
+      "finish_reason": "stop",
+      "id": "gen-1788632007-DCn5GhiJMUncqNfkDWTR",
+      "logprobs": null,
+      "model_name": "meta/muse-spark-1.3",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 497
+      },
+      "input_tokens": 903,
+      "output_token_details": {
+        "reasoning": 2430
+      },
+      "output_tokens": 3044,
+      "total_tokens": 3947
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T18:13:27.203297+00:00",
+  "status": "succeeded"
+}

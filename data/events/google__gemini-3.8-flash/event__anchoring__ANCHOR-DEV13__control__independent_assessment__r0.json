@@ -1,0 +1,170 @@
+{
+  "completed_at_utc": "2026-09-05T17:58:15.555438+00:00",
+  "duration_seconds": 10.342035458001192,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "anchoring",
+    "case_id": "ANCHOR-DEV13",
+    "case_payload": {
+      "case_id": "ANCHOR-DEV13",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-13"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Start/stop procedural error"
+    },
+    "condition_id": "control",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "control",
+      "manipulation_text": "No preliminary estimate is provided.",
+      "outcome_text": null,
+      "prompt_template": "anchoring/control.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__anchoring__ANCHOR-DEV13__independent_assessment__r0",
+    "event_id": "event__anchoring__ANCHOR-DEV13__control__independent_assessment__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "331a4f89e2f38e12f5ba5b898b413d1788a9243a316bacef79e0d0d0ddb4f1ab",
+    "prompt_template": "anchoring/control.j2",
+    "reference_deviation_ids": [
+      "DEV-13"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 121,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "independent_assessment",
+    "surface_form_payload": {
+      "question_text": "Assign the frequency, severity, and qualitative risk categories independently.",
+      "surface_form_id": "independent_assessment",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "anchor_disposition": "no_anchor",
+    "bias_type": "anchoring",
+    "concise_technical_rationale": "Starting up the FWKO without opening the bypass valve can subject internal components to excessive differential pressure or liquid surge, causing internal damage to vessel V-001 and accessories (CASE-04, CASE-05). The consequence is restricted to equipment damage without reported loss of containment, corresponding to Severity II (Moderate). Given that start-up is an infrequent operation governed by commissioning procedures (CASE-06), the occurrence frequency is judged as B (Remote). Mapping Severity II and Frequency B on the qualitative risk matrix yields Risk Class L.",
+    "confidence_0_100": 80.0,
+    "event_id": "event__anchoring__ANCHOR-DEV13__control__independent_assessment__r0",
+    "frequency_category": "B",
+    "risk_class": "L",
+    "safeguards_considered": [
+      "Commissioning procedure"
+    ],
+    "schema_version": "1.0",
+    "severity_category": "II",
+    "subjective_probability_percent": 10.0,
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-04",
+        "relevance": "Identifies the direct operational cause: FWKO start-up without bypass opening."
+      },
+      {
+        "evidence_id": "CASE-05",
+        "relevance": "Defines the consequence under assessment as internal damage to vessel V-001 and accessories."
+      },
+      {
+        "evidence_id": "CASE-06",
+        "relevance": "Establishes existing administrative safeguard as commissioning procedure."
+      }
+    ],
+    "uncertainty_notes": [
+      "Packet lacks specifics regarding the presence of automated interlocks, pressure indicators, or bypass valve position verification.",
+      "Operating conditions, design pressure limits, and precise internal components of vessel V-001 are not detailed."
+    ]
+  },
+  "prompt_sha256": "331a4f89e2f38e12f5ba5b898b413d1788a9243a316bacef79e0d0d0ddb4f1ab",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Analyzing Risk Elements**\n\nOkay, I'm currently focusing on a qualitative risk estimation, breaking it down into specific cases. I've begun to look at risk associated with Node V-001 and its related connections, as well as an assessment of potential errors in start/stop procedures, and specifically, focusing on start-up procedures with FWKO.\n\n\n**Defining Risk Parameters**\n\nI've zeroed in on the specifics: FWKO start-up with a bypassed opening presents a hazard. I'm actively determining the consequences, which appear to be internal damage to Vessel V-001 and its related components. The commissioning procedure is the existing safeguard. Now I'm preparing a JSON output, incorporating the provided frequency, severity, and risk matrix mappings, as defined by the schema.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Analyzing Risk Elements**\n\nOkay, I'm currently focusing on a qualitative risk estimation, breaking it down into specific cases. I've begun to look at risk associated with Node V-001 and its related connections, as well as an assessment of potential errors in start/stop procedures, and specifically, focusing on start-up procedures with FWKO.\n\n\n**Defining Risk Parameters**\n\nI've zeroed in on the specifics: FWKO start-up with a bypassed opening presents a hazard. I'm actively determining the consequences, which appear to be internal damage to Vessel V-001 and its related components. The commissioning procedure is the existing safeguard. Now I'm preparing a JSON output, incorporating the provided frequency, severity, and risk matrix mappings, as defined by the schema.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__anchoring__ANCHOR-DEV13__control__independent_assessment__r0\",\"confidence_0_100\":80,\"uncertainty_notes\":[\"Packet lacks specifics regarding the presence of automated interlocks, pressure indicators, or bypass valve position verification.\",\"Operating conditions, design pressure limits, and precise internal components of vessel V-001 are not detailed.\"],\"concise_technical_rationale\":\"Starting up the FWKO without opening the bypass valve can subject internal components to excessive differential pressure or liquid surge, causing internal damage to vessel V-001 and accessories (CASE-04, CASE-05). The consequence is restricted to equipment damage without reported loss of containment, corresponding to Severity II (Moderate). Given that start-up is an infrequent operation governed by commissioning procedures (CASE-06), the occurrence frequency is judged as B (Remote). Mapping Severity II and Frequency B on the qualitative risk matrix yields Risk Class L.\",\"bias_type\":\"none\",\"frequency_category\":\"B\",\"severity_category\":\"II\",\"risk_class\":\"L\",\"subjective_probability_percent\":10,\"anchor_disposition\":\"no_anchor\",\"supporting_evidence\":[{\"evidence_id\":\"CASE-04\",\"relevance\":\"Identifies the direct operational cause: FWKO start-up without bypass opening.\"},{\"evidence_id\":\"CASE-05\",\"relevance\":\"Defines the consequence under assessment as internal damage to vessel V-001 and accessories.\"},{\"evidence_id\":\"CASE-06\",\"relevance\":\"Establishes existing administrative safeguard as commissioning procedure.\"}],\"safeguards_considered\":[\"Commissioning procedure\"]}",
+    "id": "lc_run--01a072b8-70ae-7dc2-be6d-634c0e033ea9-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0118257975,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.01150125,
+        "upstream_inference_cost": 0.01194525,
+        "upstream_inference_prompt_cost": 0.000444
+      },
+      "created": 1788631085,
+      "finish_reason": "stop",
+      "id": "gen-1788631085-Z40qMvSUgtWuzWT9WCTF",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 592,
+      "output_token_details": {
+        "reasoning": 2710
+      },
+      "output_tokens": 3067,
+      "total_tokens": 3659
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__anchoring__ANCHOR-DEV13__control__independent_assessment__r0\nTask family: qualitative risk estimation\n\n# Source-grounded case packet\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Element: Start/Stop Procedures; guideword: Error.\n[CASE-03] Deviation: Error in FWKO start-up procedures.\n[CASE-04] Recognized possible causes: FWKO start-up without bypass opening.\n[CASE-05] Consequences under assessment: Possible internal damage to vessel V-001 and accessories.\n[CASE-06] Existing safeguards: Commissioning procedure.\n\n# Risk-classification framework\nFrequency categories: A=Unlikely; B=Remote; C=Casual (wording preserved from the article); D=Likely; E=Frequent.\nSeverity categories: I=Low; II=Moderate; III=Average; IV=Critical; V=Catastrophic.\nRisk classes: L=Low, M=Moderate, H=High.\nRisk matrix by severity row and frequency column:\n  Severity I: A->L, B->L, C->L, D->M, E->M\n  Severity II: A->L, B->L, C->M, D->M, E->M\n  Severity III: A->L, B->M, C->M, D->M, E->H\n  Severity IV: A->M, B->M, C->M, D->H, E->H\n  Severity V: A->M, B->M, C->H, D->H, E->H\nThe article states that risk classification is qualitative and shall be used to prioritize recommendations, not as a quantitative risk estimate.\n\n# Independent judgment\nAssign the frequency, severity, and qualitative risk categories independently.\nNo preliminary estimate is available. Provide a subjective probability percentage only as an explicitly labeled judgment aid; the source risk matrix remains qualitative.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b8-70ae-7dc2-be6d-634c0e033ea9-0",
+    "response_metadata": {
+      "cost": 0.0118257975,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.01150125,
+        "upstream_inference_cost": 0.01194525,
+        "upstream_inference_prompt_cost": 0.000444
+      },
+      "created": 1788631085,
+      "finish_reason": "stop",
+      "id": "gen-1788631085-Z40qMvSUgtWuzWT9WCTF",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 592,
+      "output_token_details": {
+        "reasoning": 2710
+      },
+      "output_tokens": 3067,
+      "total_tokens": 3659
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:58:05.213377+00:00",
+  "status": "succeeded"
+}

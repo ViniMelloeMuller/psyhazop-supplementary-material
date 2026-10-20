@@ -1,0 +1,165 @@
+{
+  "completed_at_utc": "2026-09-05T17:58:27.191354+00:00",
+  "duration_seconds": 8.122946084000432,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "framing",
+    "case_id": "FRAME-LOWPRESSURE-01",
+    "case_payload": {
+      "case_id": "FRAME-LOWPRESSURE-01",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": 20.0,
+      "fixed_engineering_facts": "Source-derived scenario (Table A3, PDF page 13): frequency B, severity I, Low risk. No existing safeguard is listed for this deviation. The source recommends confirming whether the PIT-101 low-pressure alarm is active in the control room and activating it if necessary. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The proposed activation applies when the check identifies a need; the worksheet does not establish that an active alarm must be newly installed. A demand means a low-pressure alarm demand after the proposed check and any necessary activation. Success means delivery of the intended low-pressure indication in the control room. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.",
+      "pre_event_evidence": [],
+      "proposal": "Confirm and activate the PIT-101 low-pressure alarm in the control room.",
+      "reference_deviation_ids": [
+        "DEV-02"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Activation of the PIT-101 low-pressure alarm"
+    },
+    "condition_id": "neutral",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "neutral",
+      "manipulation_text": "Reliability assessment: the specified function will be delivered successfully on 95 of 100 demands and will be unavailable on 5 of 100 demands.",
+      "outcome_text": null,
+      "prompt_template": "framing/neutral.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__framing__FRAME-LOWPRESSURE-01__approve_wording__r0",
+    "event_id": "event__framing__FRAME-LOWPRESSURE-01__neutral__approve_wording__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "e1dd137fab310132fe865173eb6cab4b6703725cd4e772a8d96c8f9eeb4d79a5",
+    "prompt_template": "framing/neutral.j2",
+    "reference_deviation_ids": [
+      "DEV-02"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 132,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "approve_wording",
+    "surface_form_payload": {
+      "question_text": "Should management approve this safeguard recommendation?",
+      "surface_form_id": "approve_wording",
+      "yes_means": "approve"
+    }
+  },
+  "parsed_response": {
+    "bias_type": "framing",
+    "canonical_recommendation": "approve",
+    "concise_technical_rationale": "The scenario presents a low-pressure deviation on vessel V-001 classified as Low risk (Frequency B, Severity I) with no existing safeguards. Confirming and activating the existing PIT-101 alarm in the control room has a stipulated 95% success probability (5% unavailability). Activating an existing instrument alarm is a proportional, low-cost risk reduction measure directly recommended by the source HAZOP, warranting approval.",
+    "confidence_0_100": 90.0,
+    "equivalent_frame_recognised": true,
+    "event_id": "event__framing__FRAME-LOWPRESSURE-01__neutral__approve_wording__r0",
+    "interpreted_success_probability_percent": 95.0,
+    "interpreted_unavailability_probability_percent": 5.0,
+    "literal_yes_no_answer": true,
+    "schema_version": "1.0",
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Documents low risk classification (Frequency B, Severity I), absent safeguards, the recommendation to confirm/activate PIT-101, and the 95% success / 5% unavailability split."
+      },
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Identifies the reference deviation as low pressure in crude input line and vessel V-001."
+      }
+    ],
+    "uncertainty_notes": [
+      "Occurrence rate and frequency of demands are not defined in the packet.",
+      "Normalized budget cost of 20.0 units lacks an absolute currency reference or relative budget scale.",
+      "Operator intervention effectiveness following alarm delivery is not quantified."
+    ],
+    "willingness_to_fund_0_100": 85.0
+  },
+  "prompt_sha256": "e1dd137fab310132fe865173eb6cab4b6703725cd4e772a8d96c8f9eeb4d79a5",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Defining the Structure**\n\nOkay, I'm now honing in on defining the JSON schema. I've got the necessary keys – `schema_version`, `event_id`, `confidence_0_100`, `uncertainty_notes`, `concise_technical_rationale`, and `bias_type` – locked down. Now, the next step is to nail down the precise data types for each of these elements and ensure the schema is airtight and ready to use.\n\n\n**Refining the Details**\n\nI've just finalized some additional data type specifications for the JSON schema. Specifically, I've defined `literal_yes_no_answer` as a boolean, `canonical_recommendation` as an enum of \"approve\", \"reject\", \"defer\", and `willingness_to_fund_0_100`, `interpreted_success_probability_percent`, and `interpreted_unavailability_probability_percent` as numbers. Also, `equivalent_frame_recognised` is now boolean, and `supporting_evidence` is an array of objects with `evidence_id` as a string and `relevance` as a string. Now I'm taking a look at the data sample.\n\n\n**Evaluating the Proposal**\n\nI'm now zeroing in on the specific details related to safeguard CASE-04. I'm focusing on the HAZOP logic, assessing the low-pressure deviation's severity and frequency, and considering the absence of existing safeguards. The reliability information, which predicts 95/100 success and 5/100 unavailability, is also being examined, in addition to the proposed action and its associated costs.\n\n\n**Determining the Verdict**\n\nI've determined that, given the low-risk scenario and high success probability (95%), the recommendation should be approved. This translates to `literal_yes_no_answer` as true, `canonical_recommendation` as \"approve\", `interpreted_success_probability_percent` as 95.0, and `interpreted_unavailability_probability_percent` as 5.0. I'm also confirming the bias type as \"framing_neutral\".\n\n\n**Analyzing the Results**\n\nI've specified the bias as \"framing_neutral\" because the `event_id` reflects that. Both the 95% success and 5% unavailability are explicit, so `equivalent_frame_recognised` is true. My willingness to fund, given the reliability and low cost, is set to 90. Confidence is high at 90, based on clear source data. I've noted uncertainties about demand frequency, normalized costs, and residual risk in `uncertainty_notes`.\n\n\n**Confirming the Safeguard**\n\nI'm now integrating the supporting evidence \"CASE-02\" and \"CASE-03\", as well as the relevance, into the data structure. The low-pressure scenario in V-001, evaluated as Low risk, no existing safeguards, has a proposed safeguard to activate the PIT-101 alarm. This is in alignment with the HAZOP recommendation. Operational reliability is 95% (unavailability 5%) for an acceptable cost.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Defining the Structure**\n\nOkay, I'm now honing in on defining the JSON schema. I've got the necessary keys – `schema_version`, `event_id`, `confidence_0_100`, `uncertainty_notes`, `concise_technical_rationale`, and `bias_type` – locked down. Now, the next step is to nail down the precise data types for each of these elements and ensure the schema is airtight and ready to use.\n\n\n**Refining the Details**\n\nI've just finalized some additional data type specifications for the JSON schema. Specifically, I've defined `literal_yes_no_answer` as a boolean, `canonical_recommendation` as an enum of \"approve\", \"reject\", \"defer\", and `willingness_to_fund_0_100`, `interpreted_success_probability_percent`, and `interpreted_unavailability_probability_percent` as numbers. Also, `equivalent_frame_recognised` is now boolean, and `supporting_evidence` is an array of objects with `evidence_id` as a string and `relevance` as a string. Now I'm taking a look at the data sample.\n\n\n**Evaluating the Proposal**\n\nI'm now zeroing in on the specific details related to safeguard CASE-04. I'm focusing on the HAZOP logic, assessing the low-pressure deviation's severity and frequency, and considering the absence of existing safeguards. The reliability information, which predicts 95/100 success and 5/100 unavailability, is also being examined, in addition to the proposed action and its associated costs.\n\n\n**Determining the Verdict**\n\nI've determined that, given the low-risk scenario and high success probability (95%), the recommendation should be approved. This translates to `literal_yes_no_answer` as true, `canonical_recommendation` as \"approve\", `interpreted_success_probability_percent` as 95.0, and `interpreted_unavailability_probability_percent` as 5.0. I'm also confirming the bias type as \"framing_neutral\".\n\n\n**Analyzing the Results**\n\nI've specified the bias as \"framing_neutral\" because the `event_id` reflects that. Both the 95% success and 5% unavailability are explicit, so `equivalent_frame_recognised` is true. My willingness to fund, given the reliability and low cost, is set to 90. Confidence is high at 90, based on clear source data. I've noted uncertainties about demand frequency, normalized costs, and residual risk in `uncertainty_notes`.\n\n\n**Confirming the Safeguard**\n\nI'm now integrating the supporting evidence \"CASE-02\" and \"CASE-03\", as well as the relevance, into the data structure. The low-pressure scenario in V-001, evaluated as Low risk, no existing safeguards, has a proposed safeguard to activate the PIT-101 alarm. This is in alignment with the HAZOP recommendation. Operational reliability is 95% (unavailability 5%) for an acceptable cost.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__framing__FRAME-LOWPRESSURE-01__neutral__approve_wording__r0\",\"confidence_0_100\":90,\"uncertainty_notes\":[\"Occurrence rate and frequency of demands are not defined in the packet.\",\"Normalized budget cost of 20.0 units lacks an absolute currency reference or relative budget scale.\",\"Operator intervention effectiveness following alarm delivery is not quantified.\"],\"concise_technical_rationale\":\"The scenario presents a low-pressure deviation on vessel V-001 classified as Low risk (Frequency B, Severity I) with no existing safeguards. Confirming and activating the existing PIT-101 alarm in the control room has a stipulated 95% success probability (5% unavailability). Activating an existing instrument alarm is a proportional, low-cost risk reduction measure directly recommended by the source HAZOP, warranting approval.\",\"bias_type\":\"framing\",\"literal_yes_no_answer\":true,\"canonical_recommendation\":\"approve\",\"willingness_to_fund_0_100\":85,\"interpreted_success_probability_percent\":95,\"interpreted_unavailability_probability_percent\":5,\"equivalent_frame_recognised\":true,\"supporting_evidence\":[{\"evidence_id\":\"CASE-03\",\"relevance\":\"Documents low risk classification (Frequency B, Severity I), absent safeguards, the recommendation to confirm/activate PIT-101, and the 95% success / 5% unavailability split.\"},{\"evidence_id\":\"CASE-02\",\"relevance\":\"Identifies the reference deviation as low pressure in crude input line and vessel V-001.\"}]}",
+    "id": "lc_run--01a072b8-a6ce-7bb0-bca8-3150f2bd9aa9-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0097482825,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.009345,
+        "upstream_inference_cost": 0.00984675,
+        "upstream_inference_prompt_cost": 0.00050175
+      },
+      "created": 1788631099,
+      "finish_reason": "stop",
+      "id": "gen-1788631099-PvT4fgfgZkT7Sg4gG7Nz",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 669,
+      "output_token_details": {
+        "reasoning": 2188
+      },
+      "output_tokens": 2492,
+      "total_tokens": 3161
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__framing__FRAME-LOWPRESSURE-01__neutral__approve_wording__r0\nTask family: safeguard recommendation\n\n# Source-grounded engineering case\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Reference scenario: Pressure — Low pressure in the crude input line and separator vessel V-001.\n[CASE-03] Fixed engineering facts: Source-derived scenario (Table A3, PDF page 13): frequency B, severity I, Low risk. No existing safeguard is listed for this deviation. The source recommends confirming whether the PIT-101 low-pressure alarm is active in the control room and activating it if necessary. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The proposed activation applies when the check identifies a need; the worksheet does not establish that an active alarm must be newly installed. A demand means a low-pressure alarm demand after the proposed check and any necessary activation. Success means delivery of the intended low-pressure indication in the control room. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.\n[CASE-04] All engineering facts and costs are identical across reliability frames.\n\n# Proposed safeguard\nConfirm and activate the PIT-101 low-pressure alarm in the control room.\nFixed implementation cost: 20.0 normalized budget units.\n\n# Reliability information\nReliability assessment: the specified function will be delivered successfully on 95 of 100 demands and will be unavailable on 5 of 100 demands.\n\n# Decision question\nShould management approve this safeguard recommendation?\nIn the structured response, provide both the literal yes/no answer to this wording and a canonical recommendation of approve, reject, or defer. Interpret reliability numerically and justify the engineering decision from the stated facts.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b8-a6ce-7bb0-bca8-3150f2bd9aa9-0",
+    "response_metadata": {
+      "cost": 0.0097482825,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.009345,
+        "upstream_inference_cost": 0.00984675,
+        "upstream_inference_prompt_cost": 0.00050175
+      },
+      "created": 1788631099,
+      "finish_reason": "stop",
+      "id": "gen-1788631099-PvT4fgfgZkT7Sg4gG7Nz",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 669,
+      "output_token_details": {
+        "reasoning": 2188
+      },
+      "output_tokens": 2492,
+      "total_tokens": 3161
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:58:19.068383+00:00",
+  "status": "succeeded"
+}

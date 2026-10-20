@@ -1,0 +1,222 @@
+{
+  "completed_at_utc": "2026-09-05T17:54:43.478264+00:00",
+  "duration_seconds": 7.69687574999989,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "hindsight",
+    "case_id": "HIND-LOWLEVEL-01",
+    "case_payload": {
+      "case_id": "HIND-LOWLEVEL-01",
+      "conditions": [
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "foresight",
+          "manipulation_text": "",
+          "outcome_text": "The outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+          "prompt_template": "hindsight/foresight.j2",
+          "provenance": "synthetic_experimental"
+        },
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "hindsight",
+          "manipulation_text": "",
+          "outcome_text": "Within the stated 30-operating-day horizon, the following target event occurred: damage to the V-102 degasser associated with gas passage following low level in V-001. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+          "prompt_template": "hindsight/hindsight.j2",
+          "provenance": "synthetic_experimental_realization"
+        }
+      ],
+      "evidence_items": [],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [
+        {
+          "evidence_id": "P1",
+          "provenance": "source_derived",
+          "text": "LAHH-104 with closing action on SDV-101 is the safeguard listed for low level; instrument and equipment tags are retained as published."
+        },
+        {
+          "evidence_id": "P2",
+          "provenance": "source_derived",
+          "text": "LV-101 open-circuit failure is a recognized possible cause of low level; the listed consequences include gas passage through V-102 and possible damage to that degasser."
+        },
+        {
+          "evidence_id": "P3",
+          "provenance": "synthetic_experimental",
+          "text": "For this synthetic exercise, the target event is: damage to the V-102 degasser associated with gas passage following low level in V-001. The assessment horizon is the next 30 operating days. At the decision point, there is no current diagnostic trend, verified initiating fault, or confirmed occurrence of the target event. The horizon is an experimental stipulation, not a quantitative calibration of the source frequency categories."
+        }
+      ],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-08"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [
+        {
+          "question_text": "Estimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.",
+          "surface_form_id": "direct",
+          "yes_means": null
+        }
+      ],
+      "task": null,
+      "title": "Low-level gas-passage and degasser-damage scenario"
+    },
+    "condition_id": "foresight",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "foresight",
+      "manipulation_text": "",
+      "outcome_text": "The outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+      "prompt_template": "hindsight/foresight.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__hindsight__HIND-LOWLEVEL-01__direct__r0",
+    "event_id": "event__hindsight__HIND-LOWLEVEL-01__foresight__direct__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "2543f2381838881078274848aeceb5faa2206275f3a3e6be785845514fd6b40a",
+    "prompt_template": "hindsight/foresight.j2",
+    "reference_deviation_ids": [
+      "DEV-08"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 11,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "direct",
+    "surface_form_payload": {
+      "question_text": "Estimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.",
+      "surface_form_id": "direct",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "bias_type": "hindsight",
+    "concise_technical_rationale": "The causal chain linking LV-101 open-circuit failure to low level in V-001, gas breakthrough, and subsequent damage to downstream degasser V-102 is a recognized HAZOP deviation. However, over an arbitrary 30-operating-day horizon with no active faults, pre-existing degradation, or diagnostic warnings, the random probability of this joint failure occurring (initiating valve fault plus safeguard failure) remains low. Predictability is moderate-to-high because the hazard mechanism is explicitly identified in the design documentation.",
+    "confidence_0_100": 75.0,
+    "estimated_event_probability_percent": 2.5,
+    "event_id": "event__hindsight__HIND-LOWLEVEL-01__foresight__direct__r0",
+    "negligence_assessment": "indeterminate",
+    "post_event_information_used_as_pre_event_evidence": false,
+    "pre_event_evidence_used": [
+      {
+        "evidence_id": "CASE-01",
+        "relevance": "Defines the study node covering separator vessel V-001 and associated piping."
+      },
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Identifies the specific guideword deviation: Level — Less liquid."
+      },
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Documents existing safeguards credited (LAHH-104 acting on SDV-101)."
+      },
+      {
+        "evidence_id": "P1",
+        "relevance": "Confirms the documented safeguard arrangement and instrument tags as published."
+      },
+      {
+        "evidence_id": "P2",
+        "relevance": "Identifies the credible initiating cause (LV-101 open-circuit failure) and downstream consequence (V-102 damage via gas passage)."
+      },
+      {
+        "evidence_id": "P3",
+        "relevance": "Defines the 30-day evaluation horizon and confirms absence of active diagnostic alarms or initiating faults at decision point."
+      }
+    ],
+    "predictability_percent": 75.0,
+    "schema_version": "1.0",
+    "uncertainty_notes": [
+      "Instrument tag LAHH-104 is listed as safeguard for a low-level deviation, which may indicate a typographical error in the source record (e.g., LALL vs LAHH) or an inappropriate safeguard.",
+      "Lack of historical reliability data, mean time between failures (MTBF) for control valve LV-101, and proof test records for SDV-101.",
+      "Absence of diagnostic trends, operating logs, or procedural compliance data limits deterministic forecasting."
+    ]
+  },
+  "prompt_sha256": "2543f2381838881078274848aeceb5faa2206275f3a3e6be785845514fd6b40a",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Refining JSON Output**\n\nI'm focused on ensuring the JSON output adheres precisely to the schema, with no extraneous markdown, comments, or control characters within string values. I'm exploring strategies for validation and cleansing to guarantee a perfectly parseable JSON response.\n\n\n**Validating JSON Structure**\n\nI'm now deeply engaged in validating the JSON structure to perfectly align with the prescribed schema. The Event ID is \"event__hindsight__HIND-LOWLEVEL-01__foresight__direct__r0,\" linked to vessel V-001 and associated lines, where the scenario involves less liquid in separator vessel. Safeguards, like LAHH-104 with SDV-101's closing action, are being noted, along with instrument tag anomalies. I'm carefully analyzing causes like LV-101 open-circuit failure.\n\n\n**Assessing Event Probabilities**\n\nI am now assessing the probability of the target event: damage to the V-102 degasser. This follows gas passage after a low level in V-001 within 30 operating days. Currently, there is no diagnostic trend, initiating fault, or verified occurrence. I am evaluating the low base probability of hardware failure, like LV-101 open-circuit, combined with the safeguard's efficacy, particularly LAHH-104's potential anomaly, assuming no current active degradation is present.\n\n\n**Evaluating Risk Likelihood**\n\nMy current focus is on refining the risk assessment for degasser V-102 damage due to gas blowby. The probability within a 30-day window is very low. While the causal pathway is clearly documented in HAZOP, boosting predictability, I'm finding the exact timing is difficult to pinpoint without any precursors. Negligence assessment is tricky.\n\n\n**Determining Negligence and Bias**\n\nI'm working to determine negligence, given the scenario's safeguards and the absence of faults at the decision point, leaning toward \"indeterminate\" due to packet insufficiency. Specifically, no additional causal diagnosis, procedural-compliance findings, or pre-event knowledge. I've also identified a potential \"hindsight_bias\" as the dominant cognitive bias impacting the analysis, considering the hindsight/foresight framing of the event. I'm verifying all required fields, including schema_version and event_id, to ensure data integrity and schema compliance.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Refining JSON Output**\n\nI'm focused on ensuring the JSON output adheres precisely to the schema, with no extraneous markdown, comments, or control characters within string values. I'm exploring strategies for validation and cleansing to guarantee a perfectly parseable JSON response.\n\n\n**Validating JSON Structure**\n\nI'm now deeply engaged in validating the JSON structure to perfectly align with the prescribed schema. The Event ID is \"event__hindsight__HIND-LOWLEVEL-01__foresight__direct__r0,\" linked to vessel V-001 and associated lines, where the scenario involves less liquid in separator vessel. Safeguards, like LAHH-104 with SDV-101's closing action, are being noted, along with instrument tag anomalies. I'm carefully analyzing causes like LV-101 open-circuit failure.\n\n\n**Assessing Event Probabilities**\n\nI am now assessing the probability of the target event: damage to the V-102 degasser. This follows gas passage after a low level in V-001 within 30 operating days. Currently, there is no diagnostic trend, initiating fault, or verified occurrence. I am evaluating the low base probability of hardware failure, like LV-101 open-circuit, combined with the safeguard's efficacy, particularly LAHH-104's potential anomaly, assuming no current active degradation is present.\n\n\n**Evaluating Risk Likelihood**\n\nMy current focus is on refining the risk assessment for degasser V-102 damage due to gas blowby. The probability within a 30-day window is very low. While the causal pathway is clearly documented in HAZOP, boosting predictability, I'm finding the exact timing is difficult to pinpoint without any precursors. Negligence assessment is tricky.\n\n\n**Determining Negligence and Bias**\n\nI'm working to determine negligence, given the scenario's safeguards and the absence of faults at the decision point, leaning toward \"indeterminate\" due to packet insufficiency. Specifically, no additional causal diagnosis, procedural-compliance findings, or pre-event knowledge. I've also identified a potential \"hindsight_bias\" as the dominant cognitive bias impacting the analysis, considering the hindsight/foresight framing of the event. I'm verifying all required fields, including schema_version and event_id, to ensure data integrity and schema compliance.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\n  \"schema_version\": \"1.0.0\",\n  \"event_id\": \"event__hindsight__HIND-LOWLEVEL-01__foresight__direct__r0\",\n  \"confidence_0_100\": 75,\n  \"uncertainty_notes\": [\n    \"Instrument tag LAHH-104 is listed as safeguard for a low-level deviation, which may indicate a typographical error in the source record (e.g., LALL vs LAHH) or an inappropriate safeguard.\",\n    \"Lack of historical reliability data, mean time between failures (MTBF) for control valve LV-101, and proof test records for SDV-101.\",\n    \"Absence of diagnostic trends, operating logs, or procedural compliance data limits deterministic forecasting.\"\n  ],\n  \"concise_technical_rationale\": \"The causal chain linking LV-101 open-circuit failure to low level in V-001, gas breakthrough, and subsequent damage to downstream degasser V-102 is a recognized HAZOP deviation. However, over an arbitrary 30-operating-day horizon with no active faults, pre-existing degradation, or diagnostic warnings, the random probability of this joint failure occurring (initiating valve fault plus safeguard failure) remains low. Predictability is moderate-to-high because the hazard mechanism is explicitly identified in the design documentation.\",\n  \"bias_type\": \"hindsight_bias\",\n  \"estimated_event_probability_percent\": 2.5,\n  \"predictability_percent\": 75,\n  \"negligence_assessment\": \"indeterminate\",\n  \"pre_event_evidence_used\": [\n    {\n      \"evidence_id\": \"CASE-01\",\n      \"relevance\": \"Defines the study node covering separator vessel V-001 and associated piping.\"\n    },\n    {\n      \"evidence_id\": \"CASE-02\",\n      \"relevance\": \"Identifies the specific guideword deviation: Level — Less liquid.\"\n    },\n    {\n      \"evidence_id\": \"CASE-03\",\n      \"relevance\": \"Documents existing safeguards credited (LAHH-104 acting on SDV-101).\"\n    },\n    {\n      \"evidence_id\": \"P1\",\n      \"relevance\": \"Confirms the documented safeguard arrangement and instrument tags as published.\"\n    },\n    {\n      \"evidence_id\": \"P2\",\n      \"relevance\": \"Identifies the credible initiating cause (LV-101 open-circuit failure) and downstream consequence (V-102 damage via gas passage).\"\n    },\n    {\n      \"evidence_id\": \"P3\",\n      \"relevance\": \"Defines the 30-day evaluation horizon and confirms absence of active diagnostic alarms or initiating faults at decision point.\"\n    }\n  ],\n  \"post_event_information_used_as_pre_event_evidence\": false\n}",
+    "id": "lc_run--01a072b5-3e99-7c31-a14e-dbab0d8bf4f7-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0076202775,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00726375,
+        "upstream_inference_cost": 0.00769725,
+        "upstream_inference_prompt_cost": 0.0004335
+      },
+      "created": 1788630876,
+      "finish_reason": "stop",
+      "id": "gen-1788630876-wb6sNe8db4pPs9NibAP2",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 578,
+      "output_token_details": {
+        "reasoning": 1360
+      },
+      "output_tokens": 1937,
+      "total_tokens": 2515
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__hindsight__HIND-LOWLEVEL-01__foresight__direct__r0\nTask family: ex ante predictability\n\n# Source-grounded scenario\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Scenario: Level — Less liquid in separator vessel V-001.\n[CASE-03] Existing safeguards: LAHH-104 with closing action of SDV-101.\n[CASE-04] The requested estimates are ex ante judgments; the article's final qualitative rating is withheld.\n\n# Information available before the decision point\n[P1] LAHH-104 with closing action on SDV-101 is the safeguard listed for low level; instrument and equipment tags are retained as published.\n[P2] LV-101 open-circuit failure is a recognized possible cause of low level; the listed consequences include gas passage through V-102 and possible damage to that degasser.\n[P3] For this synthetic exercise, the target event is: damage to the V-102 degasser associated with gas passage following low level in V-001. The assessment horizon is the next 30 operating days. At the decision point, there is no current diagnostic trend, verified initiating fault, or confirmed occurrence of the target event. The horizon is an experimental stipulation, not a quantitative calibration of the source frequency categories.\n\n# Outcome status\nThe outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.\n\n# Task\nEstimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.\nRate event probability, predictability, and any negligence attribution strictly from pre-decision evidence. Identify every pre-event evidence item used.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b5-3e99-7c31-a14e-dbab0d8bf4f7-0",
+    "response_metadata": {
+      "cost": 0.0076202775,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00726375,
+        "upstream_inference_cost": 0.00769725,
+        "upstream_inference_prompt_cost": 0.0004335
+      },
+      "created": 1788630876,
+      "finish_reason": "stop",
+      "id": "gen-1788630876-wb6sNe8db4pPs9NibAP2",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 578,
+      "output_token_details": {
+        "reasoning": 1360
+      },
+      "output_tokens": 1937,
+      "total_tokens": 2515
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:54:35.781718+00:00",
+  "status": "succeeded"
+}

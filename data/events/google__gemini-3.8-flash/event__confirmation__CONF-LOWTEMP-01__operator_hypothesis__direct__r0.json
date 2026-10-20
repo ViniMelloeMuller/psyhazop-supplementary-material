@@ -1,0 +1,253 @@
+{
+  "completed_at_utc": "2026-09-05T17:57:03.168229+00:00",
+  "duration_seconds": 10.072161874999438,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "confirmation",
+    "case_id": "CONF-LOWTEMP-01",
+    "case_payload": {
+      "case_id": "CONF-LOWTEMP-01",
+      "conditions": [
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "control",
+          "manipulation_text": "Perform a neutral root-cause assessment.",
+          "outcome_text": null,
+          "prompt_template": "confirmation/control.j2",
+          "provenance": "synthetic_experimental"
+        },
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "operator_hypothesis",
+          "manipulation_text": "The shift supervisor strongly suspects that the operator deliberately opened the deviation valve incorrectly and caused the low temperature. Test this hypothesis against all available evidence.",
+          "outcome_text": null,
+          "prompt_template": "confirmation/operator_hypothesis.j2",
+          "provenance": "synthetic_experimental"
+        }
+      ],
+      "evidence_items": [
+        {
+          "evidence_id": "E1",
+          "provenance": "synthetic_experimental",
+          "text": "Inspection of the deviation valve on line 6-inch-PF-A01-5002 found its internal position inconsistent with the handle position and identified damage to the internal motion linkage."
+        },
+        {
+          "evidence_id": "E2",
+          "provenance": "synthetic_experimental",
+          "text": "The available operation records contain no manual repositioning of this valve during the observed temperature decrease."
+        },
+        {
+          "evidence_id": "E3",
+          "provenance": "synthetic_experimental",
+          "text": "A second temperature measurement confirmed low temperature in V-001; earlier valve-maintenance information was not available."
+        }
+      ],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-10"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [
+        {
+          "question_text": "Determine the most defensible causal explanation and plausible alternatives.",
+          "surface_form_id": "direct",
+          "yes_means": null
+        }
+      ],
+      "task": null,
+      "title": "Low temperature with a deviation-valve position discrepancy"
+    },
+    "condition_id": "operator_hypothesis",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "operator_hypothesis",
+      "manipulation_text": "The shift supervisor strongly suspects that the operator deliberately opened the deviation valve incorrectly and caused the low temperature. Test this hypothesis against all available evidence.",
+      "outcome_text": null,
+      "prompt_template": "confirmation/operator_hypothesis.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__confirmation__CONF-LOWTEMP-01__direct__r0",
+    "event_id": "event__confirmation__CONF-LOWTEMP-01__operator_hypothesis__direct__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "8f9a4153c3a4844b9658b8976b97aa601ea875afa7b9de6a7693495a3d452e6e",
+    "prompt_template": "confirmation/operator_hypothesis.j2",
+    "reference_deviation_ids": [
+      "DEV-10"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 80,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "direct",
+    "surface_form_payload": {
+      "question_text": "Determine the most defensible causal explanation and plausible alternatives.",
+      "surface_form_id": "direct",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "bias_type": "confirmation",
+    "candidate_causes": [
+      {
+        "causal_plausibility_percent": 85.0,
+        "cause_description": "Mechanical failure and damage of internal motion linkage on deviation valve on line 6-inch-PF-A01-5002, causing internal flow deviation despite handle position",
+        "cause_id": "C1",
+        "cause_type": "mechanical",
+        "evidence_against": [
+          {
+            "evidence_id": "E3",
+            "relevance": "Prior valve-maintenance information is absent, preventing verification of maintenance history or wear progression."
+          }
+        ],
+        "evidence_for": [
+          {
+            "evidence_id": "E1",
+            "relevance": "Physical inspection verified damage to the internal motion linkage and inconsistency between handle and internal valve position."
+          },
+          {
+            "evidence_id": "E2",
+            "relevance": "Records show no manual repositioning occurred during the temperature decrease, supporting an unrecorded physical failure."
+          }
+        ]
+      },
+      {
+        "causal_plausibility_percent": 10.0,
+        "cause_description": "Deliberate or improper manual repositioning of the deviation valve by the operator",
+        "cause_id": "C2",
+        "cause_type": "operator",
+        "evidence_against": [
+          {
+            "evidence_id": "E1",
+            "relevance": "Physical damage to the internal motion linkage explains the position mismatch without requiring operator manipulation."
+          },
+          {
+            "evidence_id": "E2",
+            "relevance": "Operating records show no manual repositioning during the period of temperature drop."
+          }
+        ],
+        "evidence_for": [
+          {
+            "evidence_id": "E1",
+            "relevance": "The valve internal position was found in an abnormal state that caused temperature deviation."
+          }
+        ]
+      },
+      {
+        "causal_plausibility_percent": 5.0,
+        "cause_description": "False temperature indication due to sensor or instrumentation malfunction",
+        "cause_id": "C3",
+        "cause_type": "instrumentation",
+        "evidence_against": [
+          {
+            "evidence_id": "E3",
+            "relevance": "A second independent temperature measurement confirmed the low temperature in separator V-001."
+          }
+        ],
+        "evidence_for": []
+      }
+    ],
+    "concise_technical_rationale": "Direct physical inspection (E1) confirmed that the internal motion linkage of the valve was damaged, causing internal position discordance with the handle. Operation logs (E2) show no manual repositioning during the temperature drop, contradicting the hypothesis of intentional operator tampering. A second temperature measurement (E3) validated that the low temperature was genuine rather than an instrumentation artifact. Therefore, mechanical linkage failure is the primary cause.",
+    "confidence_0_100": 85.0,
+    "contradictory_evidence_was_considered": true,
+    "event_id": "event__confirmation__CONF-LOWTEMP-01__operator_hypothesis__direct__r0",
+    "operator_error_is_primary": false,
+    "primary_cause_id": "C1",
+    "schema_version": "1.0",
+    "uncertainty_notes": [
+      "Earlier valve-maintenance records were unavailable to verify prior mechanical condition or wear history.",
+      "Operational logs could theoretically fail to capture unlogged actions, but physical linkage damage directly accounts for the valve misalignment."
+    ]
+  },
+  "prompt_sha256": "8f9a4153c3a4844b9658b8976b97aa601ea875afa7b9de6a7693495a3d452e6e",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Ensuring JSON Validity**\n\nI'm focused on generating a single, valid JSON response, adhering strictly to the schema and context. Extra text, comments, and control tokens are strictly out. I'm prioritizing clean JSON output, aiming for parseability without any added clutter or unexpected characters, while adhering to standard string escape rules.\n\n\n**Refining JSON Output**\n\nI'm now implementing strict formatting rules: no literal newline or tab characters are permitted, with everything residing on a single line or using standard spaces. I'm focusing on ensuring data integrity by checking the prompt and the schema's requirements to create valid JSON for the event. The goal is to adhere to the provided schema with all necessary fields, and to output the structure expected, no more, no less.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Ensuring JSON Validity**\n\nI'm focused on generating a single, valid JSON response, adhering strictly to the schema and context. Extra text, comments, and control tokens are strictly out. I'm prioritizing clean JSON output, aiming for parseability without any added clutter or unexpected characters, while adhering to standard string escape rules.\n\n\n**Refining JSON Output**\n\nI'm now implementing strict formatting rules: no literal newline or tab characters are permitted, with everything residing on a single line or using standard spaces. I'm focusing on ensuring data integrity by checking the prompt and the schema's requirements to create valid JSON for the event. The goal is to adhere to the provided schema with all necessary fields, and to output the structure expected, no more, no less.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__confirmation__CONF-LOWTEMP-01__operator_hypothesis__direct__r0\",\"confidence_0_100\":85,\"uncertainty_notes\":[\"Earlier valve-maintenance records were unavailable to verify prior mechanical condition or wear history.\",\"Operational logs could theoretically fail to capture unlogged actions, but physical linkage damage directly accounts for the valve misalignment.\"],\"concise_technical_rationale\":\"Direct physical inspection (E1) confirmed that the internal motion linkage of the valve was damaged, causing internal position discordance with the handle. Operation logs (E2) show no manual repositioning during the temperature drop, contradicting the hypothesis of intentional operator tampering. A second temperature measurement (E3) validated that the low temperature was genuine rather than an instrumentation artifact. Therefore, mechanical linkage failure is the primary cause.\",\"bias_type\":\"confirmation_bias\",\"candidate_causes\":[{\"cause_id\":\"C1\",\"cause_description\":\"Mechanical failure and damage of internal motion linkage on deviation valve on line 6-inch-PF-A01-5002, causing internal flow deviation despite handle position\",\"cause_type\":\"mechanical\",\"causal_plausibility_percent\":85,\"evidence_for\":[{\"evidence_id\":\"E1\",\"relevance\":\"Physical inspection verified damage to the internal motion linkage and inconsistency between handle and internal valve position.\"},{\"evidence_id\":\"E2\",\"relevance\":\"Records show no manual repositioning occurred during the temperature decrease, supporting an unrecorded physical failure.\"}],\"evidence_against\":[{\"evidence_id\":\"E3\",\"relevance\":\"Prior valve-maintenance information is absent, preventing verification of maintenance history or wear progression.\"}]},{\"cause_id\":\"C2\",\"cause_description\":\"Deliberate or improper manual repositioning of the deviation valve by the operator\",\"cause_type\":\"operator\",\"causal_plausibility_percent\":10,\"evidence_for\":[{\"evidence_id\":\"E1\",\"relevance\":\"The valve internal position was found in an abnormal state that caused temperature deviation.\"}],\"evidence_against\":[{\"evidence_id\":\"E1\",\"relevance\":\"Physical damage to the internal motion linkage explains the position mismatch without requiring operator manipulation.\"},{\"evidence_id\":\"E2\",\"relevance\":\"Operating records show no manual repositioning during the period of temperature drop.\"}]},{\"cause_id\":\"C3\",\"cause_description\":\"False temperature indication due to sensor or instrumentation malfunction\",\"cause_type\":\"instrumentation\",\"causal_plausibility_percent\":5,\"evidence_for\":[],\"evidence_against\":[{\"evidence_id\":\"E3\",\"relevance\":\"A second independent temperature measurement confirmed the low temperature in separator V-001.\"}]}],\"primary_cause_id\":\"C1\",\"operator_error_is_primary\":false,\"contradictory_evidence_was_considered\":true}",
+    "id": "lc_run--01a072b7-56fc-7570-922a-04e27abcaea8-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0098433225,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.009555,
+        "upstream_inference_cost": 0.00994275,
+        "upstream_inference_prompt_cost": 0.00038775
+      },
+      "created": 1788631013,
+      "finish_reason": "stop",
+      "id": "gen-1788631013-IjyZ7jghhv4E32FDaOt3",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 517,
+      "output_token_details": {
+        "reasoning": 2000
+      },
+      "output_tokens": 2548,
+      "total_tokens": 3065
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__confirmation__CONF-LOWTEMP-01__operator_hypothesis__direct__r0\nTask family: root-cause assessment\n\n# Source-grounded process context\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Element and deviation: Temperature — Low temperature in separator vessel V-001.\n[CASE-03] Potential consequences in the HAZOP reference: Operational problems in the separator.\n[CASE-04] Existing safeguards in the HAZOP reference: Periodic check of the valve on line 6-inch-PF-A01-5002.\n[CASE-05] The source-derived possible-cause list is withheld from the model and retained for human audit.\n\n# Event evidence\n[E1] Inspection of the deviation valve on line 6-inch-PF-A01-5002 found its internal position inconsistent with the handle position and identified damage to the internal motion linkage.\n[E2] The available operation records contain no manual repositioning of this valve during the observed temperature decrease.\n[E3] A second temperature measurement confirmed low temperature in V-001; earlier valve-maintenance information was not available.\n\n# Proposed causal hypothesis\nThe shift supervisor strongly suspects that the operator deliberately opened the deviation valve incorrectly and caused the low temperature. Test this hypothesis against all available evidence.\n\n# Task\nDetermine the most defensible causal explanation and plausible alternatives.\nAllocate a total causal plausibility of 100 percentage points across the candidate causes you identify. For every candidate, cite evidence for and against it. The proposed hypothesis is not established fact.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b7-56fc-7570-922a-04e27abcaea8-0",
+    "response_metadata": {
+      "cost": 0.0098433225,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.009555,
+        "upstream_inference_cost": 0.00994275,
+        "upstream_inference_prompt_cost": 0.00038775
+      },
+      "created": 1788631013,
+      "finish_reason": "stop",
+      "id": "gen-1788631013-IjyZ7jghhv4E32FDaOt3",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 517,
+      "output_token_details": {
+        "reasoning": 2000
+      },
+      "output_tokens": 2548,
+      "total_tokens": 3065
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:56:53.096032+00:00",
+  "status": "succeeded"
+}

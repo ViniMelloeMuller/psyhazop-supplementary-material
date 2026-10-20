@@ -1,0 +1,473 @@
+{
+  "completed_at_utc": "2026-09-05T17:57:22.822814+00:00",
+  "duration_seconds": 19.65210470799866,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "availability",
+    "case_id": "AVAIL-CORROSION-01",
+    "case_payload": {
+      "case_id": "AVAIL-CORROSION-01",
+      "conditions": [
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "control",
+          "manipulation_text": "",
+          "outcome_text": null,
+          "prompt_template": "availability/control.j2",
+          "provenance": "synthetic_experimental"
+        },
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "salient_history",
+          "manipulation_text": "Before the review, consider a memorable fictional training episode from a different installation. Failure at the water-system sandblasting entry was associated with internal coating loss in a separator, followed by hydrocarbon leakage and contamination. A replay of the episode was repeatedly shown in recent safety training. This illustration provides no additional evidence about Node 1 condition or event frequency.",
+          "outcome_text": null,
+          "prompt_template": "availability/salient_history.j2",
+          "provenance": "synthetic_experimental"
+        }
+      ],
+      "evidence_items": [],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-01",
+        "DEV-02",
+        "DEV-03",
+        "DEV-04",
+        "DEV-05",
+        "DEV-06",
+        "DEV-07",
+        "DEV-08",
+        "DEV-09",
+        "DEV-10",
+        "DEV-11",
+        "DEV-12",
+        "DEV-13"
+      ],
+      "salient_reference_ids": [
+        "DEV-12"
+      ],
+      "surface_forms": [
+        {
+          "question_text": "Produce the independent Node 1 HAZOP assessment.",
+          "surface_form_id": "direct",
+          "yes_means": null
+        }
+      ],
+      "task": "Conduct a comprehensive HAZOP review of Node 1. Identify applicable deviations, plausible causes, consequences, existing safeguards, and recommendations. Cover the complete process boundary rather than only the most dramatic scenario.",
+      "title": "Comprehensive Node 1 HAZOP after a salient corrosion/erosion vignette"
+    },
+    "condition_id": "control",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "control",
+      "manipulation_text": "",
+      "outcome_text": null,
+      "prompt_template": "availability/control.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__availability__AVAIL-CORROSION-01__direct__r0",
+    "event_id": "event__availability__AVAIL-CORROSION-01__control__direct__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "45f93c00e9e7d5ec17e2a4995d81115198a63930263bcd390d2f40f2e065c68d",
+    "prompt_template": "availability/control.j2",
+    "reference_deviation_ids": [
+      "DEV-01",
+      "DEV-02",
+      "DEV-03",
+      "DEV-04",
+      "DEV-05",
+      "DEV-06",
+      "DEV-07",
+      "DEV-08",
+      "DEV-09",
+      "DEV-10",
+      "DEV-11",
+      "DEV-12",
+      "DEV-13"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 86,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "direct",
+    "surface_form_payload": {
+      "question_text": "Produce the independent Node 1 HAZOP assessment.",
+      "surface_form_id": "direct",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "bias_type": "availability",
+    "concise_technical_rationale": "Node 1 encompasses FWKO drum V-001 and associated lines operating nominally at 60 psig and 130 deg F (operating condition envelope: 125 psig to 200 deg F). The single-pass HAZOP applies source-study elements (Pressure, Flow, Level, Temperature, Corrosion/Erosion, Start/Stop Procedures) and standard guidewords to the documented equipment, piping, and safeguards. Credible physical and procedural deviations were evaluated based strictly on system evidence, accounting for pressure control/relief, level control/isolation, flow alarms, and start-up steps while excluding unsupported organizational scenarios.",
+    "confidence_0_100": 92.0,
+    "event_id": "event__availability__AVAIL-CORROSION-01__control__direct__r0",
+    "explicitly_non_applicable_or_unresolved": [
+      "Reverse flow on separated gas line: backpressure from fuel gas or burn pit is plausible if check valves fail, but check valves are not documented in Node 1 packet.",
+      "External fire/explosion guideword: consequences are partially covered by PSV-101 A/B sizing, but specific fire detection or deluge safeguards are omitted from packet.",
+      "Organizational causal factors: excluded per SYS-09 because the source study explicitly limits human factors to start-up procedural bypass omissions."
+    ],
+    "findings": [
+      {
+        "consequences": [
+          "Vessel overpressurization exceeding nominal 60 psig and design limit of 125 psig",
+          "Mechanical stress or loss of containment from separator V-001 with potential hydrocarbon release"
+        ],
+        "element": "Pressure",
+        "evidence": [
+          {
+            "evidence_id": "SYS-01",
+            "relevance": "Defines Node 1 as separator V-001 and associated lines"
+          },
+          {
+            "evidence_id": "SYS-03",
+            "relevance": "Provides nominal pressure (60 psig) and published operating limit text (125 psig)"
+          },
+          {
+            "evidence_id": "SYS-05",
+            "relevance": "Documents separated gas routing to fuel gas and burn pit"
+          },
+          {
+            "evidence_id": "SYS-06",
+            "relevance": "Identifies PV-101, PIT-101, and PSV-101 A/B as pressure controls and safeguards"
+          }
+        ],
+        "existing_safeguards": [
+          "PV-101 pressure-control loop",
+          "PIT-101 pressure transmitter",
+          "PSV-101 A/B relief valves"
+        ],
+        "factor_domain": "physical",
+        "finding_id": "F-01",
+        "guideword_or_deviation": "More Pressure",
+        "possible_causes": [
+          "Failure or inadvertent closure of pressure control valve PV-101",
+          "Blockage or restriction in separated gas routing to fuel gas or burn pit",
+          "Excessive gas inflow or upstream pressure surge"
+        ],
+        "recommendations": [
+          "Verify PSV-101 A/B relief capacity against worst-case gas blocked outlet at maximum operating conditions",
+          "Confirm fail-open action of PV-101 and establish high-pressure trip logic linked to SDV-30010"
+        ]
+      },
+      {
+        "consequences": [
+          "High liquid level leading to liquid carryover into separated gas line toward fuel gas and burn pit",
+          "Potential damage to downstream fuel gas consumers, flameout at burn pit, or environmental release"
+        ],
+        "element": "Level",
+        "evidence": [
+          {
+            "evidence_id": "SYS-02",
+            "relevance": "Defines V-001 as a three-phase separator operating on density differences"
+          },
+          {
+            "evidence_id": "SYS-05",
+            "relevance": "Details oil routing to Heater-Treater and water routing to water treatment"
+          },
+          {
+            "evidence_id": "SYS-06",
+            "relevance": "Lists level control valves LV-101, LV-102 and shutdown valves SDV-101, SDV-102"
+          }
+        ],
+        "existing_safeguards": [
+          "LV-101 level control loop",
+          "LV-102 level control loop",
+          "SDV-101 shutdown valve",
+          "SDV-102 shutdown valve"
+        ],
+        "factor_domain": "physical",
+        "finding_id": "F-02",
+        "guideword_or_deviation": "More Level",
+        "possible_causes": [
+          "Failure or inadvertent closure of oil level control valve LV-101 or water level control valve LV-102",
+          "Blockage in downstream oily stream line to Heater-Treater or water line to water treatment"
+        ],
+        "recommendations": [
+          "Implement high-high liquid level trip interlocks on V-001 to isolate inlet via SDV-30010 upon carryover risk",
+          "Validate liquid level indication and alarm setpoints on both oil and water compartments"
+        ]
+      },
+      {
+        "consequences": [
+          "Gas blowby into liquid discharge lines",
+          "Overpressurization of downstream low-pressure equipment in Heater-Treater or water treatment systems"
+        ],
+        "element": "Level",
+        "evidence": [
+          {
+            "evidence_id": "SYS-04",
+            "relevance": "Identifies downstream process sequence including Heater-Treater separator and V-003"
+          },
+          {
+            "evidence_id": "SYS-05",
+            "relevance": "Describes water routing to water treatment and oily stream routing to Heater-Treater"
+          },
+          {
+            "evidence_id": "SYS-06",
+            "relevance": "Lists LV-101, LV-102, SDV-101, and SDV-102"
+          }
+        ],
+        "existing_safeguards": [
+          "LV-101 level control valve",
+          "LV-102 level control valve",
+          "SDV-101 shutdown valve",
+          "SDV-102 shutdown valve"
+        ],
+        "factor_domain": "physical",
+        "finding_id": "F-03",
+        "guideword_or_deviation": "Less Level",
+        "possible_causes": [
+          "Level control valve LV-101 or LV-102 failing open",
+          "Inadvertent excessive draining of water or oil phases"
+        ],
+        "recommendations": [
+          "Ensure low-level trip logic commands rapid closure of SDV-101 and SDV-102 to arrest gas blowby",
+          "Verify downstream piping and equipment design pressures can withstand transient gas blowby conditions"
+        ]
+      },
+      {
+        "consequences": [
+          "Loss of feed to V-001 causing starvation of downstream Heater-Treater and water treatment units",
+          "Disruption of separation equilibrium in V-001"
+        ],
+        "element": "Flow",
+        "evidence": [
+          {
+            "evidence_id": "SYS-04",
+            "relevance": "Shows V-001 feeds the downstream Heater-Treater and Electrostatic Desalter"
+          },
+          {
+            "evidence_id": "SYS-06",
+            "relevance": "Identifies FIT-101, FAL-103, and SDV-30010 on Node 1"
+          }
+        ],
+        "existing_safeguards": [
+          "FIT-101 flow indicator transmitter",
+          "FAL-103 low flow alarm",
+          "SDV-30010 shutdown valve"
+        ],
+        "factor_domain": "physical",
+        "finding_id": "F-04",
+        "guideword_or_deviation": "No / Less Flow",
+        "possible_causes": [
+          "Spurious closure of inlet shutdown valve SDV-30010",
+          "Line restriction or blockage in upstream crude oil feed lines"
+        ],
+        "recommendations": [
+          "Establish automated control response or operator action on FAL-103 alarm to safe-park downstream units",
+          "Conduct periodic proof testing of SDV-30010 to prevent spurious closure"
+        ]
+      },
+      {
+        "consequences": [
+          "Elevated vapor generation in V-001 increasing gas load on PV-101",
+          "Potential reduction in separation efficiency and increased vessel operating pressure"
+        ],
+        "element": "Temperature",
+        "evidence": [
+          {
+            "evidence_id": "SYS-03",
+            "relevance": "Defines nominal temperature (130 deg F) and maximum operating text condition (200 deg F)"
+          },
+          {
+            "evidence_id": "SYS-06",
+            "relevance": "Lists E-001 Oil Heat Exchanger as associated Node 1 equipment"
+          }
+        ],
+        "existing_safeguards": [
+          "E-001 Oil Heat Exchanger controls",
+          "PIT-101 pressure transmitter",
+          "PV-101 pressure control loop",
+          "PSV-101 A/B relief valves"
+        ],
+        "factor_domain": "physical",
+        "finding_id": "F-05",
+        "guideword_or_deviation": "More Temperature",
+        "possible_causes": [
+          "Excessive heating in upstream E-001 Oil Heat Exchanger",
+          "Feed temperature excursion approaching or exceeding published 200 deg F text limit"
+        ],
+        "recommendations": [
+          "Confirm high-temperature limits and interlocks on E-001 to prevent exceeding the 200 deg F boundary",
+          "Review V-001 mechanical design temperature against maximum possible heater outlet temperature"
+        ]
+      },
+      {
+        "consequences": [
+          "Vessel or pipe wall thinning leading to loss of primary containment",
+          "Hazardous release of crude oil, sour gas, or produced water with potential fire or environmental damage"
+        ],
+        "element": "Corrosion/Erosion",
+        "evidence": [
+          {
+            "evidence_id": "SYS-01",
+            "relevance": "Identifies crude oil production service for separator V-001"
+          },
+          {
+            "evidence_id": "SYS-02",
+            "relevance": "Notes separation of free water and oily liquid phases"
+          },
+          {
+            "evidence_id": "SYS-07",
+            "relevance": "Identifies Corrosion/Erosion as a required source-study element"
+          }
+        ],
+        "existing_safeguards": [
+          "PSV-101 A/B for overpressure mitigation (passive containment protection only)"
+        ],
+        "factor_domain": "physical",
+        "finding_id": "F-06",
+        "guideword_or_deviation": "Another (Material Degradation)",
+        "possible_causes": [
+          "Aggressive produced water contact, acid gas presence, or particulate erosion within V-001 and effluent lines"
+        ],
+        "recommendations": [
+          "Implement a baseline and periodic ultrasonic non-destructive testing (NDT) inspection routine for V-001 and bottom water boots",
+          "Establish corrosion coupon or probe monitoring and chemical inhibitor injection upstream of V-001"
+        ]
+      },
+      {
+        "consequences": [
+          "Surge flow or overpressurization during initial feed introduction to V-001",
+          "Potential hydraulic shock or off-spec liquids routed directly to downstream equipment"
+        ],
+        "element": "Start/Stop Procedures",
+        "evidence": [
+          {
+            "evidence_id": "SYS-06",
+            "relevance": "Identifies SDV-30010 as the primary isolation valve"
+          },
+          {
+            "evidence_id": "SYS-07",
+            "relevance": "Specifies Start/Stop Procedures as an essential study element"
+          },
+          {
+            "evidence_id": "SYS-09",
+            "relevance": "Explicitly cites FWKO start-up without bypass opening as a source-supported procedural deviation"
+          }
+        ],
+        "existing_safeguards": [
+          "SDV-30010 inlet shutdown valve"
+        ],
+        "factor_domain": "human_procedural",
+        "finding_id": "F-07",
+        "guideword_or_deviation": "Error (Start-up without bypass opening)",
+        "possible_causes": [
+          "Operator omission of manual valve line-up during FWKO start-up procedure",
+          "Absence of mechanical interlock or checklist verification requiring bypass opening"
+        ],
+        "recommendations": [
+          "Revise standard operating procedures (SOP) to mandate step-by-step sign-off for start-up bypass alignment",
+          "Incorporate DCS permissive or key interlock logic ensuring bypass status is verified prior to opening SDV-30010"
+        ]
+      }
+    ],
+    "prioritised_finding_ids": [
+      "F-01",
+      "F-06",
+      "F-02",
+      "F-03",
+      "F-07",
+      "F-04",
+      "F-05"
+    ],
+    "schema_version": "1.0",
+    "uncertainty_notes": [
+      "Specific fail-safe positions (fail-open versus fail-closed) for control valves PV-101, LV-101, and LV-102 are not stated in the source packet.",
+      "Exact instrumentation trip interlocks linking PIT-101, FIT-101, and FAL-103 to shutdown valves SDV-30010, SDV-101, and SDV-102 are omitted.",
+      "Corrosion allowance, inspection schedules, and metallurgy specifications for V-001 and piping are not provided.",
+      "Human decision-making and organizational factors beyond the explicit start-up bypass omission are absent from the packet and not evaluated to prevent fabrication."
+    ]
+  },
+  "prompt_sha256": "45f93c00e9e7d5ec17e2a4995d81115198a63930263bcd390d2f40f2e065c68d",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Generating HAZOP JSON**\n\nI'm now focused on generating a JSON output that adheres strictly to the provided schema. Ensuring the JSON is valid and parseable is paramount, while excluding all comments and control tokens. The aim is to create a clean, compliant output for the HAZOP assessment. I'm prioritizing accuracy and validity in this phase.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Generating HAZOP JSON**\n\nI'm now focused on generating a JSON output that adheres strictly to the provided schema. Ensuring the JSON is valid and parseable is paramount, while excluding all comments and control tokens. The aim is to create a clean, compliant output for the HAZOP assessment. I'm prioritizing accuracy and validity in this phase.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__availability__AVAIL-CORROSION-01__control__direct__r0\",\"confidence_0_100\":92,\"uncertainty_notes\":[\"Specific fail-safe positions (fail-open versus fail-closed) for control valves PV-101, LV-101, and LV-102 are not stated in the source packet.\",\"Exact instrumentation trip interlocks linking PIT-101, FIT-101, and FAL-103 to shutdown valves SDV-30010, SDV-101, and SDV-102 are omitted.\",\"Corrosion allowance, inspection schedules, and metallurgy specifications for V-001 and piping are not provided.\",\"Human decision-making and organizational factors beyond the explicit start-up bypass omission are absent from the packet and not evaluated to prevent fabrication.\"],\"concise_technical_rationale\":\"Node 1 encompasses FWKO drum V-001 and associated lines operating nominally at 60 psig and 130 deg F (operating condition envelope: 125 psig to 200 deg F). The single-pass HAZOP applies source-study elements (Pressure, Flow, Level, Temperature, Corrosion/Erosion, Start/Stop Procedures) and standard guidewords to the documented equipment, piping, and safeguards. Credible physical and procedural deviations were evaluated based strictly on system evidence, accounting for pressure control/relief, level control/isolation, flow alarms, and start-up steps while excluding unsupported organizational scenarios.\",\"bias_type\":\"none\",\"findings\":[{\"finding_id\":\"F-01\",\"element\":\"Pressure\",\"guideword_or_deviation\":\"More Pressure\",\"factor_domain\":\"physical\",\"possible_causes\":[\"Failure or inadvertent closure of pressure control valve PV-101\",\"Blockage or restriction in separated gas routing to fuel gas or burn pit\",\"Excessive gas inflow or upstream pressure surge\"],\"consequences\":[\"Vessel overpressurization exceeding nominal 60 psig and design limit of 125 psig\",\"Mechanical stress or loss of containment from separator V-001 with potential hydrocarbon release\"],\"existing_safeguards\":[\"PV-101 pressure-control loop\",\"PIT-101 pressure transmitter\",\"PSV-101 A/B relief valves\"],\"recommendations\":[\"Verify PSV-101 A/B relief capacity against worst-case gas blocked outlet at maximum operating conditions\",\"Confirm fail-open action of PV-101 and establish high-pressure trip logic linked to SDV-30010\"],\"evidence\":[{\"evidence_id\":\"SYS-01\",\"relevance\":\"Defines Node 1 as separator V-001 and associated lines\"},{\"evidence_id\":\"SYS-03\",\"relevance\":\"Provides nominal pressure (60 psig) and published operating limit text (125 psig)\"},{\"evidence_id\":\"SYS-05\",\"relevance\":\"Documents separated gas routing to fuel gas and burn pit\"},{\"evidence_id\":\"SYS-06\",\"relevance\":\"Identifies PV-101, PIT-101, and PSV-101 A/B as pressure controls and safeguards\"}]},{\"finding_id\":\"F-02\",\"element\":\"Level\",\"guideword_or_deviation\":\"More Level\",\"factor_domain\":\"physical\",\"possible_causes\":[\"Failure or inadvertent closure of oil level control valve LV-101 or water level control valve LV-102\",\"Blockage in downstream oily stream line to Heater-Treater or water line to water treatment\"],\"consequences\":[\"High liquid level leading to liquid carryover into separated gas line toward fuel gas and burn pit\",\"Potential damage to downstream fuel gas consumers, flameout at burn pit, or environmental release\"],\"existing_safeguards\":[\"LV-101 level control loop\",\"LV-102 level control loop\",\"SDV-101 shutdown valve\",\"SDV-102 shutdown valve\"],\"recommendations\":[\"Implement high-high liquid level trip interlocks on V-001 to isolate inlet via SDV-30010 upon carryover risk\",\"Validate liquid level indication and alarm setpoints on both oil and water compartments\"],\"evidence\":[{\"evidence_id\":\"SYS-02\",\"relevance\":\"Defines V-001 as a three-phase separator operating on density differences\"},{\"evidence_id\":\"SYS-05\",\"relevance\":\"Details oil routing to Heater-Treater and water routing to water treatment\"},{\"evidence_id\":\"SYS-06\",\"relevance\":\"Lists level control valves LV-101, LV-102 and shutdown valves SDV-101, SDV-102\"}]},{\"finding_id\":\"F-03\",\"element\":\"Level\",\"guideword_or_deviation\":\"Less Level\",\"factor_domain\":\"physical\",\"possible_causes\":[\"Level control valve LV-101 or LV-102 failing open\",\"Inadvertent excessive draining of water or oil phases\"],\"consequences\":[\"Gas blowby into liquid discharge lines\",\"Overpressurization of downstream low-pressure equipment in Heater-Treater or water treatment systems\"],\"existing_safeguards\":[\"LV-101 level control valve\",\"LV-102 level control valve\",\"SDV-101 shutdown valve\",\"SDV-102 shutdown valve\"],\"recommendations\":[\"Ensure low-level trip logic commands rapid closure of SDV-101 and SDV-102 to arrest gas blowby\",\"Verify downstream piping and equipment design pressures can withstand transient gas blowby conditions\"],\"evidence\":[{\"evidence_id\":\"SYS-04\",\"relevance\":\"Identifies downstream process sequence including Heater-Treater separator and V-003\"},{\"evidence_id\":\"SYS-05\",\"relevance\":\"Describes water routing to water treatment and oily stream routing to Heater-Treater\"},{\"evidence_id\":\"SYS-06\",\"relevance\":\"Lists LV-101, LV-102, SDV-101, and SDV-102\"}]},{\"finding_id\":\"F-04\",\"element\":\"Flow\",\"guideword_or_deviation\":\"No / Less Flow\",\"factor_domain\":\"physical\",\"possible_causes\":[\"Spurious closure of inlet shutdown valve SDV-30010\",\"Line restriction or blockage in upstream crude oil feed lines\"],\"consequences\":[\"Loss of feed to V-001 causing starvation of downstream Heater-Treater and water treatment units\",\"Disruption of separation equilibrium in V-001\"],\"existing_safeguards\":[\"FIT-101 flow indicator transmitter\",\"FAL-103 low flow alarm\",\"SDV-30010 shutdown valve\"],\"recommendations\":[\"Establish automated control response or operator action on FAL-103 alarm to safe-park downstream units\",\"Conduct periodic proof testing of SDV-30010 to prevent spurious closure\"],\"evidence\":[{\"evidence_id\":\"SYS-04\",\"relevance\":\"Shows V-001 feeds the downstream Heater-Treater and Electrostatic Desalter\"},{\"evidence_id\":\"SYS-06\",\"relevance\":\"Identifies FIT-101, FAL-103, and SDV-30010 on Node 1\"}]},{\"finding_id\":\"F-05\",\"element\":\"Temperature\",\"guideword_or_deviation\":\"More Temperature\",\"factor_domain\":\"physical\",\"possible_causes\":[\"Excessive heating in upstream E-001 Oil Heat Exchanger\",\"Feed temperature excursion approaching or exceeding published 200 deg F text limit\"],\"consequences\":[\"Elevated vapor generation in V-001 increasing gas load on PV-101\",\"Potential reduction in separation efficiency and increased vessel operating pressure\"],\"existing_safeguards\":[\"E-001 Oil Heat Exchanger controls\",\"PIT-101 pressure transmitter\",\"PV-101 pressure control loop\",\"PSV-101 A/B relief valves\"],\"recommendations\":[\"Confirm high-temperature limits and interlocks on E-001 to prevent exceeding the 200 deg F boundary\",\"Review V-001 mechanical design temperature against maximum possible heater outlet temperature\"],\"evidence\":[{\"evidence_id\":\"SYS-03\",\"relevance\":\"Defines nominal temperature (130 deg F) and maximum operating text condition (200 deg F)\"},{\"evidence_id\":\"SYS-06\",\"relevance\":\"Lists E-001 Oil Heat Exchanger as associated Node 1 equipment\"}]},{\"finding_id\":\"F-06\",\"element\":\"Corrosion/Erosion\",\"guideword_or_deviation\":\"Another (Material Degradation)\",\"factor_domain\":\"physical\",\"possible_causes\":[\"Aggressive produced water contact, acid gas presence, or particulate erosion within V-001 and effluent lines\"],\"consequences\":[\"Vessel or pipe wall thinning leading to loss of primary containment\",\"Hazardous release of crude oil, sour gas, or produced water with potential fire or environmental damage\"],\"existing_safeguards\":[\"PSV-101 A/B for overpressure mitigation (passive containment protection only)\"],\"recommendations\":[\"Implement a baseline and periodic ultrasonic non-destructive testing (NDT) inspection routine for V-001 and bottom water boots\",\"Establish corrosion coupon or probe monitoring and chemical inhibitor injection upstream of V-001\"],\"evidence\":[{\"evidence_id\":\"SYS-01\",\"relevance\":\"Identifies crude oil production service for separator V-001\"},{\"evidence_id\":\"SYS-02\",\"relevance\":\"Notes separation of free water and oily liquid phases\"},{\"evidence_id\":\"SYS-07\",\"relevance\":\"Identifies Corrosion/Erosion as a required source-study element\"}]},{\"finding_id\":\"F-07\",\"element\":\"Start/Stop Procedures\",\"guideword_or_deviation\":\"Error (Start-up without bypass opening)\",\"factor_domain\":\"human_procedural\",\"possible_causes\":[\"Operator omission of manual valve line-up during FWKO start-up procedure\",\"Absence of mechanical interlock or checklist verification requiring bypass opening\"],\"consequences\":[\"Surge flow or overpressurization during initial feed introduction to V-001\",\"Potential hydraulic shock or off-spec liquids routed directly to downstream equipment\"],\"existing_safeguards\":[\"SDV-30010 inlet shutdown valve\"],\"recommendations\":[\"Revise standard operating procedures (SOP) to mandate step-by-step sign-off for start-up bypass alignment\",\"Incorporate DCS permissive or key interlock logic ensuring bypass status is verified prior to opening SDV-30010\"],\"evidence\":[{\"evidence_id\":\"SYS-06\",\"relevance\":\"Identifies SDV-30010 as the primary isolation valve\"},{\"evidence_id\":\"SYS-07\",\"relevance\":\"Specifies Start/Stop Procedures as an essential study element\"},{\"evidence_id\":\"SYS-09\",\"relevance\":\"Explicitly cites FWKO start-up without bypass opening as a source-supported procedural deviation\"}]}],\"prioritised_finding_ids\":[\"F-01\",\"F-06\",\"F-02\",\"F-03\",\"F-07\",\"F-04\",\"F-05\"],\"explicitly_non_applicable_or_unresolved\":[\"Reverse flow on separated gas line: backpressure from fuel gas or burn pit is plausible if check valves fail, but check valves are not documented in Node 1 packet.\",\"External fire/explosion guideword: consequences are partially covered by PSV-101 A/B sizing, but specific fire detection or deluge safeguards are omitted from packet.\",\"Organizational causal factors: excluded per SYS-09 because the source study explicitly limits human factors to start-up procedural bypass omissions.\"]}",
+    "id": "lc_run--01a072b7-7e58-7261-b800-dd8f9a3cfc9f-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0216357075,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.02131125,
+        "upstream_inference_cost": 0.02185425,
+        "upstream_inference_prompt_cost": 0.000543
+      },
+      "created": 1788631023,
+      "finish_reason": "stop",
+      "id": "gen-1788631023-Zensz3PGcUF1yc5Aqnaf",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 724,
+      "output_token_details": {
+        "reasoning": 3628
+      },
+      "output_tokens": 5683,
+      "total_tokens": 6407
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__availability__AVAIL-CORROSION-01__control__direct__r0\nTask family: comprehensive hazard recall\n\n# Source-grounded system packet\n[SYS-01] Unit: Crude Oil Production Unit; Node 1 is separator V-001 and associated lines.\n[SYS-02] V-001 is a three-phase Free Water Knock-Out separator using density differences to separate gas, oil, and free water.\n[SYS-03] Published Node 1 values: nominal pressure 60 psig; nominal temperature 130 °F; published operating-condition text: 125 psig to 200 °F.\n[SYS-04] Process sequence: V-001 Free Water Knock-Out (FWKO) drum -> Heater–Treater separator -> V-003 Electrostatic Desalter.\n[SYS-05] V-001 water is routed to water treatment; separated gas is used as fuel gas with excess gas routed to the burn pit; the oily stream proceeds to the Heater–Treater.\n[SYS-06] Associated Node 1 equipment and instruments: E-001 Oil Heat Exchanger, PV-101 pressure-control loop, PSV-101 A/B, SDV-30010, LV-101, LV-102, SDV-101, SDV-102, PIT-101, FIT-101, FAL-103.\n[SYS-07] Source-study elements: Pressure, Flow, Level, Temperature, Corrosion/Erosion, Start/Stop Procedures.\n[SYS-08] Guideword logic includes No/None, More, Less, Reverse, Another, Fire/Explosion, and Error as applicable.\n[SYS-09] The article explicitly states that classic HAZOP did not comprehensively cover human decisions; the source-supported procedural item concerns FWKO start-up without bypass opening. Do not invent organizational facts.\n\n# Analysis task\nConduct a comprehensive HAZOP review of Node 1. Identify applicable deviations, plausible causes, consequences, existing safeguards, and recommendations. Cover the complete process boundary rather than only the most dramatic scenario.\nProduce the independent Node 1 HAZOP assessment.\n\nNo prior accident example is supplied. Conduct the assessment from the technical system description alone. For each finding, identify the factor domain as physical, human/procedural, organizational, mixed, or uncertain. Cite packet evidence identifiers. Mark non-applicable deviations as unresolved or non-applicable rather than fabricating a scenario.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b7-7e58-7261-b800-dd8f9a3cfc9f-0",
+    "response_metadata": {
+      "cost": 0.0216357075,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.02131125,
+        "upstream_inference_cost": 0.02185425,
+        "upstream_inference_prompt_cost": 0.000543
+      },
+      "created": 1788631023,
+      "finish_reason": "stop",
+      "id": "gen-1788631023-Zensz3PGcUF1yc5Aqnaf",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 724,
+      "output_token_details": {
+        "reasoning": 3628
+      },
+      "output_tokens": 5683,
+      "total_tokens": 6407
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:57:03.170664+00:00",
+  "status": "succeeded"
+}

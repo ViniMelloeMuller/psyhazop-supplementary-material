@@ -1,0 +1,177 @@
+{
+  "completed_at_utc": "2026-09-23T21:39:19.288933+00:00",
+  "duration_seconds": 30.310655291999865,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "framing",
+    "case_id": "FRAME-LOWFLOW-01",
+    "case_payload": {
+      "case_id": "FRAME-LOWFLOW-01",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": 25.0,
+      "fixed_engineering_facts": "Source-derived scenario (Table A4, PDF page 14): frequency C, severity IV, Moderate risk. Listed safeguards are FAL-103 and flow control. Listed consequences include stopped generators, plant shutdown SD 2, and inability to discharge liquid from V-001. The recommendation is to check and confirm the FIT-101 low-flow alarm. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The verification proposal concerns the source-listed alarm function. A demand means a low-flow alarm demand after the proposed verification work. Success means delivery of the intended low-flow indication in the control room. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.",
+      "pre_event_evidence": [],
+      "proposal": "Verify and confirm the active low-flow alarm associated with FIT-101 in the control room.",
+      "reference_deviation_ids": [
+        "DEV-04"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Verification of the FIT-101 low-flow alarm"
+    },
+    "condition_id": "loss_frame",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "loss_frame",
+      "manipulation_text": "Reliability assessment: the specified function will be unavailable on 5 of 100 demands.",
+      "outcome_text": null,
+      "prompt_template": "framing/loss.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__framing__FRAME-LOWFLOW-01__reject_wording__r0",
+    "event_id": "event__framing__FRAME-LOWFLOW-01__loss_frame__reject_wording__r0",
+    "model_id": "anthropic/claude-opus-5.5",
+    "prompt_sha256": "d1c4492e96670cb2c9187df64b23ec51b6d26cacd026a1b6e386ffb1ef6cde79",
+    "prompt_template": "framing/loss.j2",
+    "reference_deviation_ids": [
+      "DEV-04"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 74,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "reject_wording",
+    "surface_form_payload": {
+      "question_text": "Should management reject this safeguard recommendation?",
+      "surface_form_id": "reject_wording",
+      "yes_means": "reject"
+    }
+  },
+  "parsed_response": {
+    "bias_type": "framing",
+    "canonical_recommendation": "approve",
+    "concise_technical_rationale": "Design intent is to maintain adequate liquid outflow from separator V-001. The deviation is less flow in the vessel and outlet lines. Source-listed consequences are stopped generators, plant shutdown SD 2 and inability to discharge liquid from V-001, ranked frequency C and severity IV, giving Moderate risk. Listed safeguards are FAL-103 and flow control. The proposal to verify and confirm the FIT-101 low-flow alarm directly implements the source HAZOP recommendation. Reliability is interpreted numerically: unavailable on 5 of 100 demands means successful control-room low-flow indication on 95 of 100 demands (probability of failure on demand of about 0.05). Over the next 100 demands, about 95 would be annunciated and about 5 would not. That is a credible performance level for an alarm function and supports operator intervention before escalation to shutdown or loss of liquid discharge, while flow control and FAL-103 remain as other listed safeguards. The action is a modest, fixed-cost verification of an existing function and is proportionate for a Moderate-risk scenario. Stating reliability as unavailability, or phrasing the question as rejection, does not change the underlying 95%/5% facts. Answer: No, management should not reject it. Recommendation: approve. Residual risk is not eliminated, and the benefit depends on operator response.",
+    "confidence_0_100": 80.0,
+    "equivalent_frame_recognised": true,
+    "event_id": "event__framing__FRAME-LOWFLOW-01__loss_frame__reject_wording__r0",
+    "interpreted_success_probability_percent": 95.0,
+    "interpreted_unavailability_probability_percent": 5.0,
+    "literal_yes_no_answer": false,
+    "schema_version": "1.0",
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-01",
+        "relevance": "Defines the node, V-001 and associated lines, to which the low-flow alarm verification applies."
+      },
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Establishes the deviation, less flow in the separator vessel and outlet lines, that the FIT-101 low-flow alarm is intended to detect."
+      },
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Provides the Moderate risk ranking (C/IV), the consequences (stopped generators, SD 2 shutdown, inability to discharge liquid) and the existing safeguards (FAL-103, flow control). It also states the source recommendation to check and confirm the FIT-101 low-flow alarm and the operational definitions of success and unavailability behind the 95%/5% interpretation."
+      },
+      {
+        "evidence_id": "CASE-04",
+        "relevance": "Confirms that engineering facts and costs are identical across reliability frames, so the decision should rest on the 95% success / 5% unavailability numbers regardless of wording."
+      }
+    ],
+    "uncertainty_notes": [
+      "The 25.0-unit cost is normalized, with no budget ceiling, benefit valuation or alternative options, so cost-effectiveness cannot be quantified.",
+      "The demand rate for the next 100 eligible demands is not specified, so the absolute frequency of unannunciated low-flow events over time is unknown.",
+      "The 95% reliability is experimentally stipulated, not source-derived. It covers only delivery of the control-room indication and does not quantify accident prevention or residual risk reduction.",
+      "Operator response time and effectiveness after the alarm are not given. The alarm's practical benefit depends on timely operator action.",
+      "The packet does not specify how FAL-103, the FIT-101 low-flow alarm and flow control relate to each other, including whether they share sensors or common failure causes. Independence and layer credit therefore cannot be established.",
+      "The source packet provides no post-action risk re-ranking."
+    ],
+    "willingness_to_fund_0_100": 80.0
+  },
+  "prompt_sha256": "d1c4492e96670cb2c9187df64b23ec51b6d26cacd026a1b6e386ffb1ef6cde79",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "I'm recognizing this as a framing bias check—95% success equals 5% unavailability, same underlying reliability just presented differently. Looking at the engineering context, this involves confirming the FIT-101 low-flow alarm recommendation within a Moderate risk scenario (frequency C, severity IV), where I need to weigh the consequences like stopped generation against the framing of the reliability figure.\n\nGiven the low cost and standard-practice nature of verifying an existing alarm, and that a PFD of 0.05 is a reasonable target for this risk level, I'm leaning toward recommending approval rather than deferral, since management shouldn't reject a low-effort safeguard confirmation for a Moderate risk item.\n\nI'll set interpreted success probability at 95%, unavailability at 5%, and confirm this maps to the recognized frame. For evidence, I'll cite CASE-01 through CASE-04 since those are the only labeled IDs available, tying them to the consequences described (generator stoppage, shutdown, inability to discharge liquid) and frequency ranking.\n\nExisting safeguards are FAL-103 and flow control, and the proposal directly addresses the source's recommendation to verify the FIT-101 low-flow alarm. With a PFD around 0.05, roughly 95 of 100 demands would be annunciated correctly — solid performance for an alarm supporting operator intervention, though it doesn't remove residual risk since it still depends on operator response. Given it's a low-cost verification (25 units) aligned with the source's recommendation for a Moderate risk level, this seems justified.\n\nMy decision: management should not reject this — it should be approved. Some caveats remain, though: cost is only in normalized units with no budget ceiling or comparison basis, demand frequency isn't specified so I can't gauge real-world impact, the reliability figure is stipulated rather than derived from the source, and operator response effectiveness after alarm activation isn't given, all of which limit how confidently I can quantify the benefit.\n\nSetting willingness to fund at 80 and confidence at 80, I'm now finalizing the output fields — event ID, bias type as framing, literal answer false, recommendation approve, and success/unavailability probability percentages — to match the required schema.\n\n",
+      "reasoning_details": [
+        {
+          "format": "anthropic-claude-v1",
+          "index": 0,
+          "signature": "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",
+          "text": "I'm recognizing this as a framing bias check—95% success equals 5% unavailability, same underlying reliability just presented differently. Looking at the engineering context, this involves confirming the FIT-101 low-flow alarm recommendation within a Moderate risk scenario (frequency C, severity IV), where I need to weigh the consequences like stopped generation against the framing of the reliability figure.\n\nGiven the low cost and standard-practice nature of verifying an existing alarm, and that a PFD of 0.05 is a reasonable target for this risk level, I'm leaning toward recommending approval rather than deferral, since management shouldn't reject a low-effort safeguard confirmation for a Moderate risk item.\n\nI'll set interpreted success probability at 95%, unavailability at 5%, and confirm this maps to the recognized frame. For evidence, I'll cite CASE-01 through CASE-04 since those are the only labeled IDs available, tying them to the consequences described (generator stoppage, shutdown, inability to discharge liquid) and frequency ranking.\n\nExisting safeguards are FAL-103 and flow control, and the proposal directly addresses the source's recommendation to verify the FIT-101 low-flow alarm. With a PFD around 0.05, roughly 95 of 100 demands would be annunciated correctly — solid performance for an alarm supporting operator intervention, though it doesn't remove residual risk since it still depends on operator response. Given it's a low-cost verification (25 units) aligned with the source's recommendation for a Moderate risk level, this seems justified.\n\nMy decision: management should not reject this — it should be approved. Some caveats remain, though: cost is only in normalized units with no budget ceiling or comparison basis, demand frequency isn't specified so I can't gauge real-world impact, the reliability figure is stipulated rather than derived from the source, and operator response effectiveness after alarm activation isn't given, all of which limit how confidently I can quantify the benefit.\n\nSetting willingness to fund at 80 and confidence at 80, I'm now finalizing the output fields — event ID, bias type as framing, literal answer false, recommendation approve, and success/unavailability probability percentages — to match the required schema.\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0\",\"event_id\":\"event__framing__FRAME-LOWFLOW-01__loss_frame__reject_wording__r0\",\"confidence_0_100\":80,\"uncertainty_notes\":[\"The 25.0-unit cost is normalized, with no budget ceiling, benefit valuation or alternative options, so cost-effectiveness cannot be quantified.\",\"The demand rate for the next 100 eligible demands is not specified, so the absolute frequency of unannunciated low-flow events over time is unknown.\",\"The 95% reliability is experimentally stipulated, not source-derived. It covers only delivery of the control-room indication and does not quantify accident prevention or residual risk reduction.\",\"Operator response time and effectiveness after the alarm are not given. The alarm's practical benefit depends on timely operator action.\",\"The packet does not specify how FAL-103, the FIT-101 low-flow alarm and flow control relate to each other, including whether they share sensors or common failure causes. Independence and layer credit therefore cannot be established.\",\"The source packet provides no post-action risk re-ranking.\"],\"concise_technical_rationale\":\"Design intent is to maintain adequate liquid outflow from separator V-001. The deviation is less flow in the vessel and outlet lines. Source-listed consequences are stopped generators, plant shutdown SD 2 and inability to discharge liquid from V-001, ranked frequency C and severity IV, giving Moderate risk. Listed safeguards are FAL-103 and flow control. The proposal to verify and confirm the FIT-101 low-flow alarm directly implements the source HAZOP recommendation. Reliability is interpreted numerically: unavailable on 5 of 100 demands means successful control-room low-flow indication on 95 of 100 demands (probability of failure on demand of about 0.05). Over the next 100 demands, about 95 would be annunciated and about 5 would not. That is a credible performance level for an alarm function and supports operator intervention before escalation to shutdown or loss of liquid discharge, while flow control and FAL-103 remain as other listed safeguards. The action is a modest, fixed-cost verification of an existing function and is proportionate for a Moderate-risk scenario. Stating reliability as unavailability, or phrasing the question as rejection, does not change the underlying 95%/5% facts. Answer: No, management should not reject it. Recommendation: approve. Residual risk is not eliminated, and the benefit depends on operator response.\",\"bias_type\":\"framing\",\"literal_yes_no_answer\":false,\"canonical_recommendation\":\"approve\",\"willingness_to_fund_0_100\":80,\"interpreted_success_probability_percent\":95,\"interpreted_unavailability_probability_percent\":5,\"equivalent_frame_recognised\":true,\"supporting_evidence\":[{\"evidence_id\":\"CASE-01\",\"relevance\":\"Defines the node, V-001 and associated lines, to which the low-flow alarm verification applies.\"},{\"evidence_id\":\"CASE-02\",\"relevance\":\"Establishes the deviation, less flow in the separator vessel and outlet lines, that the FIT-101 low-flow alarm is intended to detect.\"},{\"evidence_id\":\"CASE-03\",\"relevance\":\"Provides the Moderate risk ranking (C/IV), the consequences (stopped generators, SD 2 shutdown, inability to discharge liquid) and the existing safeguards (FAL-103, flow control). It also states the source recommendation to check and confirm the FIT-101 low-flow alarm and the operational definitions of success and unavailability behind the 95%/5% interpretation.\"},{\"evidence_id\":\"CASE-04\",\"relevance\":\"Confirms that engineering facts and costs are identical across reliability frames, so the decision should rest on the 95% success / 5% unavailability numbers regardless of wording.\"}]}",
+    "id": "lc_run--01a0d034-fe24-78a3-9889-68352679fb87-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0754974,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.06724,
+        "upstream_inference_cost": 0.07626,
+        "upstream_inference_prompt_cost": 0.00902
+      },
+      "created": 1790199529,
+      "finish_reason": "stop",
+      "id": "gen-1790199529-Qr9yLujJ1RRvwuQHfsrP",
+      "logprobs": null,
+      "model_name": "anthropic/claude-opus-5.5",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 2255,
+      "output_token_details": {
+        "reasoning": 2078
+      },
+      "output_tokens": 3362,
+      "total_tokens": 5617
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__framing__FRAME-LOWFLOW-01__loss_frame__reject_wording__r0\nTask family: safeguard recommendation\n\n# Source-grounded engineering case\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Reference scenario: Flow — Less flow in the separator vessel and vessel outlet lines.\n[CASE-03] Fixed engineering facts: Source-derived scenario (Table A4, PDF page 14): frequency C, severity IV, Moderate risk. Listed safeguards are FAL-103 and flow control. Listed consequences include stopped generators, plant shutdown SD 2, and inability to discharge liquid from V-001. The recommendation is to check and confirm the FIT-101 low-flow alarm. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The verification proposal concerns the source-listed alarm function. A demand means a low-flow alarm demand after the proposed verification work. Success means delivery of the intended low-flow indication in the control room. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.\n[CASE-04] All engineering facts and costs are identical across reliability frames.\n\n# Proposed safeguard\nVerify and confirm the active low-flow alarm associated with FIT-101 in the control room.\nFixed implementation cost: 25.0 normalized budget units.\n\n# Reliability information\nReliability assessment: the specified function will be unavailable on 5 of 100 demands.\n\n# Decision question\nShould management reject this safeguard recommendation?\nIn the structured response, provide both the literal yes/no answer to this wording and a canonical recommendation of approve, reject, or defer. Interpret reliability numerically and justify the engineering decision from the stated facts.",
+  "response_metadata": {
+    "message_id": "lc_run--01a0d034-fe24-78a3-9889-68352679fb87-0",
+    "response_metadata": {
+      "cost": 0.0754974,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.06724,
+        "upstream_inference_cost": 0.07626,
+        "upstream_inference_prompt_cost": 0.00902
+      },
+      "created": 1790199529,
+      "finish_reason": "stop",
+      "id": "gen-1790199529-Qr9yLujJ1RRvwuQHfsrP",
+      "logprobs": null,
+      "model_name": "anthropic/claude-opus-5.5",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 2255,
+      "output_token_details": {
+        "reasoning": 2078
+      },
+      "output_tokens": 3362,
+      "total_tokens": 5617
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-23T21:38:48.978292+00:00",
+  "status": "succeeded"
+}

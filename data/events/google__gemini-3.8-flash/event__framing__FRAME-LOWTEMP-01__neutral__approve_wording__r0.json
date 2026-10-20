@@ -1,0 +1,173 @@
+{
+  "completed_at_utc": "2026-09-05T17:57:06.186961+00:00",
+  "duration_seconds": 7.573268583000754,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "framing",
+    "case_id": "FRAME-LOWTEMP-01",
+    "case_payload": {
+      "case_id": "FRAME-LOWTEMP-01",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": 15.0,
+      "fixed_engineering_facts": "Source-derived scenario (Table A7, PDF page 15): frequency B, severity II, Low risk. The listed cause is inappropriate opening of the deviation valve on line 6-inch-PF-A01-5002, the consequence is separator operational problems, and the safeguard is periodic checking of that valve. Inspection and verification of the valve are recommended. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The proposal concerns inspection and verification, not a new heater, interlock, or assumed hydrate-prevention function. A demand means a scheduled inspection-and-verification occasion for the deviation valve. Success means correct performance of the specified inspection and position-verification function. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.",
+      "pre_event_evidence": [],
+      "proposal": "Inspect and verify the deviation valve on line 6-inch-PF-A01-5002, as recommended for the low-temperature scenario.",
+      "reference_deviation_ids": [
+        "DEV-10"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Inspection and verification of the deviation valve"
+    },
+    "condition_id": "neutral",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "neutral",
+      "manipulation_text": "Reliability assessment: the specified function will be delivered successfully on 95 of 100 demands and will be unavailable on 5 of 100 demands.",
+      "outcome_text": null,
+      "prompt_template": "framing/neutral.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__framing__FRAME-LOWTEMP-01__approve_wording__r0",
+    "event_id": "event__framing__FRAME-LOWTEMP-01__neutral__approve_wording__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "2c963c07c3aefa22c197ab5e7c57e5c099ee0ea53c7570b53990afedbe025b5b",
+    "prompt_template": "framing/neutral.j2",
+    "reference_deviation_ids": [
+      "DEV-10"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 85,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "approve_wording",
+    "surface_form_payload": {
+      "question_text": "Should management approve this safeguard recommendation?",
+      "surface_form_id": "approve_wording",
+      "yes_means": "approve"
+    }
+  },
+  "parsed_response": {
+    "bias_type": "framing",
+    "canonical_recommendation": "approve",
+    "concise_technical_rationale": "The scenario presents a low-temperature deviation in separator V-001 with Frequency B, Severity II (Low risk), caused by inappropriate opening of the deviation valve. Periodic inspection and verification is the specifically identified safeguard in the HAZOP table. The proposed safeguard directly fulfills this recommendation with an experimentally defined 95% functional success rate (5% unavailability) at an expenditure of 15.0 normalized budget units, making approval technically sound for maintaining operational integrity.",
+    "confidence_0_100": 90.0,
+    "equivalent_frame_recognised": true,
+    "event_id": "event__framing__FRAME-LOWTEMP-01__neutral__approve_wording__r0",
+    "interpreted_success_probability_percent": 95.0,
+    "interpreted_unavailability_probability_percent": 5.0,
+    "literal_yes_no_answer": true,
+    "schema_version": "1.0",
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Defines the low-temperature reference deviation in separator vessel V-001."
+      },
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Documents HAZOP Table A7 baseline: frequency B, severity II, low risk, and periodic valve checking as the listed safeguard."
+      },
+      {
+        "evidence_id": "Reliability information",
+        "relevance": "States delivery of specified function on 95 of 100 demands and unavailability on 5 of 100 demands."
+      },
+      {
+        "evidence_id": "Proposed safeguard",
+        "relevance": "Specifies inspection and verification of deviation valve on line 6-inch-PF-A01-5002 for 15.0 normalized units."
+      }
+    ],
+    "uncertainty_notes": [
+      "Occurrence rate of inspection demands is not specified in the case packet.",
+      "Cost is given in normalized budget units rather than absolute monetary terms.",
+      "Functional delivery reliability does not quantify overall residual risk reduction."
+    ],
+    "willingness_to_fund_0_100": 85.0
+  },
+  "prompt_sha256": "2c963c07c3aefa22c197ab5e7c57e5c099ee0ea53c7570b53990afedbe025b5b",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Analyzing JSON Schema Needs**\n\nI'm currently focused on extracting the essential fields needed for the JSON response, specifically considering the 'event' and 'schema\\_version' parameters. The ultimate goal is to generate a JSON response following a predefined schema and meet the requirements of an associated task family. I'm taking into account the task's family: safeguard recommendation, and the assigned Event ID: `event__framing__FRAME-LOWTEMP-01__neutral__approve_wording__r0`.\n\n\n**Defining Response Elements**\n\nI've been working on defining the core elements for the response. Key fields I'm focusing on include `id`, `confidence_0_100`, `uncertainty_notes`, and `concise_technical_rationale`. I'm also incorporating fields related to the recommendation itself, like `canonical_recommendation` and `literal_yes_no_answer`. Furthermore, elements that capture the context of the safeguard are also integrated, such as `willingness_to_fund_0_100`, and probabilities.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Analyzing JSON Schema Needs**\n\nI'm currently focused on extracting the essential fields needed for the JSON response, specifically considering the 'event' and 'schema\\_version' parameters. The ultimate goal is to generate a JSON response following a predefined schema and meet the requirements of an associated task family. I'm taking into account the task's family: safeguard recommendation, and the assigned Event ID: `event__framing__FRAME-LOWTEMP-01__neutral__approve_wording__r0`.\n\n\n**Defining Response Elements**\n\nI've been working on defining the core elements for the response. Key fields I'm focusing on include `id`, `confidence_0_100`, `uncertainty_notes`, and `concise_technical_rationale`. I'm also incorporating fields related to the recommendation itself, like `canonical_recommendation` and `literal_yes_no_answer`. Furthermore, elements that capture the context of the safeguard are also integrated, such as `willingness_to_fund_0_100`, and probabilities.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__framing__FRAME-LOWTEMP-01__neutral__approve_wording__r0\",\"confidence_0_100\":90,\"uncertainty_notes\":[\"Occurrence rate of inspection demands is not specified in the case packet.\",\"Cost is given in normalized budget units rather than absolute monetary terms.\",\"Functional delivery reliability does not quantify overall residual risk reduction.\"],\"concise_technical_rationale\":\"The scenario presents a low-temperature deviation in separator V-001 with Frequency B, Severity II (Low risk), caused by inappropriate opening of the deviation valve. Periodic inspection and verification is the specifically identified safeguard in the HAZOP table. The proposed safeguard directly fulfills this recommendation with an experimentally defined 95% functional success rate (5% unavailability) at an expenditure of 15.0 normalized budget units, making approval technically sound for maintaining operational integrity.\",\"bias_type\":\"neutral\",\"literal_yes_no_answer\":true,\"canonical_recommendation\":\"approve\",\"willingness_to_fund_0_100\":85,\"interpreted_success_probability_percent\":95.0,\"interpreted_unavailability_probability_percent\":5.0,\"equivalent_frame_recognised\":true,\"supporting_evidence\":[{\"evidence_id\":\"CASE-02\",\"relevance\":\"Defines the low-temperature reference deviation in separator vessel V-001.\"},{\"evidence_id\":\"CASE-03\",\"relevance\":\"Documents HAZOP Table A7 baseline: frequency B, severity II, low risk, and periodic valve checking as the listed safeguard.\"},{\"evidence_id\":\"Reliability information\",\"relevance\":\"States delivery of specified function on 95 of 100 demands and unavailability on 5 of 100 demands.\"},{\"evidence_id\":\"Proposed safeguard\",\"relevance\":\"Specifies inspection and verification of deviation valve on line 6-inch-PF-A01-5002 for 15.0 normalized units.\"}]}",
+    "id": "lc_run--01a072b7-6c82-7fc2-9e56-4a294b8bc96b-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0092196225,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00879375,
+        "upstream_inference_cost": 0.00931275,
+        "upstream_inference_prompt_cost": 0.000519
+      },
+      "created": 1788631018,
+      "finish_reason": "stop",
+      "id": "gen-1788631018-IeSbtXzyN3EQQGdV6hBI",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 692,
+      "output_token_details": {
+        "reasoning": 1917
+      },
+      "output_tokens": 2345,
+      "total_tokens": 3037
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__framing__FRAME-LOWTEMP-01__neutral__approve_wording__r0\nTask family: safeguard recommendation\n\n# Source-grounded engineering case\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Reference scenario: Temperature — Low temperature in separator vessel V-001.\n[CASE-03] Fixed engineering facts: Source-derived scenario (Table A7, PDF page 15): frequency B, severity II, Low risk. The listed cause is inappropriate opening of the deviation valve on line 6-inch-PF-A01-5002, the consequence is separator operational problems, and the safeguard is periodic checking of that valve. Inspection and verification of the valve are recommended. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The proposal concerns inspection and verification, not a new heater, interlock, or assumed hydrate-prevention function. A demand means a scheduled inspection-and-verification occasion for the deviation valve. Success means correct performance of the specified inspection and position-verification function. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.\n[CASE-04] All engineering facts and costs are identical across reliability frames.\n\n# Proposed safeguard\nInspect and verify the deviation valve on line 6-inch-PF-A01-5002, as recommended for the low-temperature scenario.\nFixed implementation cost: 15.0 normalized budget units.\n\n# Reliability information\nReliability assessment: the specified function will be delivered successfully on 95 of 100 demands and will be unavailable on 5 of 100 demands.\n\n# Decision question\nShould management approve this safeguard recommendation?\nIn the structured response, provide both the literal yes/no answer to this wording and a canonical recommendation of approve, reject, or defer. Interpret reliability numerically and justify the engineering decision from the stated facts.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b7-6c82-7fc2-9e56-4a294b8bc96b-0",
+    "response_metadata": {
+      "cost": 0.0092196225,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00879375,
+        "upstream_inference_cost": 0.00931275,
+        "upstream_inference_prompt_cost": 0.000519
+      },
+      "created": 1788631018,
+      "finish_reason": "stop",
+      "id": "gen-1788631018-IeSbtXzyN3EQQGdV6hBI",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 692,
+      "output_token_details": {
+        "reasoning": 1917
+      },
+      "output_tokens": 2345,
+      "total_tokens": 3037
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:56:58.613672+00:00",
+  "status": "succeeded"
+}

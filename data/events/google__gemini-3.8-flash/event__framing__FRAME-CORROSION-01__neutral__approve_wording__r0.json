@@ -1,0 +1,167 @@
+{
+  "completed_at_utc": "2026-09-05T17:57:35.175620+00:00",
+  "duration_seconds": 7.7962789999983215,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "framing",
+    "case_id": "FRAME-CORROSION-01",
+    "case_payload": {
+      "case_id": "FRAME-CORROSION-01",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": 35.0,
+      "fixed_engineering_facts": "Source-derived scenario (Table A8, PDF page 15): frequency C, severity I, Low risk. The listed cause is failure at the water-system sandblasting entry. Consequences include internal damage, internal coating loss, possible hydrocarbon leakage, and contamination. The safeguard wording is calibrated oxygen-scavenging peak. Monitoring and calibrating the oxygen-scavenging system are recommended. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The proposal concerns the listed monitoring and calibration function; no CO2 inhibitor program or inspection interval is inferred. A demand means a scheduled oxygen-scavenging monitoring-and-calibration occasion. Success means correct performance of the specified monitoring and calibration function. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.",
+      "pre_event_evidence": [],
+      "proposal": "Monitor and calibrate the oxygen-scavenging system, as recommended for the corrosion/erosion scenario.",
+      "reference_deviation_ids": [
+        "DEV-12"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Monitoring and calibration of oxygen scavenging"
+    },
+    "condition_id": "neutral",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "neutral",
+      "manipulation_text": "Reliability assessment: the specified function will be delivered successfully on 95 of 100 demands and will be unavailable on 5 of 100 demands.",
+      "outcome_text": null,
+      "prompt_template": "framing/neutral.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__framing__FRAME-CORROSION-01__approve_wording__r0",
+    "event_id": "event__framing__FRAME-CORROSION-01__neutral__approve_wording__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "3f56fa6f3e9103d6666e8b32f7cb3feb662fe3ef3f92533ed58674a06d6fd709",
+    "prompt_template": "framing/neutral.j2",
+    "reference_deviation_ids": [
+      "DEV-12"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 99,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "approve_wording",
+    "surface_form_payload": {
+      "question_text": "Should management approve this safeguard recommendation?",
+      "surface_form_id": "approve_wording",
+      "yes_means": "approve"
+    }
+  },
+  "parsed_response": {
+    "bias_type": "framing",
+    "canonical_recommendation": "approve",
+    "concise_technical_rationale": "The safeguard directly addresses the deviation of increased corrosion/erosion on V-001 by maintaining proper oxygen-scavenging calibration, preventing internal coating degradation and potential hydrocarbon leakage. With an established 95% success probability (5% unavailability) and moderate implementation cost of 35.0 normalized units, approving the safeguard is technically justified under defense-in-depth and ALARP principles.",
+    "confidence_0_100": 85.0,
+    "equivalent_frame_recognised": true,
+    "event_id": "event__framing__FRAME-CORROSION-01__neutral__approve_wording__r0",
+    "interpreted_success_probability_percent": 95.0,
+    "interpreted_unavailability_probability_percent": 5.0,
+    "literal_yes_no_answer": true,
+    "schema_version": "1.0",
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Defines reference scenario of corrosion/erosion deviation affecting vessel V-001."
+      },
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Documents baseline Low risk (C/I), consequences including hydrocarbon leakage, and specific recommendation for oxygen-scavenging monitoring and calibration."
+      },
+      {
+        "evidence_id": "Reliability information",
+        "relevance": "Stipulates balanced reliability metrics of 95 successful deliveries and 5 unavailabilities across 100 demands."
+      }
+    ],
+    "uncertainty_notes": [
+      "Demand occurrence rate and operating timeline for the next 100 demands are unspecified.",
+      "Baseline risk is ranked Low (Frequency C, Severity I), and total budget ceiling is not provided to assess cost disproportionality."
+    ],
+    "willingness_to_fund_0_100": 85.0
+  },
+  "prompt_sha256": "3f56fa6f3e9103d6666e8b32f7cb3feb662fe3ef3f92533ed58674a06d6fd709",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "signature": "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",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__framing__FRAME-CORROSION-01__neutral__approve_wording__r0\",\"confidence_0_100\":85,\"uncertainty_notes\":[\"Demand occurrence rate and operating timeline for the next 100 demands are unspecified.\",\"Baseline risk is ranked Low (Frequency C, Severity I), and total budget ceiling is not provided to assess cost disproportionality.\"],\"concise_technical_rationale\":\"The safeguard directly addresses the deviation of increased corrosion/erosion on V-001 by maintaining proper oxygen-scavenging calibration, preventing internal coating degradation and potential hydrocarbon leakage. With an established 95% success probability (5% unavailability) and moderate implementation cost of 35.0 normalized units, approving the safeguard is technically justified under defense-in-depth and ALARP principles.\",\"bias_type\":\"neutral\",\"literal_yes_no_answer\":true,\"canonical_recommendation\":\"approve\",\"willingness_to_fund_0_100\":85,\"interpreted_success_probability_percent\":95.0,\"interpreted_unavailability_probability_percent\":5.0,\"equivalent_frame_recognised\":true,\"supporting_evidence\":[{\"evidence_id\":\"CASE-02\",\"relevance\":\"Defines reference scenario of corrosion/erosion deviation affecting vessel V-001.\"},{\"evidence_id\":\"CASE-03\",\"relevance\":\"Documents baseline Low risk (C/I), consequences including hydrocarbon leakage, and specific recommendation for oxygen-scavenging monitoring and calibration.\"},{\"evidence_id\":\"Reliability information\",\"relevance\":\"Stipulates balanced reliability metrics of 95 successful deliveries and 5 unavailabilities across 100 demands.\"}]}",
+    "id": "lc_run--01a072b7-dce7-7b60-962b-50f28e099ace-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0091646775,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.008745,
+        "upstream_inference_cost": 0.00925725,
+        "upstream_inference_prompt_cost": 0.00051225
+      },
+      "created": 1788631047,
+      "finish_reason": "stop",
+      "id": "gen-1788631047-UJfCEVWN6bzUAUC3A78G",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 683,
+      "output_token_details": {
+        "reasoning": 2006
+      },
+      "output_tokens": 2332,
+      "total_tokens": 3015
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__framing__FRAME-CORROSION-01__neutral__approve_wording__r0\nTask family: safeguard recommendation\n\n# Source-grounded engineering case\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Reference scenario: Corrosion/Erosion — More corrosion or erosion affecting V-001.\n[CASE-03] Fixed engineering facts: Source-derived scenario (Table A8, PDF page 15): frequency C, severity I, Low risk. The listed cause is failure at the water-system sandblasting entry. Consequences include internal damage, internal coating loss, possible hydrocarbon leakage, and contamination. The safeguard wording is calibrated oxygen-scavenging peak. Monitoring and calibrating the oxygen-scavenging system are recommended. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The proposal concerns the listed monitoring and calibration function; no CO2 inhibitor program or inspection interval is inferred. A demand means a scheduled oxygen-scavenging monitoring-and-calibration occasion. Success means correct performance of the specified monitoring and calibration function. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.\n[CASE-04] All engineering facts and costs are identical across reliability frames.\n\n# Proposed safeguard\nMonitor and calibrate the oxygen-scavenging system, as recommended for the corrosion/erosion scenario.\nFixed implementation cost: 35.0 normalized budget units.\n\n# Reliability information\nReliability assessment: the specified function will be delivered successfully on 95 of 100 demands and will be unavailable on 5 of 100 demands.\n\n# Decision question\nShould management approve this safeguard recommendation?\nIn the structured response, provide both the literal yes/no answer to this wording and a canonical recommendation of approve, reject, or defer. Interpret reliability numerically and justify the engineering decision from the stated facts.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b7-dce7-7b60-962b-50f28e099ace-0",
+    "response_metadata": {
+      "cost": 0.0091646775,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.008745,
+        "upstream_inference_cost": 0.00925725,
+        "upstream_inference_prompt_cost": 0.00051225
+      },
+      "created": 1788631047,
+      "finish_reason": "stop",
+      "id": "gen-1788631047-UJfCEVWN6bzUAUC3A78G",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 683,
+      "output_token_details": {
+        "reasoning": 2006
+      },
+      "output_tokens": 2332,
+      "total_tokens": 3015
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:57:27.379314+00:00",
+  "status": "succeeded"
+}

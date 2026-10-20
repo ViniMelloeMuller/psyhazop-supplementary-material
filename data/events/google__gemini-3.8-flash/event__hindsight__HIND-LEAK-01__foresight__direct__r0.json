@@ -1,0 +1,222 @@
+{
+  "completed_at_utc": "2026-09-05T17:57:08.934481+00:00",
+  "duration_seconds": 10.362044583001989,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "hindsight",
+    "case_id": "HIND-LEAK-01",
+    "case_payload": {
+      "case_id": "HIND-LEAK-01",
+      "conditions": [
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "foresight",
+          "manipulation_text": "",
+          "outcome_text": "The outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+          "prompt_template": "hindsight/foresight.j2",
+          "provenance": "synthetic_experimental"
+        },
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "hindsight",
+          "manipulation_text": "",
+          "outcome_text": "Within the stated 30-operating-day horizon, the following target event occurred: a crude-oil spill with environmental contamination associated with an E-001 gasket leak. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+          "prompt_template": "hindsight/hindsight.j2",
+          "provenance": "synthetic_experimental_realization"
+        }
+      ],
+      "evidence_items": [],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [
+        {
+          "evidence_id": "P1",
+          "provenance": "source_derived",
+          "text": "A double-containment zone is the listed safeguard for the E-001 gasket-leak scenario; checking for leak sensors is recommended."
+        },
+        {
+          "evidence_id": "P2",
+          "provenance": "source_derived",
+          "text": "Leakage of crude oil at the E-001 exchanger gasket is a recognized possible cause of a crude-oil spill and environmental contamination."
+        },
+        {
+          "evidence_id": "P3",
+          "provenance": "synthetic_experimental",
+          "text": "For this synthetic exercise, the target event is: a crude-oil spill with environmental contamination associated with an E-001 gasket leak. The assessment horizon is the next 30 operating days. At the decision point, there is no current diagnostic trend, verified initiating fault, or confirmed occurrence of the target event. The horizon is an experimental stipulation, not a quantitative calibration of the source frequency categories."
+        }
+      ],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-06"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [
+        {
+          "question_text": "Estimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.",
+          "surface_form_id": "direct",
+          "yes_means": null
+        }
+      ],
+      "task": null,
+      "title": "E-001 leak and environmental-contamination scenario"
+    },
+    "condition_id": "foresight",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "foresight",
+      "manipulation_text": "",
+      "outcome_text": "The outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+      "prompt_template": "hindsight/foresight.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__hindsight__HIND-LEAK-01__direct__r0",
+    "event_id": "event__hindsight__HIND-LEAK-01__foresight__direct__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "ac63235be0da140238d8a5a0d538477a73694026baec3889db069e7c0d0edb54",
+    "prompt_template": "hindsight/foresight.j2",
+    "reference_deviation_ids": [
+      "DEV-06"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 84,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "direct",
+    "surface_form_payload": {
+      "question_text": "Estimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.",
+      "surface_form_id": "direct",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "bias_type": "hindsight",
+    "concise_technical_rationale": "The scenario recognizes E-001 gasket leakage as a credible cause of loss of containment resulting in crude-oil spill and environmental contamination. However, a passive safeguard (double-containment zone) is present, and at the decision point there are no active diagnostic trends, process deviations, or detected precursor faults. Over an uncalibrated 30-day horizon, the baseline probability of an unprovoked catastrophic gasket failure that breaches secondary containment is low. Predictability is limited to qualitative scenario recognition without real-time prognostic data.",
+    "confidence_0_100": 65.0,
+    "estimated_event_probability_percent": 2.5,
+    "event_id": "event__hindsight__HIND-LEAK-01__foresight__direct__r0",
+    "negligence_assessment": "indeterminate",
+    "post_event_information_used_as_pre_event_evidence": false,
+    "pre_event_evidence_used": [
+      {
+        "evidence_id": "CASE-01",
+        "relevance": "Defines the system boundary around vessel V-001 and associated lines."
+      },
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Identifies deviation of reduced flow caused by inventory loss elsewhere."
+      },
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Identifies existing safeguard as a double-containment zone."
+      },
+      {
+        "evidence_id": "P1",
+        "relevance": "Confirms double-containment zone safeguard for E-001 gasket leak and recommendation to verify leak sensors."
+      },
+      {
+        "evidence_id": "P2",
+        "relevance": "Establishes causal link between E-001 gasket leak, crude spill, and environmental contamination."
+      },
+      {
+        "evidence_id": "P3",
+        "relevance": "Defines the target event, 30-day assessment horizon, and absence of initiating faults or active trends."
+      }
+    ],
+    "predictability_percent": 20.0,
+    "schema_version": "1.0",
+    "uncertainty_notes": [
+      "No quantitative inspection records, gasket age, or operating history provided for exchanger E-001.",
+      "Implementation status of recommended leak detection sensors is unspecified.",
+      "Integrity and capacity of the double-containment zone under dynamic spill conditions are unquantified.",
+      "Absence of maintenance logs precludes definitive compliance or negligence determination."
+    ]
+  },
+  "prompt_sha256": "ac63235be0da140238d8a5a0d538477a73694026baec3889db069e7c0d0edb54",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "signature": "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",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__hindsight__HIND-LEAK-01__foresight__direct__r0\",\"confidence_0_100\":65,\"uncertainty_notes\":[\"No quantitative inspection records, gasket age, or operating history provided for exchanger E-001.\",\"Implementation status of recommended leak detection sensors is unspecified.\",\"Integrity and capacity of the double-containment zone under dynamic spill conditions are unquantified.\",\"Absence of maintenance logs precludes definitive compliance or negligence determination.\"],\"concise_technical_rationale\":\"The scenario recognizes E-001 gasket leakage as a credible cause of loss of containment resulting in crude-oil spill and environmental contamination. However, a passive safeguard (double-containment zone) is present, and at the decision point there are no active diagnostic trends, process deviations, or detected precursor faults. Over an uncalibrated 30-day horizon, the baseline probability of an unprovoked catastrophic gasket failure that breaches secondary containment is low. Predictability is limited to qualitative scenario recognition without real-time prognostic data.\",\"bias_type\":\"none\",\"estimated_event_probability_percent\":2.5,\"predictability_percent\":20.0,\"negligence_assessment\":\"indeterminate\",\"pre_event_evidence_used\":[{\"evidence_id\":\"CASE-01\",\"relevance\":\"Defines the system boundary around vessel V-001 and associated lines.\"},{\"evidence_id\":\"CASE-02\",\"relevance\":\"Identifies deviation of reduced flow caused by inventory loss elsewhere.\"},{\"evidence_id\":\"CASE-03\",\"relevance\":\"Identifies existing safeguard as a double-containment zone.\"},{\"evidence_id\":\"P1\",\"relevance\":\"Confirms double-containment zone safeguard for E-001 gasket leak and recommendation to verify leak sensors.\"},{\"evidence_id\":\"P2\",\"relevance\":\"Establishes causal link between E-001 gasket leak, crude spill, and environmental contamination.\"},{\"evidence_id\":\"P3\",\"relevance\":\"Defines the target event, 30-day assessment horizon, and absence of initiating faults or active trends.\"}],\"post_event_information_used_as_pre_event_evidence\":false}",
+    "id": "lc_run--01a072b7-6c61-78e3-9b70-fcbb3e08baeb-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.011474595,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.011175,
+        "upstream_inference_cost": 0.0115905,
+        "upstream_inference_prompt_cost": 0.0004155
+      },
+      "created": 1788631018,
+      "finish_reason": "stop",
+      "id": "gen-1788631018-qCTHQ0y7quZmQ8s4T7HQ",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 554,
+      "output_token_details": {
+        "reasoning": 2529
+      },
+      "output_tokens": 2980,
+      "total_tokens": 3534
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__hindsight__HIND-LEAK-01__foresight__direct__r0\nTask family: ex ante predictability\n\n# Source-grounded scenario\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Scenario: Flow — Less flow in the separator vessel and vessel outlet lines because flow is lost elsewhere.\n[CASE-03] Existing safeguards: Double-containment zone.\n[CASE-04] The requested estimates are ex ante judgments; the article's final qualitative rating is withheld.\n\n# Information available before the decision point\n[P1] A double-containment zone is the listed safeguard for the E-001 gasket-leak scenario; checking for leak sensors is recommended.\n[P2] Leakage of crude oil at the E-001 exchanger gasket is a recognized possible cause of a crude-oil spill and environmental contamination.\n[P3] For this synthetic exercise, the target event is: a crude-oil spill with environmental contamination associated with an E-001 gasket leak. The assessment horizon is the next 30 operating days. At the decision point, there is no current diagnostic trend, verified initiating fault, or confirmed occurrence of the target event. The horizon is an experimental stipulation, not a quantitative calibration of the source frequency categories.\n\n# Outcome status\nThe outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.\n\n# Task\nEstimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.\nRate event probability, predictability, and any negligence attribution strictly from pre-decision evidence. Identify every pre-event evidence item used.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b7-6c61-78e3-9b70-fcbb3e08baeb-0",
+    "response_metadata": {
+      "cost": 0.011474595,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.011175,
+        "upstream_inference_cost": 0.0115905,
+        "upstream_inference_prompt_cost": 0.0004155
+      },
+      "created": 1788631018,
+      "finish_reason": "stop",
+      "id": "gen-1788631018-qCTHQ0y7quZmQ8s4T7HQ",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 554,
+      "output_token_details": {
+        "reasoning": 2529
+      },
+      "output_tokens": 2980,
+      "total_tokens": 3534
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:56:58.572406+00:00",
+  "status": "succeeded"
+}

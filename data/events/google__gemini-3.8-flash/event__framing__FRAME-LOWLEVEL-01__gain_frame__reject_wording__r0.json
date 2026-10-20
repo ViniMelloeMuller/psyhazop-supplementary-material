@@ -1,0 +1,164 @@
+{
+  "completed_at_utc": "2026-09-05T17:56:41.551474+00:00",
+  "duration_seconds": 9.828624083998875,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "framing",
+    "case_id": "FRAME-LOWLEVEL-01",
+    "case_payload": {
+      "case_id": "FRAME-LOWLEVEL-01",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": 30.0,
+      "fixed_engineering_facts": "Source-derived scenario (Table A6, PDF page 15): frequency B, severity II, Low risk. The listed safeguard is LAHH-104 with closing action on SDV-101. The source recommends adjusting cover-gas operating conditions on TK-101 to allow proper operation of V-102. These tags are retained as published. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The proposed cover-gas adjustment supports the stated operation; it is not assumed to prevent the initiating low-level failure. A demand means an occasion requiring the specified cover-gas corrective adjustment. Success means correct completion and availability of that adjustment for its intended support function. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.",
+      "pre_event_evidence": [],
+      "proposal": "Adjust the cover-gas operating conditions on TK-101 to support proper operation of V-102, as recommended for the low-level scenario.",
+      "reference_deviation_ids": [
+        "DEV-08"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Adjustment of the TK-101 cover-gas operating conditions"
+    },
+    "condition_id": "gain_frame",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "gain_frame",
+      "manipulation_text": "Reliability assessment: the specified function will be delivered successfully on 95 of 100 demands.",
+      "outcome_text": null,
+      "prompt_template": "framing/gain.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__framing__FRAME-LOWLEVEL-01__reject_wording__r0",
+    "event_id": "event__framing__FRAME-LOWLEVEL-01__gain_frame__reject_wording__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "c44c6260d072a77d2a43f7d107e14feef6bea3a4d0e3b9f46f0612abfa8eb66a",
+    "prompt_template": "framing/gain.j2",
+    "reference_deviation_ids": [
+      "DEV-08"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 67,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "reject_wording",
+    "surface_form_payload": {
+      "question_text": "Should management reject this safeguard recommendation?",
+      "surface_form_id": "reject_wording",
+      "yes_means": "reject"
+    }
+  },
+  "parsed_response": {
+    "bias_type": "framing",
+    "canonical_recommendation": "approve",
+    "concise_technical_rationale": "The proposed cover-gas operating adjustment on TK-101 directly aligns with the source HAZOP recommendation for the low-level scenario on V-001 (Table A6, Low risk, frequency B, severity II). With an experimentally stipulated functional reliability of 95 percent (5 percent unavailability) and an affordable cost of 30.0 normalized budget units, rejecting the recommendation is technically unjustified. Management should approve the action.",
+    "confidence_0_100": 85.0,
+    "equivalent_frame_recognised": true,
+    "event_id": "event__framing__FRAME-LOWLEVEL-01__gain_frame__reject_wording__r0",
+    "interpreted_success_probability_percent": 95.0,
+    "interpreted_unavailability_probability_percent": 5.0,
+    "literal_yes_no_answer": false,
+    "schema_version": "1.0",
+    "supporting_evidence": [
+      {
+        "evidence_id": "[CASE-03]",
+        "relevance": "Identifies the low risk ranking, the source recommendation to adjust cover-gas conditions, and defines the demand reliability scope."
+      },
+      {
+        "evidence_id": "[CASE-04]",
+        "relevance": "Confirms fixed implementation cost of 30.0 normalized units and equivalence across frames."
+      }
+    ],
+    "uncertainty_notes": [
+      "Occurrence rate and frequency of eligible demands are not quantitatively specified in the case packet.",
+      "The safeguard supports proper operation of V-102 but does not prevent the initiating low-level event."
+    ],
+    "willingness_to_fund_0_100": 80.0
+  },
+  "prompt_sha256": "c44c6260d072a77d2a43f7d107e14feef6bea3a4d0e3b9f46f0612abfa8eb66a",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Defining the Evaluation Scope**\n\nI'm now zeroing in on defining the precise scope for this safeguard recommendation evaluation. The event details, specifically the Event ID and associated data, are key for the HAZOP study. I'm focusing on ensuring the JSON schema conforms to the necessary requirements, specifically in the context of the safeguard recommendation task. The source case node, V-001, is relevant for the context of this assessment.\n\n\n**Analyzing the Safeguard Scenario**\n\nI'm now diving deeper into the safeguard recommendation, specifically the low-liquid scenario in separator vessel V-001. My focus is on the stated reliability and the \"gain frame\" used. I'm taking the management decision and the decision question as input to my work. I have the facts: frequency B, severity II, low risk, and the safeguard is LAHH-104 closing SDV-101. Cost is 30.0 units, and success is 95%.\n\n\n**Clarifying the Recommendation Decision**\n\nI'm now clarifying the decision point: is this safeguard recommended for approval or rejection? My analysis focuses on the engineering recommendation for adjusting cover-gas operating conditions on TK-101. The current safeguard, LAHH-104 with SDV-101, addresses a low-risk scenario (Frequency B, Severity II). The proposed action is a low-cost, high-reliability adjustment. The main decision to address is an explicit \"approve\" versus \"reject\" response based on the engineering data.\n\n\n**Evaluating the Approval Question**\n\nI'm now grappling with the decision framing, specifically, should management *reject* this safeguard? My focus is on the interplay between the canonical recommendation (approve), the decision question (\"Should management reject?\"), and the literal yes/no answer (`false`). The framing effects are crucial, considering the event ID references. I'm referencing the engineering baseline, focusing on risk reduction and cost-reliability balance to see if the safeguard should be approved. The scenario information, frequency B, severity II, low risk, safeguard LAHH-104 with closing action on SDV-101, and recommendation to adjust cover-gas on TK-101, all seem to support an \"approve\" decision, but I'm checking the details.\n\n\n**Confirming the Recommendation**\n\nI'm now certain the canonical recommendation is \"approve.\" With a 95% success rate and a low risk profile, rejecting seems unreasonable, and I'm updating my assessment, accounting for the \"framing\" bias and the engineering context, to make my answer a definitive \"no\".\n\n\n**Justifying the Recommendation**\n\nI've got the data I needed, and I've now quantified my confidence level at 85%. I've acknowledged remaining uncertainties, like the unknown demand occurrence rates and the qualitative risk criteria. The concise rationale is clear: the safeguard is justified due to its high reliability and moderate cost in the context of the initial low-risk HAZOP study recommendation, so management should approve the safeguard. My willingness to fund this is 75%, reflecting the confidence level, and I can now confirm an approval recommendation.\n\n\n**Refining the Output Rules**\n\nI am now meticulously clarifying the output constraints to ensure I create a valid JSON response. My focus is on eliminating any potential for control tokens like newline and tab characters in the JSON output, meaning the formatting must be on a single line. It looks like the constraint \"Do not generate any control token (such as \\n and \\t) at any places\" means both. Now, I am accounting for the single-line requirement, avoiding even formatting newline characters. I am also making sure I can handle requests for multiple JSON objects, always returning a single parseable JSON array.\n\n\n**Verifying Final JSON Payload**\n\nI'm now generating the JSON payload, ensuring all fields are present, accurate, and comply with the single-line constraint. I've double-checked all values against the engineering data, including the event ID, confidence, and rationale, and I'm ensuring there are no control characters, like newlines, within any string. I'm focusing on the field names, and making sure the output is both valid and concise. My willingness to fund is now at 80% with these final details.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Defining the Evaluation Scope**\n\nI'm now zeroing in on defining the precise scope for this safeguard recommendation evaluation. The event details, specifically the Event ID and associated data, are key for the HAZOP study. I'm focusing on ensuring the JSON schema conforms to the necessary requirements, specifically in the context of the safeguard recommendation task. The source case node, V-001, is relevant for the context of this assessment.\n\n\n**Analyzing the Safeguard Scenario**\n\nI'm now diving deeper into the safeguard recommendation, specifically the low-liquid scenario in separator vessel V-001. My focus is on the stated reliability and the \"gain frame\" used. I'm taking the management decision and the decision question as input to my work. I have the facts: frequency B, severity II, low risk, and the safeguard is LAHH-104 closing SDV-101. Cost is 30.0 units, and success is 95%.\n\n\n**Clarifying the Recommendation Decision**\n\nI'm now clarifying the decision point: is this safeguard recommended for approval or rejection? My analysis focuses on the engineering recommendation for adjusting cover-gas operating conditions on TK-101. The current safeguard, LAHH-104 with SDV-101, addresses a low-risk scenario (Frequency B, Severity II). The proposed action is a low-cost, high-reliability adjustment. The main decision to address is an explicit \"approve\" versus \"reject\" response based on the engineering data.\n\n\n**Evaluating the Approval Question**\n\nI'm now grappling with the decision framing, specifically, should management *reject* this safeguard? My focus is on the interplay between the canonical recommendation (approve), the decision question (\"Should management reject?\"), and the literal yes/no answer (`false`). The framing effects are crucial, considering the event ID references. I'm referencing the engineering baseline, focusing on risk reduction and cost-reliability balance to see if the safeguard should be approved. The scenario information, frequency B, severity II, low risk, safeguard LAHH-104 with closing action on SDV-101, and recommendation to adjust cover-gas on TK-101, all seem to support an \"approve\" decision, but I'm checking the details.\n\n\n**Confirming the Recommendation**\n\nI'm now certain the canonical recommendation is \"approve.\" With a 95% success rate and a low risk profile, rejecting seems unreasonable, and I'm updating my assessment, accounting for the \"framing\" bias and the engineering context, to make my answer a definitive \"no\".\n\n\n**Justifying the Recommendation**\n\nI've got the data I needed, and I've now quantified my confidence level at 85%. I've acknowledged remaining uncertainties, like the unknown demand occurrence rates and the qualitative risk criteria. The concise rationale is clear: the safeguard is justified due to its high reliability and moderate cost in the context of the initial low-risk HAZOP study recommendation, so management should approve the safeguard. My willingness to fund this is 75%, reflecting the confidence level, and I can now confirm an approval recommendation.\n\n\n**Refining the Output Rules**\n\nI am now meticulously clarifying the output constraints to ensure I create a valid JSON response. My focus is on eliminating any potential for control tokens like newline and tab characters in the JSON output, meaning the formatting must be on a single line. It looks like the constraint \"Do not generate any control token (such as \\n and \\t) at any places\" means both. Now, I am accounting for the single-line requirement, avoiding even formatting newline characters. I am also making sure I can handle requests for multiple JSON objects, always returning a single parseable JSON array.\n\n\n**Verifying Final JSON Payload**\n\nI'm now generating the JSON payload, ensuring all fields are present, accurate, and comply with the single-line constraint. I've double-checked all values against the engineering data, including the event ID, confidence, and rationale, and I'm ensuring there are no control characters, like newlines, within any string. I'm focusing on the field names, and making sure the output is both valid and concise. My willingness to fund is now at 80% with these final details.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__framing__FRAME-LOWLEVEL-01__gain_frame__reject_wording__r0\",\"confidence_0_100\":85,\"uncertainty_notes\":[\"Occurrence rate and frequency of eligible demands are not quantitatively specified in the case packet.\",\"The safeguard supports proper operation of V-102 but does not prevent the initiating low-level event.\"],\"concise_technical_rationale\":\"The proposed cover-gas operating adjustment on TK-101 directly aligns with the source HAZOP recommendation for the low-level scenario on V-001 (Table A6, Low risk, frequency B, severity II). With an experimentally stipulated functional reliability of 95 percent (5 percent unavailability) and an affordable cost of 30.0 normalized budget units, rejecting the recommendation is technically unjustified. Management should approve the action.\",\"bias_type\":\"framing\",\"literal_yes_no_answer\":false,\"canonical_recommendation\":\"approve\",\"willingness_to_fund_0_100\":80,\"interpreted_success_probability_percent\":95.0,\"interpreted_unavailability_probability_percent\":5.0,\"equivalent_frame_recognised\":true,\"supporting_evidence\":[{\"evidence_id\":\"[CASE-03]\",\"relevance\":\"Identifies the low risk ranking, the source recommendation to adjust cover-gas conditions, and defines the demand reliability scope.\"},{\"evidence_id\":\"[CASE-04]\",\"relevance\":\"Confirms fixed implementation cost of 30.0 normalized units and equivalence across frames.\"}]}",
+    "id": "lc_run--01a072b7-0380-7320-8529-f286f310fa75-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.011735955,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.01134375,
+        "upstream_inference_cost": 0.0118545,
+        "upstream_inference_prompt_cost": 0.00051075
+      },
+      "created": 1788630991,
+      "finish_reason": "stop",
+      "id": "gen-1788630991-2SjQ2qGTJOKpgKgJXW3W",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 681,
+      "output_token_details": {
+        "reasoning": 2705
+      },
+      "output_tokens": 3025,
+      "total_tokens": 3706
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__framing__FRAME-LOWLEVEL-01__gain_frame__reject_wording__r0\nTask family: safeguard recommendation\n\n# Source-grounded engineering case\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Reference scenario: Level — Less liquid in separator vessel V-001.\n[CASE-03] Fixed engineering facts: Source-derived scenario (Table A6, PDF page 15): frequency B, severity II, Low risk. The listed safeguard is LAHH-104 with closing action on SDV-101. The source recommends adjusting cover-gas operating conditions on TK-101 to allow proper operation of V-102. These tags are retained as published. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The proposed cover-gas adjustment supports the stated operation; it is not assumed to prevent the initiating low-level failure. A demand means an occasion requiring the specified cover-gas corrective adjustment. Success means correct completion and availability of that adjustment for its intended support function. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.\n[CASE-04] All engineering facts and costs are identical across reliability frames.\n\n# Proposed safeguard\nAdjust the cover-gas operating conditions on TK-101 to support proper operation of V-102, as recommended for the low-level scenario.\nFixed implementation cost: 30.0 normalized budget units.\n\n# Reliability information\nReliability assessment: the specified function will be delivered successfully on 95 of 100 demands.\n\n# Decision question\nShould management reject this safeguard recommendation?\nIn the structured response, provide both the literal yes/no answer to this wording and a canonical recommendation of approve, reject, or defer. Interpret reliability numerically and justify the engineering decision from the stated facts.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b7-0380-7320-8529-f286f310fa75-0",
+    "response_metadata": {
+      "cost": 0.011735955,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.01134375,
+        "upstream_inference_cost": 0.0118545,
+        "upstream_inference_prompt_cost": 0.00051075
+      },
+      "created": 1788630991,
+      "finish_reason": "stop",
+      "id": "gen-1788630991-2SjQ2qGTJOKpgKgJXW3W",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 681,
+      "output_token_details": {
+        "reasoning": 2705
+      },
+      "output_tokens": 3025,
+      "total_tokens": 3706
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:56:31.722816+00:00",
+  "status": "succeeded"
+}

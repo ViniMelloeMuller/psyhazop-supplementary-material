@@ -1,0 +1,10 @@
+\begin{figure}[!ht]\centering
+\begin{tikzpicture}[scale=0.9, every node/.style={font=\footnotesize}]
+  \draw[->] (0, 0) -- (5, 0) node[right] {$\sigma_u$};
+  \draw[->] (0, 0) -- (0, 3) node[above] {Density};
+  \draw[black, thick] (0.2, 0.1) .. controls (1.5, 2.8) and (2.5, 1.2) .. (4.5, 0.1);
+  \draw[dashed, black!60] (1.65, 0) -- (1.65, 2.5);
+  \node[below] at (1.65, 0) {0.47};
+\end{tikzpicture}
+\caption{Posterior density of scenario random intercept scale $\sigma_u$ (median 0.47, 95\% CrI $[0.23, 0.93]$).}\label{fig:process-complexity-panel-a}
+\end{figure}

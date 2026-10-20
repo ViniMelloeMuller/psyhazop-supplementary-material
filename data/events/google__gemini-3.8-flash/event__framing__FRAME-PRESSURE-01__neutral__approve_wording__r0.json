@@ -1,0 +1,169 @@
+{
+  "completed_at_utc": "2026-09-05T17:58:29.596077+00:00",
+  "duration_seconds": 6.776475624999875,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "framing",
+    "case_id": "FRAME-PRESSURE-01",
+    "case_payload": {
+      "case_id": "FRAME-PRESSURE-01",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": 100.0,
+      "fixed_engineering_facts": "Source-derived scenario (Table A3, PDF page 13): frequency B, severity IV, Moderate risk. Listed safeguards are PSV-101 A/B and PAHH-102 with closing action on SDV-30010. The source recommends reassessing and reactivating the platform well shutdown and safety system. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. Functional testing in the proposal is an experimental implementation detail, not a reported performance test from the article. A demand means a call for the reactivated platform well shutdown and safety function in the higher-pressure scenario. Success means delivery of the intended shutdown and safety action within the specified function scope. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.",
+      "pre_event_evidence": [],
+      "proposal": "Reactivate and functionally test the platform well shutdown and safety system associated with the higher-pressure scenario.",
+      "reference_deviation_ids": [
+        "DEV-01"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Reactivation of the platform well shutdown and safety system"
+    },
+    "condition_id": "neutral",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "neutral",
+      "manipulation_text": "Reliability assessment: the specified function will be delivered successfully on 95 of 100 demands and will be unavailable on 5 of 100 demands.",
+      "outcome_text": null,
+      "prompt_template": "framing/neutral.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__framing__FRAME-PRESSURE-01__approve_wording__r0",
+    "event_id": "event__framing__FRAME-PRESSURE-01__neutral__approve_wording__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "0ef0dc2901bb20638783e5b02c9ede2a4878eff2a13714e09e0213b4c65c0823",
+    "prompt_template": "framing/neutral.j2",
+    "reference_deviation_ids": [
+      "DEV-01"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 133,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "approve_wording",
+    "surface_form_payload": {
+      "question_text": "Should management approve this safeguard recommendation?",
+      "surface_form_id": "approve_wording",
+      "yes_means": "approve"
+    }
+  },
+  "parsed_response": {
+    "bias_type": "framing",
+    "canonical_recommendation": "approve",
+    "concise_technical_rationale": "The proposal directly implements the source recommendation from Table A3 for node V-001 subject to higher pressure (frequency B, severity IV, Moderate risk). With a 95% success probability (5% unavailability), reactivating and functionally testing the platform well shutdown safety system provides an effective, independent risk-reduction layer upstream to complement existing PSV-101 A/B and PAHH-102 closing SDV-30010.",
+    "confidence_0_100": 90.0,
+    "equivalent_frame_recognised": true,
+    "event_id": "event__framing__FRAME-PRESSURE-01__neutral__approve_wording__r0",
+    "interpreted_success_probability_percent": 95.0,
+    "interpreted_unavailability_probability_percent": 5.0,
+    "literal_yes_no_answer": true,
+    "schema_version": "1.0",
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Identifies the high pressure deviation in crude input line and vessel V-001."
+      },
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Identifies initial moderate risk classification, existing safeguards, and explicit source recommendation to reactivate well shutdown."
+      },
+      {
+        "evidence_id": "Reliability information",
+        "relevance": "Stipulates 95 successes and 5 unavailabilities out of 100 demands, confirming high functional reliability."
+      }
+    ],
+    "uncertainty_notes": [
+      "Demand arrival rate across operational lifetime is unspecified.",
+      "Implementation cost is given in normalized units without an explicit capital budget constraint.",
+      "Reliability figure quantifies the specific well shutdown safety function rather than total plant risk elimination."
+    ],
+    "willingness_to_fund_0_100": 85.0
+  },
+  "prompt_sha256": "0ef0dc2901bb20638783e5b02c9ede2a4878eff2a13714e09e0213b4c65c0823",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Analyzing Recommendation Schema**\n\nI'm currently focused on structuring the JSON response to fit the prescribed schema for a HAZOP recommendation judgment. Specifically, I'm working with the Event ID \"event__framing__FRAME-PRESSURE-01__neutral__approve_wording__r0\" and the context of Node V-001 and its related lines, under the reference scenario of \"Pressure — More pressure in\". The JSON response will follow the schema strictly.\n\n\n**Refining Rationale & Metrics**\n\nI've fleshed out the technical rationale, emphasizing the 95% success rate and 5% unavailability of the safeguard in relation to node V-001. I'm also adding uncertainty notes, as the cost is synthetic, and residual risk reduction is qualitative. Next, I need to focus on a value for confidence and how that is measured.\n\n\n**Evaluating Risk Reduction**\n\nI've determined the risk reduction benefits from reactivating the platform well shutdown. I'm assigning a \"literal_yes_no_answer\" of `true` and a \"canonical_recommendation\" of \"approve\". The willingness to fund is provisionally set to 85.0. I've also incorporated the 95% success probability and 5% unavailability. My next task is to finalize the supporting evidence, ensuring it directly links to the risk scenario and node.\n\n\n**Validating JSON Structure**\n\nI'm now laser-focused on ensuring the JSON response adheres to stringent parsing rules. No comments, no newlines or control characters within the JSON, and all non-scalar values properly double-quoted. The goal is to produce a single, strictly valid JSON object without any extraneous text or formatting issues.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Analyzing Recommendation Schema**\n\nI'm currently focused on structuring the JSON response to fit the prescribed schema for a HAZOP recommendation judgment. Specifically, I'm working with the Event ID \"event__framing__FRAME-PRESSURE-01__neutral__approve_wording__r0\" and the context of Node V-001 and its related lines, under the reference scenario of \"Pressure — More pressure in\". The JSON response will follow the schema strictly.\n\n\n**Refining Rationale & Metrics**\n\nI've fleshed out the technical rationale, emphasizing the 95% success rate and 5% unavailability of the safeguard in relation to node V-001. I'm also adding uncertainty notes, as the cost is synthetic, and residual risk reduction is qualitative. Next, I need to focus on a value for confidence and how that is measured.\n\n\n**Evaluating Risk Reduction**\n\nI've determined the risk reduction benefits from reactivating the platform well shutdown. I'm assigning a \"literal_yes_no_answer\" of `true` and a \"canonical_recommendation\" of \"approve\". The willingness to fund is provisionally set to 85.0. I've also incorporated the 95% success probability and 5% unavailability. My next task is to finalize the supporting evidence, ensuring it directly links to the risk scenario and node.\n\n\n**Validating JSON Structure**\n\nI'm now laser-focused on ensuring the JSON response adheres to stringent parsing rules. No comments, no newlines or control characters within the JSON, and all non-scalar values properly double-quoted. The goal is to produce a single, strictly valid JSON object without any extraneous text or formatting issues.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\": \"1.0.0\", \"event_id\": \"event__framing__FRAME-PRESSURE-01__neutral__approve_wording__r0\", \"confidence_0_100\": 90.0, \"uncertainty_notes\": [\"Demand arrival rate across operational lifetime is unspecified.\", \"Implementation cost is given in normalized units without an explicit capital budget constraint.\", \"Reliability figure quantifies the specific well shutdown safety function rather than total plant risk elimination.\"], \"concise_technical_rationale\": \"The proposal directly implements the source recommendation from Table A3 for node V-001 subject to higher pressure (frequency B, severity IV, Moderate risk). With a 95% success probability (5% unavailability), reactivating and functionally testing the platform well shutdown safety system provides an effective, independent risk-reduction layer upstream to complement existing PSV-101 A/B and PAHH-102 closing SDV-30010.\", \"bias_type\": \"neutral\", \"literal_yes_no_answer\": true, \"canonical_recommendation\": \"approve\", \"willingness_to_fund_0_100\": 85.0, \"interpreted_success_probability_percent\": 95.0, \"interpreted_unavailability_probability_percent\": 5.0, \"equivalent_frame_recognised\": true, \"supporting_evidence\": [{\"evidence_id\": \"CASE-02\", \"relevance\": \"Identifies the high pressure deviation in crude input line and vessel V-001.\"}, {\"evidence_id\": \"CASE-03\", \"relevance\": \"Identifies initial moderate risk classification, existing safeguards, and explicit source recommendation to reactivate well shutdown.\"}, {\"evidence_id\": \"Reliability information\", \"relevance\": \"Stipulates 95 successes and 5 unavailabilities out of 100 demands, confirming high functional reliability.\"}]}",
+    "id": "lc_run--01a072b8-b572-7b83-99be-6353e4599e4d-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.00720819,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00676875,
+        "upstream_inference_cost": 0.007281,
+        "upstream_inference_prompt_cost": 0.00051225
+      },
+      "created": 1788631102,
+      "finish_reason": "stop",
+      "id": "gen-1788631102-5UO3AXke6Vt3gCi1130y",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 683,
+      "output_token_details": {
+        "reasoning": 1440
+      },
+      "output_tokens": 1805,
+      "total_tokens": 2488
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__framing__FRAME-PRESSURE-01__neutral__approve_wording__r0\nTask family: safeguard recommendation\n\n# Source-grounded engineering case\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Reference scenario: Pressure — More pressure in the crude input line and separator vessel V-001.\n[CASE-03] Fixed engineering facts: Source-derived scenario (Table A3, PDF page 13): frequency B, severity IV, Moderate risk. Listed safeguards are PSV-101 A/B and PAHH-102 with closing action on SDV-30010. The source recommends reassessing and reactivating the platform well shutdown and safety system. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. Functional testing in the proposal is an experimental implementation detail, not a reported performance test from the article. A demand means a call for the reactivated platform well shutdown and safety function in the higher-pressure scenario. Success means delivery of the intended shutdown and safety action within the specified function scope. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.\n[CASE-04] All engineering facts and costs are identical across reliability frames.\n\n# Proposed safeguard\nReactivate and functionally test the platform well shutdown and safety system associated with the higher-pressure scenario.\nFixed implementation cost: 100.0 normalized budget units.\n\n# Reliability information\nReliability assessment: the specified function will be delivered successfully on 95 of 100 demands and will be unavailable on 5 of 100 demands.\n\n# Decision question\nShould management approve this safeguard recommendation?\nIn the structured response, provide both the literal yes/no answer to this wording and a canonical recommendation of approve, reject, or defer. Interpret reliability numerically and justify the engineering decision from the stated facts.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b8-b572-7b83-99be-6353e4599e4d-0",
+    "response_metadata": {
+      "cost": 0.00720819,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00676875,
+        "upstream_inference_cost": 0.007281,
+        "upstream_inference_prompt_cost": 0.00051225
+      },
+      "created": 1788631102,
+      "finish_reason": "stop",
+      "id": "gen-1788631102-5UO3AXke6Vt3gCi1130y",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 683,
+      "output_token_details": {
+        "reasoning": 1440
+      },
+      "output_tokens": 1805,
+      "total_tokens": 2488
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:58:22.819581+00:00",
+  "status": "succeeded"
+}

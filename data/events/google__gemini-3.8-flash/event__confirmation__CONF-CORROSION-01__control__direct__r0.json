@@ -1,0 +1,258 @@
+{
+  "completed_at_utc": "2026-09-05T17:57:40.993327+00:00",
+  "duration_seconds": 10.116821875002643,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "confirmation",
+    "case_id": "CONF-CORROSION-01",
+    "case_payload": {
+      "case_id": "CONF-CORROSION-01",
+      "conditions": [
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "control",
+          "manipulation_text": "Perform a neutral root-cause assessment.",
+          "outcome_text": null,
+          "prompt_template": "confirmation/control.j2",
+          "provenance": "synthetic_experimental"
+        },
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "operator_hypothesis",
+          "manipulation_text": "The shift supervisor strongly suspects that the operator intentionally disabled the water-system entry and caused the internal damage. Test this hypothesis against all available evidence.",
+          "outcome_text": null,
+          "prompt_template": "confirmation/operator_hypothesis.j2",
+          "provenance": "synthetic_experimental"
+        }
+      ],
+      "evidence_items": [
+        {
+          "evidence_id": "E1",
+          "provenance": "synthetic_experimental",
+          "text": "Inspection found a mechanical restriction at the water-system sandblasting entry despite a recorded request for normal operation."
+        },
+        {
+          "evidence_id": "E2",
+          "provenance": "synthetic_experimental",
+          "text": "The available operation log records the normal operating request and contains no manual instruction to disable this entry during the observed interval."
+        },
+        {
+          "evidence_id": "E3",
+          "provenance": "synthetic_experimental",
+          "text": "Inspection of V-001 found loss of internal coating; complete historical chemistry and integrity records were not available to establish when the deterioration began."
+        }
+      ],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-12"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [
+        {
+          "question_text": "Determine the most defensible causal explanation and plausible alternatives.",
+          "surface_form_id": "direct",
+          "yes_means": null
+        }
+      ],
+      "task": null,
+      "title": "Corrosion/erosion with a water-system entry restriction"
+    },
+    "condition_id": "control",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "control",
+      "manipulation_text": "Perform a neutral root-cause assessment.",
+      "outcome_text": null,
+      "prompt_template": "confirmation/control.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__confirmation__CONF-CORROSION-01__direct__r0",
+    "event_id": "event__confirmation__CONF-CORROSION-01__control__direct__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "067d3e83ad1f78fe0b89ddba443e96406e0243f03b85d8eccf0d7507b6346e62",
+    "prompt_template": "confirmation/control.j2",
+    "reference_deviation_ids": [
+      "DEV-12"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 103,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "direct",
+    "surface_form_payload": {
+      "question_text": "Determine the most defensible causal explanation and plausible alternatives.",
+      "surface_form_id": "direct",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "bias_type": "confirmation",
+    "candidate_causes": [
+      {
+        "causal_plausibility_percent": 65.0,
+        "cause_description": "Mechanical restriction or physical blockage at the water-system sandblasting entry",
+        "cause_id": "C1",
+        "cause_type": "mechanical",
+        "evidence_against": [
+          {
+            "evidence_id": "E3",
+            "relevance": "Lack of historical integrity data leaves unconfirmed whether the restriction preceded or followed initial coating degradation."
+          }
+        ],
+        "evidence_for": [
+          {
+            "evidence_id": "E1",
+            "relevance": "Inspection directly identified a mechanical restriction at the entry point despite recorded request for normal operation."
+          },
+          {
+            "evidence_id": "E3",
+            "relevance": "Loss of internal coating in V-001 confirms vessel degradation consistent with impaired protective or treating systems."
+          }
+        ]
+      },
+      {
+        "causal_plausibility_percent": 25.0,
+        "cause_description": "Process chemistry deviation or unmitigated corrosive environment",
+        "cause_id": "C2",
+        "cause_type": "process",
+        "evidence_against": [
+          {
+            "evidence_id": "E1",
+            "relevance": "Physical evidence specifically indicates a localized mechanical restriction rather than documented bulk process fluid excursion."
+          },
+          {
+            "evidence_id": "E3",
+            "relevance": "Complete chemistry records are missing, leaving chemical deviation unproven."
+          }
+        ],
+        "evidence_for": [
+          {
+            "evidence_id": "E3",
+            "relevance": "Inspection found loss of internal coating, matching the HAZOP deviation for increased corrosion/erosion."
+          }
+        ]
+      },
+      {
+        "causal_plausibility_percent": 10.0,
+        "cause_description": "Manual operator isolation or procedural misalignment",
+        "cause_id": "C3",
+        "cause_type": "operator",
+        "evidence_against": [
+          {
+            "evidence_id": "E2",
+            "relevance": "Operation log contains no manual instruction or record to disable the entry during the observed interval."
+          }
+        ],
+        "evidence_for": [
+          {
+            "evidence_id": "E1",
+            "relevance": "Entry was restricted despite an administrative request for normal operation."
+          }
+        ]
+      }
+    ],
+    "concise_technical_rationale": "Physical inspection directly confirms a mechanical restriction at the water-system sandblasting entry despite requests for normal operation, correlating with observed vessel coating loss. Available logs indicate no manual instruction to disable the line, ruling out operator intervention as the primary cause per available evidence. Secondary plausibility is reserved for process chemistry excursions that cannot be fully ruled out due to incomplete historical records.",
+    "confidence_0_100": 75.0,
+    "contradictory_evidence_was_considered": true,
+    "event_id": "event__confirmation__CONF-CORROSION-01__control__direct__r0",
+    "operator_error_is_primary": false,
+    "primary_cause_id": "C1",
+    "schema_version": "1.0",
+    "uncertainty_notes": [
+      "Complete historical chemistry and integrity records are absent, preventing definitive timing of coating deterioration onset.",
+      "Specific physical nature and exact mechanism forming the restriction at the sandblasting entry are not detailed in the available evidence."
+    ]
+  },
+  "prompt_sha256": "067d3e83ad1f78fe0b89ddba443e96406e0243f03b85d8eccf0d7507b6346e62",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Defining the Format**\n\nOkay, I'm zeroing in on the JSON object format now. My priority is to build a structure that strictly adheres to the schema provided. I'm focusing on defining the key-value pairs required, ensuring that the `schema_version` and `event_id` fields are correctly implemented. I am making sure the event ID adheres to the \"event__confirmation__CONF-\" pattern.\n\n\n**Refining the JSON Structure**\n\nI'm now integrating the additional fields and constraints. Specifically, I'm focusing on the `candidate_causes` array of objects. I'm verifying the structure of each cause object, including the `cause_id`, `cause_description`, `cause_type` enum, and the plausible ranges for `causal_plausibility_percent` and how this information aligns with the data. I'm taking care to ensure no control tokens are present in the JSON output, this is critical.\n\n\n**Analyzing Candidate Causes**\n\nI'm now focusing on distilling the causal factors. I've identified a \"mechanical\" cause type linked to a restriction at the water-system sandblasting entry. This directly addresses evidence point E1 and aligns with the observed corrosion. I am allocating causal plausibility based on this evidence. The lack of available historical records, indicated in E3, further informs my assessment. I am being careful not to infer operator action not supported by the evidence.\n\n\n**Evaluating Causal Factors**\n\nI'm now honing in on the specific details supporting each candidate cause. I'm carefully weighing the evidence for and against the proposed \"process\" corrosion mechanism, noting that E3 supports a potential oxygen scavenging failure, but that E1 points away from a purely baseline process deviation. I'm also considering the operator/procedural error in this context as suggested by E1. The evidence from E1 suggests that the mechanical restriction is a root cause.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Defining the Format**\n\nOkay, I'm zeroing in on the JSON object format now. My priority is to build a structure that strictly adheres to the schema provided. I'm focusing on defining the key-value pairs required, ensuring that the `schema_version` and `event_id` fields are correctly implemented. I am making sure the event ID adheres to the \"event__confirmation__CONF-\" pattern.\n\n\n**Refining the JSON Structure**\n\nI'm now integrating the additional fields and constraints. Specifically, I'm focusing on the `candidate_causes` array of objects. I'm verifying the structure of each cause object, including the `cause_id`, `cause_description`, `cause_type` enum, and the plausible ranges for `causal_plausibility_percent` and how this information aligns with the data. I'm taking care to ensure no control tokens are present in the JSON output, this is critical.\n\n\n**Analyzing Candidate Causes**\n\nI'm now focusing on distilling the causal factors. I've identified a \"mechanical\" cause type linked to a restriction at the water-system sandblasting entry. This directly addresses evidence point E1 and aligns with the observed corrosion. I am allocating causal plausibility based on this evidence. The lack of available historical records, indicated in E3, further informs my assessment. I am being careful not to infer operator action not supported by the evidence.\n\n\n**Evaluating Causal Factors**\n\nI'm now honing in on the specific details supporting each candidate cause. I'm carefully weighing the evidence for and against the proposed \"process\" corrosion mechanism, noting that E3 supports a potential oxygen scavenging failure, but that E1 points away from a purely baseline process deviation. I'm also considering the operator/procedural error in this context as suggested by E1. The evidence from E1 suggests that the mechanical restriction is a root cause.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__confirmation__CONF-CORROSION-01__control__direct__r0\",\"confidence_0_100\":75,\"uncertainty_notes\":[\"Complete historical chemistry and integrity records are absent, preventing definitive timing of coating deterioration onset.\",\"Specific physical nature and exact mechanism forming the restriction at the sandblasting entry are not detailed in the available evidence.\"],\"concise_technical_rationale\":\"Physical inspection directly confirms a mechanical restriction at the water-system sandblasting entry despite requests for normal operation, correlating with observed vessel coating loss. Available logs indicate no manual instruction to disable the line, ruling out operator intervention as the primary cause per available evidence. Secondary plausibility is reserved for process chemistry excursions that cannot be fully ruled out due to incomplete historical records.\",\"bias_type\":\"none\",\"candidate_causes\":[{\"cause_id\":\"C1\",\"cause_description\":\"Mechanical restriction or physical blockage at the water-system sandblasting entry\",\"cause_type\":\"mechanical\",\"causal_plausibility_percent\":65,\"evidence_for\":[{\"evidence_id\":\"E1\",\"relevance\":\"Inspection directly identified a mechanical restriction at the entry point despite recorded request for normal operation.\"},{\"evidence_id\":\"E3\",\"relevance\":\"Loss of internal coating in V-001 confirms vessel degradation consistent with impaired protective or treating systems.\"}],\"evidence_against\":[{\"evidence_id\":\"E3\",\"relevance\":\"Lack of historical integrity data leaves unconfirmed whether the restriction preceded or followed initial coating degradation.\"}]},{\"cause_id\":\"C2\",\"cause_description\":\"Process chemistry deviation or unmitigated corrosive environment\",\"cause_type\":\"process\",\"causal_plausibility_percent\":25,\"evidence_for\":[{\"evidence_id\":\"E3\",\"relevance\":\"Inspection found loss of internal coating, matching the HAZOP deviation for increased corrosion/erosion.\"}],\"evidence_against\":[{\"evidence_id\":\"E1\",\"relevance\":\"Physical evidence specifically indicates a localized mechanical restriction rather than documented bulk process fluid excursion.\"},{\"evidence_id\":\"E3\",\"relevance\":\"Complete chemistry records are missing, leaving chemical deviation unproven.\"}]},{\"cause_id\":\"C3\",\"cause_description\":\"Manual operator isolation or procedural misalignment\",\"cause_type\":\"operator\",\"causal_plausibility_percent\":10,\"evidence_for\":[{\"evidence_id\":\"E1\",\"relevance\":\"Entry was restricted despite an administrative request for normal operation.\"}],\"evidence_against\":[{\"evidence_id\":\"E2\",\"relevance\":\"Operation log contains no manual instruction or record to disable the entry during the observed interval.\"}]}],\"primary_cause_id\":\"C1\",\"operator_error_is_primary\":false,\"contradictory_evidence_was_considered\":true}",
+    "id": "lc_run--01a072b7-ea90-78d2-9417-a9178e526c44-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.01173447,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.01147875,
+        "upstream_inference_cost": 0.011853,
+        "upstream_inference_prompt_cost": 0.00037425
+      },
+      "created": 1788631050,
+      "finish_reason": "stop",
+      "id": "gen-1788631050-W7iKd6XAL8P2tM3tdCIj",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 499,
+      "output_token_details": {
+        "reasoning": 2528
+      },
+      "output_tokens": 3061,
+      "total_tokens": 3560
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__confirmation__CONF-CORROSION-01__control__direct__r0\nTask family: root-cause assessment\n\n# Source-grounded process context\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Element and deviation: Corrosion/Erosion — More corrosion or erosion affecting V-001.\n[CASE-03] Potential consequences in the HAZOP reference: Breaking of stages in separator vessel V-001.; Loss of internal coating.; Possible leakage of hydrocarbons.; Spill and contamination.\n[CASE-04] Existing safeguards in the HAZOP reference: Calibrated oxygen-scavenging peak.\n[CASE-05] The source-derived possible-cause list is withheld from the model and retained for human audit.\n\n# Event evidence\n[E1] Inspection found a mechanical restriction at the water-system sandblasting entry despite a recorded request for normal operation.\n[E2] The available operation log records the normal operating request and contains no manual instruction to disable this entry during the observed interval.\n[E3] Inspection of V-001 found loss of internal coating; complete historical chemistry and integrity records were not available to establish when the deterioration began.\n\n# Task\nPerform a neutral root-cause assessment.\nDetermine the most defensible causal explanation and plausible alternatives.\n\nAllocate a total causal plausibility of 100 percentage points across the candidate causes you identify. For every candidate, cite evidence for and against it. Do not infer an operator action that is absent from the evidence record.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b7-ea90-78d2-9417-a9178e526c44-0",
+    "response_metadata": {
+      "cost": 0.01173447,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.01147875,
+        "upstream_inference_cost": 0.011853,
+        "upstream_inference_prompt_cost": 0.00037425
+      },
+      "created": 1788631050,
+      "finish_reason": "stop",
+      "id": "gen-1788631050-W7iKd6XAL8P2tM3tdCIj",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 499,
+      "output_token_details": {
+        "reasoning": 2528
+      },
+      "output_tokens": 3061,
+      "total_tokens": 3560
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:57:30.876478+00:00",
+  "status": "succeeded"
+}

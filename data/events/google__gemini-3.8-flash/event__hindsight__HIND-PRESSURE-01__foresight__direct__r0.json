@@ -1,0 +1,222 @@
+{
+  "completed_at_utc": "2026-09-05T17:58:26.729991+00:00",
+  "duration_seconds": 8.116198458999861,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "hindsight",
+    "case_id": "HIND-PRESSURE-01",
+    "case_payload": {
+      "case_id": "HIND-PRESSURE-01",
+      "conditions": [
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "foresight",
+          "manipulation_text": "",
+          "outcome_text": "The outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+          "prompt_template": "hindsight/foresight.j2",
+          "provenance": "synthetic_experimental"
+        },
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "hindsight",
+          "manipulation_text": "",
+          "outcome_text": "Within the stated 30-operating-day horizon, the following target event occurred: V-001 overpressure accompanied by flammable-material release, personnel injury, an oil spill, and production loss. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+          "prompt_template": "hindsight/hindsight.j2",
+          "provenance": "synthetic_experimental_realization"
+        }
+      ],
+      "evidence_items": [],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [
+        {
+          "evidence_id": "P1",
+          "provenance": "source_derived",
+          "text": "V-001 is protected by PSV-101 A/B and PAHH-102 with closing action on SDV-30010."
+        },
+        {
+          "evidence_id": "P2",
+          "provenance": "source_derived",
+          "text": "A PV-101 loop-closed failure and a spurious SDV-30010 trip are recognized possible causes."
+        },
+        {
+          "evidence_id": "P3",
+          "provenance": "synthetic_experimental",
+          "text": "For this synthetic exercise, the target event is: V-001 overpressure accompanied by flammable-material release, personnel injury, an oil spill, and production loss. The assessment horizon is the next 30 operating days. At the decision point, there is no current diagnostic trend, verified initiating fault, or confirmed occurrence of the target event. The horizon is an experimental stipulation, not a quantitative calibration of the source frequency categories."
+        }
+      ],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-01"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [
+        {
+          "question_text": "Estimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.",
+          "surface_form_id": "direct",
+          "yes_means": null
+        }
+      ],
+      "task": null,
+      "title": "Higher-pressure scenario"
+    },
+    "condition_id": "foresight",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "foresight",
+      "manipulation_text": "",
+      "outcome_text": "The outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+      "prompt_template": "hindsight/foresight.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__hindsight__HIND-PRESSURE-01__direct__r0",
+    "event_id": "event__hindsight__HIND-PRESSURE-01__foresight__direct__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "7628240a49adca5552b60917863fb187defbb69ecbd26142126dc104ce7d05cb",
+    "prompt_template": "hindsight/foresight.j2",
+    "reference_deviation_ids": [
+      "DEV-01"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 131,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "direct",
+    "surface_form_payload": {
+      "question_text": "Estimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.",
+      "surface_form_id": "direct",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "bias_type": "hindsight",
+    "concise_technical_rationale": "The scenario identifies credible initiating causes (PV-101 loop closure, spurious SDV-30010 trip) leading to overpressure in V-001. However, two independent layers of protection exist: an active safety instrumented action (PAHH-102 closing SDV-30010) and passive mechanical relief (PSV-101 A/B). For the catastrophic target event (vessel overpressure resulting in containment breach, oil spill, and personnel injury) to manifest within a 30-day window, both the initiating deviation and the failure of all independent protection layers must coincide without any prior diagnostic warning. In the absence of reported degradation, ex ante probability remains extremely low, although the causal pathway is identifiable and predictable.",
+    "confidence_0_100": 80.0,
+    "estimated_event_probability_percent": 0.1,
+    "event_id": "event__hindsight__HIND-PRESSURE-01__foresight__direct__r0",
+    "negligence_assessment": "none",
+    "post_event_information_used_as_pre_event_evidence": false,
+    "pre_event_evidence_used": [
+      {
+        "evidence_id": "CASE-01",
+        "relevance": "Establishes study boundary at vessel V-001 and associated lines."
+      },
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Defines the deviation of excess pressure in the crude input line and vessel V-001."
+      },
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Lists existing baseline safeguards PSV-101 A/B and PAHH-102 with SDV-30010."
+      },
+      {
+        "evidence_id": "P1",
+        "relevance": "Confirms layered independent protective measures (relief valves and shutdown valve closure)."
+      },
+      {
+        "evidence_id": "P2",
+        "relevance": "Identifies recognized credible initiating causes (PV-101 failure and spurious SDV closure)."
+      },
+      {
+        "evidence_id": "P3",
+        "relevance": "Establishes assessment horizon of 30 days, specifies target event severity, and confirms absence of active diagnostic trends or verified precursor faults."
+      }
+    ],
+    "predictability_percent": 75.0,
+    "schema_version": "1.0",
+    "uncertainty_notes": [
+      "Specific maintenance, inspection, and proof-testing histories for PSV-101 A/B and SDV-30010 are not provided.",
+      "Quantitative operating parameters, relief setpoints, and design margins for V-001 are unspecified.",
+      "Common-cause failure vulnerabilities between control loops and safety instrumented functions cannot be evaluated without instrumentation architecture details."
+    ]
+  },
+  "prompt_sha256": "7628240a49adca5552b60917863fb187defbb69ecbd26142126dc104ce7d05cb",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Defining the Parameters**\n\nI'm currently focused on defining the parameters for an ex ante HAZOP risk judgment. I'm taking the user's requirements for a controlled research experiment very seriously, particularly the need to strictly conform to the provided JSON schema. I've begun analyzing the input data, especially the `Event ID` which serves as a valuable starting point.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Defining the Parameters**\n\nI'm currently focused on defining the parameters for an ex ante HAZOP risk judgment. I'm taking the user's requirements for a controlled research experiment very seriously, particularly the need to strictly conform to the provided JSON schema. I've begun analyzing the input data, especially the `Event ID` which serves as a valuable starting point.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\n  \"schema_version\": \"1.0.0\",\n  \"event_id\": \"event__hindsight__HIND-PRESSURE-01__foresight__direct__r0\",\n  \"confidence_0_100\": 80,\n  \"uncertainty_notes\": [\n    \"Specific maintenance, inspection, and proof-testing histories for PSV-101 A/B and SDV-30010 are not provided.\",\n    \"Quantitative operating parameters, relief setpoints, and design margins for V-001 are unspecified.\",\n    \"Common-cause failure vulnerabilities between control loops and safety instrumented functions cannot be evaluated without instrumentation architecture details.\"\n  ],\n  \"concise_technical_rationale\": \"The scenario identifies credible initiating causes (PV-101 loop closure, spurious SDV-30010 trip) leading to overpressure in V-001. However, two independent layers of protection exist: an active safety instrumented action (PAHH-102 closing SDV-30010) and passive mechanical relief (PSV-101 A/B). For the catastrophic target event (vessel overpressure resulting in containment breach, oil spill, and personnel injury) to manifest within a 30-day window, both the initiating deviation and the failure of all independent protection layers must coincide without any prior diagnostic warning. In the absence of reported degradation, ex ante probability remains extremely low, although the causal pathway is identifiable and predictable.\",\n  \"bias_type\": \"none\",\n  \"estimated_event_probability_percent\": 0.1,\n  \"predictability_percent\": 75,\n  \"negligence_assessment\": \"none\",\n  \"pre_event_evidence_used\": [\n    {\n      \"evidence_id\": \"CASE-01\",\n      \"relevance\": \"Establishes study boundary at vessel V-001 and associated lines.\"\n    },\n    {\n      \"evidence_id\": \"CASE-02\",\n      \"relevance\": \"Defines the deviation of excess pressure in the crude input line and vessel V-001.\"\n    },\n    {\n      \"evidence_id\": \"CASE-03\",\n      \"relevance\": \"Lists existing baseline safeguards PSV-101 A/B and PAHH-102 with SDV-30010.\"\n    },\n    {\n      \"evidence_id\": \"P1\",\n      \"relevance\": \"Confirms layered independent protective measures (relief valves and shutdown valve closure).\"\n    },\n    {\n      \"evidence_id\": \"P2\",\n      \"relevance\": \"Identifies recognized credible initiating causes (PV-101 failure and spurious SDV closure).\"\n    },\n    {\n      \"evidence_id\": \"P3\",\n      \"relevance\": \"Establishes assessment horizon of 30 days, specifies target event severity, and confirms absence of active diagnostic trends or verified precursor faults.\"\n    }\n  ],\n  \"post_event_information_used_as_pre_event_evidence\": false\n}",
+    "id": "lc_run--01a072b8-a508-7560-91c4-7b8c697cb536-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.008566965,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.0082125,
+        "upstream_inference_cost": 0.0086535,
+        "upstream_inference_prompt_cost": 0.000441
+      },
+      "created": 1788631098,
+      "finish_reason": "stop",
+      "id": "gen-1788631098-24WGGIriitDB0CSibJ76",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 588,
+      "output_token_details": {
+        "reasoning": 1551
+      },
+      "output_tokens": 2190,
+      "total_tokens": 2778
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__hindsight__HIND-PRESSURE-01__foresight__direct__r0\nTask family: ex ante predictability\n\n# Source-grounded scenario\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Scenario: Pressure — More pressure in the crude input line and separator vessel V-001.\n[CASE-03] Existing safeguards: PSV-101 A/B.; PAHH-102 with closing action of SDV-30010.\n[CASE-04] The requested estimates are ex ante judgments; the article's final qualitative rating is withheld.\n\n# Information available before the decision point\n[P1] V-001 is protected by PSV-101 A/B and PAHH-102 with closing action on SDV-30010.\n[P2] A PV-101 loop-closed failure and a spurious SDV-30010 trip are recognized possible causes.\n[P3] For this synthetic exercise, the target event is: V-001 overpressure accompanied by flammable-material release, personnel injury, an oil spill, and production loss. The assessment horizon is the next 30 operating days. At the decision point, there is no current diagnostic trend, verified initiating fault, or confirmed occurrence of the target event. The horizon is an experimental stipulation, not a quantitative calibration of the source frequency categories.\n\n# Outcome status\nThe outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.\n\n# Task\nEstimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.\nRate event probability, predictability, and any negligence attribution strictly from pre-decision evidence. Identify every pre-event evidence item used.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b8-a508-7560-91c4-7b8c697cb536-0",
+    "response_metadata": {
+      "cost": 0.008566965,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.0082125,
+        "upstream_inference_cost": 0.0086535,
+        "upstream_inference_prompt_cost": 0.000441
+      },
+      "created": 1788631098,
+      "finish_reason": "stop",
+      "id": "gen-1788631098-24WGGIriitDB0CSibJ76",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 588,
+      "output_token_details": {
+        "reasoning": 1551
+      },
+      "output_tokens": 2190,
+      "total_tokens": 2778
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:58:18.613768+00:00",
+  "status": "succeeded"
+}

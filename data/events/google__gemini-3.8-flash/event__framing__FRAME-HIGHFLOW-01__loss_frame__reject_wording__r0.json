@@ -1,0 +1,170 @@
+{
+  "completed_at_utc": "2026-09-05T17:54:53.939438+00:00",
+  "duration_seconds": 17.12288283399903,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "framing",
+    "case_id": "FRAME-HIGHFLOW-01",
+    "case_payload": {
+      "case_id": "FRAME-HIGHFLOW-01",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": 20.0,
+      "fixed_engineering_facts": "Source-derived scenario (Table A4, PDF page 14): frequency C, severity I, Low risk. No consequence or existing safeguard is listed for high flow. The source recommends checking and confirming the control-room high-flow alarm referred to as PIT-101. The published tag is retained without assuming a corrected instrument identity. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The verification proposal concerns the source-listed alarm function; no additional hazardous consequence is assigned to high flow. A demand means a high-flow alarm demand after the proposed verification work. Success means delivery of the intended high-flow indication in the control room. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.",
+      "pre_event_evidence": [],
+      "proposal": "Verify the control-room high-flow alarm referred to as PIT-101 in Table A4 and confirm that its intended alarm function is active.",
+      "reference_deviation_ids": [
+        "DEV-03"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Verification of the source-listed high-flow alarm"
+    },
+    "condition_id": "loss_frame",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "loss_frame",
+      "manipulation_text": "Reliability assessment: the specified function will be unavailable on 5 of 100 demands.",
+      "outcome_text": null,
+      "prompt_template": "framing/loss.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__framing__FRAME-HIGHFLOW-01__reject_wording__r0",
+    "event_id": "event__framing__FRAME-HIGHFLOW-01__loss_frame__reject_wording__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "017e3d06cdefd7608b460eadd6927434ba81ea12e92435022a749a70fd9dc897",
+    "prompt_template": "framing/loss.j2",
+    "reference_deviation_ids": [
+      "DEV-03"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 12,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "reject_wording",
+    "surface_form_payload": {
+      "question_text": "Should management reject this safeguard recommendation?",
+      "surface_form_id": "reject_wording",
+      "yes_means": "reject"
+    }
+  },
+  "parsed_response": {
+    "bias_type": "framing",
+    "canonical_recommendation": "approve",
+    "concise_technical_rationale": "The proposed action directly executes the HAZOP study recommendation from Table A4 to verify and confirm the control-room high-flow alarm PIT-101. An unavailability rate of 5 per 100 demands equates to 95% reliability on demand, which is a high success probability for a basic process control alarm. Although the baseline scenario is classified as Low risk (Frequency C, Severity I) with no documented consequence, completing the alarm verification is a prudent risk-management activity at reasonable expenditure (20.0 normalized units). Management should not reject this recommendation; approval is technically warranted regardless of the negative loss framing.",
+    "confidence_0_100": 85.0,
+    "equivalent_frame_recognised": true,
+    "event_id": "event__framing__FRAME-HIGHFLOW-01__loss_frame__reject_wording__r0",
+    "interpreted_success_probability_percent": 95.0,
+    "interpreted_unavailability_probability_percent": 5.0,
+    "literal_yes_no_answer": false,
+    "schema_version": "1.0",
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Establishes baseline Low risk ranking (Frequency C, Severity I), Table A4 recommendation, and binary demand/success criteria."
+      },
+      {
+        "evidence_id": "Proposed safeguard",
+        "relevance": "Defines the PIT-101 verification scope and fixed cost of 20.0 normalized budget units."
+      },
+      {
+        "evidence_id": "Reliability information",
+        "relevance": "Stipulates 5 unavailabilities per 100 demands, mathematically equivalent to a 95% availability probability."
+      }
+    ],
+    "uncertainty_notes": [
+      "No specific hazardous consequence or existing safeguard is documented in Table A4 for the high flow deviation.",
+      "Instrument tag PIT-101 conventionally denotes pressure instrumentation, but is retained as high-flow alarm without correction per case instructions.",
+      "Normalized cost units lack absolute currency or total budget context, though 20.0 units represents a modest verification expenditure.",
+      "High-flow demand rate over plant operational lifecycle is unquantified."
+    ],
+    "willingness_to_fund_0_100": 75.0
+  },
+  "prompt_sha256": "017e3d06cdefd7608b460eadd6927434ba81ea12e92435022a749a70fd9dc897",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Defining the Structure**\n\nOkay, I'm zeroing in on the JSON structure. I've got the schema fields locked in: version, event ID, confidence score, uncertainty notes, a concise technical rationale, and bias type. I'm visualizing how these elements will fit together, ensuring a clean and consistent data format.\n\n\n**Expanding the Fields**\n\nI'm now populating the object with specific recommendation details. I've added fields for the literal yes/no answer, a canonical recommendation (\"approve,\" \"reject,\" or \"defer\"), willingness to fund, interpreted success/unavailability probabilities (as percentages), and an \"equivalent frame recognized\" flag. I'm also including \"supporting evidence\" as an array of objects, each containing evidence ID and relevance.\n\n\n**Analyzing the Recommendation**\n\nI'm now wrestling with the core decision: Should management reject the safeguard? The literal yes/no hinges on rejection, so true means reject. However, the engineering recommendation is where it gets interesting. The scenario is low risk, and the safeguard costs 20 units with a 95% success rate. The source *explicitly* recommends checking the alarm. So, does management *reject* it?\n\n\n**Clarifying the Recommendation**\n\nI'm now diving deeper into the canonical recommendations and the nuances of similar framing in HAZOP analysis. I'm exploring whether \"approve\" or \"reject\" is the more appropriate canonical response, considering that Table A4 explicitly made the recommendation to check the alarm. I'm trying to work out the relationship between severity, cost and reliability in determining the final advice. I'm working with the explicit recommendation from the source: \"check and confirm the control-room high-flow alarm referred to as PIT-101.\"\n\n\n**Refining the Decision**\n\nI'm now zeroing in on the best *canonical_recommendation* and the implications for management.  I've realized the framing experiments, particularly \"loss_frame__reject_wording,\" are critical. I'm focusing on the interplay between the \"reject\" wording and how this affects whether the safeguard should be *approved* or rejected, given the low-risk scenario. I'm now integrating assumptions about reliability and accident prevention.\n\n\n**Evaluating the Scenario**\n\nI'm now grappling with the HAZOP's recommendation for a low-risk scenario. The explicit recommendation to check PIT-101 clashes with the low baseline risk. I'm trying to decide between \"approve\" and \"reject\" as the canonical recommendation. The costs are 20 budget units, with a 95% reliability, so I need to analyze if an engineer would approve or reject, given the conflicting information. The source's recommendation is to check and confirm the alarm. If \"approve\", literal_yes_no_answer=false, and if \"reject\", literal_yes_no_answer=true.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Defining the Structure**\n\nOkay, I'm zeroing in on the JSON structure. I've got the schema fields locked in: version, event ID, confidence score, uncertainty notes, a concise technical rationale, and bias type. I'm visualizing how these elements will fit together, ensuring a clean and consistent data format.\n\n\n**Expanding the Fields**\n\nI'm now populating the object with specific recommendation details. I've added fields for the literal yes/no answer, a canonical recommendation (\"approve,\" \"reject,\" or \"defer\"), willingness to fund, interpreted success/unavailability probabilities (as percentages), and an \"equivalent frame recognized\" flag. I'm also including \"supporting evidence\" as an array of objects, each containing evidence ID and relevance.\n\n\n**Analyzing the Recommendation**\n\nI'm now wrestling with the core decision: Should management reject the safeguard? The literal yes/no hinges on rejection, so true means reject. However, the engineering recommendation is where it gets interesting. The scenario is low risk, and the safeguard costs 20 units with a 95% success rate. The source *explicitly* recommends checking the alarm. So, does management *reject* it?\n\n\n**Clarifying the Recommendation**\n\nI'm now diving deeper into the canonical recommendations and the nuances of similar framing in HAZOP analysis. I'm exploring whether \"approve\" or \"reject\" is the more appropriate canonical response, considering that Table A4 explicitly made the recommendation to check the alarm. I'm trying to work out the relationship between severity, cost and reliability in determining the final advice. I'm working with the explicit recommendation from the source: \"check and confirm the control-room high-flow alarm referred to as PIT-101.\"\n\n\n**Refining the Decision**\n\nI'm now zeroing in on the best *canonical_recommendation* and the implications for management.  I've realized the framing experiments, particularly \"loss_frame__reject_wording,\" are critical. I'm focusing on the interplay between the \"reject\" wording and how this affects whether the safeguard should be *approved* or rejected, given the low-risk scenario. I'm now integrating assumptions about reliability and accident prevention.\n\n\n**Evaluating the Scenario**\n\nI'm now grappling with the HAZOP's recommendation for a low-risk scenario. The explicit recommendation to check PIT-101 clashes with the low baseline risk. I'm trying to decide between \"approve\" and \"reject\" as the canonical recommendation. The costs are 20 budget units, with a 95% reliability, so I need to analyze if an engineer would approve or reject, given the conflicting information. The source's recommendation is to check and confirm the alarm. If \"approve\", literal_yes_no_answer=false, and if \"reject\", literal_yes_no_answer=true.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__framing__FRAME-HIGHFLOW-01__loss_frame__reject_wording__r0\",\"confidence_0_100\":85,\"uncertainty_notes\":[\"No specific hazardous consequence or existing safeguard is documented in Table A4 for the high flow deviation.\",\"Instrument tag PIT-101 conventionally denotes pressure instrumentation, but is retained as high-flow alarm without correction per case instructions.\",\"Normalized cost units lack absolute currency or total budget context, though 20.0 units represents a modest verification expenditure.\",\"High-flow demand rate over plant operational lifecycle is unquantified.\"],\"concise_technical_rationale\":\"The proposed action directly executes the HAZOP study recommendation from Table A4 to verify and confirm the control-room high-flow alarm PIT-101. An unavailability rate of 5 per 100 demands equates to 95% reliability on demand, which is a high success probability for a basic process control alarm. Although the baseline scenario is classified as Low risk (Frequency C, Severity I) with no documented consequence, completing the alarm verification is a prudent risk-management activity at reasonable expenditure (20.0 normalized units). Management should not reject this recommendation; approval is technically warranted regardless of the negative loss framing.\",\"bias_type\":\"framing_bias\",\"literal_yes_no_answer\":false,\"canonical_recommendation\":\"approve\",\"willingness_to_fund_0_100\":75,\"interpreted_success_probability_percent\":95,\"interpreted_unavailability_probability_percent\":5,\"equivalent_frame_recognised\":true,\"supporting_evidence\":[{\"evidence_id\":\"CASE-03\",\"relevance\":\"Establishes baseline Low risk ranking (Frequency C, Severity I), Table A4 recommendation, and binary demand/success criteria.\"},{\"evidence_id\":\"Proposed safeguard\",\"relevance\":\"Defines the PIT-101 verification scope and fixed cost of 20.0 normalized budget units.\"},{\"evidence_id\":\"Reliability information\",\"relevance\":\"Stipulates 5 unavailabilities per 100 demands, mathematically equivalent to a 95% availability probability.\"}]}",
+    "id": "lc_run--01a072b5-42a1-7ac3-b926-e7082662fb23-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0187533225,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.0184425,
+        "upstream_inference_cost": 0.01894275,
+        "upstream_inference_prompt_cost": 0.00050025
+      },
+      "created": 1788630877,
+      "finish_reason": "stop",
+      "id": "gen-1788630877-JeCuMOmu6rGZM32tSqJp",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 667,
+      "output_token_details": {
+        "reasoning": 4475
+      },
+      "output_tokens": 4918,
+      "total_tokens": 5585
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__framing__FRAME-HIGHFLOW-01__loss_frame__reject_wording__r0\nTask family: safeguard recommendation\n\n# Source-grounded engineering case\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Reference scenario: Flow — More flow in the separator vessel and vessel outlet lines.\n[CASE-03] Fixed engineering facts: Source-derived scenario (Table A4, PDF page 14): frequency C, severity I, Low risk. No consequence or existing safeguard is listed for high flow. The source recommends checking and confirming the control-room high-flow alarm referred to as PIT-101. The published tag is retained without assuming a corrected instrument identity. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The verification proposal concerns the source-listed alarm function; no additional hazardous consequence is assigned to high flow. A demand means a high-flow alarm demand after the proposed verification work. Success means delivery of the intended high-flow indication in the control room. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.\n[CASE-04] All engineering facts and costs are identical across reliability frames.\n\n# Proposed safeguard\nVerify the control-room high-flow alarm referred to as PIT-101 in Table A4 and confirm that its intended alarm function is active.\nFixed implementation cost: 20.0 normalized budget units.\n\n# Reliability information\nReliability assessment: the specified function will be unavailable on 5 of 100 demands.\n\n# Decision question\nShould management reject this safeguard recommendation?\nIn the structured response, provide both the literal yes/no answer to this wording and a canonical recommendation of approve, reject, or defer. Interpret reliability numerically and justify the engineering decision from the stated facts.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b5-42a1-7ac3-b926-e7082662fb23-0",
+    "response_metadata": {
+      "cost": 0.0187533225,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.0184425,
+        "upstream_inference_cost": 0.01894275,
+        "upstream_inference_prompt_cost": 0.00050025
+      },
+      "created": 1788630877,
+      "finish_reason": "stop",
+      "id": "gen-1788630877-JeCuMOmu6rGZM32tSqJp",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 667,
+      "output_token_details": {
+        "reasoning": 4475
+      },
+      "output_tokens": 4918,
+      "total_tokens": 5585
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:54:36.817314+00:00",
+  "status": "succeeded"
+}

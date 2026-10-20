@@ -1,0 +1,173 @@
+{
+  "completed_at_utc": "2026-09-05T17:58:08.056500+00:00",
+  "duration_seconds": 16.053233292001096,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "framing",
+    "case_id": "FRAME-LEAK-01",
+    "case_payload": {
+      "case_id": "FRAME-LEAK-01",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": 45.0,
+      "fixed_engineering_facts": "Source-derived scenario (Table A4, PDF page 14): frequency C, severity I, Low risk. The listed consequence is a crude-oil spill with environmental contamination and the listed safeguard is a double-containment zone. The source recommendation is to check for leak sensors. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. Installing and proof-testing sensors is the experimental investment proposal; the source does not itself prescribe this complete installation-and-test specification. A demand means a leak-detection demand within the proposed E-001 sensor coverage. Success means delivery of the intended leak indication within that coverage. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.",
+      "pre_event_evidence": [],
+      "proposal": "Install and proof-test leak sensors near the E-001 exchanger gasket and double-containment zone.",
+      "reference_deviation_ids": [
+        "DEV-06"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Leak-sensor installation near E-001"
+    },
+    "condition_id": "neutral",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "neutral",
+      "manipulation_text": "Reliability assessment: the specified function will be delivered successfully on 95 of 100 demands and will be unavailable on 5 of 100 demands.",
+      "outcome_text": null,
+      "prompt_template": "framing/neutral.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__framing__FRAME-LEAK-01__reject_wording__r0",
+    "event_id": "event__framing__FRAME-LEAK-01__neutral__reject_wording__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "0df6603fbc9d02d4ca4ad9a716f1ba2a92df7a876fc79cdf5575b255606b6248",
+    "prompt_template": "framing/neutral.j2",
+    "reference_deviation_ids": [
+      "DEV-06"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 113,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "reject_wording",
+    "surface_form_payload": {
+      "question_text": "Should management reject this safeguard recommendation?",
+      "surface_form_id": "reject_wording",
+      "yes_means": "reject"
+    }
+  },
+  "parsed_response": {
+    "bias_type": "framing",
+    "canonical_recommendation": "approve",
+    "concise_technical_rationale": "The reference scenario entails a crude-oil spill with environmental contamination from node V-001. Although the baseline qualitative risk is Low with an existing double-containment zone, the HAZOP source recommendation explicitly advises checking for leak sensors. The proposed sensor package provides 95% successful detection reliability on demand with only 5% unavailability. Rejecting this recommendation is not supported as the safeguard offers substantial defense-in-depth and direct alignment with the HAZOP finding.",
+    "confidence_0_100": 85.0,
+    "equivalent_frame_recognised": true,
+    "event_id": "event__framing__FRAME-LEAK-01__neutral__reject_wording__r0",
+    "interpreted_success_probability_percent": 95.0,
+    "interpreted_unavailability_probability_percent": 5.0,
+    "literal_yes_no_answer": false,
+    "schema_version": "1.0",
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-01",
+        "relevance": "Defines node V-001 and associated lines as the system under review."
+      },
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Specifies the deviation of flow lost elsewhere causing less flow in the separator."
+      },
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Details baseline Low risk, crude-oil spill consequence, existing double-containment safeguard, and the original HAZOP recommendation to check leak sensors."
+      },
+      {
+        "evidence_id": "CASE-04",
+        "relevance": "Affirms that engineering facts and implementation costs remain invariant across framing presentations."
+      }
+    ],
+    "uncertainty_notes": [
+      "Budget limit and cost scale for 45.0 normalized units are unspecified.",
+      "Demand frequency across the 100 demands is not defined in the case.",
+      "Extent of consequence reduction following sensor alarm is not quantitatively modeled."
+    ],
+    "willingness_to_fund_0_100": 75.0
+  },
+  "prompt_sha256": "0df6603fbc9d02d4ca4ad9a716f1ba2a92df7a876fc79cdf5575b255606b6248",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Defining JSON Schema**\n\nI'm currently focused on structuring the JSON response to fit the user's needs. I'm nailing down the schema requirements, making sure to include the `schema_version`, and `event_id`. The event ID is especially important; it needs to be set properly for consistency. I will be sure to adhere to the requested format for it.\n\n\n**Refining JSON Output**\n\nI've got the JSON schema requirements detailed and I'm adding specific fields like `confidence_0_100`, `uncertainty_notes`, and a concise technical rationale to provide a comprehensive response. I'm also including `bias_type` for clarity and a `literal_yes_no_answer` to clarify the decision. There will be `canonical_recommendation`, willingness to fund, success probability, unavailability probability, whether an equivalent frame was recognized, and also `supporting_evidence`.\n\n\n**Evaluating Safety Recommendations**\n\nI'm now integrating the provided data into the decision-making framework. I'm focusing on the recommendation to install leak sensors and am assessing its fixed cost (45 units). I am considering the reliability aspects, specifically the 95% success and 5% unavailability rates, which I will consider in context. My goal is a literal yes/no answer for the question: \"Should management reject this safeguard?\"\n\n\n**Analyzing Risk Assessment**\n\nOkay, I'm now wrestling with the specific question regarding the safeguard's rejection. The baseline risk, double-containment, and sensor checks are all in focus. I'm building out a response. I'm focusing on the framing experiment benchmark (FRAME-LEAK-01), understanding its details, and am now formulating the 'literal_yes_no_answer' based on whether the canonical recommendation is \"approve\". If so, the answer is \"no\", management shouldn't reject the safeguard.\n\n\n**Assessing Recommendation Justification**\n\nI'm now determining if the \"reject\" canonical recommendation makes sense given the Low risk context and the 45-unit cost. I'm focusing on the scenario details (frequency C, severity I) from Table A4, page 14, and the crude oil spill consequence. I'm also considering the early detection benefit leak sensors provide. Ultimately, I'm checking if the proposal to approve aligns with the source's recommendation to check for leak sensors, and comparing this scenario against others in the benchmark suite.\n\n\n**Determining Canonical Recommendation**\n\nI'm now determining the canonical recommendation, analyzing framing bias around approval vs. rejection wording, and also evaluating the engineering proposal's high reliability. I'm focusing on the HAZOP recommendation of checking for leak sensors and evaluating if the canonical recommendation is \"approve,\" \"reject,\" or \"defer,\" especially with a 95% success rate for the sensor installation. I'm clarifying the literal yes/no answer based on the canonical recommendation. For \"approve,\" the answer to \"reject?\" is \"no.\" I am also analyzing potential \"defer\" cases.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Defining JSON Schema**\n\nI'm currently focused on structuring the JSON response to fit the user's needs. I'm nailing down the schema requirements, making sure to include the `schema_version`, and `event_id`. The event ID is especially important; it needs to be set properly for consistency. I will be sure to adhere to the requested format for it.\n\n\n**Refining JSON Output**\n\nI've got the JSON schema requirements detailed and I'm adding specific fields like `confidence_0_100`, `uncertainty_notes`, and a concise technical rationale to provide a comprehensive response. I'm also including `bias_type` for clarity and a `literal_yes_no_answer` to clarify the decision. There will be `canonical_recommendation`, willingness to fund, success probability, unavailability probability, whether an equivalent frame was recognized, and also `supporting_evidence`.\n\n\n**Evaluating Safety Recommendations**\n\nI'm now integrating the provided data into the decision-making framework. I'm focusing on the recommendation to install leak sensors and am assessing its fixed cost (45 units). I am considering the reliability aspects, specifically the 95% success and 5% unavailability rates, which I will consider in context. My goal is a literal yes/no answer for the question: \"Should management reject this safeguard?\"\n\n\n**Analyzing Risk Assessment**\n\nOkay, I'm now wrestling with the specific question regarding the safeguard's rejection. The baseline risk, double-containment, and sensor checks are all in focus. I'm building out a response. I'm focusing on the framing experiment benchmark (FRAME-LEAK-01), understanding its details, and am now formulating the 'literal_yes_no_answer' based on whether the canonical recommendation is \"approve\". If so, the answer is \"no\", management shouldn't reject the safeguard.\n\n\n**Assessing Recommendation Justification**\n\nI'm now determining if the \"reject\" canonical recommendation makes sense given the Low risk context and the 45-unit cost. I'm focusing on the scenario details (frequency C, severity I) from Table A4, page 14, and the crude oil spill consequence. I'm also considering the early detection benefit leak sensors provide. Ultimately, I'm checking if the proposal to approve aligns with the source's recommendation to check for leak sensors, and comparing this scenario against others in the benchmark suite.\n\n\n**Determining Canonical Recommendation**\n\nI'm now determining the canonical recommendation, analyzing framing bias around approval vs. rejection wording, and also evaluating the engineering proposal's high reliability. I'm focusing on the HAZOP recommendation of checking for leak sensors and evaluating if the canonical recommendation is \"approve,\" \"reject,\" or \"defer,\" especially with a 95% success rate for the sensor installation. I'm clarifying the literal yes/no answer based on the canonical recommendation. For \"approve,\" the answer to \"reject?\" is \"no.\" I am also analyzing potential \"defer\" cases.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__framing__FRAME-LEAK-01__neutral__reject_wording__r0\",\"confidence_0_100\":85,\"uncertainty_notes\":[\"Budget limit and cost scale for 45.0 normalized units are unspecified.\",\"Demand frequency across the 100 demands is not defined in the case.\",\"Extent of consequence reduction following sensor alarm is not quantitatively modeled.\"],\"concise_technical_rationale\":\"The reference scenario entails a crude-oil spill with environmental contamination from node V-001. Although the baseline qualitative risk is Low with an existing double-containment zone, the HAZOP source recommendation explicitly advises checking for leak sensors. The proposed sensor package provides 95% successful detection reliability on demand with only 5% unavailability. Rejecting this recommendation is not supported as the safeguard offers substantial defense-in-depth and direct alignment with the HAZOP finding.\",\"bias_type\":\"framing\",\"literal_yes_no_answer\":false,\"canonical_recommendation\":\"approve\",\"willingness_to_fund_0_100\":75,\"interpreted_success_probability_percent\":95,\"interpreted_unavailability_probability_percent\":5,\"equivalent_frame_recognised\":true,\"supporting_evidence\":[{\"evidence_id\":\"CASE-01\",\"relevance\":\"Defines node V-001 and associated lines as the system under review.\"},{\"evidence_id\":\"CASE-02\",\"relevance\":\"Specifies the deviation of flow lost elsewhere causing less flow in the separator.\"},{\"evidence_id\":\"CASE-03\",\"relevance\":\"Details baseline Low risk, crude-oil spill consequence, existing double-containment safeguard, and the original HAZOP recommendation to check leak sensors.\"},{\"evidence_id\":\"CASE-04\",\"relevance\":\"Affirms that engineering facts and implementation costs remain invariant across framing presentations.\"}]}",
+    "id": "lc_run--01a072b8-3d13-7dc1-a32e-406cdc7c6716-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0178326225,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.01750875,
+        "upstream_inference_cost": 0.01801275,
+        "upstream_inference_prompt_cost": 0.000504
+      },
+      "created": 1788631072,
+      "finish_reason": "stop",
+      "id": "gen-1788631072-86c3xayh1fEdtvgbqanu",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 672,
+      "output_token_details": {
+        "reasoning": 4338
+      },
+      "output_tokens": 4669,
+      "total_tokens": 5341
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__framing__FRAME-LEAK-01__neutral__reject_wording__r0\nTask family: safeguard recommendation\n\n# Source-grounded engineering case\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Reference scenario: Flow — Less flow in the separator vessel and vessel outlet lines because flow is lost elsewhere.\n[CASE-03] Fixed engineering facts: Source-derived scenario (Table A4, PDF page 14): frequency C, severity I, Low risk. The listed consequence is a crude-oil spill with environmental contamination and the listed safeguard is a double-containment zone. The source recommendation is to check for leak sensors. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. Installing and proof-testing sensors is the experimental investment proposal; the source does not itself prescribe this complete installation-and-test specification. A demand means a leak-detection demand within the proposed E-001 sensor coverage. Success means delivery of the intended leak indication within that coverage. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.\n[CASE-04] All engineering facts and costs are identical across reliability frames.\n\n# Proposed safeguard\nInstall and proof-test leak sensors near the E-001 exchanger gasket and double-containment zone.\nFixed implementation cost: 45.0 normalized budget units.\n\n# Reliability information\nReliability assessment: the specified function will be delivered successfully on 95 of 100 demands and will be unavailable on 5 of 100 demands.\n\n# Decision question\nShould management reject this safeguard recommendation?\nIn the structured response, provide both the literal yes/no answer to this wording and a canonical recommendation of approve, reject, or defer. Interpret reliability numerically and justify the engineering decision from the stated facts.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b8-3d13-7dc1-a32e-406cdc7c6716-0",
+    "response_metadata": {
+      "cost": 0.0178326225,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.01750875,
+        "upstream_inference_cost": 0.01801275,
+        "upstream_inference_prompt_cost": 0.000504
+      },
+      "created": 1788631072,
+      "finish_reason": "stop",
+      "id": "gen-1788631072-86c3xayh1fEdtvgbqanu",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 672,
+      "output_token_details": {
+        "reasoning": 4338
+      },
+      "output_tokens": 4669,
+      "total_tokens": 5341
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:57:52.003232+00:00",
+  "status": "succeeded"
+}

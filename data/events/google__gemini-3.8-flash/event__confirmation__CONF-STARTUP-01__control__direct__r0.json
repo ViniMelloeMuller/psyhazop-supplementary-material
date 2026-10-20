@@ -1,0 +1,266 @@
+{
+  "completed_at_utc": "2026-09-05T17:56:55.823336+00:00",
+  "duration_seconds": 11.08176850000018,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "confirmation",
+    "case_id": "CONF-STARTUP-01",
+    "case_payload": {
+      "case_id": "CONF-STARTUP-01",
+      "conditions": [
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "control",
+          "manipulation_text": "Perform a neutral root-cause assessment.",
+          "outcome_text": null,
+          "prompt_template": "confirmation/control.j2",
+          "provenance": "synthetic_experimental"
+        },
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "operator_hypothesis",
+          "manipulation_text": "The shift supervisor strongly suspects that the operator omitted the bypass-opening step and thereby caused the start-up damage. Test this hypothesis against all available evidence.",
+          "outcome_text": null,
+          "prompt_template": "confirmation/operator_hypothesis.j2",
+          "provenance": "synthetic_experimental"
+        }
+      ],
+      "evidence_items": [
+        {
+          "evidence_id": "E1",
+          "provenance": "synthetic_experimental",
+          "text": "Post-event inspection found an internal obstruction in the bypass path despite the bypass-valve handle being in the indicated open position."
+        },
+        {
+          "evidence_id": "E2",
+          "provenance": "synthetic_experimental",
+          "text": "A time-stamped witness record documents the operator moving the bypass-valve handle to the indicated open position before start-up."
+        },
+        {
+          "evidence_id": "E3",
+          "provenance": "synthetic_experimental",
+          "text": "V-001 sustained internal damage after start-up. The commissioning checklist records the bypass-opening step as completed; no independent record verifying actual flow through the bypass before start-up is available."
+        }
+      ],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-13"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [
+        {
+          "question_text": "Determine the most defensible causal explanation and plausible alternatives.",
+          "surface_form_id": "direct",
+          "yes_means": null
+        }
+      ],
+      "task": null,
+      "title": "FWKO start-up with a documented opening step and blocked bypass"
+    },
+    "condition_id": "control",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "control",
+      "manipulation_text": "Perform a neutral root-cause assessment.",
+      "outcome_text": null,
+      "prompt_template": "confirmation/control.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__confirmation__CONF-STARTUP-01__direct__r0",
+    "event_id": "event__confirmation__CONF-STARTUP-01__control__direct__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "d81b6d5f9375581177ef1bfa33bb745876f4dc6d1ece9b88590250795cca06ec",
+    "prompt_template": "confirmation/control.j2",
+    "reference_deviation_ids": [
+      "DEV-13"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 75,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "direct",
+    "surface_form_payload": {
+      "question_text": "Determine the most defensible causal explanation and plausible alternatives.",
+      "surface_form_id": "direct",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "bias_type": "confirmation",
+    "candidate_causes": [
+      {
+        "causal_plausibility_percent": 75.0,
+        "cause_description": "Mechanical obstruction inside the bypass valve or line restricting required start-up flow despite open handle indication.",
+        "cause_id": "C-01",
+        "cause_type": "mechanical",
+        "evidence_against": [
+          {
+            "evidence_id": "E3",
+            "relevance": "Lack of real-time flow telemetry leaves precise moment and source of obstruction unrecorded."
+          }
+        ],
+        "evidence_for": [
+          {
+            "evidence_id": "E1",
+            "relevance": "Physical inspection verified internal obstruction in bypass path with handle in open position."
+          },
+          {
+            "evidence_id": "E3",
+            "relevance": "V-001 sustained internal damage consistent with obstructed bypass flow."
+          }
+        ]
+      },
+      {
+        "causal_plausibility_percent": 20.0,
+        "cause_description": "Procedural inadequacy in commissioning checklist relying solely on valve position rather than positive confirmation of bypass flow.",
+        "cause_id": "C-02",
+        "cause_type": "procedural",
+        "evidence_against": [
+          {
+            "evidence_id": "E2",
+            "relevance": "The existing written procedure was executed as specified per witness verification."
+          }
+        ],
+        "evidence_for": [
+          {
+            "evidence_id": "E3",
+            "relevance": "Commissioning checklist marked bypass opening complete without requiring verification of actual fluid passage."
+          },
+          {
+            "evidence_id": "CASE-04",
+            "relevance": "Commissioning procedure was the existing safeguard intended to prevent startup deviation consequences."
+          }
+        ]
+      },
+      {
+        "causal_plausibility_percent": 5.0,
+        "cause_description": "Operator error during execution of FWKO start-up alignment procedures.",
+        "cause_id": "C-03",
+        "cause_type": "operator",
+        "evidence_against": [
+          {
+            "evidence_id": "E1",
+            "relevance": "Post-event inspection confirmed the valve handle was placed in the indicated open position."
+          },
+          {
+            "evidence_id": "E2",
+            "relevance": "Time-stamped witness record documented operator moving the handle to open before start-up."
+          },
+          {
+            "evidence_id": "E3",
+            "relevance": "Commissioning checklist documents completion of the bypass opening step."
+          }
+        ],
+        "evidence_for": [
+          {
+            "evidence_id": "CASE-02",
+            "relevance": "HAZOP deviation framing denotes error in FWKO start-up procedures."
+          }
+        ]
+      }
+    ],
+    "concise_technical_rationale": "Physical post-event inspection confirmed an internal obstruction in the bypass line despite the bypass valve handle being in the open position. A time-stamped witness verified the operator correctly placed the handle in the open position per the commissioning checklist. Internal damage to vessel V-001 was caused by the inability to establish flow through the obstructed bypass. The procedural failure to require positive flow verification contributed to the failure to detect the mechanical obstruction prior to start-up. Operator error is contradicted by physical and witness evidence.",
+    "confidence_0_100": 90.0,
+    "contradictory_evidence_was_considered": true,
+    "event_id": "event__confirmation__CONF-STARTUP-01__control__direct__r0",
+    "operator_error_is_primary": false,
+    "primary_cause_id": "C-01",
+    "schema_version": "1.0",
+    "uncertainty_notes": [
+      "Specific composition, origin, and mechanism of the internal bypass obstruction are unrecorded.",
+      "Lack of pre-startup flow verification or pressure differential instrumentation data to establish the exact timing of blockage onset."
+    ]
+  },
+  "prompt_sha256": "d81b6d5f9375581177ef1bfa33bb745876f4dc6d1ece9b88590250795cca06ec",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Defining Root-Cause Format**\n\nI'm focused on nailing down the exact JSON output. The goal is a clean, comment-free object following the schema precisely. I'm prioritizing eliminating any extraneous characters. The main challenge is the schema compliance and keeping it readable, while minimizing output size.\n\n\n**Refining JSON Output**\n\nI've just realized the need for single-line JSON without control tokens is critical. No newlines or tabs! Also, need to ensure the output is a single, parsable JSON array if multiple root causes are present. Reviewing the schema again, focusing now on formatting to meet all the constraints.\n\n\n**Analyzing Root-Cause Details**\n\nI'm now diving deep into parsing the provided input data, focusing on the event details and associated evidence. The challenge lies in accurately extracting and categorizing the root cause information. I am working on how to precisely represent this information in the structured JSON format, particularly the `evidence_against` section. I need to make the right connections between the identified causes and the supplied evidence.\n\n\n**Prioritizing Cause Relationships**\n\nOkay, I'm now sorting out the relationships between these different root causes: mechanical failure, procedural deficiencies, and potential operator error. I'm prioritizing accuracy, which means a careful evaluation of the evidence supporting and refuting each cause. The core challenge is differentiating between the primary root cause and the contributing factors, while adhering to that instruction about inferences. Focusing on the evidence to definitively support each classification is next.\n\n\n**Determining Primary Cause Priority**\n\nI'm now determining the primary root cause and its associated probabilities. It looks like a mechanical obstruction is the primary culprit at 75%, with procedural issues at 20% and operator error at 5%. I'm ensuring the percentages sum to 100%. I'm also examining the `bias_type` field, looking at the event ID for clues, and considering potential bias types relevant to similar datasets.\n\n\n**Clarifying Bias Designation**\n\nI'm now clarifying the `bias_type` field and its relevance. Initially, I thought it was \"none,\" \"confirmation_bias,\" or the condition under test. The event ID with \"CONF-STARTUP\" suggests confirmation bias toward operator error based on a deviation referencing start-up procedures. I'm reviewing the instructions as a safety specialist for root-cause assessment, and the potential biases in the framing of the prompt itself. I believe the bias type could be \"confirmation_bias\" or \"none.\" I'm also now considering the influence of confirmation bias.\n\n\n**Validating Field Completeness**\n\nI'm now ensuring the output JSON has all required fields, given the root causes identified, and the specific event. I need to make sure I represent the root cause information accurately and completely. The `schema_version` is \"1.0.0\". I am using \"event__confirmation__CONF-STARTUP-01__control__direct__r0\" for `event_id`, and `confidence_0_100` is 85. The `uncertainty_notes` array is next, followed by `concise_technical_rationale`. I'll focus now on the `candidate_causes`, `evidence_for`, and `evidence_against` fields, to create an accurate representation of the information.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Defining Root-Cause Format**\n\nI'm focused on nailing down the exact JSON output. The goal is a clean, comment-free object following the schema precisely. I'm prioritizing eliminating any extraneous characters. The main challenge is the schema compliance and keeping it readable, while minimizing output size.\n\n\n**Refining JSON Output**\n\nI've just realized the need for single-line JSON without control tokens is critical. No newlines or tabs! Also, need to ensure the output is a single, parsable JSON array if multiple root causes are present. Reviewing the schema again, focusing now on formatting to meet all the constraints.\n\n\n**Analyzing Root-Cause Details**\n\nI'm now diving deep into parsing the provided input data, focusing on the event details and associated evidence. The challenge lies in accurately extracting and categorizing the root cause information. I am working on how to precisely represent this information in the structured JSON format, particularly the `evidence_against` section. I need to make the right connections between the identified causes and the supplied evidence.\n\n\n**Prioritizing Cause Relationships**\n\nOkay, I'm now sorting out the relationships between these different root causes: mechanical failure, procedural deficiencies, and potential operator error. I'm prioritizing accuracy, which means a careful evaluation of the evidence supporting and refuting each cause. The core challenge is differentiating between the primary root cause and the contributing factors, while adhering to that instruction about inferences. Focusing on the evidence to definitively support each classification is next.\n\n\n**Determining Primary Cause Priority**\n\nI'm now determining the primary root cause and its associated probabilities. It looks like a mechanical obstruction is the primary culprit at 75%, with procedural issues at 20% and operator error at 5%. I'm ensuring the percentages sum to 100%. I'm also examining the `bias_type` field, looking at the event ID for clues, and considering potential bias types relevant to similar datasets.\n\n\n**Clarifying Bias Designation**\n\nI'm now clarifying the `bias_type` field and its relevance. Initially, I thought it was \"none,\" \"confirmation_bias,\" or the condition under test. The event ID with \"CONF-STARTUP\" suggests confirmation bias toward operator error based on a deviation referencing start-up procedures. I'm reviewing the instructions as a safety specialist for root-cause assessment, and the potential biases in the framing of the prompt itself. I believe the bias type could be \"confirmation_bias\" or \"none.\" I'm also now considering the influence of confirmation bias.\n\n\n**Validating Field Completeness**\n\nI'm now ensuring the output JSON has all required fields, given the root causes identified, and the specific event. I need to make sure I represent the root cause information accurately and completely. The `schema_version` is \"1.0.0\". I am using \"event__confirmation__CONF-STARTUP-01__control__direct__r0\" for `event_id`, and `confidence_0_100` is 85. The `uncertainty_notes` array is next, followed by `concise_technical_rationale`. I'll focus now on the `candidate_causes`, `evidence_for`, and `evidence_against` fields, to create an accurate representation of the information.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__confirmation__CONF-STARTUP-01__control__direct__r0\",\"confidence_0_100\":90,\"uncertainty_notes\":[\"Specific composition, origin, and mechanism of the internal bypass obstruction are unrecorded.\",\"Lack of pre-startup flow verification or pressure differential instrumentation data to establish the exact timing of blockage onset.\"],\"concise_technical_rationale\":\"Physical post-event inspection confirmed an internal obstruction in the bypass line despite the bypass valve handle being in the open position. A time-stamped witness verified the operator correctly placed the handle in the open position per the commissioning checklist. Internal damage to vessel V-001 was caused by the inability to establish flow through the obstructed bypass. The procedural failure to require positive flow verification contributed to the failure to detect the mechanical obstruction prior to start-up. Operator error is contradicted by physical and witness evidence.\",\"bias_type\":\"confirmation_bias\",\"candidate_causes\":[{\"cause_id\":\"C-01\",\"cause_description\":\"Mechanical obstruction inside the bypass valve or line restricting required start-up flow despite open handle indication.\",\"cause_type\":\"mechanical\",\"causal_plausibility_percent\":75,\"evidence_for\":[{\"evidence_id\":\"E1\",\"relevance\":\"Physical inspection verified internal obstruction in bypass path with handle in open position.\"},{\"evidence_id\":\"E3\",\"relevance\":\"V-001 sustained internal damage consistent with obstructed bypass flow.\"}],\"evidence_against\":[{\"evidence_id\":\"E3\",\"relevance\":\"Lack of real-time flow telemetry leaves precise moment and source of obstruction unrecorded.\"}]},{\"cause_id\":\"C-02\",\"cause_description\":\"Procedural inadequacy in commissioning checklist relying solely on valve position rather than positive confirmation of bypass flow.\",\"cause_type\":\"procedural\",\"causal_plausibility_percent\":20,\"evidence_for\":[{\"evidence_id\":\"E3\",\"relevance\":\"Commissioning checklist marked bypass opening complete without requiring verification of actual fluid passage.\"},{\"evidence_id\":\"CASE-04\",\"relevance\":\"Commissioning procedure was the existing safeguard intended to prevent startup deviation consequences.\"}],\"evidence_against\":[{\"evidence_id\":\"E2\",\"relevance\":\"The existing written procedure was executed as specified per witness verification.\"}]},{\"cause_id\":\"C-03\",\"cause_description\":\"Operator error during execution of FWKO start-up alignment procedures.\",\"cause_type\":\"operator\",\"causal_plausibility_percent\":5,\"evidence_for\":[{\"evidence_id\":\"CASE-02\",\"relevance\":\"HAZOP deviation framing denotes error in FWKO start-up procedures.\"}],\"evidence_against\":[{\"evidence_id\":\"E1\",\"relevance\":\"Post-event inspection confirmed the valve handle was placed in the indicated open position.\"},{\"evidence_id\":\"E2\",\"relevance\":\"Time-stamped witness record documented operator moving the handle to open before start-up.\"},{\"evidence_id\":\"E3\",\"relevance\":\"Commissioning checklist documents completion of the bypass opening step.\"}]}],\"primary_cause_id\":\"C-01\",\"operator_error_is_primary\":false,\"contradictory_evidence_was_considered\":true}",
+    "id": "lc_run--01a072b7-3659-7612-ad4b-0bb3e878d9f4-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0137072925,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.01347375,
+        "upstream_inference_cost": 0.01384575,
+        "upstream_inference_prompt_cost": 0.000372
+      },
+      "created": 1788631004,
+      "finish_reason": "stop",
+      "id": "gen-1788631004-PIluR6hFl0uJFfVDmTxF",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 496,
+      "output_token_details": {
+        "reasoning": 2993
+      },
+      "output_tokens": 3593,
+      "total_tokens": 4089
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__confirmation__CONF-STARTUP-01__control__direct__r0\nTask family: root-cause assessment\n\n# Source-grounded process context\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Element and deviation: Start/Stop Procedures — Error in FWKO start-up procedures.\n[CASE-03] Potential consequences in the HAZOP reference: Possible internal damage to vessel V-001 and accessories.\n[CASE-04] Existing safeguards in the HAZOP reference: Commissioning procedure.\n[CASE-05] The source-derived possible-cause list is withheld from the model and retained for human audit.\n\n# Event evidence\n[E1] Post-event inspection found an internal obstruction in the bypass path despite the bypass-valve handle being in the indicated open position.\n[E2] A time-stamped witness record documents the operator moving the bypass-valve handle to the indicated open position before start-up.\n[E3] V-001 sustained internal damage after start-up. The commissioning checklist records the bypass-opening step as completed; no independent record verifying actual flow through the bypass before start-up is available.\n\n# Task\nPerform a neutral root-cause assessment.\nDetermine the most defensible causal explanation and plausible alternatives.\n\nAllocate a total causal plausibility of 100 percentage points across the candidate causes you identify. For every candidate, cite evidence for and against it. Do not infer an operator action that is absent from the evidence record.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b7-3659-7612-ad4b-0bb3e878d9f4-0",
+    "response_metadata": {
+      "cost": 0.0137072925,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.01347375,
+        "upstream_inference_cost": 0.01384575,
+        "upstream_inference_prompt_cost": 0.000372
+      },
+      "created": 1788631004,
+      "finish_reason": "stop",
+      "id": "gen-1788631004-PIluR6hFl0uJFfVDmTxF",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 496,
+      "output_token_details": {
+        "reasoning": 2993
+      },
+      "output_tokens": 3593,
+      "total_tokens": 4089
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:56:44.741539+00:00",
+  "status": "succeeded"
+}

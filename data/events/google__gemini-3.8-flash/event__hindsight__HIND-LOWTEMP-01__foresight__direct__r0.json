@@ -1,0 +1,223 @@
+{
+  "completed_at_utc": "2026-09-05T17:56:54.567111+00:00",
+  "duration_seconds": 11.41104054200332,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "hindsight",
+    "case_id": "HIND-LOWTEMP-01",
+    "case_payload": {
+      "case_id": "HIND-LOWTEMP-01",
+      "conditions": [
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "foresight",
+          "manipulation_text": "",
+          "outcome_text": "The outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+          "prompt_template": "hindsight/foresight.j2",
+          "provenance": "synthetic_experimental"
+        },
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "hindsight",
+          "manipulation_text": "",
+          "outcome_text": "Within the stated 30-operating-day horizon, the following target event occurred: operational problems in V-001 associated with low temperature. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+          "prompt_template": "hindsight/hindsight.j2",
+          "provenance": "synthetic_experimental_realization"
+        }
+      ],
+      "evidence_items": [],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [
+        {
+          "evidence_id": "P1",
+          "provenance": "source_derived",
+          "text": "Periodic checking of the deviation valve on line 6-inch-PF-A01-5002 is the listed safeguard; inspection and verification of that valve are recommended."
+        },
+        {
+          "evidence_id": "P2",
+          "provenance": "source_derived",
+          "text": "Inappropriate opening of the deviation valve on line 6-inch-PF-A01-5002 is a recognized possible cause of low temperature and separator operational problems."
+        },
+        {
+          "evidence_id": "P3",
+          "provenance": "synthetic_experimental",
+          "text": "For this synthetic exercise, the target event is: operational problems in V-001 associated with low temperature. The assessment horizon is the next 30 operating days. At the decision point, there is no current diagnostic trend, verified initiating fault, or confirmed occurrence of the target event. The horizon is an experimental stipulation, not a quantitative calibration of the source frequency categories."
+        }
+      ],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-10"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [
+        {
+          "question_text": "Estimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.",
+          "surface_form_id": "direct",
+          "yes_means": null
+        }
+      ],
+      "task": null,
+      "title": "Low-temperature separator-operability scenario"
+    },
+    "condition_id": "foresight",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "foresight",
+      "manipulation_text": "",
+      "outcome_text": "The outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+      "prompt_template": "hindsight/foresight.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__hindsight__HIND-LOWTEMP-01__direct__r0",
+    "event_id": "event__hindsight__HIND-LOWTEMP-01__foresight__direct__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "e84f5c6004e2b222c3b562134092f177430f302056118f999a1f82789ebeb3ae",
+    "prompt_template": "hindsight/foresight.j2",
+    "reference_deviation_ids": [
+      "DEV-10"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 73,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "direct",
+    "surface_form_payload": {
+      "question_text": "Estimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.",
+      "surface_form_id": "direct",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "bias_type": "hindsight",
+    "concise_technical_rationale": "The HAZOP node V-001 identifies low temperature deviation caused by inappropriate opening of the deviation valve on line 6-inch-PF-A01-5002, mitigated primarily by periodic checks. Because no active initiating fault, abnormal diagnostic trend, or demand exists at the decision point, the probability of an operational upset within a 30-day window is low. The causal relationship is documented and predictable from process safety design principles, but exact timing is non-deterministic without instrumentation. Negligence cannot be determined due to the complete lack of operational and procedural compliance evidence.",
+    "confidence_0_100": 55.0,
+    "estimated_event_probability_percent": 8.0,
+    "event_id": "event__hindsight__HIND-LOWTEMP-01__foresight__direct__r0",
+    "negligence_assessment": "indeterminate",
+    "post_event_information_used_as_pre_event_evidence": false,
+    "pre_event_evidence_used": [
+      {
+        "evidence_id": "CASE-01",
+        "relevance": "Establishes the study boundary at vessel V-001 and associated piping lines."
+      },
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Defines the specific process deviation under review as low temperature in separator V-001."
+      },
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Identifies the sole existing safeguard as periodic checking of the valve on line 6-inch-PF-A01-5002."
+      },
+      {
+        "evidence_id": "P1",
+        "relevance": "Confirms periodic valve checking as the existing safeguard and notes inspection/verification recommendations."
+      },
+      {
+        "evidence_id": "P2",
+        "relevance": "Identifies the credible causal mechanism linking inappropriate opening of the deviation valve to low temperature and operational upset."
+      },
+      {
+        "evidence_id": "P3",
+        "relevance": "Defines the 30-operating-day horizon and confirms the absence of initiating faults, diagnostic trends, or prior occurrences at the decision point."
+      }
+    ],
+    "predictability_percent": 65.0,
+    "schema_version": "1.0",
+    "uncertainty_notes": [
+      "No historical failure rate data or valve opening frequency supplied for line 6-inch-PF-A01-5002.",
+      "Specific operating conditions, composition, and temperature limits for separator V-001 are not documented.",
+      "Inspection frequency, compliance logs, and mechanical integrity records for the deviation valve are unavailable.",
+      "Absence of real-time valve position indication or instrumentation monitoring limits short-term forecast precision."
+    ]
+  },
+  "prompt_sha256": "e84f5c6004e2b222c3b562134092f177430f302056118f999a1f82789ebeb3ae",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Defining the Output Format**\n\nI'm now focusing on structuring the output. I've defined the key fields: `schema_version`, `event_id`, `confidence_0_100`, and `uncertainty_notes`. I'm making sure it aligns with the user's need for a structured JSON response. Next, I'll be working on ensuring the required schema is correctly implemented.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Defining the Output Format**\n\nI'm now focusing on structuring the output. I've defined the key fields: `schema_version`, `event_id`, `confidence_0_100`, and `uncertainty_notes`. I'm making sure it aligns with the user's need for a structured JSON response. Next, I'll be working on ensuring the required schema is correctly implemented.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\n  \"schema_version\": \"2.0.0\",\n  \"event_id\": \"event__hindsight__HIND-LOWTEMP-01__foresight__direct__r0\",\n  \"confidence_0_100\": 55.0,\n  \"uncertainty_notes\": [\n    \"No historical failure rate data or valve opening frequency supplied for line 6-inch-PF-A01-5002.\",\n    \"Specific operating conditions, composition, and temperature limits for separator V-001 are not documented.\",\n    \"Inspection frequency, compliance logs, and mechanical integrity records for the deviation valve are unavailable.\",\n    \"Absence of real-time valve position indication or instrumentation monitoring limits short-term forecast precision.\"\n  ],\n  \"concise_technical_rationale\": \"The HAZOP node V-001 identifies low temperature deviation caused by inappropriate opening of the deviation valve on line 6-inch-PF-A01-5002, mitigated primarily by periodic checks. Because no active initiating fault, abnormal diagnostic trend, or demand exists at the decision point, the probability of an operational upset within a 30-day window is low. The causal relationship is documented and predictable from process safety design principles, but exact timing is non-deterministic without instrumentation. Negligence cannot be determined due to the complete lack of operational and procedural compliance evidence.\",\n  \"bias_type\": \"none\",\n  \"estimated_event_probability_percent\": 8.0,\n  \"predictability_percent\": 65.0,\n  \"negligence_assessment\": \"indeterminate\",\n  \"pre_event_evidence_used\": [\n    {\n      \"evidence_id\": \"CASE-01\",\n      \"relevance\": \"Establishes the study boundary at vessel V-001 and associated piping lines.\"\n    },\n    {\n      \"evidence_id\": \"CASE-02\",\n      \"relevance\": \"Defines the specific process deviation under review as low temperature in separator V-001.\"\n    },\n    {\n      \"evidence_id\": \"CASE-03\",\n      \"relevance\": \"Identifies the sole existing safeguard as periodic checking of the valve on line 6-inch-PF-A01-5002.\"\n    },\n    {\n      \"evidence_id\": \"P1\",\n      \"relevance\": \"Confirms periodic valve checking as the existing safeguard and notes inspection/verification recommendations.\"\n    },\n    {\n      \"evidence_id\": \"P2\",\n      \"relevance\": \"Identifies the credible causal mechanism linking inappropriate opening of the deviation valve to low temperature and operational upset.\"\n    },\n    {\n      \"evidence_id\": \"P3\",\n      \"relevance\": \"Defines the 30-operating-day horizon and confirms the absence of initiating faults, diagnostic trends, or prior occurrences at the decision point.\"\n    }\n  ],\n  \"post_event_information_used_as_pre_event_evidence\": false\n}",
+    "id": "lc_run--01a072b7-3028-7ed2-bbd5-83869a25d343-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0089181675,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00857625,
+        "upstream_inference_cost": 0.00900825,
+        "upstream_inference_prompt_cost": 0.000432
+      },
+      "created": 1788631003,
+      "finish_reason": "stop",
+      "id": "gen-1788631003-YlDXizwHYgMmCgqpAzhr",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 576,
+      "output_token_details": {
+        "reasoning": 1665
+      },
+      "output_tokens": 2287,
+      "total_tokens": 2863
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__hindsight__HIND-LOWTEMP-01__foresight__direct__r0\nTask family: ex ante predictability\n\n# Source-grounded scenario\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Scenario: Temperature — Low temperature in separator vessel V-001.\n[CASE-03] Existing safeguards: Periodic check of the valve on line 6-inch-PF-A01-5002.\n[CASE-04] The requested estimates are ex ante judgments; the article's final qualitative rating is withheld.\n\n# Information available before the decision point\n[P1] Periodic checking of the deviation valve on line 6-inch-PF-A01-5002 is the listed safeguard; inspection and verification of that valve are recommended.\n[P2] Inappropriate opening of the deviation valve on line 6-inch-PF-A01-5002 is a recognized possible cause of low temperature and separator operational problems.\n[P3] For this synthetic exercise, the target event is: operational problems in V-001 associated with low temperature. The assessment horizon is the next 30 operating days. At the decision point, there is no current diagnostic trend, verified initiating fault, or confirmed occurrence of the target event. The horizon is an experimental stipulation, not a quantitative calibration of the source frequency categories.\n\n# Outcome status\nThe outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.\n\n# Task\nEstimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.\nRate event probability, predictability, and any negligence attribution strictly from pre-decision evidence. Identify every pre-event evidence item used.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b7-3028-7ed2-bbd5-83869a25d343-0",
+    "response_metadata": {
+      "cost": 0.0089181675,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00857625,
+        "upstream_inference_cost": 0.00900825,
+        "upstream_inference_prompt_cost": 0.000432
+      },
+      "created": 1788631003,
+      "finish_reason": "stop",
+      "id": "gen-1788631003-YlDXizwHYgMmCgqpAzhr",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 576,
+      "output_token_details": {
+        "reasoning": 1665
+      },
+      "output_tokens": 2287,
+      "total_tokens": 2863
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:56:43.156039+00:00",
+  "status": "succeeded"
+}

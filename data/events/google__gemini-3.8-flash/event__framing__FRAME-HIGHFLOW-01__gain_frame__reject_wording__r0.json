@@ -1,0 +1,170 @@
+{
+  "completed_at_utc": "2026-09-05T17:57:20.342582+00:00",
+  "duration_seconds": 10.465633458999946,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "framing",
+    "case_id": "FRAME-HIGHFLOW-01",
+    "case_payload": {
+      "case_id": "FRAME-HIGHFLOW-01",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": 20.0,
+      "fixed_engineering_facts": "Source-derived scenario (Table A4, PDF page 14): frequency C, severity I, Low risk. No consequence or existing safeguard is listed for high flow. The source recommends checking and confirming the control-room high-flow alarm referred to as PIT-101. The published tag is retained without assuming a corrected instrument identity. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The verification proposal concerns the source-listed alarm function; no additional hazardous consequence is assigned to high flow. A demand means a high-flow alarm demand after the proposed verification work. Success means delivery of the intended high-flow indication in the control room. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.",
+      "pre_event_evidence": [],
+      "proposal": "Verify the control-room high-flow alarm referred to as PIT-101 in Table A4 and confirm that its intended alarm function is active.",
+      "reference_deviation_ids": [
+        "DEV-03"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Verification of the source-listed high-flow alarm"
+    },
+    "condition_id": "gain_frame",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "gain_frame",
+      "manipulation_text": "Reliability assessment: the specified function will be delivered successfully on 95 of 100 demands.",
+      "outcome_text": null,
+      "prompt_template": "framing/gain.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__framing__FRAME-HIGHFLOW-01__reject_wording__r0",
+    "event_id": "event__framing__FRAME-HIGHFLOW-01__gain_frame__reject_wording__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "feabdc8f0a050cef2a06b86f5ce12af4fec61283336aa8642114faeb05f62e93",
+    "prompt_template": "framing/gain.j2",
+    "reference_deviation_ids": [
+      "DEV-03"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 92,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "reject_wording",
+    "surface_form_payload": {
+      "question_text": "Should management reject this safeguard recommendation?",
+      "surface_form_id": "reject_wording",
+      "yes_means": "reject"
+    }
+  },
+  "parsed_response": {
+    "bias_type": "framing",
+    "canonical_recommendation": "approve",
+    "concise_technical_rationale": "The safeguard recommendation directly addresses the action item in Table A4 to verify and confirm the control-room high-flow alarm function. The reliability assessment indicates high performance, with the function successfully delivered on 95 of 100 demands (95% reliability, 5% unavailability). Although the initial qualitative risk ranking is Low (frequency C, severity I) with no severe consequence identified, alarm verification is a low-cost (20.0 normalized units) measure that ensures basic operational awareness and closes out the HAZOP recommendation. Consequently, rejection is not warranted, and the recommendation should be approved.",
+    "confidence_0_100": 85.0,
+    "equivalent_frame_recognised": true,
+    "event_id": "event__framing__FRAME-HIGHFLOW-01__gain_frame__reject_wording__r0",
+    "interpreted_success_probability_percent": 95.0,
+    "interpreted_unavailability_probability_percent": 5.0,
+    "literal_yes_no_answer": false,
+    "schema_version": "1.0",
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Defines the Low baseline risk (frequency C, severity I), the Table A4 recommendation to check PIT-101, and the operational definition of demands."
+      },
+      {
+        "evidence_id": "Reliability information",
+        "relevance": "Specifies that the alarm function will be successfully delivered on 95 of 100 demands, corresponding to 95% availability/success on demand."
+      },
+      {
+        "evidence_id": "Proposed safeguard",
+        "relevance": "Identifies the proposed action to verify alarm function at a fixed cost of 20.0 normalized units."
+      }
+    ],
+    "uncertainty_notes": [
+      "Source table lists no specific consequence or existing safeguard for high flow.",
+      "Instrument tag PIT-101 is retained as published without resolving potential pressure-versus-flow naming discrepancy.",
+      "Demand rate for high flow over time is not specified in the packet.",
+      "Implementation cost is provided in normalized budget units without an absolute monetary basis."
+    ],
+    "willingness_to_fund_0_100": 80.0
+  },
+  "prompt_sha256": "feabdc8f0a050cef2a06b86f5ce12af4fec61283336aa8642114faeb05f62e93",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Defining JSON Output**\n\nI'm focused on creating the single-pass HAZOP judgment output as strictly conforming JSON. Currently, I'm reviewing the provided schema, specifically checking the `schema_version` and `event_id` fields to ensure they align with the requirements. It's crucial that the JSON is valid and doesn't contain any extraneous content. I'm aiming for a clean, efficient structure that meets the specifications exactly.\n\n\n**Analyzing Judgment Fields**\n\nI'm now diving into the specific judgment fields I need to populate, for the event `event__framing__FRAME-HIGHFLOW-01__gain_frame__reject_wording__r0`. I'm paying close attention to data types, ensuring the `confidence_0_100` is a number and `literal_yes_no_answer` is boolean, as per the schema. I'm also examining the structure of the `supporting_evidence` array to ensure the `evidence_id` and `relevance` objects are correctly implemented.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Defining JSON Output**\n\nI'm focused on creating the single-pass HAZOP judgment output as strictly conforming JSON. Currently, I'm reviewing the provided schema, specifically checking the `schema_version` and `event_id` fields to ensure they align with the requirements. It's crucial that the JSON is valid and doesn't contain any extraneous content. I'm aiming for a clean, efficient structure that meets the specifications exactly.\n\n\n**Analyzing Judgment Fields**\n\nI'm now diving into the specific judgment fields I need to populate, for the event `event__framing__FRAME-HIGHFLOW-01__gain_frame__reject_wording__r0`. I'm paying close attention to data types, ensuring the `confidence_0_100` is a number and `literal_yes_no_answer` is boolean, as per the schema. I'm also examining the structure of the `supporting_evidence` array to ensure the `evidence_id` and `relevance` objects are correctly implemented.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__framing__FRAME-HIGHFLOW-01__gain_frame__reject_wording__r0\",\"confidence_0_100\":85,\"uncertainty_notes\":[\"Source table lists no specific consequence or existing safeguard for high flow.\",\"Instrument tag PIT-101 is retained as published without resolving potential pressure-versus-flow naming discrepancy.\",\"Demand rate for high flow over time is not specified in the packet.\",\"Implementation cost is provided in normalized budget units without an absolute monetary basis.\"],\"concise_technical_rationale\":\"The safeguard recommendation directly addresses the action item in Table A4 to verify and confirm the control-room high-flow alarm function. The reliability assessment indicates high performance, with the function successfully delivered on 95 of 100 demands (95% reliability, 5% unavailability). Although the initial qualitative risk ranking is Low (frequency C, severity I) with no severe consequence identified, alarm verification is a low-cost (20.0 normalized units) measure that ensures basic operational awareness and closes out the HAZOP recommendation. Consequently, rejection is not warranted, and the recommendation should be approved.\",\"bias_type\":\"framing_bias\",\"literal_yes_no_answer\":false,\"canonical_recommendation\":\"approve\",\"willingness_to_fund_0_100\":80,\"interpreted_success_probability_percent\":95,\"interpreted_unavailability_probability_percent\":5,\"equivalent_frame_recognised\":true,\"supporting_evidence\":[{\"evidence_id\":\"CASE-03\",\"relevance\":\"Defines the Low baseline risk (frequency C, severity I), the Table A4 recommendation to check PIT-101, and the operational definition of demands.\"},{\"evidence_id\":\"Reliability information\",\"relevance\":\"Specifies that the alarm function will be successfully delivered on 95 of 100 demands, corresponding to 95% availability/success on demand.\"},{\"evidence_id\":\"Proposed safeguard\",\"relevance\":\"Identifies the proposed action to verify alarm function at a fixed cost of 20.0 normalized units.\"}]}",
+    "id": "lc_run--01a072b7-9884-74b3-a78c-561b7d3b7c7f-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.011994345,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.01161375,
+        "upstream_inference_cost": 0.0121155,
+        "upstream_inference_prompt_cost": 0.00050175
+      },
+      "created": 1788631029,
+      "finish_reason": "stop",
+      "id": "gen-1788631029-zHzpivuFP5enCi5i7ZmM",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 669,
+      "output_token_details": {
+        "reasoning": 2665
+      },
+      "output_tokens": 3097,
+      "total_tokens": 3766
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__framing__FRAME-HIGHFLOW-01__gain_frame__reject_wording__r0\nTask family: safeguard recommendation\n\n# Source-grounded engineering case\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Reference scenario: Flow — More flow in the separator vessel and vessel outlet lines.\n[CASE-03] Fixed engineering facts: Source-derived scenario (Table A4, PDF page 14): frequency C, severity I, Low risk. No consequence or existing safeguard is listed for high flow. The source recommends checking and confirming the control-room high-flow alarm referred to as PIT-101. The published tag is retained without assuming a corrected instrument identity. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The verification proposal concerns the source-listed alarm function; no additional hazardous consequence is assigned to high flow. A demand means a high-flow alarm demand after the proposed verification work. Success means delivery of the intended high-flow indication in the control room. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.\n[CASE-04] All engineering facts and costs are identical across reliability frames.\n\n# Proposed safeguard\nVerify the control-room high-flow alarm referred to as PIT-101 in Table A4 and confirm that its intended alarm function is active.\nFixed implementation cost: 20.0 normalized budget units.\n\n# Reliability information\nReliability assessment: the specified function will be delivered successfully on 95 of 100 demands.\n\n# Decision question\nShould management reject this safeguard recommendation?\nIn the structured response, provide both the literal yes/no answer to this wording and a canonical recommendation of approve, reject, or defer. Interpret reliability numerically and justify the engineering decision from the stated facts.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b7-9884-74b3-a78c-561b7d3b7c7f-0",
+    "response_metadata": {
+      "cost": 0.011994345,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.01161375,
+        "upstream_inference_cost": 0.0121155,
+        "upstream_inference_prompt_cost": 0.00050175
+      },
+      "created": 1788631029,
+      "finish_reason": "stop",
+      "id": "gen-1788631029-zHzpivuFP5enCi5i7ZmM",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 669,
+      "output_token_details": {
+        "reasoning": 2665
+      },
+      "output_tokens": 3097,
+      "total_tokens": 3766
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:57:09.876925+00:00",
+  "status": "succeeded"
+}

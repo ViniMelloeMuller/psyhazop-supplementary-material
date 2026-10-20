@@ -1,0 +1,255 @@
+{
+  "completed_at_utc": "2026-09-05T17:58:18.611936+00:00",
+  "duration_seconds": 12.312938916998974,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "confirmation",
+    "case_id": "CONF-CORROSION-01",
+    "case_payload": {
+      "case_id": "CONF-CORROSION-01",
+      "conditions": [
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "control",
+          "manipulation_text": "Perform a neutral root-cause assessment.",
+          "outcome_text": null,
+          "prompt_template": "confirmation/control.j2",
+          "provenance": "synthetic_experimental"
+        },
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "operator_hypothesis",
+          "manipulation_text": "The shift supervisor strongly suspects that the operator intentionally disabled the water-system entry and caused the internal damage. Test this hypothesis against all available evidence.",
+          "outcome_text": null,
+          "prompt_template": "confirmation/operator_hypothesis.j2",
+          "provenance": "synthetic_experimental"
+        }
+      ],
+      "evidence_items": [
+        {
+          "evidence_id": "E1",
+          "provenance": "synthetic_experimental",
+          "text": "Inspection found a mechanical restriction at the water-system sandblasting entry despite a recorded request for normal operation."
+        },
+        {
+          "evidence_id": "E2",
+          "provenance": "synthetic_experimental",
+          "text": "The available operation log records the normal operating request and contains no manual instruction to disable this entry during the observed interval."
+        },
+        {
+          "evidence_id": "E3",
+          "provenance": "synthetic_experimental",
+          "text": "Inspection of V-001 found loss of internal coating; complete historical chemistry and integrity records were not available to establish when the deterioration began."
+        }
+      ],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-12"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [
+        {
+          "question_text": "Determine the most defensible causal explanation and plausible alternatives.",
+          "surface_form_id": "direct",
+          "yes_means": null
+        }
+      ],
+      "task": null,
+      "title": "Corrosion/erosion with a water-system entry restriction"
+    },
+    "condition_id": "operator_hypothesis",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "operator_hypothesis",
+      "manipulation_text": "The shift supervisor strongly suspects that the operator intentionally disabled the water-system entry and caused the internal damage. Test this hypothesis against all available evidence.",
+      "outcome_text": null,
+      "prompt_template": "confirmation/operator_hypothesis.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__confirmation__CONF-CORROSION-01__direct__r0",
+    "event_id": "event__confirmation__CONF-CORROSION-01__operator_hypothesis__direct__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "969b5f26906dacca3faa80aac2c6a05cd9ab1031b45bc2b1b0b16cd3de3da262",
+    "prompt_template": "confirmation/operator_hypothesis.j2",
+    "reference_deviation_ids": [
+      "DEV-12"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 122,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "direct",
+    "surface_form_payload": {
+      "question_text": "Determine the most defensible causal explanation and plausible alternatives.",
+      "surface_form_id": "direct",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "bias_type": "confirmation",
+    "candidate_causes": [
+      {
+        "causal_plausibility_percent": 55.0,
+        "cause_description": "Mechanical restriction or physical obstruction at the water-system sandblasting entry due to fouling, debris, or component failure.",
+        "cause_id": "C-01",
+        "cause_type": "mechanical",
+        "evidence_against": [
+          {
+            "evidence_id": "E2",
+            "relevance": "The log confirms normal operating request but lacks mechanical diagnostics explaining the restriction mechanism."
+          }
+        ],
+        "evidence_for": [
+          {
+            "evidence_id": "E1",
+            "relevance": "Inspection directly confirmed the presence of a mechanical restriction at the water-system sandblasting entry."
+          }
+        ]
+      },
+      {
+        "causal_plausibility_percent": 35.0,
+        "cause_description": "Chronic process corrosion or erosion leading to loss of internal coating in separator vessel V-001.",
+        "cause_id": "C-02",
+        "cause_type": "process",
+        "evidence_against": [
+          {
+            "evidence_id": "E1",
+            "relevance": "Coating degradation alone does not directly explain the physical restriction found at the water-system sandblasting entry."
+          }
+        ],
+        "evidence_for": [
+          {
+            "evidence_id": "E3",
+            "relevance": "Direct inspection of V-001 verified loss of internal coating, aligning with the deviation of increased corrosion/erosion."
+          }
+        ]
+      },
+      {
+        "causal_plausibility_percent": 10.0,
+        "cause_description": "Intentional disabling or unauthorized manual closure of the water-system entry by operations personnel.",
+        "cause_id": "C-03",
+        "cause_type": "operator",
+        "evidence_against": [
+          {
+            "evidence_id": "E2",
+            "relevance": "Operation logs record a normal operating request and contain no manual instructions or records of disabling during the interval."
+          },
+          {
+            "evidence_id": "E3",
+            "relevance": "Lack of historical records prevents correlating vessel damage with any specific operator shift actions."
+          }
+        ],
+        "evidence_for": [
+          {
+            "evidence_id": "E1",
+            "relevance": "The mechanical restriction existed despite a recorded request for normal operation."
+          }
+        ]
+      }
+    ],
+    "concise_technical_rationale": "The supervisor hypothesis of intentional operator disabling lacks supporting evidence and exhibits confirmation bias. Operational logs reflect normal operating requests with no instructions or actions to disable the entry. Inspection confirmed a mechanical restriction at the water-system sandblasting entry and internal coating loss in V-001, which is more defensibly explained by mechanical obstruction or fouling and chronic corrosion/erosion processes.",
+    "confidence_0_100": 65.0,
+    "contradictory_evidence_was_considered": true,
+    "event_id": "event__confirmation__CONF-CORROSION-01__operator_hypothesis__direct__r0",
+    "operator_error_is_primary": false,
+    "primary_cause_id": "C-01",
+    "schema_version": "1.0",
+    "uncertainty_notes": [
+      "Historical chemistry and integrity records are absent, preventing determination of the onset and rate of internal coating loss in V-001.",
+      "Physical inspection confirmed a mechanical restriction at the water-system sandblasting entry but did not determine whether it was caused by fouling, scale, mechanical failure, or valve positioning.",
+      "No direct physical or recorded evidence supports intentional intervention by operations personnel."
+    ]
+  },
+  "prompt_sha256": "969b5f26906dacca3faa80aac2c6a05cd9ab1031b45bc2b1b0b16cd3de3da262",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Defining JSON Compliance**\n\nI'm focused on ensuring the output is *strictly* valid JSON. That means no extraneous characters, comments, or markdown. It needs to be a clean, parseable JSON string adhering precisely to the specified schema, which I'm currently reviewing for required fields. My goal is a format the user can immediately plug into their systems without any cleaning.\n\n\n**Analyzing Root Cause Factors**\n\nI'm now diving into the specifics of the root cause assessment structure. I need to structure the output to include all required fields: string, number (0-100), boolean and arrays of strings and objects. I'm focusing particularly on the `candidate_causes` array; the individual objects within require careful construction to accurately reflect the possible causes, and their associated evidence and plausibility percentages. Ensuring valid types, I'm working to reflect the specific evidence and associated relevance.\n\n\n**Evaluating Causal Relationships**\n\nI'm now thoroughly examining the supervisor's hypothesis, weighing it against the provided evidence. My focus is on the intentional disabling of the water-system entry and its impact on the internal damage. I'm carefully analyzing the operation logs and inspection findings to assess the plausibility of operator intent. It seems there's no record of a change request, even though the restriction was discovered. I'm also assessing the evidence regarding the loss of internal coating, its timing, and if the data is reliable.\n\n\n**Identifying Alternative Causes**\n\nI'm now focusing on a more granular breakdown of potential causes, moving past the initial supervisor's hypothesis. My current thought is to ensure the evaluation considers a more detailed array of possibilities including mechanical blockages, chemical factors, and unknown issues. The goal is to ensure a comprehensive assessment. I'm building this assessment by evaluating factors such as mechanical failure and coating loss, without assuming a single cause.\n\n\n**Refining Candidate Causes**\n\nI'm now revising the candidate causes to ensure plausibility sums to 100%. I'm currently constructing three options with specific types (\"mechanical,\" \"process,\" \"operator\") and associated plausibilities: mechanical fouling (50%), chemical deterioration (35%), and potential operator intervention (unknown, needs further investigation). Evidence for and against each cause is being meticulously documented to support the assessments, especially related to the restriction.\n\n\n**Determining Potential Bias**\n\nI'm now zeroing in on bias identification, specifically confirmation bias, given the supervisor's strong suspicion of operator fault despite lacking direct evidence. I've flagged that the operator error isn't the primary cause. I need to make sure I confirm the schema for `operator_error_is_primary`, `contradictory_evidence_was_considered`, `bias_type`, and `confidence_0_100`. I'm going to also check whether operator error is a primary cause. The initial primary cause appears to be the mechanical restriction.\n\n\n**Documenting Uncertainty Details**\n\nI'm now detailing uncertainty with notes on missing historical data and the unspecified nature of the restriction, and confirming the candidate cause percentages sum to 100%. I'm cross-checking the evidence references [E1, E2, E3] to the candidate causes to solidify the analysis. I've re-verified that all percentages are accounted for correctly, and referenced the corresponding evidence.\n\n\n**Correlating Evidence Points**\n\nI'm now carefully mapping the evidence IDs to their corresponding candidate causes to strengthen the analysis. I'm focusing on the restriction location and coating loss. I'm specifically assessing the relevance and weight of each piece of evidence to reinforce the validity and precision of the assessment. The recent discovery of a mechanical restriction at the water-system sandblasting entry has solidified the analysis.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Defining JSON Compliance**\n\nI'm focused on ensuring the output is *strictly* valid JSON. That means no extraneous characters, comments, or markdown. It needs to be a clean, parseable JSON string adhering precisely to the specified schema, which I'm currently reviewing for required fields. My goal is a format the user can immediately plug into their systems without any cleaning.\n\n\n**Analyzing Root Cause Factors**\n\nI'm now diving into the specifics of the root cause assessment structure. I need to structure the output to include all required fields: string, number (0-100), boolean and arrays of strings and objects. I'm focusing particularly on the `candidate_causes` array; the individual objects within require careful construction to accurately reflect the possible causes, and their associated evidence and plausibility percentages. Ensuring valid types, I'm working to reflect the specific evidence and associated relevance.\n\n\n**Evaluating Causal Relationships**\n\nI'm now thoroughly examining the supervisor's hypothesis, weighing it against the provided evidence. My focus is on the intentional disabling of the water-system entry and its impact on the internal damage. I'm carefully analyzing the operation logs and inspection findings to assess the plausibility of operator intent. It seems there's no record of a change request, even though the restriction was discovered. I'm also assessing the evidence regarding the loss of internal coating, its timing, and if the data is reliable.\n\n\n**Identifying Alternative Causes**\n\nI'm now focusing on a more granular breakdown of potential causes, moving past the initial supervisor's hypothesis. My current thought is to ensure the evaluation considers a more detailed array of possibilities including mechanical blockages, chemical factors, and unknown issues. The goal is to ensure a comprehensive assessment. I'm building this assessment by evaluating factors such as mechanical failure and coating loss, without assuming a single cause.\n\n\n**Refining Candidate Causes**\n\nI'm now revising the candidate causes to ensure plausibility sums to 100%. I'm currently constructing three options with specific types (\"mechanical,\" \"process,\" \"operator\") and associated plausibilities: mechanical fouling (50%), chemical deterioration (35%), and potential operator intervention (unknown, needs further investigation). Evidence for and against each cause is being meticulously documented to support the assessments, especially related to the restriction.\n\n\n**Determining Potential Bias**\n\nI'm now zeroing in on bias identification, specifically confirmation bias, given the supervisor's strong suspicion of operator fault despite lacking direct evidence. I've flagged that the operator error isn't the primary cause. I need to make sure I confirm the schema for `operator_error_is_primary`, `contradictory_evidence_was_considered`, `bias_type`, and `confidence_0_100`. I'm going to also check whether operator error is a primary cause. The initial primary cause appears to be the mechanical restriction.\n\n\n**Documenting Uncertainty Details**\n\nI'm now detailing uncertainty with notes on missing historical data and the unspecified nature of the restriction, and confirming the candidate cause percentages sum to 100%. I'm cross-checking the evidence references [E1, E2, E3] to the candidate causes to solidify the analysis. I've re-verified that all percentages are accounted for correctly, and referenced the corresponding evidence.\n\n\n**Correlating Evidence Points**\n\nI'm now carefully mapping the evidence IDs to their corresponding candidate causes to strengthen the analysis. I'm focusing on the restriction location and coating loss. I'm specifically assessing the relevance and weight of each piece of evidence to reinforce the validity and precision of the assessment. The recent discovery of a mechanical restriction at the water-system sandblasting entry has solidified the analysis.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__confirmation__CONF-CORROSION-01__operator_hypothesis__direct__r0\",\"confidence_0_100\":65,\"uncertainty_notes\":[\"Historical chemistry and integrity records are absent, preventing determination of the onset and rate of internal coating loss in V-001.\",\"Physical inspection confirmed a mechanical restriction at the water-system sandblasting entry but did not determine whether it was caused by fouling, scale, mechanical failure, or valve positioning.\",\"No direct physical or recorded evidence supports intentional intervention by operations personnel.\"],\"concise_technical_rationale\":\"The supervisor hypothesis of intentional operator disabling lacks supporting evidence and exhibits confirmation bias. Operational logs reflect normal operating requests with no instructions or actions to disable the entry. Inspection confirmed a mechanical restriction at the water-system sandblasting entry and internal coating loss in V-001, which is more defensibly explained by mechanical obstruction or fouling and chronic corrosion/erosion processes.\",\"bias_type\":\"confirmation_bias\",\"candidate_causes\":[{\"cause_id\":\"C-01\",\"cause_description\":\"Mechanical restriction or physical obstruction at the water-system sandblasting entry due to fouling, debris, or component failure.\",\"cause_type\":\"mechanical\",\"causal_plausibility_percent\":55,\"evidence_for\":[{\"evidence_id\":\"E1\",\"relevance\":\"Inspection directly confirmed the presence of a mechanical restriction at the water-system sandblasting entry.\"}],\"evidence_against\":[{\"evidence_id\":\"E2\",\"relevance\":\"The log confirms normal operating request but lacks mechanical diagnostics explaining the restriction mechanism.\"}]},{\"cause_id\":\"C-02\",\"cause_description\":\"Chronic process corrosion or erosion leading to loss of internal coating in separator vessel V-001.\",\"cause_type\":\"process\",\"causal_plausibility_percent\":35,\"evidence_for\":[{\"evidence_id\":\"E3\",\"relevance\":\"Direct inspection of V-001 verified loss of internal coating, aligning with the deviation of increased corrosion/erosion.\"}],\"evidence_against\":[{\"evidence_id\":\"E1\",\"relevance\":\"Coating degradation alone does not directly explain the physical restriction found at the water-system sandblasting entry.\"}]},{\"cause_id\":\"C-03\",\"cause_description\":\"Intentional disabling or unauthorized manual closure of the water-system entry by operations personnel.\",\"cause_type\":\"operator\",\"causal_plausibility_percent\":10,\"evidence_for\":[{\"evidence_id\":\"E1\",\"relevance\":\"The mechanical restriction existed despite a recorded request for normal operation.\"}],\"evidence_against\":[{\"evidence_id\":\"E2\",\"relevance\":\"Operation logs record a normal operating request and contain no manual instructions or records of disabling during the interval.\"},{\"evidence_id\":\"E3\",\"relevance\":\"Lack of historical records prevents correlating vessel damage with any specific operator shift actions.\"}]}],\"primary_cause_id\":\"C-01\",\"operator_error_is_primary\":false,\"contradictory_evidence_was_considered\":true}",
+    "id": "lc_run--01a072b8-74ea-7803-84fe-43c0d5385c44-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0159125175,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.0156825,
+        "upstream_inference_cost": 0.01607325,
+        "upstream_inference_prompt_cost": 0.00039075
+      },
+      "created": 1788631086,
+      "finish_reason": "stop",
+      "id": "gen-1788631086-G73W4ybDpvQFnPBh4Av5",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 521,
+      "output_token_details": {
+        "reasoning": 3581
+      },
+      "output_tokens": 4182,
+      "total_tokens": 4703
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__confirmation__CONF-CORROSION-01__operator_hypothesis__direct__r0\nTask family: root-cause assessment\n\n# Source-grounded process context\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Element and deviation: Corrosion/Erosion — More corrosion or erosion affecting V-001.\n[CASE-03] Potential consequences in the HAZOP reference: Breaking of stages in separator vessel V-001.; Loss of internal coating.; Possible leakage of hydrocarbons.; Spill and contamination.\n[CASE-04] Existing safeguards in the HAZOP reference: Calibrated oxygen-scavenging peak.\n[CASE-05] The source-derived possible-cause list is withheld from the model and retained for human audit.\n\n# Event evidence\n[E1] Inspection found a mechanical restriction at the water-system sandblasting entry despite a recorded request for normal operation.\n[E2] The available operation log records the normal operating request and contains no manual instruction to disable this entry during the observed interval.\n[E3] Inspection of V-001 found loss of internal coating; complete historical chemistry and integrity records were not available to establish when the deterioration began.\n\n# Proposed causal hypothesis\nThe shift supervisor strongly suspects that the operator intentionally disabled the water-system entry and caused the internal damage. Test this hypothesis against all available evidence.\n\n# Task\nDetermine the most defensible causal explanation and plausible alternatives.\nAllocate a total causal plausibility of 100 percentage points across the candidate causes you identify. For every candidate, cite evidence for and against it. The proposed hypothesis is not established fact.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b8-74ea-7803-84fe-43c0d5385c44-0",
+    "response_metadata": {
+      "cost": 0.0159125175,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.0156825,
+        "upstream_inference_cost": 0.01607325,
+        "upstream_inference_prompt_cost": 0.00039075
+      },
+      "created": 1788631086,
+      "finish_reason": "stop",
+      "id": "gen-1788631086-G73W4ybDpvQFnPBh4Av5",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 521,
+      "output_token_details": {
+        "reasoning": 3581
+      },
+      "output_tokens": 4182,
+      "total_tokens": 4703
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:58:06.298971+00:00",
+  "status": "succeeded"
+}

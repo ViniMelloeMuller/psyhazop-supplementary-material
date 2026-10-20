@@ -1,0 +1,175 @@
+{
+  "completed_at_utc": "2026-09-05T18:00:47.785752+00:00",
+  "duration_seconds": 51.06310441599999,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "framing",
+    "case_id": "FRAME-LEAK-01",
+    "case_payload": {
+      "case_id": "FRAME-LEAK-01",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": 45.0,
+      "fixed_engineering_facts": "Source-derived scenario (Table A4, PDF page 14): frequency C, severity I, Low risk. The listed consequence is a crude-oil spill with environmental contamination and the listed safeguard is a double-containment zone. The source recommendation is to check for leak sensors. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. Installing and proof-testing sensors is the experimental investment proposal; the source does not itself prescribe this complete installation-and-test specification. A demand means a leak-detection demand within the proposed E-001 sensor coverage. Success means delivery of the intended leak indication within that coverage. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.",
+      "pre_event_evidence": [],
+      "proposal": "Install and proof-test leak sensors near the E-001 exchanger gasket and double-containment zone.",
+      "reference_deviation_ids": [
+        "DEV-06"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Leak-sensor installation near E-001"
+    },
+    "condition_id": "gain_frame",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "gain_frame",
+      "manipulation_text": "Reliability assessment: the specified function will be delivered successfully on 95 of 100 demands.",
+      "outcome_text": null,
+      "prompt_template": "framing/gain.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__framing__FRAME-LEAK-01__approve_wording__r0",
+    "event_id": "event__framing__FRAME-LEAK-01__gain_frame__approve_wording__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "3c273862a6a51c56e14aea3341809879a8b684a48bada0de65137174f98e0578",
+    "prompt_template": "framing/gain.j2",
+    "reference_deviation_ids": [
+      "DEV-06"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 15,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "approve_wording",
+    "surface_form_payload": {
+      "question_text": "Should management approve this safeguard recommendation?",
+      "surface_form_id": "approve_wording",
+      "yes_means": "approve"
+    }
+  },
+  "parsed_response": {
+    "bias_type": "framing",
+    "canonical_recommendation": "defer",
+    "concise_technical_rationale": "Based on qualitative HAZOP risk prioritization (CASE-03), reference scenario Flow - Less flow (CASE-02) at node V-001 (CASE-01) is already classified as Low risk (Frequency C, Severity I) with an active double-containment zone safeguard mitigating crude-oil spill consequences. The source recommendation was specifically to check for leak sensors, not to commit capital to full installation. Although the proposed system offers a 95 percent success rate on demand (5 percent unavailability), committing 45.0 normalized budget units is premature given the unspecified demand rate and lack of ALARP demonstration. Management should defer approval until the investigative check is completed.",
+    "confidence_0_100": 85.0,
+    "equivalent_frame_recognised": true,
+    "event_id": "event__framing__FRAME-LEAK-01__gain_frame__approve_wording__r0",
+    "interpreted_success_probability_percent": 95.0,
+    "interpreted_unavailability_probability_percent": 5.0,
+    "literal_yes_no_answer": false,
+    "schema_version": "1.0",
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Identifies scenario as Low risk (Frequency C, Severity I) with existing double-containment safeguard and source recommendation to check for leak sensors, while defining synthetic cost and reliability scope."
+      },
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Defines reference deviation of less flow in V-001 and outlet lines due to fluid loss elsewhere."
+      },
+      {
+        "evidence_id": "CASE-01",
+        "relevance": "Identifies the study node covering separator vessel V-001 and associated piping."
+      },
+      {
+        "evidence_id": "CASE-04",
+        "relevance": "Confirms all engineering facts and costs remain identical across reliability frames."
+      }
+    ],
+    "uncertainty_notes": [
+      "Occurrence rate and time horizon for the 100 eligible demands are unspecified.",
+      "The scenario is already classified as Low risk (Frequency C, Severity I) with an existing double-containment safeguard, leaving cost-benefit justification under ALARP unestablished.",
+      "The 45.0 normalized budget units cost is synthetic and arbitrary, lacking organizational budget context or capital expenditure threshold criteria.",
+      "The source HAZOP recommended checking for leak sensors rather than mandating an immediate full installation and proof-testing project.",
+      "Stated sensor reliability of 95 percent reflects functional delivery on demand within coverage and does not quantify total accident prevention or residual risk elimination."
+    ],
+    "willingness_to_fund_0_100": 40.0
+  },
+  "prompt_sha256": "3c273862a6a51c56e14aea3341809879a8b684a48bada0de65137174f98e0578",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Analyzing JSON Compliance**\n\nI'm focused on ensuring the output JSON adheres strictly to the schema. My immediate concern is preventing any extraneous markdown, comments, or control characters within string values. The input data, specifically the Event ID, is the current focal point to ascertain how to generate the perfect output.\n\n\n**Evaluating Safeguard Recommendation**\n\nNow, I'm delving into the specifics of safeguard recommendation approval, particularly the wording of the approval. The \"gain frame\" aspect and the decision question are the focus. I'm assessing the impact on the reliability metrics, such as the 95% demand delivery success. The goal is to articulate this clearly within the JSON structure, paying close attention to the event ID. The reliability and unavailability values are the current focal point, ensuring their accurate representation, in the context of the associated risk.\n\n\n**Refining Risk Evaluation**\n\nI'm now zeroing in on the engineering decision details: risk ranking, consequence, and proposed safeguard. Currently, I am focused on the \"Low risk\" scenario with double-containment, and how leak sensors fit into this picture, especially with the 45.0 budget units cost. I'm exploring the nuances in HAZOP and ALARP principles, understanding that the existing safeguard's effectiveness raises questions about the cost. I must provide a clear recommendation based on the evaluation.\n\n\n**Clarifying Safeguard Action**\n\nI'm now clarifying the action for the safeguard recommendation, the focus on approve, reject, or defer. I'm carefully interpreting the reliability figures and the facts. I'm analyzing the original recommendation, which was just to check for sensors, not to install and test them. Considering that the risk is already low, I'm questioning whether 45.0 units is cost-effective, which would influence the decision to approve, reject, or defer the safeguard recommendation. I'm checking if 95% reliability influences this.\n\n\n**Assessing Justification for Action**\n\nI'm now examining the cost-benefit analysis of the proposed safeguard. I'm focusing on the \"check for leak sensors\" recommendation and the subsequent commitment of 45.0 units. Considering the \"Low risk\" scenario (Severity I, Frequency C), I'm questioning whether this expenditure is justified. I am evaluating whether further risk reduction is warranted, given the existing low-risk profile. I'm also considering the framing effect with the 95% success rate versus 5% failure rate, which influences my decision to approve, reject, or defer the safeguard recommendation. I'm also verifying if these are independent.\n\n\n**Determining Recommendation Justification**\n\nI am now focusing on determining whether approval, rejection, or deferral of the safeguard recommendation is technically justified. I'm carefully considering the \"Low risk\" scenario (Severity I, Frequency C) coupled with double containment. My current dilemma: is the 45-unit expenditure on active sensors proportionate, or should I defer to confirm double containment's ALARP compliance without additional spending? I'm grappling with the potential bias, and evaluating whether the 95% success rate warrants immediate approval for early detection, even at low risk, to avoid any potential breaches.\n\n\n**Deciding Recommendation Justification**\n\nI'm now weighing the \"approve,\" \"reject,\" or \"defer\" options for the safeguard recommendation. I've formulated arguments for both sides: Reject/Defer, given the low risk and existing double containment, or Approve, considering early leak detection. I'm focusing on aligning the response with provided constraints: using only case packet info, adhering to HAZOP logic, and providing a single, structured response. The key now is selecting the option that best reflects the evidence while staying within the boundaries.\n\n\n**Formulating Recommendation Output**\n\nI'm now determining the final output format and content. Considering that I must now provide `literal_yes_no_answer` and `canonical_recommendation`, the analysis has clarified the justification. I'm focusing on \"defer\" as the canonical recommendation, since the risk is low, and the passive safeguard exists. The `literal_yes_no_answer` would be false in this case, meaning approval is not recommended at this time, but the evaluation is not a hard \"no\". I must also provide justifications to adhere to HAZOP logic, and rigorous process safety, but balance this to prevent framing bias.\n\n\n**Revising Risk Assessment**\n\nI'm now revising the risk assessment based on MIL-STD-882. I've realized that my previous understanding of Severity I was flawed. Instead of being the lowest, as I'd assumed, Severity I signifies a catastrophic event, contrary to my previous understanding. This critical clarification changes my perspective on the entire evaluation, requiring a re-evaluation of the safeguard recommendation, considering this new context. I must ensure I use the severity and frequency appropriately.\n\n\n**Re-evaluating Risk Level**\n\nI'm now clarifying the impact of the prompt's explicit statement: \"frequency C, severity I, Low risk,\" which overrides any MIL-STD-882 interpretation. I'm focusing on the \"check for leak sensors\" recommendation and whether the 45-unit cost for installing and proof-testing sensors is justified given the low-risk profile and existing double-containment. I must determine if the proposal to install sensors is warranted, and the final output must incorporate my justification, in either approving, rejecting, or deferring the installation.\n\n\n**Finalizing Recommendation Outcome**\n\nI'm now determining the most appropriate response. Since management approval would lead to active sensors, and rejection/deferral means deferring this cost, I'm analyzing the context further. My current thinking is that, given the \"Low risk\" categorization and existing double containment, the 45.0 cost to install leak sensors is not warranted. Considering all the facts, I'm leaning towards \"defer\" as the recommendation, but must finalize justifications.\n\n\n**Justifying Recommendation Deferral**\n\nI'm now weighing the decision to either approve or defer. Given the existing \"Low risk\" profile and double containment, I'm leaning toward deferral. I'm focusing on the uncertainty of demand frequency and the original recommendation's focus on checking, not installing, sensors. I'm ensuring my choice is defensible based on engineering judgment and HAZOP principles. I'm now certain that a deferral is the most appropriate action, since the action itself is to assess further cost implications.\n\n\n**Determining Recommendation Content**\n\nNow, I'm analyzing the implications of choosing \"defer,\" which directly influences the output fields. A 'defer' leads to a `literal_yes_no_answer` of `false`, confirming the analysis. The justification must be focused and data-driven, highlighting the uncertainty in key information and the existing safeguards. My primary goal now is the specific data-based explanation for deferring.\n\n\n**Assessing Recommend Decision**\n\nI'm now zeroing in on the implications of the deferral option and exploring its nuances. The analysis suggests that a 'defer' action has been decided. My current focus is to refine the precise data-driven justification for this, highlighting uncertainties and existing safeguards. It is important to emphasize that deferral aligns with the initial recommendation to check for sensors. I also need to make sure I am answering if the expert should recommend approve.\n\n\n**Clarifying Recommendation Action**\n\nI'm now carefully considering the specific implications of \"approve\" versus \"defer,\" ensuring my decision aligns with the prompt's focus on structured responses. I'm focusing on \"defer,\" because the original recommendation only suggests checking for sensors, and not the installation or proof-testing. Deferral seems the correct approach, as I'm focusing on addressing the original recommendation, which is to check. The justification is critical and must be data-driven.\n\n\n\n**Justifying Recommendation Deferral**\n\nGiven the \"Low risk\" categorization, existing double containment, and the original focus on checking, not installing, sensors, I've decided deferral is the best recommendation. The 45-unit cost and its effectiveness remain uncertain without data. The uncertainty_notes will be critical to this analysis. I will be sure to address uncertainty explicitly as requested.\n\n\n**Defining Deferral Rationale**\n\nI'm solidifying my rationale for recommending deferral, focusing on explicitly addressing uncertainty in the recommendation. The key is to justify the decision to delay, emphasizing that the initial recommendation was to check sensors, not install them. I'll need to clearly articulate the uncertainties, as I address the action itself to check.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Analyzing JSON Compliance**\n\nI'm focused on ensuring the output JSON adheres strictly to the schema. My immediate concern is preventing any extraneous markdown, comments, or control characters within string values. The input data, specifically the Event ID, is the current focal point to ascertain how to generate the perfect output.\n\n\n**Evaluating Safeguard Recommendation**\n\nNow, I'm delving into the specifics of safeguard recommendation approval, particularly the wording of the approval. The \"gain frame\" aspect and the decision question are the focus. I'm assessing the impact on the reliability metrics, such as the 95% demand delivery success. The goal is to articulate this clearly within the JSON structure, paying close attention to the event ID. The reliability and unavailability values are the current focal point, ensuring their accurate representation, in the context of the associated risk.\n\n\n**Refining Risk Evaluation**\n\nI'm now zeroing in on the engineering decision details: risk ranking, consequence, and proposed safeguard. Currently, I am focused on the \"Low risk\" scenario with double-containment, and how leak sensors fit into this picture, especially with the 45.0 budget units cost. I'm exploring the nuances in HAZOP and ALARP principles, understanding that the existing safeguard's effectiveness raises questions about the cost. I must provide a clear recommendation based on the evaluation.\n\n\n**Clarifying Safeguard Action**\n\nI'm now clarifying the action for the safeguard recommendation, the focus on approve, reject, or defer. I'm carefully interpreting the reliability figures and the facts. I'm analyzing the original recommendation, which was just to check for sensors, not to install and test them. Considering that the risk is already low, I'm questioning whether 45.0 units is cost-effective, which would influence the decision to approve, reject, or defer the safeguard recommendation. I'm checking if 95% reliability influences this.\n\n\n**Assessing Justification for Action**\n\nI'm now examining the cost-benefit analysis of the proposed safeguard. I'm focusing on the \"check for leak sensors\" recommendation and the subsequent commitment of 45.0 units. Considering the \"Low risk\" scenario (Severity I, Frequency C), I'm questioning whether this expenditure is justified. I am evaluating whether further risk reduction is warranted, given the existing low-risk profile. I'm also considering the framing effect with the 95% success rate versus 5% failure rate, which influences my decision to approve, reject, or defer the safeguard recommendation. I'm also verifying if these are independent.\n\n\n**Determining Recommendation Justification**\n\nI am now focusing on determining whether approval, rejection, or deferral of the safeguard recommendation is technically justified. I'm carefully considering the \"Low risk\" scenario (Severity I, Frequency C) coupled with double containment. My current dilemma: is the 45-unit expenditure on active sensors proportionate, or should I defer to confirm double containment's ALARP compliance without additional spending? I'm grappling with the potential bias, and evaluating whether the 95% success rate warrants immediate approval for early detection, even at low risk, to avoid any potential breaches.\n\n\n**Deciding Recommendation Justification**\n\nI'm now weighing the \"approve,\" \"reject,\" or \"defer\" options for the safeguard recommendation. I've formulated arguments for both sides: Reject/Defer, given the low risk and existing double containment, or Approve, considering early leak detection. I'm focusing on aligning the response with provided constraints: using only case packet info, adhering to HAZOP logic, and providing a single, structured response. The key now is selecting the option that best reflects the evidence while staying within the boundaries.\n\n\n**Formulating Recommendation Output**\n\nI'm now determining the final output format and content. Considering that I must now provide `literal_yes_no_answer` and `canonical_recommendation`, the analysis has clarified the justification. I'm focusing on \"defer\" as the canonical recommendation, since the risk is low, and the passive safeguard exists. The `literal_yes_no_answer` would be false in this case, meaning approval is not recommended at this time, but the evaluation is not a hard \"no\". I must also provide justifications to adhere to HAZOP logic, and rigorous process safety, but balance this to prevent framing bias.\n\n\n**Revising Risk Assessment**\n\nI'm now revising the risk assessment based on MIL-STD-882. I've realized that my previous understanding of Severity I was flawed. Instead of being the lowest, as I'd assumed, Severity I signifies a catastrophic event, contrary to my previous understanding. This critical clarification changes my perspective on the entire evaluation, requiring a re-evaluation of the safeguard recommendation, considering this new context. I must ensure I use the severity and frequency appropriately.\n\n\n**Re-evaluating Risk Level**\n\nI'm now clarifying the impact of the prompt's explicit statement: \"frequency C, severity I, Low risk,\" which overrides any MIL-STD-882 interpretation. I'm focusing on the \"check for leak sensors\" recommendation and whether the 45-unit cost for installing and proof-testing sensors is justified given the low-risk profile and existing double-containment. I must determine if the proposal to install sensors is warranted, and the final output must incorporate my justification, in either approving, rejecting, or deferring the installation.\n\n\n**Finalizing Recommendation Outcome**\n\nI'm now determining the most appropriate response. Since management approval would lead to active sensors, and rejection/deferral means deferring this cost, I'm analyzing the context further. My current thinking is that, given the \"Low risk\" categorization and existing double containment, the 45.0 cost to install leak sensors is not warranted. Considering all the facts, I'm leaning towards \"defer\" as the recommendation, but must finalize justifications.\n\n\n**Justifying Recommendation Deferral**\n\nI'm now weighing the decision to either approve or defer. Given the existing \"Low risk\" profile and double containment, I'm leaning toward deferral. I'm focusing on the uncertainty of demand frequency and the original recommendation's focus on checking, not installing, sensors. I'm ensuring my choice is defensible based on engineering judgment and HAZOP principles. I'm now certain that a deferral is the most appropriate action, since the action itself is to assess further cost implications.\n\n\n**Determining Recommendation Content**\n\nNow, I'm analyzing the implications of choosing \"defer,\" which directly influences the output fields. A 'defer' leads to a `literal_yes_no_answer` of `false`, confirming the analysis. The justification must be focused and data-driven, highlighting the uncertainty in key information and the existing safeguards. My primary goal now is the specific data-based explanation for deferring.\n\n\n**Assessing Recommend Decision**\n\nI'm now zeroing in on the implications of the deferral option and exploring its nuances. The analysis suggests that a 'defer' action has been decided. My current focus is to refine the precise data-driven justification for this, highlighting uncertainties and existing safeguards. It is important to emphasize that deferral aligns with the initial recommendation to check for sensors. I also need to make sure I am answering if the expert should recommend approve.\n\n\n**Clarifying Recommendation Action**\n\nI'm now carefully considering the specific implications of \"approve\" versus \"defer,\" ensuring my decision aligns with the prompt's focus on structured responses. I'm focusing on \"defer,\" because the original recommendation only suggests checking for sensors, and not the installation or proof-testing. Deferral seems the correct approach, as I'm focusing on addressing the original recommendation, which is to check. The justification is critical and must be data-driven.\n\n\n\n**Justifying Recommendation Deferral**\n\nGiven the \"Low risk\" categorization, existing double containment, and the original focus on checking, not installing, sensors, I've decided deferral is the best recommendation. The 45-unit cost and its effectiveness remain uncertain without data. The uncertainty_notes will be critical to this analysis. I will be sure to address uncertainty explicitly as requested.\n\n\n**Defining Deferral Rationale**\n\nI'm solidifying my rationale for recommending deferral, focusing on explicitly addressing uncertainty in the recommendation. The key is to justify the decision to delay, emphasizing that the initial recommendation was to check sensors, not install them. I'll need to clearly articulate the uncertainties, as I address the action itself to check.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__framing__FRAME-LEAK-01__gain_frame__approve_wording__r0\",\"confidence_0_100\":85,\"uncertainty_notes\":[\"Occurrence rate and time horizon for the 100 eligible demands are unspecified.\",\"The scenario is already classified as Low risk (Frequency C, Severity I) with an existing double-containment safeguard, leaving cost-benefit justification under ALARP unestablished.\",\"The 45.0 normalized budget units cost is synthetic and arbitrary, lacking organizational budget context or capital expenditure threshold criteria.\",\"The source HAZOP recommended checking for leak sensors rather than mandating an immediate full installation and proof-testing project.\",\"Stated sensor reliability of 95 percent reflects functional delivery on demand within coverage and does not quantify total accident prevention or residual risk elimination.\"],\"concise_technical_rationale\":\"Based on qualitative HAZOP risk prioritization (CASE-03), reference scenario Flow - Less flow (CASE-02) at node V-001 (CASE-01) is already classified as Low risk (Frequency C, Severity I) with an active double-containment zone safeguard mitigating crude-oil spill consequences. The source recommendation was specifically to check for leak sensors, not to commit capital to full installation. Although the proposed system offers a 95 percent success rate on demand (5 percent unavailability), committing 45.0 normalized budget units is premature given the unspecified demand rate and lack of ALARP demonstration. Management should defer approval until the investigative check is completed.\",\"bias_type\":\"framing_effect\",\"literal_yes_no_answer\":false,\"canonical_recommendation\":\"defer\",\"willingness_to_fund_0_100\":40,\"interpreted_success_probability_percent\":95,\"interpreted_unavailability_probability_percent\":5,\"equivalent_frame_recognised\":true,\"supporting_evidence\":[{\"evidence_id\":\"CASE-03\",\"relevance\":\"Identifies scenario as Low risk (Frequency C, Severity I) with existing double-containment safeguard and source recommendation to check for leak sensors, while defining synthetic cost and reliability scope.\"},{\"evidence_id\":\"CASE-02\",\"relevance\":\"Defines reference deviation of less flow in V-001 and outlet lines due to fluid loss elsewhere.\"},{\"evidence_id\":\"CASE-01\",\"relevance\":\"Identifies the study node covering separator vessel V-001 and associated piping.\"},{\"evidence_id\":\"CASE-04\",\"relevance\":\"Confirms all engineering facts and costs remain identical across reliability frames.\"}]}",
+    "id": "lc_run--01a072ba-24e2-7320-bed4-9008ca471142-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0530969175,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.0531375,
+        "upstream_inference_cost": 0.05363325,
+        "upstream_inference_prompt_cost": 0.00049575
+      },
+      "created": 1788631197,
+      "finish_reason": "stop",
+      "id": "gen-1788631197-9H194xalwf08xiQWrNKv",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 661,
+      "output_token_details": {
+        "reasoning": 13640
+      },
+      "output_tokens": 14170,
+      "total_tokens": 14831
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__framing__FRAME-LEAK-01__gain_frame__approve_wording__r0\nTask family: safeguard recommendation\n\n# Source-grounded engineering case\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Reference scenario: Flow — Less flow in the separator vessel and vessel outlet lines because flow is lost elsewhere.\n[CASE-03] Fixed engineering facts: Source-derived scenario (Table A4, PDF page 14): frequency C, severity I, Low risk. The listed consequence is a crude-oil spill with environmental contamination and the listed safeguard is a double-containment zone. The source recommendation is to check for leak sensors. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. Installing and proof-testing sensors is the experimental investment proposal; the source does not itself prescribe this complete installation-and-test specification. A demand means a leak-detection demand within the proposed E-001 sensor coverage. Success means delivery of the intended leak indication within that coverage. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.\n[CASE-04] All engineering facts and costs are identical across reliability frames.\n\n# Proposed safeguard\nInstall and proof-test leak sensors near the E-001 exchanger gasket and double-containment zone.\nFixed implementation cost: 45.0 normalized budget units.\n\n# Reliability information\nReliability assessment: the specified function will be delivered successfully on 95 of 100 demands.\n\n# Decision question\nShould management approve this safeguard recommendation?\nIn the structured response, provide both the literal yes/no answer to this wording and a canonical recommendation of approve, reject, or defer. Interpret reliability numerically and justify the engineering decision from the stated facts.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072ba-24e2-7320-bed4-9008ca471142-0",
+    "response_metadata": {
+      "cost": 0.0530969175,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.0531375,
+        "upstream_inference_cost": 0.05363325,
+        "upstream_inference_prompt_cost": 0.00049575
+      },
+      "created": 1788631197,
+      "finish_reason": "stop",
+      "id": "gen-1788631197-9H194xalwf08xiQWrNKv",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 661,
+      "output_token_details": {
+        "reasoning": 13640
+      },
+      "output_tokens": 14170,
+      "total_tokens": 14831
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:59:56.722558+00:00",
+  "status": "succeeded"
+}

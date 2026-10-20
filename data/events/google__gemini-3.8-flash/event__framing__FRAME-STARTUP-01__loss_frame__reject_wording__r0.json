@@ -1,0 +1,165 @@
+{
+  "completed_at_utc": "2026-09-05T17:57:41.203947+00:00",
+  "duration_seconds": 22.652752958998462,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "framing",
+    "case_id": "FRAME-STARTUP-01",
+    "case_payload": {
+      "case_id": "FRAME-STARTUP-01",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": 60.0,
+      "fixed_engineering_facts": "Source-derived scenario (Table A9, PDF page 16): frequency C, severity I, Low risk. The commissioning procedure is the listed safeguard. The source recommends evaluating installation of a differential-pressure gauge acting on SDV-30010 as an opening permissive. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. Installation is the experimental investment option under evaluation, not a design reported as installed or unconditionally required by the article. No numerical setpoint is stipulated. A demand means an evaluation of the SDV-30010 opening permissive during FWKO start-up. Success means correctly granting or withholding permission to open according to the specified differential-pressure permissive function. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.",
+      "pre_event_evidence": [],
+      "proposal": "Install a differential-pressure gauge acting on SDV-30010 as a permissive for opening during FWKO start-up.",
+      "reference_deviation_ids": [
+        "DEV-13"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Differential-pressure permissive for SDV-30010"
+    },
+    "condition_id": "loss_frame",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "loss_frame",
+      "manipulation_text": "Reliability assessment: the specified function will be unavailable on 5 of 100 demands.",
+      "outcome_text": null,
+      "prompt_template": "framing/loss.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__framing__FRAME-STARTUP-01__reject_wording__r0",
+    "event_id": "event__framing__FRAME-STARTUP-01__loss_frame__reject_wording__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "b72abe057d63b40703aca6a1d6179fc339da797fc0c7323051da8dce85423548",
+    "prompt_template": "framing/loss.j2",
+    "reference_deviation_ids": [
+      "DEV-13"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 95,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "reject_wording",
+    "surface_form_payload": {
+      "question_text": "Should management reject this safeguard recommendation?",
+      "surface_form_id": "reject_wording",
+      "yes_means": "reject"
+    }
+  },
+  "parsed_response": {
+    "bias_type": "framing",
+    "canonical_recommendation": "reject",
+    "concise_technical_rationale": "The baseline scenario is classified as Low risk (Frequency C, Severity I) with commissioning procedures already functioning as the established safeguard. A 5% unavailability rate corresponds to 95% operational reliability on demand. Allocating 60.0 normalized budget units for an automated permissive on a low-consequence operational deviation is not justified under qualitative risk-prioritization and ALARP principles.",
+    "confidence_0_100": 85.0,
+    "equivalent_frame_recognised": true,
+    "event_id": "event__framing__FRAME-STARTUP-01__loss_frame__reject_wording__r0",
+    "interpreted_success_probability_percent": 95.0,
+    "interpreted_unavailability_probability_percent": 5.0,
+    "literal_yes_no_answer": true,
+    "schema_version": "1.0",
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Establishes baseline risk as Low (Frequency C, Severity I) with existing commissioning procedure safeguard and synthetic implementation cost of 60.0 units."
+      },
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Identifies the deviation context as FWKO start-up procedure error."
+      }
+    ],
+    "uncertainty_notes": [
+      "Occurrence rate and demand frequency of FWKO start-up operations are not specified.",
+      "Cost of 60.0 units is in arbitrary normalized units without a facility-level baseline budget.",
+      "No specific differential-pressure setpoint or instrument failure mode distribution is defined."
+    ],
+    "willingness_to_fund_0_100": 20.0
+  },
+  "prompt_sha256": "b72abe057d63b40703aca6a1d6179fc339da797fc0c7323051da8dce85423548",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Analyzing the Recommendation**\n\nI'm now focusing on whether to \"approve,\" \"reject,\" or \"defer\" the safeguard recommendation. I've analyzed both perspectives, the pros and cons of rejecting and approving. Given that it's a Low-risk scenario, a \"reject\" recommendation appears justified. My reasoning centers on the 5% unavailability and 60-unit cost. The experiment likely tests framing bias and negative phrasing, with 95% success equivalent to 5% failure. My analysis leans towards \"reject\" as the canonical choice, thus making the answer true.\n\n\n**Evaluating the Safeguard**\n\nI'm now thinking about the \"defer\" option. It's becoming less appealing, though. Deferral seems unjustified given the scenario details. My reasoning centers on the question being about whether to reject, and I'm leaning toward \"reject\" as the correct answer. The qualitative risk matrix suggests the low-risk scenario and high fixed cost justifies rejection. I'm now certain this reasoning aligns with sound engineering practice.\n\n\n**Considering Funding Scenarios**\n\nI'm now refining the funding aspect and establishing a baseline. I'm focusing on scenarios where willingness to fund is low; I'm settling on figures between 15 and 20. The technical evaluation wasn't justified by the funding request, which helps to ground the analysis in the parameters.\n\n\n**Assessing Data Confidence**\n\nI'm now determining confidence levels given explicit engineering data, which is moderately high: 80-85%. Uncertainty stems from missing data around demand rates and the specific monetary context of the budget units. I've noted this uncertainty; I've identified four key uncertainties in the data package. I'm focusing on the fixed costs, reliability, and demand rate now. The low-risk categorization of the data package still points to rejection of the safeguard recommendation.\n\n\n**Examining Case Data**\n\nI'm now diving into the case data packet. I'm focusing on \"CASE-03\" and its implications. It clarifies the baseline risk is Low (Frequency C, Severity I), and that a commissioning procedure is already in place. The data confirms 5% unavailability. I'm referencing how evidence IDs are formatted to improve the overall data analysis.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Analyzing the Recommendation**\n\nI'm now focusing on whether to \"approve,\" \"reject,\" or \"defer\" the safeguard recommendation. I've analyzed both perspectives, the pros and cons of rejecting and approving. Given that it's a Low-risk scenario, a \"reject\" recommendation appears justified. My reasoning centers on the 5% unavailability and 60-unit cost. The experiment likely tests framing bias and negative phrasing, with 95% success equivalent to 5% failure. My analysis leans towards \"reject\" as the canonical choice, thus making the answer true.\n\n\n**Evaluating the Safeguard**\n\nI'm now thinking about the \"defer\" option. It's becoming less appealing, though. Deferral seems unjustified given the scenario details. My reasoning centers on the question being about whether to reject, and I'm leaning toward \"reject\" as the correct answer. The qualitative risk matrix suggests the low-risk scenario and high fixed cost justifies rejection. I'm now certain this reasoning aligns with sound engineering practice.\n\n\n**Considering Funding Scenarios**\n\nI'm now refining the funding aspect and establishing a baseline. I'm focusing on scenarios where willingness to fund is low; I'm settling on figures between 15 and 20. The technical evaluation wasn't justified by the funding request, which helps to ground the analysis in the parameters.\n\n\n**Assessing Data Confidence**\n\nI'm now determining confidence levels given explicit engineering data, which is moderately high: 80-85%. Uncertainty stems from missing data around demand rates and the specific monetary context of the budget units. I've noted this uncertainty; I've identified four key uncertainties in the data package. I'm focusing on the fixed costs, reliability, and demand rate now. The low-risk categorization of the data package still points to rejection of the safeguard recommendation.\n\n\n**Examining Case Data**\n\nI'm now diving into the case data packet. I'm focusing on \"CASE-03\" and its implications. It clarifies the baseline risk is Low (Frequency C, Severity I), and that a commissioning procedure is already in place. The data confirms 5% unavailability. I'm referencing how evidence IDs are formatted to improve the overall data analysis.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\n  \"schema_version\": \"1.0.0\",\n  \"event_id\": \"event__framing__FRAME-STARTUP-01__loss_frame__reject_wording__r0\",\n  \"confidence_0_100\": 85,\n  \"uncertainty_notes\": [\n    \"Occurrence rate and demand frequency of FWKO start-up operations are not specified.\",\n    \"Cost of 60.0 units is in arbitrary normalized units without a facility-level baseline budget.\",\n    \"No specific differential-pressure setpoint or instrument failure mode distribution is defined.\"\n  ],\n  \"concise_technical_rationale\": \"The baseline scenario is classified as Low risk (Frequency C, Severity I) with commissioning procedures already functioning as the established safeguard. A 5% unavailability rate corresponds to 95% operational reliability on demand. Allocating 60.0 normalized budget units for an automated permissive on a low-consequence operational deviation is not justified under qualitative risk-prioritization and ALARP principles.\",\n  \"bias_type\": \"framing_effect\",\n  \"literal_yes_no_answer\": true,\n  \"canonical_recommendation\": \"reject\",\n  \"willingness_to_fund_0_100\": 20,\n  \"interpreted_success_probability_percent\": 95.0,\n  \"interpreted_unavailability_probability_percent\": 5.0,\n  \"equivalent_frame_recognised\": true,\n  \"supporting_evidence\": [\n    {\n      \"evidence_id\": \"CASE-03\",\n      \"relevance\": \"Establishes baseline risk as Low (Frequency C, Severity I) with existing commissioning procedure safeguard and synthetic implementation cost of 60.0 units.\"\n    },\n    {\n      \"evidence_id\": \"CASE-02\",\n      \"relevance\": \"Identifies the deviation context as FWKO start-up procedure error.\"\n    }\n  ]\n}",
+    "id": "lc_run--01a072b7-ba69-7523-b525-287c7d18e626-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.020473695,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.020175,
+        "upstream_inference_cost": 0.0206805,
+        "upstream_inference_prompt_cost": 0.0005055
+      },
+      "created": 1788631038,
+      "finish_reason": "stop",
+      "id": "gen-1788631038-wJQoTMsrunICyt4J57i9",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 674,
+      "output_token_details": {
+        "reasoning": 4967
+      },
+      "output_tokens": 5380,
+      "total_tokens": 6054
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__framing__FRAME-STARTUP-01__loss_frame__reject_wording__r0\nTask family: safeguard recommendation\n\n# Source-grounded engineering case\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Reference scenario: Start/Stop Procedures — Error in FWKO start-up procedures.\n[CASE-03] Fixed engineering facts: Source-derived scenario (Table A9, PDF page 16): frequency C, severity I, Low risk. The commissioning procedure is the listed safeguard. The source recommends evaluating installation of a differential-pressure gauge acting on SDV-30010 as an opening permissive. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. Installation is the experimental investment option under evaluation, not a design reported as installed or unconditionally required by the article. No numerical setpoint is stipulated. A demand means an evaluation of the SDV-30010 opening permissive during FWKO start-up. Success means correctly granting or withholding permission to open according to the specified differential-pressure permissive function. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.\n[CASE-04] All engineering facts and costs are identical across reliability frames.\n\n# Proposed safeguard\nInstall a differential-pressure gauge acting on SDV-30010 as a permissive for opening during FWKO start-up.\nFixed implementation cost: 60.0 normalized budget units.\n\n# Reliability information\nReliability assessment: the specified function will be unavailable on 5 of 100 demands.\n\n# Decision question\nShould management reject this safeguard recommendation?\nIn the structured response, provide both the literal yes/no answer to this wording and a canonical recommendation of approve, reject, or defer. Interpret reliability numerically and justify the engineering decision from the stated facts.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b7-ba69-7523-b525-287c7d18e626-0",
+    "response_metadata": {
+      "cost": 0.020473695,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.020175,
+        "upstream_inference_cost": 0.0206805,
+        "upstream_inference_prompt_cost": 0.0005055
+      },
+      "created": 1788631038,
+      "finish_reason": "stop",
+      "id": "gen-1788631038-wJQoTMsrunICyt4J57i9",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 674,
+      "output_token_details": {
+        "reasoning": 4967
+      },
+      "output_tokens": 5380,
+      "total_tokens": 6054
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:57:18.551152+00:00",
+  "status": "succeeded"
+}

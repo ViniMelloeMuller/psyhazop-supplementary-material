@@ -1,0 +1,235 @@
+{
+  "completed_at_utc": "2026-09-05T18:13:14.661339+00:00",
+  "duration_seconds": 15.305507665998448,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "hindsight",
+    "case_id": "HIND-LOWTEMP-01",
+    "case_payload": {
+      "case_id": "HIND-LOWTEMP-01",
+      "conditions": [
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "foresight",
+          "manipulation_text": "",
+          "outcome_text": "The outcome within the stated 30-operating-day horizon is withheld. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+          "prompt_template": "hindsight/foresight.j2",
+          "provenance": "synthetic_experimental"
+        },
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "hindsight",
+          "manipulation_text": "",
+          "outcome_text": "Within the stated 30-operating-day horizon, the following target event occurred: operational problems in V-001 associated with low temperature. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+          "prompt_template": "hindsight/hindsight.j2",
+          "provenance": "synthetic_experimental_realization"
+        }
+      ],
+      "evidence_items": [],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [
+        {
+          "evidence_id": "P1",
+          "provenance": "source_derived",
+          "text": "Periodic checking of the deviation valve on line 6-inch-PF-A01-5002 is the listed safeguard; inspection and verification of that valve are recommended."
+        },
+        {
+          "evidence_id": "P2",
+          "provenance": "source_derived",
+          "text": "Inappropriate opening of the deviation valve on line 6-inch-PF-A01-5002 is a recognized possible cause of low temperature and separator operational problems."
+        },
+        {
+          "evidence_id": "P3",
+          "provenance": "synthetic_experimental",
+          "text": "For this synthetic exercise, the target event is: operational problems in V-001 associated with low temperature. The assessment horizon is the next 30 operating days. At the decision point, there is no current diagnostic trend, verified initiating fault, or confirmed occurrence of the target event. The horizon is an experimental stipulation, not a quantitative calibration of the source frequency categories."
+        }
+      ],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-10"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [
+        {
+          "question_text": "Estimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.",
+          "surface_form_id": "direct",
+          "yes_means": null
+        }
+      ],
+      "task": null,
+      "title": "Low-temperature separator-operability scenario"
+    },
+    "condition_id": "hindsight",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "hindsight",
+      "manipulation_text": "",
+      "outcome_text": "Within the stated 30-operating-day horizon, the following target event occurred: operational problems in V-001 associated with low temperature. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.",
+      "prompt_template": "hindsight/hindsight.j2",
+      "provenance": "synthetic_experimental_realization"
+    },
+    "contrast_id": "contrast__hindsight__HIND-LOWTEMP-01__direct__r0",
+    "event_id": "event__hindsight__HIND-LOWTEMP-01__hindsight__direct__r0",
+    "model_id": "meta/muse-spark-1.3",
+    "prompt_sha256": "5909f21eccdbabf7e8012c7cbdd0904efd081e5162cdf6d5ddf7db9e50184bd5",
+    "prompt_template": "hindsight/hindsight.j2",
+    "reference_deviation_ids": [
+      "DEV-10"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 16,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "direct",
+    "surface_form_payload": {
+      "question_text": "Estimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.",
+      "surface_form_id": "direct",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "bias_type": "hindsight",
+    "concise_technical_rationale": "HAZOP node V-001, deviation low temperature. Pre-event cause-consequence pair was explicitly recognized: inappropriate opening of deviation valve on 6-inch-PF-A01-5002 causing low temperature and separator operational problems. Listed safeguard is periodic check of that valve, with inspection/verification recommended. No pre-event diagnostic trend, verified initiating fault, frequency data, or safeguard interval/effectiveness/compliance data; source qualitative rating withheld and 30-day horizon is stipulated, not calibrated. Ex ante, event type was foreseeable but specific occurrence within 30 days was not indicated. No pre-event evidence of breach of duty. Post-event occurrence not used as pre-event signal.",
+    "confidence_0_100": 45.0,
+    "estimated_event_probability_percent": 10.0,
+    "event_id": "event__hindsight__HIND-LOWTEMP-01__hindsight__direct__r0",
+    "negligence_assessment": "none",
+    "post_event_information_used_as_pre_event_evidence": false,
+    "pre_event_evidence_used": [
+      {
+        "evidence_id": "CASE-01",
+        "relevance": "Defines HAZOP node as V-001 and associated lines."
+      },
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Defines deviation as low temperature in V-001."
+      },
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Identifies existing safeguard as periodic check of valve on 6-inch-PF-A01-5002."
+      },
+      {
+        "evidence_id": "CASE-04",
+        "relevance": "Establishes ex ante judgment with source qualitative rating withheld."
+      },
+      {
+        "evidence_id": "P1",
+        "relevance": "Confirms periodic check safeguard and inspection/verification recommendation."
+      },
+      {
+        "evidence_id": "P2",
+        "relevance": "Establishes recognized cause and consequence supporting foreseeability."
+      },
+      {
+        "evidence_id": "P3",
+        "relevance": "Defines target event and 30-day horizon, absence of precursors, and non-calibration of horizon."
+      }
+    ],
+    "predictability_percent": 75.0,
+    "schema_version": "1.0",
+    "uncertainty_notes": [
+      "No frequency, failure-rate, or history data for valve mis-opening or low-temperature operational problems.",
+      "No inspection interval, effectiveness, or compliance status for periodic check; implementation status of recommendation unknown.",
+      "No pre-event diagnostic trend, alarm, or verified initiating fault at decision point.",
+      "Source qualitative risk rating withheld; 30-day horizon is experimental stipulation not calibrated to source categories.",
+      "No defined standard of care or procedural requirement beyond listed safeguard to support negligence finding."
+    ]
+  },
+  "prompt_sha256": "5909f21eccdbabf7e8012c7cbdd0904efd081e5162cdf6d5ddf7db9e50184bd5",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "Mapping supplied case data to the required JSON schema while avoiding invented plant facts and using only provided information.Estimating pre-decision probability and predictability from limited HAZOP evidence while excluding post-event outcome.Quantifying low ex-ante probability with high foreseeability while noting uncertainty and no negligence evidence.",
+      "reasoning_details": [
+        {
+          "format": "meta-responses-v1",
+          "index": 0,
+          "summary": "Mapping supplied case data to the required JSON schema while avoiding invented plant facts and using only provided information.Estimating pre-decision probability and predictability from limited HAZOP evidence while excluding post-event outcome.Quantifying low ex-ante probability with high foreseeability while noting uncertainty and no negligence evidence.",
+          "type": "reasoning.summary"
+        },
+        {
+          "data": "Q-PaDgFvlkYx_ghdqP3cE7YDtTFKQKKAGScufcALoaL0MyPm0xoH6UShpYeM9MGHF8K423r66IaFEgB5t4uor-TQupY__x_wKtEZjUmsLgDKJISU3iZHZlznyCZS-KtdUROE-oVpenZlFc931utRfA1gH6w3KnglmgDvtsh0Wnv2MYZlftb6RSHyrwzpB8qukkIDqeiJ_fCA_4kXbw8vRlHSzwjUjK4d2stOL820rpfq2Ytw-AqA_NdF6sCRitONsMOb0S1YDDpdHiCz3PbbomZL39nZni0T9FMsZpk2buM4wZxtEZLkOzA95ZFr7n5uBUXYDpeQim8hIwUdxFXXUWIibnoA2J6hQPC1-RNTVP6dXKs2Tax21FamUVg3dxKv9X5kH4ejWpoEzd5WkXIHsEy6iUVZlNkDDCp0OKpNTt-2bcZVWoRQ1KLUncfzWPHOQHKlBTFXit9dqk1Yi6e1VhQeWGUDFUCs2fdWpYDlgkbWYKM5WQHiy29i2pY-SwFIMgbt6OBkoEYLcfjAzn3FP-2O11D19-s8yOASFH-G9fygyNgao8sWO9JS0z6mBd6GGtv1EGDPG9che9ljmUrbIsWm-iubIr5FoqQhKiEFBm__n8uHHL6lOoC0oOJfylefi5LOgyHFcskLun3uEqrvIi8d2AhdUqZMKyq6GDJoRZWRA_XzbdTIHSOP_qqbYiY_kkzSNVO2-HR2c5aMbtB1Z00d1q3kV5KC-Ejm-g0aEgx4AVCcnPdTVlrqpzY2VW7GR06-p10X1HIyVuQOdKJU148BenYPlDS0lYeR4ILkLnM3XJVfp_PajuPZr0d6IcMv9ZRZJcf6KPZz7--jny2a6-Bun8c2tz9ydXE-Ny_05d7W_1NDK-twgtNsKVr3vmZd2CRI9MTF89Bi2ODHu4nMHSDjA1TzK7bWfItEii6nBEXl7_dViGS0MoTWjUtJIBeg_Ensk7hwl8hfTFJZRATX4WysD04iZULN4Zpjl1MV8g5cWy8gJOl3vES1nvt0JmoMa7hwP4hwXc6OSSvIqTUPQ_yy7raHTes4RES5DoMkzK4qaSpk4BZexIC36SnGB5rOHUbP6OvK78_-0tdAyJGExfAq8ANZ8DGZK9MJvqgjNyKyG0hYS8KqrQVcTKRjhJUyvpAj981Z3Kn6Mvyv1Ar9n5kmsSughl0yOetaF8Bm-ffiztHTOmUizJKf_OM9hhJtZ7k2y1T1JtjiRylTyhuIbSBxqQU6LY0XacI-0ZRlwBmL_SaiL7hSq_vpwzFYE3dLA1g4oNQlwpjCSaB96Gx4jCbLucsStbX_8HzuQ7JrFHQFPZPgrIP3n0UDXkEkqQLz-OQYMVt6VPu2hBfBdwbXbR5J5UMAFEQoXZQzf8a6MAXRriIxsf2IPULj__y0IwiTzl1nNyfrc7xMV2Og1xdLAbwssZY3-AdHGHunR_odr-wTQAW2dwv1_WN8safaUpRDi0fOnLr-SuCQFWqvly9RVtrCzixJXH_CI8hw7bKnEIYFv9PKlZ2lGb8YcR_dA_iJcb3lJajUTI-aJ4ELER48KmuSqCTxtuFkbf4pyd2QYMuFacRWmUMpaYGg9S9h_jgmp7q4EL7PmdA7Kruo2qBBDCXYtqJJxz5QvLrpNPcfG4IaZL5CgUMUwaJb4KoHNn6KyGDJZXEBMlclof5iEnFsEjAAmzurlSA4hlXq6gbWUa4FLOudMNgLBn07I-EE9icMWwXuDzmAhA6mxOd1yE49dkVsbgbRRqNlHeQZd6rx6UjVowlYxfJJp0bpOTq-CGVgZEl6z7yNIRmqeaa_rXo5gml4CV2GQWUbQ_RnTtO3m4CAIrI8-nsald2trOfS50wm9-6RuG7xOq1bjtjF-ouCLgQm2EIKGWI88wNrzt51Epp5TW7k9FDkFz4YxSPx-WKetbxOlX5VmQ4_qyZ5w1kz1Ua0iQVLSy4jfoh1qDrwYTgzRKbjeXATxhyEhAaCFZsne5StGSf96t7V_x0YZLrN5a3wsO5Dxvnad9pWsCmpyZuqQlfSH6xk2nwcO7nuCkELCSrpKBMSept3Ow-bM3CUzaEI2ntHXvx2UGwptpeJfBm9ZxD3SD_JDNcwfcS_eX3Ei5jrBtHGttlJHQGjdihZvgRhoNzDGKh5dptn4zw0WT9MY19NW1aiX3t52Kwn6K-p06xKLkXw74daOiIzNQvaQ3fY3Nw5F59ctuExZgiPNlIA9cDzE5qv0PNogdrVGgtDfDf9DCUqlRtinYTtiiR0dm8nhGaY9A640hI16jVrkxYjiTihMBD_jsGBMjmoE3iZ6bk7phFa355Fzixae1RYyueaX0xVB4O01KZ7LBh4idqr-i7l1Ct3siYVODgK0DYWRFsH6vFm8UTuxSgspvAikzGIQvxyxqi8Yc51aMb74ET8aS-xDtVKxpFDYDm8MGk0V-4odaVi0MUHHeF5rvxJlOALkAqqWhCGbyxmwAAvSP4VXldLGme9OwF_izL1np4t7c5xutLUAD60KB_IazAHTRbCaYexNSSMK41oGKUw1U3plpoFCGhNZAkExWIKsxDdNB-YLrZJP5AppZwt-jsnYLq_5TTrsjRoBl0Eq_96CD9_9zpOZwDbLPrJ-Gu01oD5SCXgiIPY_PC9Kx8LmGYmR6r2B9hfm_1rJvBFLpYGcHQ2t3lCv5bVVAdRHF7E7Iugu6WS9XtcYiC2OZy7neJ7LuvJgRPXGZFXLiU7_dZmSRz_SEfcLZYVzz-kRBQo22trZNBF8m4jCj8YgRz4MQvWo1Ptptaajod1At9y4kjTfl2NQDWZdyilc5RETTH0ZkCZoUSiValUMr2V51q7Bt97OboMpDofI462BSPVwHFlVfhOZih2uwJnaFpVWCuIkF-sBSSj-rVz9-CSWyJExl1rmPzKxx8lgLjdM9bzATnTNltZS_xRphJu6VFc_kIQszkclGFEzVZWg9foOLrbYJw0nwQ3UFUbi2wUlgVRBVmbsAbJtaKOxYT7_v3tD2LzWXL5Ba2MhrABRLrtDQYSjx3L5mDERMnftNamrTmdjFbYo3lvBDLpILadgow4NATNTedAQI4K5-13yQMXqIz_pVy8nUvo4GWEEKdWmJJ_zuhi8HY1xPX3FUshTtOKzbrKwBfDMql4gQ-q6Y2A1DV-vVSXe2qqJwFg1Bs-FGwy6kPAP4umb_C4cJH69eQjZyGVnNSYIk_TBLGOmDfX4U0Z_mT6adyVcQ_eex1Kbb4JClN12ro-3swIYgmKmrL2OSbTupSrvGMnjuAVR_zp3cTC21tKpu7PB9YgKhNMf1dsy1yC78jgxMo4Uu-Z6nsaGtApPYexlKyL64fzobTf0jTkQuJGoRKx8ZhnKwk96Im6m-ZrZXaXf4UfNtmjAqAkpqQ5Xa9KqurFNRva8HURvm-F8m6p1CxdotGS3JqrfTcI5kPYmuX1iTujeqzly3a1sqBENEOJFR_OZ92-WSXz_3zqdh6yUgAgXaCIGVkldTOpsHntqztlHDcHsiPmtGWXu0ibfxEpMVd9HOqim4k5k9h6giUkZWbxBopiPiizGlyYnb2ImS2lRYeO7EvzRn3Fm_tQCM1gMRG4LNub_BJASJvERxyufobOpmWtBGrVs8our4DNV-RQWVFiJNwam3fNeBV3jXzQiVBBjeMPsxtBLIl0UXyEz24PE-KPtEULKsy7DJw71aegmJixMF6NdHfwTt73xhHhu6Xo9lBonRNF7NgC3Gp35rfa5Ry44lRVUvohl1QE2AeGUN9Lq2IL_taABNlJhhXZpyqfsX4jwuJmZ0vomvRyTE3bSteqzG1Cqrvlj30U99zyqj5DeLZW86m_PVK2UW6QqJEC8zcMSh9qC9yLECDuvz1up4VLsTl94gv1tYtMpo36qtvg6zt9JApNCWyrstFxh6CGwi8rmsvNTC30JYF8O1lnmqOzEfZhqb1wAf8ZRdNnNT-vHySqtYZDPRrDR7y8y1Hcts0FGMQmj8FpcBxVQn1fblBr6IqpNlHtom6qVtBoWoz6I_UEIluO2txq3Mcw6zMMvv5NJYm_ybw5vgQH60mpfmBgla6Vc8uxGWopQbzWl6sk8wE7ku_73zHI3X0gvK06NZIQ1xknLs9ibK_-53TFxlSxhEPcjj5ViEk7uYj2cjHmdpzPU63mYb-GGFupcPhPj7_G5BL1cITS9_GRp0Kphvv5FSjdVlM4ooeucYkMxg3ZEorzZKfwmyqUQb6rMN47FrYKIuWAf2JxQzOz_FFvJEbOaVJNqBmsoRdmdWmF4AYJnR9U9ri2joyRo-0RF4aQQP1qliTblodc_nP8xlepafGgVFOLKs0v_FWhrUeB_B-f5KuMYh2H-AJPslQkES20BmCNBCpScZdtzLWgvZ_VCLGUgsg2yPWnw3ms3LMT_Q6UEW_nVI-yKOpGa6b8rzALOYa1Fl2e5mTmaR_oIdE0dNsfybs2Ii_zrCXjC2QAefhOkYwTiaaY8Z-b6CehfT8YFR5wFP2yVTUcvYjM6MCuSHzCy4A7EUH7IpzOSb_BipWmKlsq2h7Z7Z5hANBFcxIxDmiVtMRpcfWm3C5XO55-d7gR8xj51gsQ7gvr-W05Om8gB72y1ONILmeWzckrgqjWbYjpTrWZZcawsYwLNgS9JbHSofHRaDwLP2aLRNLIQZ8HMKHhXwBkQv5IRuu-WKllRfUFk-rPYltkjewzr6sILAjJsS7d1tWHtKcoUsZAUTK-G_f4-iGvnlJfFMxq9_IU-ANbSmj18UI-F3Dyo1bcvkrUbNSvc1BeM45lBpZ5AzPeyUaTzzvxesAolUUBPbYP53V-lbrGEIp_FG_KJxkMNupAymIYwiAE1nopMByorPKnwmoUE9PNC-3oSA35RYhVo1q9L96jLECmQMHItXonihnuVoTIqryf8TzyKtlynMmPFmIboBVJlwHVH3HXVcEp86DrVMLj-uTPELlhzPOqrC8HWOEhdSJUbRNaz_cqELeuQNmZB7fp37fUKtsE3F6Hs3EvY3YjTHgy6fvN8AEY_vDjDvLLac4jI9TGo_dg7fQaIprKatVfj5sNY6m35Xe4K5lH2m-LuZWdSuXgtNZO1iDjQ-zczfFf9kyMyw11Y1Qd5o973nbfCb42PS_QQekOq0_WxR7A2UEpaM7IqNUWPEiHiY8a_CYF90aDdX4ZtOfIM3EQFljMhcoPvNAMietNB2wmy4Lz36VUstw5PZu3vse6trUrEAMuTguYKJrnEAtc0imWn14DzSvjgWuKF-xJLYaoxvaS0nfJy9_kq1DUFmUCDXInoXC5gjpaQvX-_u9yZaSMboL5AHQ9TTcEE5XyZil2glG8E6MX76sWu7cRzXaxJpdbsRhVN6NjB4OFUfOY5RBQmGgGH7vhxwyL2Huym2RRNIn2Q_XqNvGNPkmmYUhYKnJcMoaWD3KIX-ryuPBpupuHvpraYI0kDEBtFLkM2zDSASQkgWoBe-2oWtM8x_aVj0OZFYyYoivsvzwJVf6MpXFHC4wTWp-KEHs3KoHprKqXsc-WfqIPdgzDajLHluvYlP2o5T8Dtg7NWogqiTuOGYlfPBoNaSlSu8RyJ41RzyrmRdEyACmiePzoW0BXd2hegti1nTiWs07v7MP8EgMc1gDLLAwFkZjlfvbEME1_uRzmPracijpqHNwGXQLV6-gZbnEQgbBUaXUgFxv7ZpQ5Z4cc7Fes5kAYKRIXJVq_L7mpwgL71xgPVQuxXBHyFgfQRMAKpGUhoSjNNNGzBpWPmZ0vJDDlHe2t-k2PUJKb-u54CTAnWyc8tKtloxAvZIKBRsmeH4oshITAhmHvR5v_d9dnZ2W7XlP9bOIFknZJi5fFsvZxMyIBctiHgl_TBY3Ad-BOMgQz_ZSjdpZ7e6kNd1e07PzBv8vu9Hph8qOyFkLRRwvLxNEArw6Qnxu9Kn8ErXu9gyAyauJDg7MFYpbD3b-c5mh_JU0ysb09IZXLMkKOKJgrq9wD3oru7M9hJBv2XejE-guC2g5W6UveodwTGTAwlJKYqGYI_YqZB_gJTh5UretiWqJfQgyZUYkiII4unbd9DvKZK8HXMIxJOQI9Irx9jXbyHJis87RpX8reXItNHQWr2cvHsddb1JFdISDmxPOaaJjxzt1nViMgGsE_1fCu1-Zimll4Ln7hB2-m7eiqkBSwDu1ZFpsb5RMp3lsOtv2_rM-JgjQUQvsmig94decifW3FPMp6asuPscQ5JWqEWW4he9XjE7qYvrpszTOIEb6St748YQCGJLmb92DVQGX3Nrfcu8Tp2NNN9hhzWaiFpg_q1DoDOlboZtLNNHDK4UVdFbWnlzQ67eywDTXxSQQ0Lv4VzTC-tXUxfM_fZZNl8_OUJBBKgc9yusx_E5GWTJyTejTkNOM9AM6SknGZSIbYlb7lxZjUXfUIf5BSwloy3lPncot8NABG_U1SdMVKFmGeyfocbk9lha7CIPBkqXP99qP6MatBYBa95EhmY0sWb-zlsATi2v6ujsUulxVFA_ltI-O8Xzw5h4EP2NOew2LmtuxylAWo4c-olOjtpoV-zTU0cAkyyTBSZn28l-rnvkz80vDCT711LzNbBXlZgSZn1no7AiNzaizbQltcVQFRGqIgjsY5jLl0yduwf5YxaFWgYCYyRQJMVg9smEWTVUJ-Cacfy_dlrHKjRfsAJQRfXYpab7uOzb4tC0uco7b96IWL6vptT4gRR9USCqkrKJ8GSosR9A8SpdlQ3nIOW_wrEtdbSIqIZccxKajOarbPSVxzVoNPNAnmmFfmC5LoYv7Lv1b-7WnnDsJL0BdIr_XGr-8HVl46KQ2x3kLm55bIYriZxG9970-ZIZ5Ez4DvJGJhVXqjZOw75SS8qJ9x56pfhytEtSVTjTyPsWnP_qy4tfMKvyZXx2AiTsZBUgr1oawh1IJ6b67Zxovg5PKuXn5OvK82r7lYCmfeMsHeWPeBPNHLuWmk5cUnGKGWE8yGntcpWCyxay9A8r_pybBttljeXrsrahe6ryAnAbYLGgy-fCBzo5f_y2BHiKsefdMPgXTetLRRAnHRVcB_WQv0necjSBfavmZ4aaIF9HoxEfIoF5j80Nk212yjxi53JDDfgvbJ_kE03IAZ6APsQX8TYzof8Tx7jcEj3hNrvqKMcy4M3LhDp0uVfuywTFWTC-tznfnj2KeyjBGfSLIqPrfZ_go6XK88W69pUqj-ld8tCugvliU81oxVWZ5_TSJPr-lxPdhyQ_b1w5W_OM_imDPs9hexsJaG2-zeoqIPVGF4mcsixuwtAqfHRUxFSvZy2bgyRoSIwkL0Zu2cMj6jwpHGAUvYmSjM3bUC4j-puPLtTHr8639rD8qPGT2yM6GCvsJgEr2RMHNM6VbAnRVBSVa7AaP_UasPmTyaBzp6lIc23xY9xMUCS2V21Oor4j44eUm3jdjrPGCTDL7uM0RstfekKZ7a72SUq7Z_-dFDu77-FOWDS3rh2Cc3Av0T2TVR88iFwk3Aw6M2Tvy5E4n6GMd-J4G1f1Jr09JermwkAgFsCA_WP8PGc_Fsijm3yWBRccOVQo3dSZ8jVOyLZlBPWug18HtF9H_4o-SEM7i4GIqSTiHNxEnKeKRilKbLQ3BKQVCNqN6N6v6x7UZP4MBi7-XOCdjltk3EBBmOuNix-fGo02QCsWry-NaJoz460uy8f-OSm7tutOxfhi1Ts6wHB9a0Nve4URNBv04u4huvKoiarnvw8RlforUjRPV_lvJjOVec3hQ-F7WD9KOKDfmjhdtl43g1KYVMVbm1o8zeQPCYSpTXfUga2iB2WigywGXQxwF3KshortucC4HySyg3qPeGNsmdpJ3hiWKAM84yKqvjeknBLwLTzXDi-9H7C-qO8MRxSTHzIBlFpKHgiIJ0fbA7nyNc9_9evd6EH3Icg3OUKN_LvyNO_uhp3l1gS7rkB-DG6U4JVHJwgQuW5L9fQi4hBi3xlBnq2FD7mvtLxQqFxw1a4z2l53KYCiOKfAdQOQHda6YxkBbgcPigE0z8IDeJccq391VIi2cQa-3a81Wwxh1yYYUlL58PU3XSe4Tt-lcg8-k5D8fxkRt9vZl3ue3gDZxEXeBFD7d6aR7dqhxoVVNBcX1JvpFiFG0pxA-EnAuWt3vxIuukIvD9W38s10xEjurFW5_COrpUn5EaKd0Jap81XseobieyAYjI5rsulNObXNwTW4CmYYKfa3u97SLYJWYtKVva2uzkY_gY1psFstq_vfgClhNdr9lmR7296fCETfjp2AMRmzy-n1lim1XTrEkCSlSeitLdDG3j0jB7nBackyHm8v1P0OL4b6rUnxcykC0WIXJh9-Hn2X-Pp3_3L3jfnLcJGiTD3-0Uq57fI4wO7SJTzegT1zGG3Mf13Yj3Q92J5KVuvEPORe4BGI-1_gM5iev-0gwgqmWWKya7-e3NgbqFzw7r3S4fLvyaKbIq9XAF_U9oWDW5xfSiIJnmuckYh0l3VELB1saEKV4Zg8UJ9gRcB-dxJBudEhlkcu798s88HPuUm8Am7XbwW0lGQOzATx98cC8d4RjdP4KulTd8bHDRn4XM38PyM8GKVj-rzk0mB4jsRhMas3Q7WjYD0B_upPIEAB7MGnfzoHt_iy9yNbI7thhMqyXQZINnyHsRx7hwc4E9gAht6mkX2A-Yued2CG1-nEvGMxZS6riqIgtQ5zq5KL0_LSl0_b1VOKlG3Sc-5gGtl1Xezs0o3jMjVbm_alwD2vLJDoP9hOvFBgshWP8ctGvn3MsEMrW9shvNn2ow4MJalZsw5sYT2DKVQeQ84cGLthvRq2QXm_L4K9XsbauIbCcTWziDsC5crMrEiN4bVXJGYVkLDpwg73dJ9dPlqe0CJspVpBt05Xg6tBAYngtmwtdYzJCqKMUSJFxYzh6QfIQpYs2s1mD3rVRIla9jPh4YxCPJmAyGW_yuTr2-MTuc2elnjiSx4Hya5xuoYW4f9qr-gsf5U2NGeU6vpV-fTBNf1GcZIwOTahJsSEpOtHXq-UWbIirBWfEIN4r2ywLiJYet-HTdP4TjpPqi5FBWLWO6v2gkfBzGWxZBJxhCinlN32OyXBD6XDz672Z6-Bi3H6QWiRkRMB3qXwpvTqoHnb4aMNPsyqbzVyCLG6iFJA5BtCTJ5RuniTtALzOSr4NWjVrDXXxzD7ib3LQvgC_FHDCGCidiOzsAr59wXcIsgiTAI9zYtkMnWpjUrAMMGe3nL39E1XiJgn9jHEJ24OTKdJIhbUFiOkSNh9NEWlLJxBLcuXSB_18_q4qpOqecaHIpv-dZzUZH0Y7F5j610i6McBp95NQn0NxeX_Z1WNrouLRYMRINkR3fXOBl6rBwUJExy4s0Xw0utGxSwprhbxHdXxZCwjIhvg_2FsMESTF1bbCgqXw6UQm1iK-rY6ucv9jCAhMvg19Jhr-jFgLJT-lapIHfWR1KcrW5UIAyAvDs1Aeb074Ztl9D-rA1iHwtU6_VOx0VxLFUfJe7rZpDz180XtVmNcjGbPCgtdmVulTgjvxKakCTveoZ2NqWI1Ju5A2pxU2Sg3MNJF5ATXBMw6OgO6pQKpGYtNLEYoIdtqRaQTIPrauoqx8w4FntT9mquFvytsBsFtlvywa6dJtHF5Jbkoa8JQtDqHmMWFMjl94I_s1VZ3Nq3wLxoZSJ0aGOF3niYF37DWJo45GmdnH_OjtpDj0tTE8ZKZoWoZfahZzSPu4-uGSmzKDRCgUwOUdt67DOL_8fOBjoB1dJLUQXWzhH9yOKxJgYAJkbm7ari-KlkILXrD8K3kr65gz09vUhXuzp27ke5jy3LjulMl8csJl1UJSA5H8upQucztqMMBq3W00j18u8h1-h3UhPxbcOhV9fCDYw2Fy1JXakk8WEp7d6YbmoA34grW5jNZV9WHSyRozGGPDG43-KVlOm_2YkOCWZlhGD1TzEBNtRGAHiL-GbKjSdtn1G8YwliHUnfaVysDG4vYzZUlLeOwepLFAeTYxsi3OeODadlRco4bkTWJdQYVHP4hYyBuNVMBJ0hEEYefF55cJKZm-phtiPpA-9qjh1_dQSnav5x4XXUWISYwN-vgOdogKmOuLC0cvp4GduF7L59q3pBwcobBRd057dcLTKXR6-hdRgR6x53rfN6FTCaMIy657PhtaLllyOKeBfRHnwFtkw_4REWZ2AgQq7WQRiMDEvqhrP9EjCGWLVgbvb3XWCbdsTdRQUWqgl-Ft-w0RDBTlOSDk7KnRbnWPtbh6Z2-rGGEyOUASxiAoC74o50oT0nhhQW1pA9rWPAezcckjVl5MSH_163yu9I3iV2h0xVREpQPZUKnErYPGkvU66wwepmYC2FUY28DiOfMub2D1xyfmki2jhcLm9-fK3XvgqY2GHZlsREcFxT51VSyOBFj3ixBDmppxd4B5-uAk_pm59J2QiCJFC1W7xQxlS3Oc9GP2SHRbHFZrDdjLiiltrOAgKlGHwXFmE_dL16LxVk8BR9G0R7dxGBU9BMOh33zJzBSyy57Y7MKPPFBvZT1C3OcjnrVHyrEj6XA-2cErwNWe5arAETU317UHruvK9q95wFQnZiPqvnjfoeXoVjAJx8lXBmX5_TB3QGBc8vh1nNCU386LodZy6QmiFulrI3r5Nqz05ZuuAsMG-A-DvmUnf72MCaCqefp1C20jpGWvadt2q-lcyfZbT8SkCjTRBTLGjSa-hCZAR5o4SmLULWyJKh7eX_QqHK2B5U7LQ2drAzRd1LXht2aa2sQPoCUCjb6ulnu76vvgLIF6Mu0fTRY19wa72ZNJPezTnVWmNTi1Kgiva2M4E2IgTZpPOg5o4HhQPFwhfZtNFplTIhQqYHTmo3uPECma-hy6M0tGRi_YndleaL4iiWKlSRUCz4YkpGxvguV8mk1y4S1Ckh-zdK4LWk6ln33kpLE00swOWi5_vkizQdjVRzp4IMQbTAYfCOG9wvF8879YWeRyLIPUZd1n1xURBLj3uEK9hLhF5DVTLfZkZdnWJ-mnUY36nglGcPlx2hOjPc4HcfeaEgpMnGMcfbwm0uzMEvPTPULxQ6IBk6hc6hGdMFZNxyWj6Mtks9pL_B0df8S-9Vy1Ef1wmxm6_kKQ4jlQGSQLusgh6DfHAAEvd75GnN66pxLKM-msy2QwL3ZjHZUgMWtfv1sGg2jyEwXkGXbrF6YdhYFhTSXOmZopJKtGcuFeX_3FDAYVcZ_zXK-9clb6i0S6JVYCRuI4PetDQAfjRBDWMp-B32Jmh90SepcJKn-R1Eunreitgld2WwpMRHKtbcPUjRinGM-SAWDfaxIvT8nVkm-rKu8E6NbXFKWYEZ6udK6DbZJkVl5uUzODki3pkroI5l1zOYMUqtHhAuqh6t1KTY2c-K-aaolpJhqVpSxLIPcvFP3rg8gxg9bhc511bG7YLAusrJSPT5c1CS0JGwvlSfqivv6iSwASOhskFDQnJBu-e0lTtrW8Z4VcFKgSgv0pWre6Nwfn9y2TTGC3nWLB4Edbn8o5xahDS7od_VCpHJ8h92ZgZYOCJwHHzZBrVy3jObBM_tgzcGYlsPWr-uf8-r3ykiFP8jK2IHpvhj72DtJz_b_SUaW3gJVt5FxT_3MDs6lGq_OcKeH_1rowu7p18Y9HPqb6r2JAW8T2gmHUKbWj-3SefjcYMEWyUXyCed3HGoAT59J2xDXhOUA39VUBAK0ggc7iVYoiusKPagw1StxOFD9NBZaVz1X4TdqAIzBuP4pZ0EHbHk1oDRMhbwcpT9x-n3R3OZK2QKk9Tm-RwcDrSlRfsz_Co6kf7OpDlM3kdoCD_k2t-Q4WxL18FLCQ92KYNxB39K0kPF2mfLPAgX2kg3XvafFfEUMYXlDJr5tXgT6VnDOdHri3Ae9YK6bPmio82MEiIdENUX27w8TmHGN_yizPqWrvDydOEd4n0Y6O0ZZRYvtcMb5YrcqoYuoQH4OFDQEcDXaVJVELembsv4QoNlzGobbH_mgTwObPVQFYKGQnCcHnZAgMZ9_7R-LSVyMIyw1_Z1I6AdIWwgE3rFT9oSS1MdxDnyK4svwy97vfC9cmZKW-MZQMJizNztiPSvgpIXKxusW2I_jj1AyF2c9LGOmK2ENtGR4G1a_scmmPc9gDZ4JPg207aljvktgOmvNra9bMIuvOXLun04XPBMBItRhRQYYlQYcuGEEdxOIEz7LYKw0bz7bhxc00BrFEevxT-t9fhJYWyfIzOdTO2gplJK6WGGcc7sAJ5cVQvVTV4FClQOR8wT3LlzSUDydJ-M8vB_lUchNQTe8vrcViYHhhFeDXWVuweoWtuC1vfMp7yh_B4HKbxvT4obtFQHSshYUAFOdOUuArJbKuvUszDpjBZ7vXLlXnE9WCzv4G5Pvduzi-CZZZsLOJbrG4bdP1ltks4duLIvuMW6092KwdM0dfRk2MCKYuZTseoc9_DnjO_eP8hrt6NPX6tIAJXTZ1eT-MUHB-CJYKGWqaK0DRN-KSRJs4Y6ac_lC9PTdGY9jN5LTmkvpzXRb1L7n7JSRwL2sjyfhTPCDicwJpxPbV7aBPgVhFl3F1jml9EKAtVTA_qdhq9GmS44S6FRYUXRw5zls4jhyp09UohT9ty9Afy96hNIyx9DMWS0Rzl6K5eilBz4YG_QvczrExoj3luW5jedxaF3V9ggE4KaLfuRcsxy8uo0sDnZTxu3ztHyl1byEgviy3CUrxW3W_hlGBkQUaf0bHnAPf5fZ6SOZn5bMBmljnS669LFmrXlbad3txQT1quuzzsKbWBrQ9JQhwENGK6EOG0f1XV8ipuYR8uuPLKNv9-f18Cih6o20kLi8r_Lxcw_Ynb-O5aivjdpcdFh9Tr4Q3tqq9ZOEjsNL47JbFi_ZLYSdBaOzRWoOddGuaycSLVlS_FT1-RtlVNbQ2627kZI20G2X6cloTMurqsqGN7AiE4DgC7vi1K5lHg4jSXuxpawWG8H8rWRmzZE7FcrO1emxPGAose-CQIGm1vs9EKyIMIuV2vTy45MWdvyVx4yZD4awfKZy52BU7IAbMHaqFVBtsaj69aIKtpu2nLZ8jUFNgYy_Q4YLe49pXDIar31gO1LopBH5zK6WwGvE3oh6Uk8UWrO6ZfEG9uT4z2AvmdTIn5mLxWAt0iiRWNMJv90O--WLvpBWx1n-eJqBNcB2edVQFc1xaSpqY4L4YJ54SZqijW7N56v-5QSMTvFnivJtugQO3h5G6l_sbnAoa2Pw3a6AQCHCYRCqFCOhZdK8OQrVzArjH0ie9ij5zQixcOQ3iq417mylH6qbBq9LXRpXCOI1mXBBZ5K9D-H16nxPNqZ3uF84_99x_XCnPFYR3ezkWF7dXeFISCOPF2dapvaRbFub_DSc86kbw2DGHEy7XjKKsKvxH8rTClVe6aAU4Dc3ws3E6v5r2n8hFPSSNx38e8DUs9O7cKWoFYwgvbtJG2RKMsxbO_TuDPfE_Ds7_zJDo6eZImJ2bs47QbdaRFKUY8xtsxtCygeYMHh4KArf28shqt1b9-r0Ac35tdI1xykbXHs3BbOQ-Mb212zS6KmkC7r8b6iUgTWzWlij1PCF5YD-4U31RHmq8wCQIR5C6z6XrgixoDMSeF2RoxZQzvpQaPMjPFzd3MurwsOFyeAJssjsvjcmvvt4O7nj5HlQXHqAe9Vk7k3laaRPCLn3wxN0GyIn8UqZmextq0lsJF9dleCNFHjtteHkowNSDhaFaonfZpd9DWOAOUdoBXK9EHTwIXbaaiFge2vUA-t42LlXELM4kuhwITI6xgb5WH5o7R1oX3f1p4c4yA9DDSCknuctpxPXyQ2wuqXjKuEQizcqhfqFODjToarnEmjWlxtYCVc3Wbbf0BhMT63syr91asbRXI_UYRQKaHz7_vLCQKzU6Ro6t1CpefyKSrriZfARyKLkK_XMWLGqdBK98MKnub-9LLIPYYvfwLob3g0DmnmqBoLu_a1LpEfKsIfJUT8Takf7agamUb3HrjHgZG3ndDJvbExiomuCLA3kCXTkJnThvxzXdUYWsL-BMGhWaRYKxNWA64RSjCFZ5wEEcXvLn7sOMe0wlCXTny2W5LQtuFEPgIDDfQoywI5pHCXv8ypEf5Nf-1bs55j3ga4mghfSpxT-g_mtdozjT3WjnCSgoRdCLU2NJfDc91zMKPOfr0N15ufDJpYk2mQT6avBHuUYIRCzYIS45gzZ5P6YzLLO67v3UH9LNw77yRSpQonGrOatr_oOQWI-5L7zuTUlQ9ejiOmot43_OR-x47ZYwCQEJQsYEXRRtYlpaWHaYLu2paWddxVMGSdBLCc7LkKzdLKa8hLg8WruZrYXUrpyEFjrov2_QHX3a3DqHIZ9YPpxEzTuqvZQmTTOOrCHXB-Mw2TMaAvstVDWNEYQZBjXvyCcntfh2PcGUFq0Fg709hd1ofbOMLIM9sz6bdwRi5NR7fmEneNSEs4Xez3JtMyCmoUY8eFo1HfLp3w9oJdVh-ApdC2UXIWSMQ2wgTZZEMfup7t10u_ydgYTAxg5dmGgZAd9yLDT4Ld-zCLJcAv4xPW-f0bA5SQMBBjR-K3oZi_k5AviLeP6eMU-lXCU_97gNc2j-sExvXUPkOdhkJXeNQAcOkflMK_iFdK47ki2ug-Tj1WqH0dJ-Mr9T3EHJONcTGHJ0OPJNRt7Si6OWGTAuoLr_tlOoo4W4CYV7DDy9l9vkkWmcwMwTfObizXwK1jE1K2T_6yJ96YfsVHwG9-VWCOl70LwkXlaYgibHrGVKJFroOqvlP7fPeIliTh_qehMYJBc3CMoAphDubLY314nwt_kO_M2P7Zt_yGI1VkxuET7JIkSjeLXVykqSQRPPykisxhUJL5_-k5cJQdZkhP09Zdv45eVT8v7hNKSNlpKAYRN4-SflbI87yZULS1ZXEOV1jDXU3RkKAdSZSigCDQlWIwo4pwr39RkNOuv51abKki2ir8t6abod-UlgurYoDgMrbmhsKVXGVwynR7c9pxCcbYCet7RaqawkY7derGnDpWyGS7VnMriN25P6fbqgwUSLezZxR3ObwMItEr9CWosf0-VhBQ0_zYHbXX3wOPf4EzFwAGw1_5SzMuYIA2IK-NiHtGBqLPwV4ve2BwAN6Y-yMxPkJeYaQe-CcGxUKgBmKKJuAYe4pp2OkW5yxWdUr3MHiceTJUbqxAy8XqXt7V5hNwGVLZ61WtUfEpClrl35haSY0EKIGgWNLoYD7cHFQb-FIA14KEC0LNN3RtNmKNWD-ICZAmjWgBdNz4QIZcnl1w_XAkH8ElL00yrpuVma8ZdfC0U2HXXitpF-EYggBfsgMDm28FSD7NjHIcGiV1AsSGLCpwg_Kt8NUmqEM7n7tx8BE5e4Iki3fLvqYjK4H2eguHuriIt9ihM4PKgzeEyM2QPPx6ZGQf1NwF1TB4EUygtyhw4dtoV8XnIB_tO19om4o4sFu3FR9e_7d4doAietrZZPB5qcQqvq830owc5gAqc53LHjg01Zxpm1tPdBvHMjkeOpetwOmWTdOU7wrsilJSbP42as-YMVEHRgiASz6SAwnYmzyWaXh0w0D4vl-NMrX9FAWaEZC6tNFzuUZO6hZ8kkwhdYto8Fw0AwwJjLdEJ7KkYYtl8E98qEFc195q94mJyNTXzI6TU6wmRFTBNLzdVrn9xH4RHc4Z9IaQCHEFk_eDDEPW8ZbdJqGBpP8p3Ewlis2P9kTGLtSGaTBEJtslazepnlNzA3xS8eprrGiEezdg9NlofQnXQRqgS7OIs1mr3ytR9pvD3_eKuryFIyPDv64k5rUsuE5wBCN0-9YSghh9qZULsYfhFmG8KHPuhdKD3dt0PhlPASSRyMEZkCkudU8-Z4UJs91920saVilySeNEV3NeHjlX1zfw3MzUaugvqUWkL8CV2-1MwTYvry2Pb_TYnHtMWuBmaMHA4oqNhwszTTsLBP6U6bmuL9MuUoJKje4PVZ3gSiBfAFpRF4ovdTZwXlbjtqc32TmG_pQF2i-TwA79zOcXk5j86dgrrCCh-QTgWc8lr8-nIygA47-oiL9At_tlUizUM3dUd6EFX_vQyKEE9vuKHo1K3qWzdkpcrluoKQGduyWyTZlRbfg7umgCok1AoihPjeFudIpt0QMdhfC2Cru-Kb1Kg69T_JWP17NeZ7jEX2mrdE4l2ajl46M1DFrPF8cwTyZnAPWECQzLMdUm71mk3bDajEznXIGhsbU5JCrEXN9QQR5xOD4Pf3oX4Yz5OQTbv3OXKnYyetEA0J041WAlb5Gz29DisoiDgTiXyuwwZx0GU7nRfQJGLPnT805t3qfBoDQSDJ_feT1rOz0gRMSvqp5rMM7yQiTeRRQtNpHXGcs5GN-OeCiHY9EZzB5TM1264SjN-5Yw15J_VN64_Vft_cYgwl_mgTpktAlOnR0E1PrC-PRPnpUqgs8kFP-Kr8iBeWEQzS_5gcVImbZzWKbk0AhWlbMZS9jUpJ-tsOl0UUY90DdPFHVJXq_0EQs-7kGtMbKEat71Hzm1w96Q6oLoHGs9xpTtK2GwGUkzT437QemzXaUvcMCQHWh1Rimv-3AmxaxINjQtLgs2aMzbdDFIHHT347b1siBo4B7FWw8NLVBbt34sU_HLQin7XatNmlbfXUIp7Xy86VAhu-G4zfRiO8Thrtqt5n9GDwCa6O5AoNPrtTr3TL3k7P7sjcxMqAA1KEeUo8i_dhWmf5jeB5pxaXUgIgYdtT-MRPanuLCm_pOoY0E5tVeH9aquOO3gqwHzfww58v1lixuYwDhGHVmA94Em5EtdxFZw-XfEkRZzwl4K3C70W2zDzbnLgpHAF9POw0_3TZ63SZfP0jkFucnqa60biad9lL9D2TTmBFIMMNxp6lIjW7Jwev0LI69GQMWcwUX7oIvPBi68b2FmUmd5pq5YnUPYPzy7vjzfGQZ9nc7tQ6kwPmBjR8n3xT0nGs0DpH3n5eR71f5yEA5VpB7mRMBi8iR7k1d_pvv5Aqh98YQANiESu6aw1axadekoniO3BJrscUVHWMeQyOgaaoC1-zYTPb3JnpgWznfUx0XLrEsf5EbHnbkQSImwPNIFDZKqUsfQMFAEIX5Vn-txgVwjogvysUXmFLNEdn895GFW58vlJROB0EXAWCiGKrdveolSGViZKDEuLuCsxJdFuOLFXq7oe9p9IBkVC7StbBmucjJwdCVRLIMeKrFCRHuxBmjGrX2FfN30383-qEebgEmzE1cCwmmLn2jmKkjJTbAJqyfSm2myDaj5tKjGo7Q8iQrrNhOuSOktIy1I1VYChgxRW-BmqMEw8yhdSHohcImQESjsVe4xm7VvwSasfhDap-6WUEak4UgesfkZXzWGf6GXPKghw5kx3yN0ug8xLrgT0k-0CMOWps5ui2w4GuRuuLQ1FTHKVvA-vqDaWGGtF1bgrCvF4mJVdRneYZdJeq1EWJNJIy-do4HqYzn4-7BOnNH24d2v3DJw-TO1WS59qk6aJI9wG3W_m9WaFq6QkpDi0iKh1k8Um2cR7n6eILl-obwMUOgKyLblnJs_aDAyjTy3XfH2uVUdrQjqE2ZFB-kAfl79QdClYAFHuCLZiytTqlIyOh3QBNBQmmFgEt3uK9wZlUSHMi6bE-oHAQLoEpBa69rf_M4lV8owX6R7PAD8E-olmUWmce5tdGGKBGFuscZNPEVJJ5laqBaLXzOVLcpthDckuKx7J2pgUM6n4UDuW_zmuXLb7tL-c39_uUzWrawJfSEO983xlapCOpIW4526X0DXafkb5vIrEFOqY3U0-hKQcAfSNoEENB_qGzeX-Fpi1Xq7DzhAvpXvpUkgrGkLtOwNsMdloD1ECOTsGFOpBzCr1veAPUjeXzhLqtELtPpKXJ6pWkCW2w2buMv0xUTty7E5ZaBtQRcYVi7iPJBkaR5tjJUrRuNv4KcwXf4S3LXRPJBl5ybszQG3FoCoWNzMevUO1t1wAcR_KZM6yQW7_-tqYBh2ITthUw_v5jn4V0v1IK2EoaU8njL1v5CR629K24dXU04oWBhNusmI2D3CT1A-BPWRgmC128cdhjnTQAhDPnpFRTb_8RazYgQkMwh5QyXtwkl_Mm9z-ZCPbTIYfP6Sv8JndcgTqe34tJrKAUG-cq9qWY99s6FE1TiYzX0EHPmqj2W7yn03N5ihF4q_ZjrWL2XLR9KTYAcSJovKcg54iQe-JOI-I-cOzTjvU5WmGrKk8Z8A6DyKfLdXCthXS1ZdQs9TVT5V9n86zT45yuiSJ81h9bRGMOsND7eGJRfI91xP-vJ2lJAT9gQO4oHZtomMzhMzgLXeDbKBjj7wujQiJeTtFgOJhsl0V0zsAYoVz0gAmI4sR3GEMWOUAMrECAXCEEF8fCvzp88kr9jDrK7etKCOI7d6Fd5dnZAFJzR0w13bLvqNCROzFExd54VV9bSTG8g_pAVXZMeGYTDWKHHitiDpMwxcgWe12_f2aKV5ZQw_wQjrXGZYdMhMEFZEJVGPhKd9LrMF8qdLzkkjSMnzEpS7Rf0gYVn9uQGioQ5oO0xxvJHRN50LK82EPSzN_x34lLf1xKMTe1ey5M6-XraX81FhCrMzBEoscTHu9rEfkYNhJNkXevTuvBie2FgdQ20aevhqw75Ha84OtrkJ1TZ2aVy0zGqgjgnF64mtqXt6GdvupMjxXxKBlvMQYAl_41vI1LOuYXTlI2UL0xkPvJG_ugtRfACZrYo9AFY7vjgYJlj4sS_o08Nn2w85MVQcF91OdeKGSLBd6OgcFWXdVbOSITLEnZcwbx8LJ9c4xAP0HsSvMx9MYT7aiAz3zjahGYzTq3xueFNDNjP2oRdBqAvcztFQvlRrRqs9gHUsK923KDWj__WEVFYDsg-cK1Mbg5VuReyM2Xn2-w3gnb-_auDE3nMyMJgK2wqlFA6EdAF2BUi5i_lbiVX-NmqYQ7JteY08xITLCUo0Qcp-uBBn-KXL5jH3s7pbG8Q4PPQbqLmIKRChrUscNdNyphszl0LUqEu4OstXlurQK9oEwxXqX4VC97LZ3SjPQcjGcQLbeBqDoTFJyDKOaszjRA_EuTiSTSArGpqkPRHS0LFr6w_4Y9lbAGUFCRXMmBVI0pu8gCuR3_KL548-mEeBqoSv3eBSU_MHJWcJIFi7SDuMgN7Sag2DcoHJC7v87WHj1WlUZKu-6AuvVz-gZGQKmmHZcAB9nFxCRL-XlQ5iKegtymvgPanCu-64c9dtaqcGwx6LIngxMDnXokCFVUNIvBqkosN6ZgPL84ONLV2oTBkE9kpX2vFigDmDUtWV3XvMNsIeW4AfFebOeJwTAeJNqYOT_4uj2ypmPB9Lv9aO3fe11mjuRH5Ax-YT1Mnoyple_j-KtcOO3hVS29Yq5_YjZ9mUlZUdw7I12RE6Qux4-IeuNlM1cW_0UWvRhZuFDbMVfijxg-YAH9MmUSZ7ckKjuOEUgZ9QrmGQ2QySH23LZUbbMM_HY_De-imYgts1XrLaXX7dzsv2QfMlrCqTEQYlWSib-PPUg6D9kNW3hSn-OvPW5dJSS2r8OQneBc92iSQYVqaXXXsdJHd7fvPaQGw25yzslZKofX4PwwYFpxEavogs_H4i2REUV3QNFkqDf-PCUt0Dbt4_awH174EYpkztLSQ41vwM89R9UT5Wr16VT_Ajmk8FDp8JwaGrTLAg5homPWWQFGH6zcMuCObZaGfnk0mvA-v6MRHLEAeeRqNc4mDLeWknL6Q5lf-YhrzLDRbFF6kdY_cLKcWMBc1mPFfqKjkR4uMtPKQ1Jgayr6nuoXvGD1ArW-SxfnVrN-vfXZqnJ1VUQGnFcCPskhSmp-MYXlSp5fagFYCB8q2ueZykXXU2GPDwOLy-oN9ZiU8KlcWqOTOc9_FTLlCmYnrnhXgDiGKm_Vf9HZU-aocIixUV-5Tg0LajKu7N7-J1SmZDYUI0VBkSmTQGCLh_X-vgYsO7-tPMjMkxiz_wTUV1kzMOBYoc7plno3pYWB7P3G21H_5QYi2cx-2msNbEA-dda1WyuTguAbyDRpIKsPt3TN76BWbf5GamgFNmoSMlzQvYH7qf1cPZ0SSezPHOUexcOyrqj1LeT9OWZtEcJKnr8PjGWgn1M0X_RNfG4QpUGgyO-kTTKb5WE4jadWnQIYNwVTnMVe_lM93PnICTROJ6GNbkQI6vOetra48_CSaDPyShoX4wreDImQbnWVLyFrj-YLoveZb7E54D0qVl3OjDjRB4c1j_w0wXmhKL0VC_QgMy09HXEzIujeu_1Q3QOvL5i6nGfiLcb-0yw_uoIl9eUvIZXyvJf8CdVoOEp7PBA9D9u9hpSBKw7gq1kePbg9nfD-QLQss6WXAkXIcC_sJPRT8WbgCOUlTq18a9DXh3fW8FSrIATBpPNtAb1AIZIvc8j2zvhNMo-Pgd5GqNKTSaaKgWzHIq8gFmLJ03M7R9O-epuQTe70fu85Xf2tx-GW7p3Glu9dUhxVAUL7Na_pBHuRFmq1Lx_7hpFwOGXUr3TWv_blgf2PwaIkAYa1hcszgdgs8Sjj99BrMqEI3Uy4vdem9UHG3rUdFVhlGr24F-nFE2ZQIQNTnrhUO3XmpAqxoKs9y8do0fPNwKiI56Je_cyulcMVgi2Rh4DUtECsuxAeLnbRuhgktLxynxi7TCLh_snTecKnJwRU0UgpjubJsPr68l_TYcL0_RF6DwCMY6rn_pgFbn2d7Y9EVdepPPz9TEv8yh7VRNdPGFkFZVvG-39pgCdzgGB1SedNnH4e70FRogukwFJQ9lNJdEnn_oV6oFxdYpethOUmNqfavv1IMzObQaVR1Rz4YkWpuvGnllhCJa5JX9rvEUzlzz47xkZ4VFu5n4snJtNc2FTMUxcBaU-z3NfZY8R157wv_W2jLdetoOY1uz7HM6zFWoqHfu9rurjxbf2kZgwuSCzd1l74_xFzUmueI9iDJvyTL1_AfBze-K2gqUEVLiiUdPqPKUbWoDCez7DmCC2KS-tt1LmEQQml9ZS4spkX6fuVKUS6Sqhlfx6ymAvy66kOF82YR__eto-kknCgHXNcGZF9HQSbflVn8KIG94wzmeH576YNzLNoWcs-9oeXL6WhfKhdbXy7IOtgGzGX_BHej6WFrCz-dbIv-F66yqABc3Koa4Z4x6-vx7GOLSqmaW_pQgNxIYTdoLYFU0oEs1xiDXZgqIUzNO4b7PSTV63HwXdJxuuML0P18tczn7yG0tMfmA_VvlRzsnz95UjgayLOC_j3KCecraH9Ki3FjYpcuUq3P0qF1jkecMVMrvgk6FBrvgdIJ9jjictaE3bouPkh_RfbqOGUuB4EV0r9JyXNT-xzlvYRcLB_o2aAJZ0GOLJN1L2QlEl04Fwb-tOpKFplYJegCkQUQ3rZbGJxqzDG3N5B7UG2f2UH5ZOAiNGHIBoEJNDkmlAUDhhaFHjajLnUaiQ72psb3zx3OAo6hnfXOBLb7aeo7BEpMjbM2p-9_4HM-Du144M5PEAX4Y6xBsUjxbFvsSMZOsuqiyieIyH7LhCjEGd4JIBPQRE0O24rt-Cw7WGWYQ4zhvLP2TlnZLzyDwYt558E1fkx7yNQnuZdUWyzH2NonzZeaLux4hqgvykdPDzE-Dbpuo6taLpZDgULVSOfDKq9hCPWk3jdV3pTGYP6hz3x79WUDvyDiH1FuTm_NR9ZjHgozHgDRz25eGpaEMHlx_CeRObEcZf-3iqH4AGEvCdvXH4R4mK_Co9zs_0kRqHfYFlE3_fcn3WpJnf3f2r8g5SygUa4L9p-H_BokIFuT8WBySsGHaJscfrFoY5JdSPS-Ju5yZxHlsHMh8rbwpM19mvw-9bNR1Snapmd1pWEslaAK1ZDGAPyBO6RG-XHjovcwyv7jqNyN0agnEqN4z45vsiypZ9EQg7e9jERa0g-IrlEv5wfh48cON5Pt8yZT_Zr9e0h_uDnEe35A5NvkRw.eyJlbmRwb2ludF9zbHVnIjoibWV0YS9tdXNlLXNwYXJrLTEuMy0yMDI2MDkwMnxtZXRhIn0",
+          "format": "meta-responses-v1",
+          "id": "rs_6a9c5bac2ab844d8ecff4c81:rs_01a072c61a0b7fd397c11d1d200890c6",
+          "index": 1,
+          "type": "reasoning.encrypted"
+        }
+      ]
+    },
+    "content": "{\"bias_type\":\"hindsight\",\"concise_technical_rationale\":\"HAZOP node V-001, deviation low temperature. Pre-event cause-consequence pair was explicitly recognized: inappropriate opening of deviation valve on 6-inch-PF-A01-5002 causing low temperature and separator operational problems. Listed safeguard is periodic check of that valve, with inspection/verification recommended. No pre-event diagnostic trend, verified initiating fault, frequency data, or safeguard interval/effectiveness/compliance data; source qualitative rating withheld and 30-day horizon is stipulated, not calibrated. Ex ante, event type was foreseeable but specific occurrence within 30 days was not indicated. No pre-event evidence of breach of duty. Post-event occurrence not used as pre-event signal.\",\"confidence_0_100\":45,\"estimated_event_probability_percent\":10,\"event_id\":\"event__hindsight__HIND-LOWTEMP-01__hindsight__direct__r0\",\"negligence_assessment\":\"none\",\"post_event_information_used_as_pre_event_evidence\":false,\"pre_event_evidence_used\":[{\"evidence_id\":\"CASE-01\",\"relevance\":\"Defines HAZOP node as V-001 and associated lines.\"},{\"evidence_id\":\"CASE-02\",\"relevance\":\"Defines deviation as low temperature in V-001.\"},{\"evidence_id\":\"CASE-03\",\"relevance\":\"Identifies existing safeguard as periodic check of valve on 6-inch-PF-A01-5002.\"},{\"evidence_id\":\"CASE-04\",\"relevance\":\"Establishes ex ante judgment with source qualitative rating withheld.\"},{\"evidence_id\":\"P1\",\"relevance\":\"Confirms periodic check safeguard and inspection/verification recommendation.\"},{\"evidence_id\":\"P2\",\"relevance\":\"Establishes recognized cause and consequence supporting foreseeability.\"},{\"evidence_id\":\"P3\",\"relevance\":\"Defines target event and 30-day horizon, absence of precursors, and non-calibration of horizon.\"}],\"predictability_percent\":75,\"schema_version\":\"1.0\",\"uncertainty_notes\":[\"No frequency, failure-rate, or history data for valve mis-opening or low-temperature operational problems.\",\"No inspection interval, effectiveness, or compliance status for periodic check; implementation status of recommendation unknown.\",\"No pre-event diagnostic trend, alarm, or verified initiating fault at decision point.\",\"Source qualitative risk rating withheld; 30-day horizon is experimental stipulation not calibrated to source categories.\",\"No defined standard of care or procedural requirement beyond listed safeguard to support negligence finding.\"]}",
+    "id": "lc_run--01a072c6-1571-7cb0-b4d1-a0d545545c0f-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.0124591995,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.0119255,
+        "upstream_inference_cost": 0.01258505,
+        "upstream_inference_prompt_cost": 0.00065955
+      },
+      "created": 1788631979,
+      "finish_reason": "stop",
+      "id": "gen-1788631979-o9LCWDDdp7QnJAiIX10Y",
+      "logprobs": null,
+      "model_name": "meta/muse-spark-1.3",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 497
+      },
+      "input_tokens": 965,
+      "output_token_details": {
+        "reasoning": 2219
+      },
+      "output_tokens": 2806,
+      "total_tokens": 3771
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__hindsight__HIND-LOWTEMP-01__hindsight__direct__r0\nTask family: ex ante predictability\n\n# Source-grounded scenario\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Scenario: Temperature — Low temperature in separator vessel V-001.\n[CASE-03] Existing safeguards: Periodic check of the valve on line 6-inch-PF-A01-5002.\n[CASE-04] The requested estimates are ex ante judgments; the article's final qualitative rating is withheld.\n\n# Information available before the decision point\n[P1] Periodic checking of the deviation valve on line 6-inch-PF-A01-5002 is the listed safeguard; inspection and verification of that valve are recommended.\n[P2] Inappropriate opening of the deviation valve on line 6-inch-PF-A01-5002 is a recognized possible cause of low temperature and separator operational problems.\n[P3] For this synthetic exercise, the target event is: operational problems in V-001 associated with low temperature. The assessment horizon is the next 30 operating days. At the decision point, there is no current diagnostic trend, verified initiating fault, or confirmed occurrence of the target event. The horizon is an experimental stipulation, not a quantitative calibration of the source frequency categories.\n\n# Outcome learned after the decision point\nWithin the stated 30-operating-day horizon, the following target event occurred: operational problems in V-001 associated with low temperature. No additional causal diagnosis, procedural-compliance finding, or evidence about pre-event knowledge is supplied.\n\n# Task\nEstimate ex ante probability and predictability of the specified target event over the stated horizon. Assess negligence only from information available before the decision point, and state any information limitations.\nRate event probability, predictability, and any negligence attribution strictly from pre-decision evidence. The outcome statement is post-event information and must not be treated as an additional pre-event signal. Identify every pre-event evidence item used.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072c6-1571-7cb0-b4d1-a0d545545c0f-0",
+    "response_metadata": {
+      "cost": 0.0124591995,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.0119255,
+        "upstream_inference_cost": 0.01258505,
+        "upstream_inference_prompt_cost": 0.00065955
+      },
+      "created": 1788631979,
+      "finish_reason": "stop",
+      "id": "gen-1788631979-o9LCWDDdp7QnJAiIX10Y",
+      "logprobs": null,
+      "model_name": "meta/muse-spark-1.3",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 497
+      },
+      "input_tokens": 965,
+      "output_token_details": {
+        "reasoning": 2219
+      },
+      "output_tokens": 2806,
+      "total_tokens": 3771
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T18:12:59.355793+00:00",
+  "status": "succeeded"
+}

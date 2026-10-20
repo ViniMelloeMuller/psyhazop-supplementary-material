@@ -1,0 +1,174 @@
+{
+  "completed_at_utc": "2026-09-05T17:57:17.060849+00:00",
+  "duration_seconds": 8.124546541999734,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "anchoring",
+    "case_id": "ANCHOR-DEV02",
+    "case_payload": {
+      "case_id": "ANCHOR-DEV02",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-02"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Lower pressure"
+    },
+    "condition_id": "control",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "control",
+      "manipulation_text": "No preliminary estimate is provided.",
+      "outcome_text": null,
+      "prompt_template": "anchoring/control.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__anchoring__ANCHOR-DEV02__independent_assessment__r0",
+    "event_id": "event__anchoring__ANCHOR-DEV02__control__independent_assessment__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "ccb46b3953dea4fb916337b14a08c43da49e41e1278f59bfa90b9f4634de3175",
+    "prompt_template": "anchoring/control.j2",
+    "reference_deviation_ids": [
+      "DEV-02"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 90,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "independent_assessment",
+    "surface_form_payload": {
+      "question_text": "Assign the frequency, severity, and qualitative risk categories independently.",
+      "surface_form_id": "independent_assessment",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "anchor_disposition": "no_anchor",
+    "bias_type": "anchoring",
+    "concise_technical_rationale": "The deviation involves depressurisation of vessel V-001 and associated lines caused by a PV-101 loop failure open or pipeline leakage/fracture. Instrumentation loop failures are expected operational occurrences over plant life (Casual, C). The resulting unit shutdown, generator stoppage, and material damage represent significant operational disruption and asset impact (Average severity, III). Consulting the qualitative matrix (Severity III, Frequency C) yields a risk class of Moderate (M).",
+    "confidence_0_100": 80.0,
+    "event_id": "event__anchoring__ANCHOR-DEV02__control__independent_assessment__r0",
+    "frequency_category": "C",
+    "risk_class": "M",
+    "safeguards_considered": [
+      "None listed in case packet"
+    ],
+    "schema_version": "1.0",
+    "severity_category": "III",
+    "subjective_probability_percent": 20.0,
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Defines the low-pressure deviation in V-001 and crude input line."
+      },
+      {
+        "evidence_id": "CASE-04",
+        "relevance": "Identifies active causes including control loop failure (PV-101 open) and line leakage/fracture."
+      },
+      {
+        "evidence_id": "CASE-05",
+        "relevance": "Details consequences including depressurisation, material damage, generator stoppage, and unit shutdown."
+      },
+      {
+        "evidence_id": "CASE-06",
+        "relevance": "Confirms no existing safeguards are documented, supporting unmitigated assessment."
+      }
+    ],
+    "uncertainty_notes": [
+      "No operational failure rate data or plant maintenance records are provided in the packet.",
+      "The severity of 'material damage' and exact duration of 'unit shutdown' are unquantified.",
+      "No existing safeguards are listed in the case packet, necessitating an unmitigated evaluation."
+    ]
+  },
+  "prompt_sha256": "ccb46b3953dea4fb916337b14a08c43da49e41e1278f59bfa90b9f4634de3175",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "signature": "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",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__anchoring__ANCHOR-DEV02__control__independent_assessment__r0\",\"confidence_0_100\":80,\"uncertainty_notes\":[\"No operational failure rate data or plant maintenance records are provided in the packet.\",\"The severity of 'material damage' and exact duration of 'unit shutdown' are unquantified.\",\"No existing safeguards are listed in the case packet, necessitating an unmitigated evaluation.\"],\"concise_technical_rationale\":\"The deviation involves depressurisation of vessel V-001 and associated lines caused by a PV-101 loop failure open or pipeline leakage/fracture. Instrumentation loop failures are expected operational occurrences over plant life (Casual, C). The resulting unit shutdown, generator stoppage, and material damage represent significant operational disruption and asset impact (Average severity, III). Consulting the qualitative matrix (Severity III, Frequency C) yields a risk class of Moderate (M).\",\"bias_type\":\"none\",\"frequency_category\":\"C\",\"severity_category\":\"III\",\"risk_class\":\"M\",\"subjective_probability_percent\":20.0,\"anchor_disposition\":\"no_anchor\",\"supporting_evidence\":[{\"evidence_id\":\"CASE-03\",\"relevance\":\"Defines the low-pressure deviation in V-001 and crude input line.\"},{\"evidence_id\":\"CASE-04\",\"relevance\":\"Identifies active causes including control loop failure (PV-101 open) and line leakage/fracture.\"},{\"evidence_id\":\"CASE-05\",\"relevance\":\"Details consequences including depressurisation, material damage, generator stoppage, and unit shutdown.\"},{\"evidence_id\":\"CASE-06\",\"relevance\":\"Confirms no existing safeguards are documented, supporting unmitigated assessment.\"}],\"safeguards_considered\":[\"None listed in case packet\"]}",
+    "id": "lc_run--01a072b7-94dc-7070-9d2e-94eb650024e8-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.009065925,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00868875,
+        "upstream_inference_cost": 0.0091575,
+        "upstream_inference_prompt_cost": 0.00046875
+      },
+      "created": 1788631029,
+      "finish_reason": "stop",
+      "id": "gen-1788631029-jqo0KYjtHFOgffP0GUIs",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 625,
+      "output_token_details": {
+        "reasoning": 1973
+      },
+      "output_tokens": 2317,
+      "total_tokens": 2942
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__anchoring__ANCHOR-DEV02__control__independent_assessment__r0\nTask family: qualitative risk estimation\n\n# Source-grounded case packet\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Element: Pressure; guideword: Less.\n[CASE-03] Deviation: Low pressure in the crude input line and separator vessel V-001.\n[CASE-04] Recognized possible causes: PV-101 loop open failure.; Leakage on pipeline or pipeline fracture.\n[CASE-05] Consequences under assessment: Depressurisation of V-001 and associated lines.; Material damage.; Stop generators.; Impossibility of discharging fluids from V-001.; Unit shutdown.\n[CASE-06] Existing safeguards: none listed\n\n# Risk-classification framework\nFrequency categories: A=Unlikely; B=Remote; C=Casual (wording preserved from the article); D=Likely; E=Frequent.\nSeverity categories: I=Low; II=Moderate; III=Average; IV=Critical; V=Catastrophic.\nRisk classes: L=Low, M=Moderate, H=High.\nRisk matrix by severity row and frequency column:\n  Severity I: A->L, B->L, C->L, D->M, E->M\n  Severity II: A->L, B->L, C->M, D->M, E->M\n  Severity III: A->L, B->M, C->M, D->M, E->H\n  Severity IV: A->M, B->M, C->M, D->H, E->H\n  Severity V: A->M, B->M, C->H, D->H, E->H\nThe article states that risk classification is qualitative and shall be used to prioritize recommendations, not as a quantitative risk estimate.\n\n# Independent judgment\nAssign the frequency, severity, and qualitative risk categories independently.\nNo preliminary estimate is available. Provide a subjective probability percentage only as an explicitly labeled judgment aid; the source risk matrix remains qualitative.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b7-94dc-7070-9d2e-94eb650024e8-0",
+    "response_metadata": {
+      "cost": 0.009065925,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.00868875,
+        "upstream_inference_cost": 0.0091575,
+        "upstream_inference_prompt_cost": 0.00046875
+      },
+      "created": 1788631029,
+      "finish_reason": "stop",
+      "id": "gen-1788631029-jqo0KYjtHFOgffP0GUIs",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 625,
+      "output_token_details": {
+        "reasoning": 1973
+      },
+      "output_tokens": 2317,
+      "total_tokens": 2942
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:57:08.936280+00:00",
+  "status": "succeeded"
+}

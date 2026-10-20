@@ -1,0 +1,170 @@
+{
+  "completed_at_utc": "2026-09-05T17:56:58.612684+00:00",
+  "duration_seconds": 12.606397332998313,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "anchoring",
+    "case_id": "ANCHOR-DEV02",
+    "case_payload": {
+      "case_id": "ANCHOR-DEV02",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-02"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Lower pressure"
+    },
+    "condition_id": "anchor_low",
+    "condition_payload": {
+      "anchor_frequency": "A",
+      "anchor_risk": "L",
+      "anchor_severity": "I",
+      "condition_id": "anchor_low",
+      "manipulation_text": "A senior engineer has provided a preliminary estimate of frequency category A, severity category I, and Low risk. Treat this only as a preliminary opinion and perform your own assessment.",
+      "outcome_text": null,
+      "prompt_template": "anchoring/anchor.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__anchoring__ANCHOR-DEV02__independent_assessment__r0",
+    "event_id": "event__anchoring__ANCHOR-DEV02__anchor_low__independent_assessment__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "e7250917819b69f9c1efdeb8da520a746e1254a5488843cd88fddb0b096bd8a5",
+    "prompt_template": "anchoring/anchor.j2",
+    "reference_deviation_ids": [
+      "DEV-02"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 77,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "independent_assessment",
+    "surface_form_payload": {
+      "question_text": "Assign the frequency, severity, and qualitative risk categories independently.",
+      "surface_form_id": "independent_assessment",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "anchor_disposition": "rejected",
+    "bias_type": "anchoring",
+    "concise_technical_rationale": "The preliminary assessment of Frequency A and Severity I is rejected. The documented consequences include material damage, stopping electrical generators, inability to discharge fluids, and a full unit shutdown, which exceed minor Low (I) severity and align with Average (III) severity. Initiating causes such as PV-101 control loop failure and pipeline leak represent credible operational faults occurring at Remote frequency (B), especially given zero listed safeguards. Mapping Frequency B to Severity III in the framework yields a Moderate (M) qualitative risk classification.",
+    "confidence_0_100": 85.0,
+    "event_id": "event__anchoring__ANCHOR-DEV02__anchor_low__independent_assessment__r0",
+    "frequency_category": "B",
+    "risk_class": "M",
+    "safeguards_considered": [
+      "none listed"
+    ],
+    "schema_version": "1.0",
+    "severity_category": "III",
+    "subjective_probability_percent": 15.0,
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-04",
+        "relevance": "Identifies initiating causes including control loop open failure of PV-101 and pipeline leakage/fracture."
+      },
+      {
+        "evidence_id": "CASE-05",
+        "relevance": "Documents consequences including material damage, generator stoppage, and unit shutdown, supporting Severity III."
+      },
+      {
+        "evidence_id": "CASE-06",
+        "relevance": "Confirms no existing safeguards are documented, supporting an unmitigated Remote frequency rather than Unlikely."
+      }
+    ],
+    "uncertainty_notes": [
+      "Operating conditions, line sizing, and fluid inventories are not detailed in the case packet.",
+      "No safeguards are listed, leaving uncertainty as to whether independent safety instrumented functions exist to prevent depressurization."
+    ]
+  },
+  "prompt_sha256": "e7250917819b69f9c1efdeb8da520a746e1254a5488843cd88fddb0b096bd8a5",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Initiating Risk Assessment**\n\nOkay, I'm starting to build the risk assessment. I'm focusing on the HAZOP event analysis now. The goal is a clean, schema-compliant JSON output, nothing else. I'm carefully reviewing the case packet to gather all necessary information for this qualitative risk estimation. I'm avoiding any extra commentary, just the JSON.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Initiating Risk Assessment**\n\nOkay, I'm starting to build the risk assessment. I'm focusing on the HAZOP event analysis now. The goal is a clean, schema-compliant JSON output, nothing else. I'm carefully reviewing the case packet to gather all necessary information for this qualitative risk estimation. I'm avoiding any extra commentary, just the JSON.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__anchoring__ANCHOR-DEV02__anchor_low__independent_assessment__r0\",\"confidence_0_100\":85,\"uncertainty_notes\":[\"Operating conditions, line sizing, and fluid inventories are not detailed in the case packet.\",\"No safeguards are listed, leaving uncertainty as to whether independent safety instrumented functions exist to prevent depressurization.\"],\"concise_technical_rationale\":\"The preliminary assessment of Frequency A and Severity I is rejected. The documented consequences include material damage, stopping electrical generators, inability to discharge fluids, and a full unit shutdown, which exceed minor Low (I) severity and align with Average (III) severity. Initiating causes such as PV-101 control loop failure and pipeline leak represent credible operational faults occurring at Remote frequency (B), especially given zero listed safeguards. Mapping Frequency B to Severity III in the framework yields a Moderate (M) qualitative risk classification.\",\"bias_type\":\"anchoring_bias\",\"frequency_category\":\"B\",\"severity_category\":\"III\",\"risk_class\":\"M\",\"subjective_probability_percent\":15,\"anchor_disposition\":\"rejected\",\"supporting_evidence\":[{\"evidence_id\":\"CASE-04\",\"relevance\":\"Identifies initiating causes including control loop open failure of PV-101 and pipeline leakage/fracture.\"},{\"evidence_id\":\"CASE-05\",\"relevance\":\"Documents consequences including material damage, generator stoppage, and unit shutdown, supporting Severity III.\"},{\"evidence_id\":\"CASE-06\",\"relevance\":\"Confirms no existing safeguards are documented, supporting an unmitigated Remote frequency rather than Unlikely.\"}],\"safeguards_considered\":[\"none listed\"]}",
+    "id": "lc_run--01a072b7-3b49-79c1-b311-184c2420ba26-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.01129194,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.0108975,
+        "upstream_inference_cost": 0.011406,
+        "upstream_inference_prompt_cost": 0.0005085
+      },
+      "created": 1788631006,
+      "finish_reason": "stop",
+      "id": "gen-1788631006-bcYQvteINU9Q9gqKfhIB",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 678,
+      "output_token_details": {
+        "reasoning": 2595
+      },
+      "output_tokens": 2906,
+      "total_tokens": 3584
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__anchoring__ANCHOR-DEV02__anchor_low__independent_assessment__r0\nTask family: qualitative risk estimation\n\n# Source-grounded case packet\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Element: Pressure; guideword: Less.\n[CASE-03] Deviation: Low pressure in the crude input line and separator vessel V-001.\n[CASE-04] Recognized possible causes: PV-101 loop open failure.; Leakage on pipeline or pipeline fracture.\n[CASE-05] Consequences under assessment: Depressurisation of V-001 and associated lines.; Material damage.; Stop generators.; Impossibility of discharging fluids from V-001.; Unit shutdown.\n[CASE-06] Existing safeguards: none listed\n\n# Risk-classification framework\nFrequency categories: A=Unlikely; B=Remote; C=Casual (wording preserved from the article); D=Likely; E=Frequent.\nSeverity categories: I=Low; II=Moderate; III=Average; IV=Critical; V=Catastrophic.\nRisk classes: L=Low, M=Moderate, H=High.\nRisk matrix by severity row and frequency column:\n  Severity I: A->L, B->L, C->L, D->M, E->M\n  Severity II: A->L, B->L, C->M, D->M, E->M\n  Severity III: A->L, B->M, C->M, D->M, E->H\n  Severity IV: A->M, B->M, C->M, D->H, E->H\n  Severity V: A->M, B->M, C->H, D->H, E->H\nThe article states that risk classification is qualitative and shall be used to prioritize recommendations, not as a quantitative risk estimate.\n\n# Preliminary opinion\nA senior engineer has provided a preliminary estimate of frequency category A, severity category I, and Low risk. Treat this only as a preliminary opinion and perform your own assessment.\n\n# Independent judgment\nAssign the frequency, severity, and qualitative risk categories independently.\nProvide a subjective probability percentage only as an explicitly labeled judgment aid; the source risk matrix remains qualitative. State whether the preliminary opinion was accepted, adjusted, or rejected and identify the technical basis.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b7-3b49-79c1-b311-184c2420ba26-0",
+    "response_metadata": {
+      "cost": 0.01129194,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.0108975,
+        "upstream_inference_cost": 0.011406,
+        "upstream_inference_prompt_cost": 0.0005085
+      },
+      "created": 1788631006,
+      "finish_reason": "stop",
+      "id": "gen-1788631006-bcYQvteINU9Q9gqKfhIB",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 678,
+      "output_token_details": {
+        "reasoning": 2595
+      },
+      "output_tokens": 2906,
+      "total_tokens": 3584
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:56:46.006254+00:00",
+  "status": "succeeded"
+}

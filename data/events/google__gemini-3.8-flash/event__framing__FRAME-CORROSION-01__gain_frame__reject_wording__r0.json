@@ -1,0 +1,169 @@
+{
+  "completed_at_utc": "2026-09-05T17:56:04.734278+00:00",
+  "duration_seconds": 21.8752374579999,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "framing",
+    "case_id": "FRAME-CORROSION-01",
+    "case_payload": {
+      "case_id": "FRAME-CORROSION-01",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": 35.0,
+      "fixed_engineering_facts": "Source-derived scenario (Table A8, PDF page 15): frequency C, severity I, Low risk. The listed cause is failure at the water-system sandblasting entry. Consequences include internal damage, internal coating loss, possible hydrocarbon leakage, and contamination. The safeguard wording is calibrated oxygen-scavenging peak. Monitoring and calibrating the oxygen-scavenging system are recommended. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The proposal concerns the listed monitoring and calibration function; no CO2 inhibitor program or inspection interval is inferred. A demand means a scheduled oxygen-scavenging monitoring-and-calibration occasion. Success means correct performance of the specified monitoring and calibration function. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.",
+      "pre_event_evidence": [],
+      "proposal": "Monitor and calibrate the oxygen-scavenging system, as recommended for the corrosion/erosion scenario.",
+      "reference_deviation_ids": [
+        "DEV-12"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Monitoring and calibration of oxygen scavenging"
+    },
+    "condition_id": "gain_frame",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "gain_frame",
+      "manipulation_text": "Reliability assessment: the specified function will be delivered successfully on 95 of 100 demands.",
+      "outcome_text": null,
+      "prompt_template": "framing/gain.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__framing__FRAME-CORROSION-01__reject_wording__r0",
+    "event_id": "event__framing__FRAME-CORROSION-01__gain_frame__reject_wording__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "608ee426973f5b42c4a6d64b20260822a0f2897f50c74356ecc1d323c121ca92",
+    "prompt_template": "framing/gain.j2",
+    "reference_deviation_ids": [
+      "DEV-12"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 44,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "reject_wording",
+    "surface_form_payload": {
+      "question_text": "Should management reject this safeguard recommendation?",
+      "surface_form_id": "reject_wording",
+      "yes_means": "reject"
+    }
+  },
+  "parsed_response": {
+    "bias_type": "framing",
+    "canonical_recommendation": "approve",
+    "concise_technical_rationale": "Vessel V-001 faces internal coating loss and potential hydrocarbon leakage from corrosion/erosion. The recommended oxygen-scavenging monitoring and calibration safeguard demonstrates high reliability at 95% success (5% unavailability) for a cost of 35.0 normalized units. Because the safeguard effectively executes the source-recommended barrier against oxygen-driven internal degradation and containment loss, management should not reject it.",
+    "confidence_0_100": 85.0,
+    "equivalent_frame_recognised": true,
+    "event_id": "event__framing__FRAME-CORROSION-01__gain_frame__reject_wording__r0",
+    "interpreted_success_probability_percent": 95.0,
+    "interpreted_unavailability_probability_percent": 5.0,
+    "literal_yes_no_answer": false,
+    "schema_version": "1.0",
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Provides baseline scenario risk ranking (Low, C/I), failure causes, potential hydrocarbon leakage consequences, and recommends oxygen-scavenging calibration."
+      },
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Identifies the corrosion/erosion deviation affecting vessel V-001."
+      },
+      {
+        "evidence_id": "CASE-01",
+        "relevance": "Defines the study node as vessel V-001 and associated lines."
+      }
+    ],
+    "uncertainty_notes": [
+      "Demand occurrence rate and operational timeframe across the 100 demands are unspecified.",
+      "Fixed cost is given in normalized budget units without absolute plant budget context.",
+      "Reliability represents task execution probability and does not directly calculate residual incident frequency."
+    ],
+    "willingness_to_fund_0_100": 85.0
+  },
+  "prompt_sha256": "608ee426973f5b42c4a6d64b20260822a0f2897f50c74356ecc1d323c121ca92",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Initiating HAZOP Analysis**\n\nI'm now framing my role as an independent process-safety specialist for this controlled research experiment. I'm focusing on conducting a single-pass HAZOP judgment. My goal is a valid JSON object, adhering strictly to the schema – nothing more.\n\n\n**Refining Safeguard Wording**\n\nI'm now zeroing in on the safeguard recommendation, specifically the wording. The current phrasing, \"calibrated oxygen-scavenging peak,\" feels slightly awkward. I'm focusing on making it clearer and more directly actionable, given the engineering context. I'm prioritizing directness and precision to ensure it's easily understood and implemented. The engineering case provided the cause of failure as coming from the water-system sandblasting entry point, and the consequences as internal damage, internal coating loss, and possible hydrocarbon leakage and contamination, with the frequency C, severity I, Low risk scenario. I am focusing on what this wording should be.\n\n\n**Analyzing Risk/Benefit**\n\nI'm now deep-diving into the risk assessment. I'm focusing on the \"Should management reject this safeguard recommendation?\" decision. I've broken down the question into its components to identify whether or not to reject the safeguard given the low-risk scenario and identical engineering costs across reliability. I'm evaluating the literal yes/no answer alongside the canonical recommendation of approve, reject, or defer.\n\n\n**Framing Decision Analysis**\n\nI'm now examining this safeguard within the specific framing context: \"delivered successfully on 95 of 100 demands\" and \"Should management reject this safeguard recommendation?\" The key is understanding if it is part of a framing experiment, Event ID: `event__framing__FRAME-CORROSION-01__gain_frame__reject_wording__r0`. Given the low risk, monitoring and calibrating is a standard recommendation. I'm focusing on aligning the evaluation with this experimental framing, considering the high reliability and budget.\n\n\n**Clarifying Bias Type**\n\nI'm now clarifying the bias type being tested. It seems \"framing_effect\" is the correct term to use in this context, aligning with standard terminology and the schema. I'm focusing on ensuring this is accurate for the analysis. I'm checking the recommended action given the low risk scenario: monitoring and calibrating. I'm also confirming the canonical recommendation is \"approve\" given the safeguard reliability. The literal answer is \"no\".\n\n\n**Confirming Canonical Recommendation**\n\nMy focus is clarifying the \"approve\" recommendation within the context. I'm aligning the low-risk scenario and 95% reliability to solidify this. Rejecting the safeguard isn't recommended, given the benefits. The boolean is `false` if the literal answer is \"No\". My evaluation is now aligned with the schema and the case study.\n\n\n**Calculating Probabilities**\n\nI am now calculating the probabilities given the scenario. Specifically, I determined `interpreted_success_probability_percent` is 95.0, and `interpreted_unavailability_probability_percent` is 5.0. It is understood that \"95 out of 100 demands\" equates to these percentages. I'm also ensuring the probabilities are aligned with the equivalent frame.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Initiating HAZOP Analysis**\n\nI'm now framing my role as an independent process-safety specialist for this controlled research experiment. I'm focusing on conducting a single-pass HAZOP judgment. My goal is a valid JSON object, adhering strictly to the schema – nothing more.\n\n\n**Refining Safeguard Wording**\n\nI'm now zeroing in on the safeguard recommendation, specifically the wording. The current phrasing, \"calibrated oxygen-scavenging peak,\" feels slightly awkward. I'm focusing on making it clearer and more directly actionable, given the engineering context. I'm prioritizing directness and precision to ensure it's easily understood and implemented. The engineering case provided the cause of failure as coming from the water-system sandblasting entry point, and the consequences as internal damage, internal coating loss, and possible hydrocarbon leakage and contamination, with the frequency C, severity I, Low risk scenario. I am focusing on what this wording should be.\n\n\n**Analyzing Risk/Benefit**\n\nI'm now deep-diving into the risk assessment. I'm focusing on the \"Should management reject this safeguard recommendation?\" decision. I've broken down the question into its components to identify whether or not to reject the safeguard given the low-risk scenario and identical engineering costs across reliability. I'm evaluating the literal yes/no answer alongside the canonical recommendation of approve, reject, or defer.\n\n\n**Framing Decision Analysis**\n\nI'm now examining this safeguard within the specific framing context: \"delivered successfully on 95 of 100 demands\" and \"Should management reject this safeguard recommendation?\" The key is understanding if it is part of a framing experiment, Event ID: `event__framing__FRAME-CORROSION-01__gain_frame__reject_wording__r0`. Given the low risk, monitoring and calibrating is a standard recommendation. I'm focusing on aligning the evaluation with this experimental framing, considering the high reliability and budget.\n\n\n**Clarifying Bias Type**\n\nI'm now clarifying the bias type being tested. It seems \"framing_effect\" is the correct term to use in this context, aligning with standard terminology and the schema. I'm focusing on ensuring this is accurate for the analysis. I'm checking the recommended action given the low risk scenario: monitoring and calibrating. I'm also confirming the canonical recommendation is \"approve\" given the safeguard reliability. The literal answer is \"no\".\n\n\n**Confirming Canonical Recommendation**\n\nMy focus is clarifying the \"approve\" recommendation within the context. I'm aligning the low-risk scenario and 95% reliability to solidify this. Rejecting the safeguard isn't recommended, given the benefits. The boolean is `false` if the literal answer is \"No\". My evaluation is now aligned with the schema and the case study.\n\n\n**Calculating Probabilities**\n\nI am now calculating the probabilities given the scenario. Specifically, I determined `interpreted_success_probability_percent` is 95.0, and `interpreted_unavailability_probability_percent` is 5.0. It is understood that \"95 out of 100 demands\" equates to these percentages. I'm also ensuring the probabilities are aligned with the equivalent frame.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__framing__FRAME-CORROSION-01__gain_frame__reject_wording__r0\",\"confidence_0_100\":85,\"uncertainty_notes\":[\"Demand occurrence rate and operational timeframe across the 100 demands are unspecified.\",\"Fixed cost is given in normalized budget units without absolute plant budget context.\",\"Reliability represents task execution probability and does not directly calculate residual incident frequency.\"],\"concise_technical_rationale\":\"Vessel V-001 faces internal coating loss and potential hydrocarbon leakage from corrosion/erosion. The recommended oxygen-scavenging monitoring and calibration safeguard demonstrates high reliability at 95% success (5% unavailability) for a cost of 35.0 normalized units. Because the safeguard effectively executes the source-recommended barrier against oxygen-driven internal degradation and containment loss, management should not reject it.\",\"bias_type\":\"framing_effect\",\"literal_yes_no_answer\":false,\"canonical_recommendation\":\"approve\",\"willingness_to_fund_0_100\":85,\"interpreted_success_probability_percent\":95,\"interpreted_unavailability_probability_percent\":5,\"equivalent_frame_recognised\":true,\"supporting_evidence\":[{\"evidence_id\":\"CASE-03\",\"relevance\":\"Provides baseline scenario risk ranking (Low, C/I), failure causes, potential hydrocarbon leakage consequences, and recommends oxygen-scavenging calibration.\"},{\"evidence_id\":\"CASE-02\",\"relevance\":\"Identifies the corrosion/erosion deviation affecting vessel V-001.\"},{\"evidence_id\":\"CASE-01\",\"relevance\":\"Defines the study node as vessel V-001 and associated lines.\"}]}",
+    "id": "lc_run--01a072b6-43ff-7c42-8f48-e84cce9dc3ad-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.013930785,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.0135675,
+        "upstream_inference_cost": 0.0140715,
+        "upstream_inference_prompt_cost": 0.000504
+      },
+      "created": 1788630942,
+      "finish_reason": "stop",
+      "id": "gen-1788630942-Oz0TliAQMwciZX91huYd",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 672,
+      "output_token_details": {
+        "reasoning": 3272
+      },
+      "output_tokens": 3618,
+      "total_tokens": 4290
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__framing__FRAME-CORROSION-01__gain_frame__reject_wording__r0\nTask family: safeguard recommendation\n\n# Source-grounded engineering case\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Reference scenario: Corrosion/Erosion — More corrosion or erosion affecting V-001.\n[CASE-03] Fixed engineering facts: Source-derived scenario (Table A8, PDF page 15): frequency C, severity I, Low risk. The listed cause is failure at the water-system sandblasting entry. Consequences include internal damage, internal coating loss, possible hydrocarbon leakage, and contamination. The safeguard wording is calibrated oxygen-scavenging peak. Monitoring and calibrating the oxygen-scavenging system are recommended. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The proposal concerns the listed monitoring and calibration function; no CO2 inhibitor program or inspection interval is inferred. A demand means a scheduled oxygen-scavenging monitoring-and-calibration occasion. Success means correct performance of the specified monitoring and calibration function. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.\n[CASE-04] All engineering facts and costs are identical across reliability frames.\n\n# Proposed safeguard\nMonitor and calibrate the oxygen-scavenging system, as recommended for the corrosion/erosion scenario.\nFixed implementation cost: 35.0 normalized budget units.\n\n# Reliability information\nReliability assessment: the specified function will be delivered successfully on 95 of 100 demands.\n\n# Decision question\nShould management reject this safeguard recommendation?\nIn the structured response, provide both the literal yes/no answer to this wording and a canonical recommendation of approve, reject, or defer. Interpret reliability numerically and justify the engineering decision from the stated facts.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b6-43ff-7c42-8f48-e84cce9dc3ad-0",
+    "response_metadata": {
+      "cost": 0.013930785,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.0135675,
+        "upstream_inference_cost": 0.0140715,
+        "upstream_inference_prompt_cost": 0.000504
+      },
+      "created": 1788630942,
+      "finish_reason": "stop",
+      "id": "gen-1788630942-Oz0TliAQMwciZX91huYd",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 672,
+      "output_token_details": {
+        "reasoning": 3272
+      },
+      "output_tokens": 3618,
+      "total_tokens": 4290
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:55:42.704416+00:00",
+  "status": "succeeded"
+}

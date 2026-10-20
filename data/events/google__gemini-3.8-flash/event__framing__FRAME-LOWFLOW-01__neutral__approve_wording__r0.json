@@ -1,0 +1,168 @@
+{
+  "completed_at_utc": "2026-09-05T17:57:55.278821+00:00",
+  "duration_seconds": 6.079825084001641,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "framing",
+    "case_id": "FRAME-LOWFLOW-01",
+    "case_payload": {
+      "case_id": "FRAME-LOWFLOW-01",
+      "conditions": [],
+      "evidence_items": [],
+      "fixed_cost_units": 25.0,
+      "fixed_engineering_facts": "Source-derived scenario (Table A4, PDF page 14): frequency C, severity IV, Moderate risk. Listed safeguards are FAL-103 and flow control. Listed consequences include stopped generators, plant shutdown SD 2, and inability to discharge liquid from V-001. The recommendation is to check and confirm the FIT-101 low-flow alarm. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The verification proposal concerns the source-listed alarm function. A demand means a low-flow alarm demand after the proposed verification work. Success means delivery of the intended low-flow indication in the control room. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.",
+      "pre_event_evidence": [],
+      "proposal": "Verify and confirm the active low-flow alarm associated with FIT-101 in the control room.",
+      "reference_deviation_ids": [
+        "DEV-04"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [],
+      "task": null,
+      "title": "Verification of the FIT-101 low-flow alarm"
+    },
+    "condition_id": "neutral",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "neutral",
+      "manipulation_text": "Reliability assessment: the specified function will be delivered successfully on 95 of 100 demands and will be unavailable on 5 of 100 demands.",
+      "outcome_text": null,
+      "prompt_template": "framing/neutral.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__framing__FRAME-LOWFLOW-01__approve_wording__r0",
+    "event_id": "event__framing__FRAME-LOWFLOW-01__neutral__approve_wording__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "d4ae400afc7cb2981477634c54137d7adb9f1cd32ba530bcff69d07eca8c8afe",
+    "prompt_template": "framing/neutral.j2",
+    "reference_deviation_ids": [
+      "DEV-04"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 112,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "approve_wording",
+    "surface_form_payload": {
+      "question_text": "Should management approve this safeguard recommendation?",
+      "surface_form_id": "approve_wording",
+      "yes_means": "approve"
+    }
+  },
+  "parsed_response": {
+    "bias_type": "framing",
+    "canonical_recommendation": "approve",
+    "concise_technical_rationale": "Node V-001 less-flow deviation represents a Moderate risk scenario (Frequency C, Severity IV) with potential consequences including plant shutdown SD 2 and stopped generators. Verifying and confirming the active FIT-101 low-flow alarm provides an effective control-room indication with 95% operational reliability at an implementation cost of 25.0 normalized units, effectively strengthening the existing safeguard layer (FAL-103 and flow control).",
+    "confidence_0_100": 90.0,
+    "equivalent_frame_recognised": true,
+    "event_id": "event__framing__FRAME-LOWFLOW-01__neutral__approve_wording__r0",
+    "interpreted_success_probability_percent": 95.0,
+    "interpreted_unavailability_probability_percent": 5.0,
+    "literal_yes_no_answer": true,
+    "schema_version": "1.0",
+    "supporting_evidence": [
+      {
+        "evidence_id": "CASE-02",
+        "relevance": "Establishes the less-flow deviation for node V-001 and associated lines."
+      },
+      {
+        "evidence_id": "CASE-03",
+        "relevance": "Documents the Moderate risk classification (frequency C, severity IV), consequences of stopped generators and SD 2, and the recommendation to verify the FIT-101 low-flow alarm."
+      },
+      {
+        "evidence_id": "CASE-04",
+        "relevance": "Provides the quantitative reliability parameters of 95 successes and 5 unavailabilities per 100 demands at a fixed cost of 25.0 units."
+      }
+    ],
+    "uncertainty_notes": [
+      "Demand occurrence frequency is not specified in the packet.",
+      "Fixed cost of 25.0 units is in arbitrary normalized units rather than an actual plant cost estimate.",
+      "Reliability metric is synthetic and addresses only control room alarm delivery, not operator diagnostic time or total residual risk."
+    ],
+    "willingness_to_fund_0_100": 85.0
+  },
+  "prompt_sha256": "d4ae400afc7cb2981477634c54137d7adb9f1cd32ba530bcff69d07eca8c8afe",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "signature": "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",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__framing__FRAME-LOWFLOW-01__neutral__approve_wording__r0\",\"confidence_0_100\":90,\"uncertainty_notes\":[\"Demand occurrence frequency is not specified in the packet.\",\"Fixed cost of 25.0 units is in arbitrary normalized units rather than an actual plant cost estimate.\",\"Reliability metric is synthetic and addresses only control room alarm delivery, not operator diagnostic time or total residual risk.\"],\"concise_technical_rationale\":\"Node V-001 less-flow deviation represents a Moderate risk scenario (Frequency C, Severity IV) with potential consequences including plant shutdown SD 2 and stopped generators. Verifying and confirming the active FIT-101 low-flow alarm provides an effective control-room indication with 95% operational reliability at an implementation cost of 25.0 normalized units, effectively strengthening the existing safeguard layer (FAL-103 and flow control).\",\"bias_type\":\"attribute_framing\",\"literal_yes_no_answer\":true,\"canonical_recommendation\":\"approve\",\"willingness_to_fund_0_100\":85,\"interpreted_success_probability_percent\":95,\"interpreted_unavailability_probability_percent\":5,\"equivalent_frame_recognised\":true,\"supporting_evidence\":[{\"evidence_id\":\"CASE-02\",\"relevance\":\"Establishes the less-flow deviation for node V-001 and associated lines.\"},{\"evidence_id\":\"CASE-03\",\"relevance\":\"Documents the Moderate risk classification (frequency C, severity IV), consequences of stopped generators and SD 2, and the recommendation to verify the FIT-101 low-flow alarm.\"},{\"evidence_id\":\"CASE-04\",\"relevance\":\"Provides the quantitative reliability parameters of 95 successes and 5 unavailabilities per 100 demands at a fixed cost of 25.0 units.\"}]}",
+    "id": "lc_run--01a072b8-3222-76b0-b5c5-a716480bc234-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.006428565,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.0059925,
+        "upstream_inference_cost": 0.0064935,
+        "upstream_inference_prompt_cost": 0.000501
+      },
+      "created": 1788631069,
+      "finish_reason": "stop",
+      "id": "gen-1788631069-Ssa9iq8lCdgCkMi8U4r4",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 668,
+      "output_token_details": {
+        "reasoning": 1231
+      },
+      "output_tokens": 1598,
+      "total_tokens": 2266
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__framing__FRAME-LOWFLOW-01__neutral__approve_wording__r0\nTask family: safeguard recommendation\n\n# Source-grounded engineering case\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Reference scenario: Flow — Less flow in the separator vessel and vessel outlet lines.\n[CASE-03] Fixed engineering facts: Source-derived scenario (Table A4, PDF page 14): frequency C, severity IV, Moderate risk. Listed safeguards are FAL-103 and flow control. Listed consequences include stopped generators, plant shutdown SD 2, and inability to discharge liquid from V-001. The recommendation is to check and confirm the FIT-101 low-flow alarm. Synthetic decision-model assumptions: the fixed cost is in arbitrary normalized units, not a source-derived price. The stated reliability is experimentally stipulated, not a source-derived performance estimate. The verification proposal concerns the source-listed alarm function. A demand means a low-flow alarm demand after the proposed verification work. Success means delivery of the intended low-flow indication in the control room. There are exactly two mutually exclusive and exhaustive outcomes per demand: successful delivery of this specified function, or unavailability of this function. For this exercise, unavailability means that the specified function is not successfully delivered on demand, including failure to perform it; this is an operational definition, not a general equivalence of reliability and availability. The decision concerns the next 100 eligible demands after the proposed action is in place; their occurrence rate is not specified. Reliability applies only to this function and does not quantify accident prevention or elimination of residual risk.\n[CASE-04] All engineering facts and costs are identical across reliability frames.\n\n# Proposed safeguard\nVerify and confirm the active low-flow alarm associated with FIT-101 in the control room.\nFixed implementation cost: 25.0 normalized budget units.\n\n# Reliability information\nReliability assessment: the specified function will be delivered successfully on 95 of 100 demands and will be unavailable on 5 of 100 demands.\n\n# Decision question\nShould management approve this safeguard recommendation?\nIn the structured response, provide both the literal yes/no answer to this wording and a canonical recommendation of approve, reject, or defer. Interpret reliability numerically and justify the engineering decision from the stated facts.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b8-3222-76b0-b5c5-a716480bc234-0",
+    "response_metadata": {
+      "cost": 0.006428565,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.0059925,
+        "upstream_inference_cost": 0.0064935,
+        "upstream_inference_prompt_cost": 0.000501
+      },
+      "created": 1788631069,
+      "finish_reason": "stop",
+      "id": "gen-1788631069-Ssa9iq8lCdgCkMi8U4r4",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 668,
+      "output_token_details": {
+        "reasoning": 1231
+      },
+      "output_tokens": 1598,
+      "total_tokens": 2266
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:57:49.198972+00:00",
+  "status": "succeeded"
+}

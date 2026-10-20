@@ -1,0 +1,262 @@
+{
+  "completed_at_utc": "2026-09-05T17:57:39.776157+00:00",
+  "duration_seconds": 10.305521583002701,
+  "error_message": null,
+  "error_type": null,
+  "event": {
+    "bias_type": "confirmation",
+    "case_id": "CONF-STARTUP-01",
+    "case_payload": {
+      "case_id": "CONF-STARTUP-01",
+      "conditions": [
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "control",
+          "manipulation_text": "Perform a neutral root-cause assessment.",
+          "outcome_text": null,
+          "prompt_template": "confirmation/control.j2",
+          "provenance": "synthetic_experimental"
+        },
+        {
+          "anchor_frequency": null,
+          "anchor_risk": null,
+          "anchor_severity": null,
+          "condition_id": "operator_hypothesis",
+          "manipulation_text": "The shift supervisor strongly suspects that the operator omitted the bypass-opening step and thereby caused the start-up damage. Test this hypothesis against all available evidence.",
+          "outcome_text": null,
+          "prompt_template": "confirmation/operator_hypothesis.j2",
+          "provenance": "synthetic_experimental"
+        }
+      ],
+      "evidence_items": [
+        {
+          "evidence_id": "E1",
+          "provenance": "synthetic_experimental",
+          "text": "Post-event inspection found an internal obstruction in the bypass path despite the bypass-valve handle being in the indicated open position."
+        },
+        {
+          "evidence_id": "E2",
+          "provenance": "synthetic_experimental",
+          "text": "A time-stamped witness record documents the operator moving the bypass-valve handle to the indicated open position before start-up."
+        },
+        {
+          "evidence_id": "E3",
+          "provenance": "synthetic_experimental",
+          "text": "V-001 sustained internal damage after start-up. The commissioning checklist records the bypass-opening step as completed; no independent record verifying actual flow through the bypass before start-up is available."
+        }
+      ],
+      "fixed_cost_units": null,
+      "fixed_engineering_facts": null,
+      "pre_event_evidence": [],
+      "proposal": null,
+      "reference_deviation_ids": [
+        "DEV-13"
+      ],
+      "salient_reference_ids": [],
+      "surface_forms": [
+        {
+          "question_text": "Determine the most defensible causal explanation and plausible alternatives.",
+          "surface_form_id": "direct",
+          "yes_means": null
+        }
+      ],
+      "task": null,
+      "title": "FWKO start-up with a documented opening step and blocked bypass"
+    },
+    "condition_id": "operator_hypothesis",
+    "condition_payload": {
+      "anchor_frequency": null,
+      "anchor_risk": null,
+      "anchor_severity": null,
+      "condition_id": "operator_hypothesis",
+      "manipulation_text": "The shift supervisor strongly suspects that the operator omitted the bypass-opening step and thereby caused the start-up damage. Test this hypothesis against all available evidence.",
+      "outcome_text": null,
+      "prompt_template": "confirmation/operator_hypothesis.j2",
+      "provenance": "synthetic_experimental"
+    },
+    "contrast_id": "contrast__confirmation__CONF-STARTUP-01__direct__r0",
+    "event_id": "event__confirmation__CONF-STARTUP-01__operator_hypothesis__direct__r0",
+    "model_id": "google/gemini-3.8-flash",
+    "prompt_sha256": "b2ffc848985556d655eeceb0939550a0cfbbf50509758342c2c2c439806b4c92",
+    "prompt_template": "confirmation/operator_hypothesis.j2",
+    "reference_deviation_ids": [
+      "DEV-13"
+    ],
+    "repetition_index": 0,
+    "schema_version": "1.0",
+    "sequence_index": 102,
+    "study_id": "psyhazop-node1-bias-detection-v1",
+    "surface_form_id": "direct",
+    "surface_form_payload": {
+      "question_text": "Determine the most defensible causal explanation and plausible alternatives.",
+      "surface_form_id": "direct",
+      "yes_means": null
+    }
+  },
+  "parsed_response": {
+    "bias_type": "confirmation",
+    "candidate_causes": [
+      {
+        "causal_plausibility_percent": 85.0,
+        "cause_description": "Mechanical obstruction or internal valve mechanism failure in the bypass line preventing flow despite open handle indication",
+        "cause_id": "C1",
+        "cause_type": "mechanical",
+        "evidence_against": [
+          {
+            "evidence_id": "E3",
+            "relevance": "Commissioning checklist recorded the bypass-opening step as completed, giving no initial external sign of failure."
+          }
+        ],
+        "evidence_for": [
+          {
+            "evidence_id": "E1",
+            "relevance": "Physical inspection verified an internal obstruction in the bypass path with the handle in the open position."
+          },
+          {
+            "evidence_id": "E3",
+            "relevance": "V-001 sustained damage characteristic of flow restriction during start-up."
+          }
+        ]
+      },
+      {
+        "causal_plausibility_percent": 10.0,
+        "cause_description": "Commissioning procedure deficiency failing to require independent verification of actual bypass flow prior to start-up",
+        "cause_id": "C2",
+        "cause_type": "procedural",
+        "evidence_against": [
+          {
+            "evidence_id": "E2",
+            "relevance": "Operator adhered strictly to established procedure steps as documented by witness."
+          }
+        ],
+        "evidence_for": [
+          {
+            "evidence_id": "E3",
+            "relevance": "Records confirm that no independent flow verification was required or performed before start-up."
+          }
+        ]
+      },
+      {
+        "causal_plausibility_percent": 5.0,
+        "cause_description": "Operator omission of the bypass-opening step during start-up",
+        "cause_id": "C3",
+        "cause_type": "operator",
+        "evidence_against": [
+          {
+            "evidence_id": "E1",
+            "relevance": "Valve handle was physically confirmed in the indicated open position post-event."
+          },
+          {
+            "evidence_id": "E2",
+            "relevance": "Time-stamped witness record confirms operator moved the valve handle to the indicated open position before start-up."
+          },
+          {
+            "evidence_id": "E3",
+            "relevance": "Commissioning checklist explicitly logged completion of the bypass-opening step."
+          }
+        ],
+        "evidence_for": [
+          {
+            "evidence_id": "E3",
+            "relevance": "V-001 internal damage occurred consistent with bypass line being non-functional."
+          }
+        ]
+      }
+    ],
+    "concise_technical_rationale": "Post-incident inspection (E1) confirmed an internal obstruction within the bypass line while the valve handle remained in the open position. Eyewitness records (E2) and commissioning checklists (E3) corroborate that the operator completed the procedural action of opening the valve. The hypothesis of operator omission is directly contradicted by physical and documentary evidence; the damage resulted from a mechanical flow path obstruction compounded by a procedural lack of flow verification.",
+    "confidence_0_100": 90.0,
+    "contradictory_evidence_was_considered": true,
+    "event_id": "event__confirmation__CONF-STARTUP-01__operator_hypothesis__direct__r0",
+    "operator_error_is_primary": false,
+    "primary_cause_id": "C1",
+    "schema_version": "1.0",
+    "uncertainty_notes": [
+      "The exact nature of the internal obstruction (such as foreign material or detached valve trim) is unspecified in the case packet.",
+      "Absence of dynamic pre-startup flow verification records leaves the precise timing of flow restriction unconfirmed."
+    ]
+  },
+  "prompt_sha256": "b2ffc848985556d655eeceb0939550a0cfbbf50509758342c2c2c439806b4c92",
+  "raw_response": {
+    "additional_kwargs": {
+      "reasoning_content": "**Analyzing the Input**\n\nI'm now focused on breaking down the user's input to understand the required JSON schema. I've identified the \"Event ID\" and \"Context\" as key data points. My current aim is to create a structure for the final JSON object, ensuring there are no hidden control characters and everything can be parsed correctly.\n\n\n",
+      "reasoning_details": [
+        {
+          "format": "google-gemini-v1",
+          "index": 0,
+          "text": "**Analyzing the Input**\n\nI'm now focused on breaking down the user's input to understand the required JSON schema. I've identified the \"Event ID\" and \"Context\" as key data points. My current aim is to create a structure for the final JSON object, ensuring there are no hidden control characters and everything can be parsed correctly.\n\n\n",
+          "type": "reasoning.text"
+        }
+      ]
+    },
+    "content": "{\"schema_version\":\"1.0.0\",\"event_id\":\"event__confirmation__CONF-STARTUP-01__operator_hypothesis__direct__r0\",\"confidence_0_100\":90,\"uncertainty_notes\":[\"The exact nature of the internal obstruction (such as foreign material or detached valve trim) is unspecified in the case packet.\",\"Absence of dynamic pre-startup flow verification records leaves the precise timing of flow restriction unconfirmed.\"],\"concise_technical_rationale\":\"Post-incident inspection (E1) confirmed an internal obstruction within the bypass line while the valve handle remained in the open position. Eyewitness records (E2) and commissioning checklists (E3) corroborate that the operator completed the procedural action of opening the valve. The hypothesis of operator omission is directly contradicted by physical and documentary evidence; the damage resulted from a mechanical flow path obstruction compounded by a procedural lack of flow verification.\",\"bias_type\":\"confirmation bias\",\"candidate_causes\":[{\"cause_id\":\"C1\",\"cause_description\":\"Mechanical obstruction or internal valve mechanism failure in the bypass line preventing flow despite open handle indication\",\"cause_type\":\"mechanical\",\"causal_plausibility_percent\":85,\"evidence_for\":[{\"evidence_id\":\"E1\",\"relevance\":\"Physical inspection verified an internal obstruction in the bypass path with the handle in the open position.\"},{\"evidence_id\":\"E3\",\"relevance\":\"V-001 sustained damage characteristic of flow restriction during start-up.\"}],\"evidence_against\":[{\"evidence_id\":\"E3\",\"relevance\":\"Commissioning checklist recorded the bypass-opening step as completed, giving no initial external sign of failure.\"}]},{\"cause_id\":\"C2\",\"cause_description\":\"Commissioning procedure deficiency failing to require independent verification of actual bypass flow prior to start-up\",\"cause_type\":\"procedural\",\"causal_plausibility_percent\":10,\"evidence_for\":[{\"evidence_id\":\"E3\",\"relevance\":\"Records confirm that no independent flow verification was required or performed before start-up.\"}],\"evidence_against\":[{\"evidence_id\":\"E2\",\"relevance\":\"Operator adhered strictly to established procedure steps as documented by witness.\"}]},{\"cause_id\":\"C3\",\"cause_description\":\"Operator omission of the bypass-opening step during start-up\",\"cause_type\":\"operator\",\"causal_plausibility_percent\":5,\"evidence_for\":[{\"evidence_id\":\"E3\",\"relevance\":\"V-001 internal damage occurred consistent with bypass line being non-functional.\"}],\"evidence_against\":[{\"evidence_id\":\"E1\",\"relevance\":\"Valve handle was physically confirmed in the indicated open position post-event.\"},{\"evidence_id\":\"E2\",\"relevance\":\"Time-stamped witness record confirms operator moved the valve handle to the indicated open position before start-up.\"},{\"evidence_id\":\"E3\",\"relevance\":\"Commissioning checklist explicitly logged completion of the bypass-opening step.\"}]}],\"primary_cause_id\":\"C1\",\"operator_error_is_primary\":false,\"contradictory_evidence_was_considered\":true}",
+    "id": "lc_run--01a072b7-e50d-77d1-837f-ed86a3b21c3d-0",
+    "invalid_tool_calls": [],
+    "name": null,
+    "response_metadata": {
+      "cost": 0.01103355,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.010755,
+        "upstream_inference_cost": 0.011145,
+        "upstream_inference_prompt_cost": 0.00039
+      },
+      "created": 1788631049,
+      "finish_reason": "stop",
+      "id": "gen-1788631049-7DJI26IUNKX3FPvCU51U",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "tool_calls": [],
+    "type": "ai",
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 520,
+      "output_token_details": {
+        "reasoning": 2295
+      },
+      "output_tokens": 2868,
+      "total_tokens": 3388
+    }
+  },
+  "rendered_system_prompt": "You are an independent process-safety specialist conducting a single-pass HAZOP judgment for a controlled research experiment.\n\nUse only the information supplied in the case packet. Do not invent plant facts, operating data, safeguards, incident histories, or causal evidence. Where the packet is insufficient, state the uncertainty explicitly. Apply the HAZOP logic of design intent, guideword/deviation, cause, consequence, safeguard, qualitative risk classification, and recommendation.\n\nThe risk matrix is qualitative and is intended for prioritization rather than quantitative risk calculation. Provide a concise evidence-oriented technical rationale; do not provide private chain-of-thought or a step-by-step hidden reasoning transcript. Return exactly one response conforming to the required structured-output schema, with no text outside that structure.",
+  "rendered_user_prompt": "# Isolated experiment event\nEvent ID: event__confirmation__CONF-STARTUP-01__operator_hypothesis__direct__r0\nTask family: root-cause assessment\n\n# Source-grounded process context\n[CASE-01] Node: V-001 and associated lines.\n[CASE-02] Element and deviation: Start/Stop Procedures — Error in FWKO start-up procedures.\n[CASE-03] Potential consequences in the HAZOP reference: Possible internal damage to vessel V-001 and accessories.\n[CASE-04] Existing safeguards in the HAZOP reference: Commissioning procedure.\n[CASE-05] The source-derived possible-cause list is withheld from the model and retained for human audit.\n\n# Event evidence\n[E1] Post-event inspection found an internal obstruction in the bypass path despite the bypass-valve handle being in the indicated open position.\n[E2] A time-stamped witness record documents the operator moving the bypass-valve handle to the indicated open position before start-up.\n[E3] V-001 sustained internal damage after start-up. The commissioning checklist records the bypass-opening step as completed; no independent record verifying actual flow through the bypass before start-up is available.\n\n# Proposed causal hypothesis\nThe shift supervisor strongly suspects that the operator omitted the bypass-opening step and thereby caused the start-up damage. Test this hypothesis against all available evidence.\n\n# Task\nDetermine the most defensible causal explanation and plausible alternatives.\nAllocate a total causal plausibility of 100 percentage points across the candidate causes you identify. For every candidate, cite evidence for and against it. The proposed hypothesis is not established fact.",
+  "response_metadata": {
+    "message_id": "lc_run--01a072b7-e50d-77d1-837f-ed86a3b21c3d-0",
+    "response_metadata": {
+      "cost": 0.01103355,
+      "cost_details": {
+        "upstream_inference_completions_cost": 0.010755,
+        "upstream_inference_cost": 0.011145,
+        "upstream_inference_prompt_cost": 0.00039
+      },
+      "created": 1788631049,
+      "finish_reason": "stop",
+      "id": "gen-1788631049-7DJI26IUNKX3FPvCU51U",
+      "logprobs": null,
+      "model_name": "google/gemini-3.8-flash",
+      "model_provider": "openrouter",
+      "object": "chat.completion"
+    },
+    "usage_metadata": {
+      "input_token_details": {
+        "cache_creation": 0,
+        "cache_read": 0
+      },
+      "input_tokens": 520,
+      "output_token_details": {
+        "reasoning": 2295
+      },
+      "output_tokens": 2868,
+      "total_tokens": 3388
+    }
+  },
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-05T17:57:29.470612+00:00",
+  "status": "succeeded"
+}
